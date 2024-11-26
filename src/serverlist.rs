@@ -57,7 +57,7 @@ impl<T: Clone> TrackedServer<T> {
     }
 
     pub fn track_connection_failure(&self) -> u32 {
-        self.connection_failures.fetch_add(1, Ordering::Relaxed)
+        self.connection_failures.fetch_add(1, Ordering::Relaxed) + 1
     }
 
     pub fn connection_failures(&self) -> u32 {
