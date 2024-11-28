@@ -1,5 +1,5 @@
 use crate::auth::SteamGuardToken;
-use another_steam_totp::generate_auth_code;
+use another_steam_totp::{generate_auth_code, get_steam_server_time_offset};
 use futures_util::future::{select, Either};
 use std::pin::pin;
 use steam_vent_proto::steammessages_auth_steamclient::{
@@ -7,6 +7,7 @@ use steam_vent_proto::steammessages_auth_steamclient::{
 };
 use tokio::io::AsyncBufReadExt;
 use tokio::io::{stdin, stdout, AsyncRead, AsyncWrite, AsyncWriteExt, BufReader, Stdin, Stdout};
+use tracing::{debug, error};
 
 /// A method that can be used to confirm a login
 #[derive(Debug, Clone)]
@@ -257,7 +258,15 @@ impl AuthConfirmationHandler for SharedSecretAuthConfirmationHandler {
     ) -> Option<ConfirmationAction> {
         for method in allowed_confirmations {
             if let Some(token_type) = method.token_type() {
-                let auth_code = generate_auth_code(self.shared_secret, None)
+                let offset = match get_steam_server_time_offset().await {
+                    Ok(offset) => offset,
+                    Err(e) => {
+                        error!(error = ?e, "Failed to acquire server time offset");
+                        return Some(ConfirmationAction::Abort);
+                    }
+                };
+                debug!("Server time offset: {offset}");
+                let auth_code = generate_auth_code(self.shared_secret, Some(offset))
                     .expect("Could not generate auth code given shared secret.");
                 let token = SteamGuardToken(auth_code);
                 return Some(ConfirmationAction::GuardToken(token, token_type));
