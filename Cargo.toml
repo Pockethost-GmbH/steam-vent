@@ -32,14 +32,14 @@ dashmap = "6.0.1"
 tracing = "0.1.40"
 serde = { version = "1.0.209", features = ["derive"] }
 serde_json = "1.0.127"
-reqwest = { version = "0.12.9", default-features = false, features = ["json", "rustls-tls"] }
+reqwest = { version = "^0.12", default-features = false, features = ["json", "rustls-tls"] }
 rsa = "0.9.6"
 num-traits = "0.2.19"
 num-bigint-dig = "0.8.4"
 base64 = "0.22.1"
 num_enum = "0.7.3"
 directories = "5.0.1"
-another-steam-totp = { version = "0.3.3", features = ["reqwest"] }
+another-steam-totp = { git = "https://github.com/ported-pw/another-steam-totp", features = ["reqwest"] }
 async-stream = "0.3.5"
 
 [dev-dependencies]
