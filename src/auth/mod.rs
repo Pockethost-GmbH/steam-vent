@@ -15,6 +15,7 @@ use crate::proto::steammessages_auth_steamclient::{
     EAuthTokenPlatformType,
 };
 use crate::session::{ConnectionError, LoginError};
+use crate::EResult;
 use base64::prelude::BASE64_STANDARD;
 use base64::Engine;
 pub use confirmation::*;
@@ -27,7 +28,7 @@ use std::time::Duration;
 use steam_vent_crypto::encrypt_with_key_pkcs1;
 use thiserror::Error;
 use tokio::time::sleep;
-use tracing::{debug, info, instrument};
+use tracing::{debug, info, instrument, warn};
 
 pub(crate) async fn begin_password_auth(
     connection: &mut Connection,
@@ -139,14 +140,34 @@ impl StartedAuth {
     ) -> Result<(), ConfirmationError> {
         match confirmation {
             ConfirmationAction::GuardToken(token, ty) => {
+                let mut attempt = 0;
                 let req = CAuthentication_UpdateAuthSessionWithSteamGuardCode_Request {
                     client_id: Some(self.client_id()),
                     steamid: Some(self.steam_id()),
-                    code: Some(token.0),
+                    code: Some(token.0.clone()),
                     code_type: Some(EnumOrUnknown::new(ty.into())),
                     ..CAuthentication_UpdateAuthSessionWithSteamGuardCode_Request::default()
                 };
-                let _ = connection.service_method_un_authenticated(req).await?;
+                loop {
+                    attempt += 1;
+                    if let Err(e) = connection
+                        .service_method_un_authenticated(req.clone())
+                        .await
+                    {
+                        if let NetworkError::ApiError(eresult) = e {
+                            if eresult == EResult::TwoFactorCodeMismatch {
+                                if attempt <= 3 {
+                                    warn!("Error submitting two-factor code on attempt {}, retrying in a second", attempt);
+                                    tokio::time::sleep(Duration::from_secs(1)).await;
+                                    continue;
+                                }
+                            }
+                        }
+                        return Err(e.into());
+                    } else {
+                        break;
+                    }
+                }
             }
             ConfirmationAction::None => {}
             ConfirmationAction::Abort => return Err(ConfirmationError::Aborted),
