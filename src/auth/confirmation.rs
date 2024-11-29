@@ -2,12 +2,14 @@ use crate::auth::SteamGuardToken;
 use another_steam_totp::{generate_auth_code, get_steam_server_time_offset};
 use futures_util::future::{select, Either};
 use std::pin::pin;
+use std::time;
+use std::time::{Duration, UNIX_EPOCH};
 use steam_vent_proto::steammessages_auth_steamclient::{
     CAuthentication_AllowedConfirmation, EAuthSessionGuardType,
 };
 use tokio::io::AsyncBufReadExt;
 use tokio::io::{stdin, stdout, AsyncRead, AsyncWrite, AsyncWriteExt, BufReader, Stdin, Stdout};
-use tracing::{debug, error};
+use tracing::{debug, error, info};
 
 /// A method that can be used to confirm a login
 #[derive(Debug, Clone)]
@@ -258,14 +260,27 @@ impl AuthConfirmationHandler for SharedSecretAuthConfirmationHandler {
     ) -> Option<ConfirmationAction> {
         for method in allowed_confirmations {
             if let Some(token_type) = method.token_type() {
-                let offset = match get_steam_server_time_offset().await {
-                    Ok(offset) => offset,
-                    Err(e) => {
-                        error!(error = ?e, "Failed to acquire server time offset");
-                        return Some(ConfirmationAction::Abort);
-                    }
-                };
+                let offset = get_steam_server_time_offset().await.unwrap_or_else(|e| {
+                    error!(error = ?e, "Failed to acquire server time offset, ignoring and assuming 0");
+                    0i64
+                });
                 debug!("Server time offset: {offset}");
+                // Wait for server time on second 15 and 45 on the minute, since that would be in the middle of the validity
+                // of any TOTP
+                let current_ts = time::SystemTime::now()
+                    .duration_since(UNIX_EPOCH)
+                    .unwrap()
+                    .as_secs()
+                    + offset as u64;
+                let modulo = current_ts % 30;
+                let next = if modulo <= 15 {
+                    current_ts - modulo + 15
+                } else {
+                    current_ts - modulo + 45
+                };
+                let sleep_for = Duration::from_secs(next - current_ts);
+                info!("Waiting for {:?} to submit TOTP code", sleep_for);
+                tokio::time::sleep(sleep_for).await;
                 let auth_code = generate_auth_code(self.shared_secret, Some(offset))
                     .expect("Could not generate auth code given shared secret.");
                 let token = SteamGuardToken(auth_code);
