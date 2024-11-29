@@ -1,7 +1,7 @@
 use num_enum::TryFromPrimitive;
 use std::convert::TryFrom;
 
-#[derive(TryFromPrimitive, Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(TryFromPrimitive, Debug, Copy, Clone)]
 #[repr(i32)]
 pub enum EResult {
     Invalid = 0,
