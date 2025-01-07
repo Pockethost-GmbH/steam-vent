@@ -31,8 +31,6 @@ pub struct CMsgSteamNetworkingIdentityLegacyBinary {
     // message fields
     // @@protoc_insertion_point(field:CMsgSteamNetworkingIdentityLegacyBinary.steam_id)
     pub steam_id: ::std::option::Option<u64>,
-    // @@protoc_insertion_point(field:CMsgSteamNetworkingIdentityLegacyBinary.xbox_pairwise_id)
-    pub xbox_pairwise_id: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CMsgSteamNetworkingIdentityLegacyBinary.generic_bytes)
     pub generic_bytes: ::std::option::Option<::std::vec::Vec<u8>>,
     // @@protoc_insertion_point(field:CMsgSteamNetworkingIdentityLegacyBinary.generic_string)
@@ -72,42 +70,6 @@ impl CMsgSteamNetworkingIdentityLegacyBinary {
     // Param is passed by value, moved
     pub fn set_steam_id(&mut self, v: u64) {
         self.steam_id = ::std::option::Option::Some(v);
-    }
-
-    // optional string xbox_pairwise_id = 17;
-
-    pub fn xbox_pairwise_id(&self) -> &str {
-        match self.xbox_pairwise_id.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_xbox_pairwise_id(&mut self) {
-        self.xbox_pairwise_id = ::std::option::Option::None;
-    }
-
-    pub fn has_xbox_pairwise_id(&self) -> bool {
-        self.xbox_pairwise_id.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_xbox_pairwise_id(&mut self, v: ::std::string::String) {
-        self.xbox_pairwise_id = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_xbox_pairwise_id(&mut self) -> &mut ::std::string::String {
-        if self.xbox_pairwise_id.is_none() {
-            self.xbox_pairwise_id = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.xbox_pairwise_id.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_xbox_pairwise_id(&mut self) -> ::std::string::String {
-        self.xbox_pairwise_id.take().unwrap_or_else(|| ::std::string::String::new())
     }
 
     // optional bytes generic_bytes = 2;
@@ -232,9 +194,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamNetworkingIdentit
                 129 => {
                     self.steam_id = ::std::option::Option::Some(is.read_fixed64()?);
                 },
-                138 => {
-                    self.xbox_pairwise_id = ::std::option::Option::Some(is.read_string()?);
-                },
                 18 => {
                     self.generic_bytes = ::std::option::Option::Some(is.read_bytes()?);
                 },
@@ -259,9 +218,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamNetworkingIdentit
         if let Some(v) = self.steam_id {
             my_size += 2 + 8;
         }
-        if let Some(v) = self.xbox_pairwise_id.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(17, &v);
-        }
         if let Some(v) = self.generic_bytes.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::bytes_size(2, &v);
         }
@@ -279,9 +235,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamNetworkingIdentit
     fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
         if let Some(v) = self.steam_id {
             os.write_fixed64(16, v)?;
-        }
-        if let Some(v) = self.xbox_pairwise_id.as_ref() {
-            os.write_string(17, v)?;
         }
         if let Some(v) = self.generic_bytes.as_ref() {
             os.write_bytes(2, v)?;
@@ -310,7 +263,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamNetworkingIdentit
 
     fn clear(&mut self) {
         self.steam_id = ::std::option::Option::None;
-        self.xbox_pairwise_id = ::std::option::Option::None;
         self.generic_bytes = ::std::option::Option::None;
         self.generic_string = ::std::option::Option::None;
         self.ipv6_and_port = ::std::option::Option::None;
@@ -320,7 +272,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamNetworkingIdentit
     fn default_instance() -> &'static CMsgSteamNetworkingIdentityLegacyBinary {
         static instance: CMsgSteamNetworkingIdentityLegacyBinary = CMsgSteamNetworkingIdentityLegacyBinary {
             steam_id: ::std::option::Option::None,
-            xbox_pairwise_id: ::std::option::Option::None,
             generic_bytes: ::std::option::Option::None,
             generic_string: ::std::option::Option::None,
             ipv6_and_port: ::std::option::Option::None,

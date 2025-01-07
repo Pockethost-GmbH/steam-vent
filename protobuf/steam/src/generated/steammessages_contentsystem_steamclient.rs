@@ -3395,6 +3395,432 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentServerDirectory_Ge
     }
 }
 
+// @@protoc_insertion_point(message:CDepotContentDetection_GetAllDetectedAppContent_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CDepotContentDetection_GetAllDetectedAppContent_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CDepotContentDetection_GetAllDetectedAppContent_Request.detection_type)
+    pub detection_type: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<EAppContentDetectionType>>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CDepotContentDetection_GetAllDetectedAppContent_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CDepotContentDetection_GetAllDetectedAppContent_Request {
+    fn default() -> &'a CDepotContentDetection_GetAllDetectedAppContent_Request {
+        <CDepotContentDetection_GetAllDetectedAppContent_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CDepotContentDetection_GetAllDetectedAppContent_Request {
+    pub fn new() -> CDepotContentDetection_GetAllDetectedAppContent_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional .EAppContentDetectionType detection_type = 1;
+
+    pub fn detection_type(&self) -> EAppContentDetectionType {
+        match self.detection_type {
+            Some(e) => e.enum_value_or(EAppContentDetectionType::k_EAppContentDetectionType_None),
+            None => EAppContentDetectionType::k_EAppContentDetectionType_None,
+        }
+    }
+
+    pub fn clear_detection_type(&mut self) {
+        self.detection_type = ::std::option::Option::None;
+    }
+
+    pub fn has_detection_type(&self) -> bool {
+        self.detection_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_detection_type(&mut self, v: EAppContentDetectionType) {
+        self.detection_type = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CDepotContentDetection_GetAllDetectedAppContent_Request {
+    const NAME: &'static str = "CDepotContentDetection_GetAllDetectedAppContent_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.detection_type = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.detection_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(1, v.value());
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.detection_type {
+            os.write_enum(1, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CDepotContentDetection_GetAllDetectedAppContent_Request {
+        CDepotContentDetection_GetAllDetectedAppContent_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.detection_type = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CDepotContentDetection_GetAllDetectedAppContent_Request {
+        static instance: CDepotContentDetection_GetAllDetectedAppContent_Request = CDepotContentDetection_GetAllDetectedAppContent_Request {
+            detection_type: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:DetectedAppContent)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct DetectedAppContent {
+    // message fields
+    // @@protoc_insertion_point(field:DetectedAppContent.app_id)
+    pub app_id: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:DetectedAppContent.depot_id)
+    pub depot_id: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:DetectedAppContent.detected_content)
+    pub detected_content: ::std::option::Option<i32>,
+    // special fields
+    // @@protoc_insertion_point(special_field:DetectedAppContent.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a DetectedAppContent {
+    fn default() -> &'a DetectedAppContent {
+        <DetectedAppContent as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl DetectedAppContent {
+    pub fn new() -> DetectedAppContent {
+        ::std::default::Default::default()
+    }
+
+    // optional uint32 app_id = 1;
+
+    pub fn app_id(&self) -> u32 {
+        self.app_id.unwrap_or(0)
+    }
+
+    pub fn clear_app_id(&mut self) {
+        self.app_id = ::std::option::Option::None;
+    }
+
+    pub fn has_app_id(&self) -> bool {
+        self.app_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_app_id(&mut self, v: u32) {
+        self.app_id = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 depot_id = 2;
+
+    pub fn depot_id(&self) -> u32 {
+        self.depot_id.unwrap_or(0)
+    }
+
+    pub fn clear_depot_id(&mut self) {
+        self.depot_id = ::std::option::Option::None;
+    }
+
+    pub fn has_depot_id(&self) -> bool {
+        self.depot_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_depot_id(&mut self, v: u32) {
+        self.depot_id = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 detected_content = 3;
+
+    pub fn detected_content(&self) -> i32 {
+        self.detected_content.unwrap_or(0)
+    }
+
+    pub fn clear_detected_content(&mut self) {
+        self.detected_content = ::std::option::Option::None;
+    }
+
+    pub fn has_detected_content(&self) -> bool {
+        self.detected_content.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_detected_content(&mut self, v: i32) {
+        self.detected_content = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for DetectedAppContent {
+    const NAME: &'static str = "DetectedAppContent";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.app_id = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                16 => {
+                    self.depot_id = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                24 => {
+                    self.detected_content = ::std::option::Option::Some(is.read_int32()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.app_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
+        }
+        if let Some(v) = self.depot_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
+        }
+        if let Some(v) = self.detected_content {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(3, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.app_id {
+            os.write_uint32(1, v)?;
+        }
+        if let Some(v) = self.depot_id {
+            os.write_uint32(2, v)?;
+        }
+        if let Some(v) = self.detected_content {
+            os.write_int32(3, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> DetectedAppContent {
+        DetectedAppContent::new()
+    }
+
+    fn clear(&mut self) {
+        self.app_id = ::std::option::Option::None;
+        self.depot_id = ::std::option::Option::None;
+        self.detected_content = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static DetectedAppContent {
+        static instance: DetectedAppContent = DetectedAppContent {
+            app_id: ::std::option::Option::None,
+            depot_id: ::std::option::Option::None,
+            detected_content: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CDepotContentDetection_GetAllDetectedAppContent_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CDepotContentDetection_GetAllDetectedAppContent_Response {
+    // message fields
+    // @@protoc_insertion_point(field:CDepotContentDetection_GetAllDetectedAppContent_Response.detected_app_content)
+    pub detected_app_content: ::std::vec::Vec<DetectedAppContent>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CDepotContentDetection_GetAllDetectedAppContent_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CDepotContentDetection_GetAllDetectedAppContent_Response {
+    fn default() -> &'a CDepotContentDetection_GetAllDetectedAppContent_Response {
+        <CDepotContentDetection_GetAllDetectedAppContent_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CDepotContentDetection_GetAllDetectedAppContent_Response {
+    pub fn new() -> CDepotContentDetection_GetAllDetectedAppContent_Response {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CDepotContentDetection_GetAllDetectedAppContent_Response {
+    const NAME: &'static str = "CDepotContentDetection_GetAllDetectedAppContent_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.detected_app_content.push(is.read_message()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        for value in &self.detected_app_content {
+            let len = value.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        };
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        for v in &self.detected_app_content {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(1, v, os)?;
+        };
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CDepotContentDetection_GetAllDetectedAppContent_Response {
+        CDepotContentDetection_GetAllDetectedAppContent_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.detected_app_content.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CDepotContentDetection_GetAllDetectedAppContent_Response {
+        static instance: CDepotContentDetection_GetAllDetectedAppContent_Response = CDepotContentDetection_GetAllDetectedAppContent_Response {
+            detected_app_content: ::std::vec::Vec::new(),
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+#[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+// @@protoc_insertion_point(enum:EAppContentDetectionType)
+pub enum EAppContentDetectionType {
+    // @@protoc_insertion_point(enum_value:EAppContentDetectionType.k_EAppContentDetectionType_None)
+    k_EAppContentDetectionType_None = 0,
+    // @@protoc_insertion_point(enum_value:EAppContentDetectionType.k_EAppContentDetectionType_AntiCheat)
+    k_EAppContentDetectionType_AntiCheat = 1,
+    // @@protoc_insertion_point(enum_value:EAppContentDetectionType.k_EAppContentDetectionType_GameEngine)
+    k_EAppContentDetectionType_GameEngine = 2,
+}
+
+impl ::steam_vent_proto_common::protobuf::Enum for EAppContentDetectionType {
+    const NAME: &'static str = "EAppContentDetectionType";
+
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<EAppContentDetectionType> {
+        match value {
+            0 => ::std::option::Option::Some(EAppContentDetectionType::k_EAppContentDetectionType_None),
+            1 => ::std::option::Option::Some(EAppContentDetectionType::k_EAppContentDetectionType_AntiCheat),
+            2 => ::std::option::Option::Some(EAppContentDetectionType::k_EAppContentDetectionType_GameEngine),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn from_str(str: &str) -> ::std::option::Option<EAppContentDetectionType> {
+        match str {
+            "k_EAppContentDetectionType_None" => ::std::option::Option::Some(EAppContentDetectionType::k_EAppContentDetectionType_None),
+            "k_EAppContentDetectionType_AntiCheat" => ::std::option::Option::Some(EAppContentDetectionType::k_EAppContentDetectionType_AntiCheat),
+            "k_EAppContentDetectionType_GameEngine" => ::std::option::Option::Some(EAppContentDetectionType::k_EAppContentDetectionType_GameEngine),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    const VALUES: &'static [EAppContentDetectionType] = &[
+        EAppContentDetectionType::k_EAppContentDetectionType_None,
+        EAppContentDetectionType::k_EAppContentDetectionType_AntiCheat,
+        EAppContentDetectionType::k_EAppContentDetectionType_GameEngine,
+    ];
+}
+
+impl ::std::default::Default for EAppContentDetectionType {
+    fn default() -> Self {
+        EAppContentDetectionType::k_EAppContentDetectionType_None
+    }
+}
+
+
 
 const _VENT_PROTO_VERSION_CHECK: () = ::steam_vent_proto_common::VERSION_0_5_0;
 
@@ -3625,10 +4051,56 @@ for CContentServerDirectory_GetPeerContentInfo_Response {
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessage
+for CDepotContentDetection_GetAllDetectedAppContent_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for DetectedAppContent {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CDepotContentDetection_GetAllDetectedAppContent_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
 ///
 struct ContentServerDirectory {}
 impl ::steam_vent_proto_common::RpcService for ContentServerDirectory {
     const SERVICE_NAME: &'static str = "ContentServerDirectory";
+}
+///
+struct DepotContentDetection {}
+impl ::steam_vent_proto_common::RpcService for DepotContentDetection {
+    const SERVICE_NAME: &'static str = "DepotContentDetection";
 }
 impl ::steam_vent_proto_common::RpcMethod
 for CContentServerDirectory_GetCDNAuthToken_Request {
@@ -3664,4 +4136,9 @@ impl ::steam_vent_proto_common::RpcMethod
 for CContentServerDirectory_RequestPeerContentServer_Request {
     const METHOD_NAME: &'static str = "ContentServerDirectory.RequestPeerContentServer#1";
     type Response = CContentServerDirectory_RequestPeerContentServer_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CDepotContentDetection_GetAllDetectedAppContent_Request {
+    const METHOD_NAME: &'static str = "DepotContentDetection.GetAllDetectedAppContent#1";
+    type Response = CDepotContentDetection_GetAllDetectedAppContent_Response;
 }

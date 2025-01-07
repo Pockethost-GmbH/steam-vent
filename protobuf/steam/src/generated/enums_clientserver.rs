@@ -195,8 +195,6 @@ pub enum EMsg {
     k_EMsgGMSchemaConversionResults, // 327
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGMWriteShellFailureToSQL)
     k_EMsgGMWriteShellFailureToSQL, // 329
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGMWriteStatsToSOS)
-    k_EMsgGMWriteStatsToSOS, // 330
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGMGetServiceMethodRouting)
     k_EMsgGMGetServiceMethodRouting, // 331
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGMGetServiceMethodRoutingResponse)
@@ -219,8 +217,6 @@ pub enum EMsg {
     k_EMsgBaseAIS, // 400
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAISRequestContentDescription)
     k_EMsgAISRequestContentDescription, // 402
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAISUpdateAppInfo)
-    k_EMsgAISUpdateAppInfo, // 403
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAISGetPackageChangeNumber)
     k_EMsgAISGetPackageChangeNumber, // 405
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAISGetPackageChangeNumberResponse)
@@ -261,10 +257,6 @@ pub enum EMsg {
     k_EMsgAMInitPurchase, // 512
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMPurchaseResponse)
     k_EMsgAMPurchaseResponse, // 513
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetFinalPrice)
-    k_EMsgAMGetFinalPrice, // 514
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetFinalPriceResponse)
-    k_EMsgAMGetFinalPriceResponse, // 515
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetLegacyGameKey)
     k_EMsgAMGetLegacyGameKey, // 516
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetLegacyGameKeyResponse)
@@ -277,8 +269,6 @@ pub enum EMsg {
     k_EMsgAMCancelPurchase, // 522
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMNewChallenge)
     k_EMsgAMNewChallenge, // 523
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMLoadOEMTickets)
-    k_EMsgAMLoadOEMTickets, // 524
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMFixPendingPurchase)
     k_EMsgAMFixPendingPurchase, // 525
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMFixPendingPurchaseResponse)
@@ -559,8 +549,6 @@ pub enum EMsg {
     k_EMsgClientLicenseList, // 780
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientVACBanStatus)
     k_EMsgClientVACBanStatus, // 782
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientCMList)
-    k_EMsgClientCMList, // 783
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientEncryptPct)
     k_EMsgClientEncryptPct, // 784
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientGetLegacyGameKeyResponse)
@@ -1003,12 +991,6 @@ pub enum EMsg {
     k_EMsgDPSetPublishingState, // 1601
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgDPUniquePlayersStat)
     k_EMsgDPUniquePlayersStat, // 1603
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgDPStreamingUniquePlayersStat)
-    k_EMsgDPStreamingUniquePlayersStat, // 1604
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgDPBlockingStats)
-    k_EMsgDPBlockingStats, // 1607
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgDPNatTraversalStats)
-    k_EMsgDPNatTraversalStats, // 1608
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgDPCloudStats)
     k_EMsgDPCloudStats, // 1612
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgDPGetPlayerCount)
@@ -1045,6 +1027,8 @@ pub enum EMsg {
     k_EMsgCMSetSecrets, // 1704
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgCMGetSecrets)
     k_EMsgCMGetSecrets, // 1705
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgCMRemotePlayReplyPacket)
+    k_EMsgCMRemotePlayReplyPacket, // 1706
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgBaseGC)
     k_EMsgBaseGC, // 2200
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGCCmdRevive)
@@ -1061,8 +1045,6 @@ pub enum EMsg {
     k_EMsgAMRefreshSessions, // 2210
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGCAchievementAwarded)
     k_EMsgGCAchievementAwarded, // 2212
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGCSystemMessage)
-    k_EMsgGCSystemMessage, // 2213
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGCCmdStatus)
     k_EMsgGCCmdStatus, // 2216
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgGCRegisterWebInterfaces_Deprecated)
@@ -1205,18 +1187,12 @@ pub enum EMsg {
     k_EMsgOGSWriteAppSessionRow, // 3406
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgBaseBRP)
     k_EMsgBaseBRP, // 3600
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgBRPPostTransactionTax)
-    k_EMsgBRPPostTransactionTax, // 3629
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgBRPPostTransactionTaxResponse)
-    k_EMsgBRPPostTransactionTaxResponse, // 3630
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgBaseAMRange2)
     k_EMsgBaseAMRange2, // 4000
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMCreateChat)
     k_EMsgAMCreateChat, // 4001
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMCreateChatResponse)
     k_EMsgAMCreateChatResponse, // 4002
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMSetProfileURL)
-    k_EMsgAMSetProfileURL, // 4005
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetAccountEmailAddress)
     k_EMsgAMGetAccountEmailAddress, // 4006
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetAccountEmailAddressResponse)
@@ -1417,8 +1393,6 @@ pub enum EMsg {
     k_EMsgAMSendQueuedEmails, // 4152
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMSetLicenseFlags)
     k_EMsgAMSetLicenseFlags, // 4153
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgCommunityDeleteUserNews)
-    k_EMsgCommunityDeleteUserNews, // 4155
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetAccountStatus)
     k_EMsgAMGetAccountStatus, // 4158
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetAccountStatusResponse)
@@ -1573,8 +1547,6 @@ pub enum EMsg {
     k_EMsgAMGetNameHistory, // 4301
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMGetNameHistoryResponse)
     k_EMsgAMGetNameHistoryResponse, // 4302
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMUpdateProviderStatus)
-    k_EMsgAMUpdateProviderStatus, // 4305
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMSupportRemoveAccountSecurity)
     k_EMsgAMSupportRemoveAccountSecurity, // 4307
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMIsAccountInCaptchaGracePeriod)
@@ -1801,42 +1773,18 @@ pub enum EMsg {
     k_EMsgPSAddWalletCreditToShoppingCart, // 5011
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgPSAddWalletCreditToShoppingCartResponse)
     k_EMsgPSAddWalletCreditToShoppingCartResponse, // 5012
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgPSGetAccountCartContents)
+    k_EMsgPSGetAccountCartContents, // 5013
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgPSGetAccountCartContentsResponse)
+    k_EMsgPSGetAccountCartContentsResponse, // 5014
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgBaseUFSRange)
     k_EMsgBaseUFSRange, // 5200
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSUploadFileRequest)
-    k_EMsgClientUFSUploadFileRequest, // 5202
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSUploadFileResponse)
-    k_EMsgClientUFSUploadFileResponse, // 5203
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSUploadFileChunk)
-    k_EMsgClientUFSUploadFileChunk, // 5204
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSUploadFileFinished)
-    k_EMsgClientUFSUploadFileFinished, // 5205
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSGetFileListForApp)
-    k_EMsgClientUFSGetFileListForApp, // 5206
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSGetFileListForAppResponse)
-    k_EMsgClientUFSGetFileListForAppResponse, // 5207
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSDownloadRequest)
-    k_EMsgClientUFSDownloadRequest, // 5210
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSDownloadResponse)
-    k_EMsgClientUFSDownloadResponse, // 5211
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSDownloadChunk)
-    k_EMsgClientUFSDownloadChunk, // 5212
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSLoginRequest)
-    k_EMsgClientUFSLoginRequest, // 5213
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSLoginResponse)
-    k_EMsgClientUFSLoginResponse, // 5214
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUFSReloadPartitionInfo)
     k_EMsgUFSReloadPartitionInfo, // 5215
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSTransferHeartbeat)
-    k_EMsgClientUFSTransferHeartbeat, // 5216
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUFSSynchronizeFile)
     k_EMsgUFSSynchronizeFile, // 5217
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUFSSynchronizeFileResponse)
     k_EMsgUFSSynchronizeFileResponse, // 5218
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSDeleteFileRequest)
-    k_EMsgClientUFSDeleteFileRequest, // 5219
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSDeleteFileResponse)
-    k_EMsgClientUFSDeleteFileResponse, // 5220
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSGetUGCDetails)
     k_EMsgClientUFSGetUGCDetails, // 5226
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSGetUGCDetailsResponse)
@@ -1887,10 +1835,6 @@ pub enum EMsg {
     k_EMsgUFSDownloadFinishResponse, // 5249
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUFSFlushURLCache)
     k_EMsgUFSFlushURLCache, // 5250
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSUploadCommit)
-    k_EMsgClientUFSUploadCommit, // 5251
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientUFSUploadCommitResponse)
-    k_EMsgClientUFSUploadCommitResponse, // 5252
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUFSMigrateFileAppID)
     k_EMsgUFSMigrateFileAppID, // 5253
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUFSMigrateFileAppIDResponse)
@@ -1947,8 +1891,8 @@ pub enum EMsg {
     k_EMsgClientRequestAuthList, // 5431
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientAuthList)
     k_EMsgClientAuthList, // 5432
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientStat)
-    k_EMsgClientStat, // 5433
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientStat_Deprecated)
+    k_EMsgClientStat_Deprecated, // 5433
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientP2PConnectionInfo)
     k_EMsgClientP2PConnectionInfo, // 5434
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientP2PConnectionFailInfo)
@@ -1991,30 +1935,20 @@ pub enum EMsg {
     k_EMsgClientRequestForgottenPasswordEmail3, // 5461
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientNewLoginKey)
     k_EMsgClientNewLoginKey, // 5463
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientNewLoginKeyAccepted)
-    k_EMsgClientNewLoginKeyAccepted, // 5464
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientNewLoginKeyAccepted_Deprecated)
+    k_EMsgClientNewLoginKeyAccepted_Deprecated, // 5464
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientLogOnWithHash_Deprecated)
     k_EMsgClientLogOnWithHash_Deprecated, // 5465
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientStoreUserStats2)
     k_EMsgClientStoreUserStats2, // 5466
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientStatsUpdated)
     k_EMsgClientStatsUpdated, // 5467
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientActivateOEMLicense)
-    k_EMsgClientActivateOEMLicense, // 5468
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRegisterOEMMachine)
-    k_EMsgClientRegisterOEMMachine, // 5469
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRegisterOEMMachineResponse)
-    k_EMsgClientRegisterOEMMachineResponse, // 5470
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestedClientStats)
-    k_EMsgClientRequestedClientStats, // 5480
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientStat2Int32)
-    k_EMsgClientStat2Int32, // 5481
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientStat2)
-    k_EMsgClientStat2, // 5482
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientVerifyPassword)
-    k_EMsgClientVerifyPassword, // 5483
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientVerifyPasswordResponse)
-    k_EMsgClientVerifyPasswordResponse, // 5484
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestedClientStats_Deprecated)
+    k_EMsgClientRequestedClientStats_Deprecated, // 5480
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientStat2Int32_Deprecated)
+    k_EMsgClientStat2Int32_Deprecated, // 5481
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientStat2_Deprecated)
+    k_EMsgClientStat2_Deprecated, // 5482
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientDRMDownloadRequest)
     k_EMsgClientDRMDownloadRequest, // 5485
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientDRMDownloadResponse)
@@ -2115,18 +2049,12 @@ pub enum EMsg {
     k_EMsgClientReadMachineAuth, // 5539
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientReadMachineAuthResponse)
     k_EMsgClientReadMachineAuthResponse, // 5540
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestMachineAuth)
-    k_EMsgClientRequestMachineAuth, // 5541
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestMachineAuthResponse)
-    k_EMsgClientRequestMachineAuthResponse, // 5542
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientScreenshotsChanged)
     k_EMsgClientScreenshotsChanged, // 5543
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientGetCDNAuthToken)
-    k_EMsgClientGetCDNAuthToken, // 5546
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientGetCDNAuthTokenResponse)
-    k_EMsgClientGetCDNAuthTokenResponse, // 5547
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientDownloadRateStatistics)
-    k_EMsgClientDownloadRateStatistics, // 5548
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientLaunchClientApp)
+    k_EMsgClientLaunchClientApp, // 5544
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientLaunchClientAppResponse)
+    k_EMsgClientLaunchClientAppResponse, // 5545
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestAccountData)
     k_EMsgClientRequestAccountData, // 5549
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestAccountDataResponse)
@@ -2193,10 +2121,10 @@ pub enum EMsg {
     k_EMsgClientRequestCommentNotifications, // 5583
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientPersonaChangeResponse)
     k_EMsgClientPersonaChangeResponse, // 5584
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestWebAPIAuthenticateUserNonce)
-    k_EMsgClientRequestWebAPIAuthenticateUserNonce, // 5585
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse)
-    k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse, // 5586
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestWebAPIAuthenticateUserNonce_Deprecated)
+    k_EMsgClientRequestWebAPIAuthenticateUserNonce_Deprecated, // 5585
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse_Deprecated)
+    k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse_Deprecated, // 5586
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientPlayerNicknameList)
     k_EMsgClientPlayerNicknameList, // 5587
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgAMClientSetPlayerNickname)
@@ -2291,12 +2219,6 @@ pub enum EMsg {
     k_EMsgMDSGetDepotManifestResponse, // 5830
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgMDSGetDepotManifestChunk)
     k_EMsgMDSGetDepotManifestChunk, // 5831
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgMDSGetDepotChunk)
-    k_EMsgMDSGetDepotChunk, // 5832
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgMDSGetDepotChunkResponse)
-    k_EMsgMDSGetDepotChunkResponse, // 5833
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgMDSGetDepotChunkChunk)
-    k_EMsgMDSGetDepotChunkChunk, // 5834
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgMDSToCSFlushChunk)
     k_EMsgMDSToCSFlushChunk, // 5844
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgMDSMigrateChunk)
@@ -2679,24 +2601,6 @@ pub enum EMsg {
     k_EMsgStoreBase, // 8000
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQBase)
     k_EMsgUMQBase, // 8100
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQLogonRequest)
-    k_EMsgUMQLogonRequest, // 8100
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQLogonResponse)
-    k_EMsgUMQLogonResponse, // 8101
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQLogoffRequest)
-    k_EMsgUMQLogoffRequest, // 8102
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQLogoffResponse)
-    k_EMsgUMQLogoffResponse, // 8103
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQSendChatMessage)
-    k_EMsgUMQSendChatMessage, // 8104
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQIncomingChatMessage)
-    k_EMsgUMQIncomingChatMessage, // 8105
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQPoll)
-    k_EMsgUMQPoll, // 8106
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQPollResults)
-    k_EMsgUMQPollResults, // 8107
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgUMQ2AM_ClientMsgBatch)
-    k_EMsgUMQ2AM_ClientMsgBatch, // 8108
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgWorkshopBase)
     k_EMsgWorkshopBase, // 8200
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgWebAPIBase)
@@ -2763,6 +2667,10 @@ pub enum EMsg {
     k_EMsgClientPICSAccessTokenRequest, // 8905
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientPICSAccessTokenResponse)
     k_EMsgClientPICSAccessTokenResponse, // 8906
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientPICSPrivateBetaRequest)
+    k_EMsgClientPICSPrivateBetaRequest, // 8907
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientPICSPrivateBetaResponse)
+    k_EMsgClientPICSPrivateBetaResponse, // 8908
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgWorkerProcess)
     k_EMsgWorkerProcess, // 9000
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgWorkerProcessPingRequest)
@@ -2865,8 +2773,6 @@ pub enum EMsg {
     k_EMsgClientSharedLibraryLockStatus, // 9405
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientSharedLibraryStopPlaying)
     k_EMsgClientSharedLibraryStopPlaying, // 9406
-    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgSLCOwnerLibraryChanged)
-    k_EMsgSLCOwnerLibraryChanged, // 9407
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgSLCSharedLibraryChanged)
     k_EMsgSLCSharedLibraryChanged, // 9408
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgRemoteClientBase)
@@ -2905,6 +2811,18 @@ pub enum EMsg {
     k_EMsgRemoteClientStatusRequest, // 9515
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgRemoteClientStatusResponse)
     k_EMsgRemoteClientStatusResponse, // 9516
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgRemoteClientAuthorizationRequest)
+    k_EMsgRemoteClientAuthorizationRequest, // 9517
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgRemoteClientAuthorizationResponse)
+    k_EMsgRemoteClientAuthorizationResponse, // 9518
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgRemoteClientAuthorizationCancelRequest)
+    k_EMsgRemoteClientAuthorizationCancelRequest, // 9519
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgRemoteClientAuthorizationConfirmed)
+    k_EMsgRemoteClientAuthorizationConfirmed, // 9520
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgRemoteClientProofRequest)
+    k_EMsgRemoteClientProofRequest, // 9521
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgRemoteClientProofResponse)
+    k_EMsgRemoteClientProofResponse, // 9522
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientConcurrentSessionsBase)
     k_EMsgClientConcurrentSessionsBase, // 9600
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientPlayingSessionState)
@@ -2995,6 +2913,10 @@ pub enum EMsg {
     k_EMsgWGConnectionLegacyWGRequest, // 12203
     // @@protoc_insertion_point(enum_value:EMsg.k_EMsgWGConnectionLegacyWGResponse)
     k_EMsgWGConnectionLegacyWGResponse, // 12204
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientPendingGameLaunch)
+    k_EMsgClientPendingGameLaunch, // 12300
+    // @@protoc_insertion_point(enum_value:EMsg.k_EMsgClientPendingGameLaunchResponse)
+    k_EMsgClientPendingGameLaunchResponse, // 12301
 }
 
 impl ::std::cmp::PartialEq for EMsg {
@@ -3097,7 +3019,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgGMQueueForFBS => 326,
             EMsg::k_EMsgGMSchemaConversionResults => 327,
             EMsg::k_EMsgGMWriteShellFailureToSQL => 329,
-            EMsg::k_EMsgGMWriteStatsToSOS => 330,
             EMsg::k_EMsgGMGetServiceMethodRouting => 331,
             EMsg::k_EMsgGMGetServiceMethodRoutingResponse => 332,
             EMsg::k_EMsgGMTestNextBuildSchemaConversion => 334,
@@ -3109,7 +3030,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgGMGetModifiedConVarsResponse => 340,
             EMsg::k_EMsgBaseAIS => 400,
             EMsg::k_EMsgAISRequestContentDescription => 402,
-            EMsg::k_EMsgAISUpdateAppInfo => 403,
             EMsg::k_EMsgAISGetPackageChangeNumber => 405,
             EMsg::k_EMsgAISGetPackageChangeNumberResponse => 406,
             EMsg::k_EMsgAIGetAppGCFlags => 423,
@@ -3130,15 +3050,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgAMCancelLicense => 511,
             EMsg::k_EMsgAMInitPurchase => 512,
             EMsg::k_EMsgAMPurchaseResponse => 513,
-            EMsg::k_EMsgAMGetFinalPrice => 514,
-            EMsg::k_EMsgAMGetFinalPriceResponse => 515,
             EMsg::k_EMsgAMGetLegacyGameKey => 516,
             EMsg::k_EMsgAMGetLegacyGameKeyResponse => 517,
             EMsg::k_EMsgAMFindHungTransactions => 518,
             EMsg::k_EMsgAMSetAccountTrustedRequest => 519,
             EMsg::k_EMsgAMCancelPurchase => 522,
             EMsg::k_EMsgAMNewChallenge => 523,
-            EMsg::k_EMsgAMLoadOEMTickets => 524,
             EMsg::k_EMsgAMFixPendingPurchase => 525,
             EMsg::k_EMsgAMFixPendingPurchaseResponse => 526,
             EMsg::k_EMsgAMIsUserBanned => 527,
@@ -3279,7 +3196,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgClientGameConnectTokens => 779,
             EMsg::k_EMsgClientLicenseList => 780,
             EMsg::k_EMsgClientVACBanStatus => 782,
-            EMsg::k_EMsgClientCMList => 783,
             EMsg::k_EMsgClientEncryptPct => 784,
             EMsg::k_EMsgClientGetLegacyGameKeyResponse => 785,
             EMsg::k_EMsgClientAddFriend => 791,
@@ -3501,9 +3417,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgBaseDP => 1600,
             EMsg::k_EMsgDPSetPublishingState => 1601,
             EMsg::k_EMsgDPUniquePlayersStat => 1603,
-            EMsg::k_EMsgDPStreamingUniquePlayersStat => 1604,
-            EMsg::k_EMsgDPBlockingStats => 1607,
-            EMsg::k_EMsgDPNatTraversalStats => 1608,
             EMsg::k_EMsgDPCloudStats => 1612,
             EMsg::k_EMsgDPGetPlayerCount => 1615,
             EMsg::k_EMsgDPGetPlayerCountResponse => 1616,
@@ -3522,6 +3435,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgCMSessionRejected => 1703,
             EMsg::k_EMsgCMSetSecrets => 1704,
             EMsg::k_EMsgCMGetSecrets => 1705,
+            EMsg::k_EMsgCMRemotePlayReplyPacket => 1706,
             EMsg::k_EMsgBaseGC => 2200,
             EMsg::k_EMsgGCCmdRevive => 2203,
             EMsg::k_EMsgGCCmdDown => 2206,
@@ -3530,7 +3444,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgGCCmdSwitch => 2209,
             EMsg::k_EMsgAMRefreshSessions => 2210,
             EMsg::k_EMsgGCAchievementAwarded => 2212,
-            EMsg::k_EMsgGCSystemMessage => 2213,
             EMsg::k_EMsgGCCmdStatus => 2216,
             EMsg::k_EMsgGCRegisterWebInterfaces_Deprecated => 2217,
             EMsg::k_EMsgGCGetAccountDetails_DEPRECATED => 2218,
@@ -3602,12 +3515,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgOGSEndSessionResponse => 3404,
             EMsg::k_EMsgOGSWriteAppSessionRow => 3406,
             EMsg::k_EMsgBaseBRP => 3600,
-            EMsg::k_EMsgBRPPostTransactionTax => 3629,
-            EMsg::k_EMsgBRPPostTransactionTaxResponse => 3630,
             EMsg::k_EMsgBaseAMRange2 => 4000,
             EMsg::k_EMsgAMCreateChat => 4001,
             EMsg::k_EMsgAMCreateChatResponse => 4002,
-            EMsg::k_EMsgAMSetProfileURL => 4005,
             EMsg::k_EMsgAMGetAccountEmailAddress => 4006,
             EMsg::k_EMsgAMGetAccountEmailAddressResponse => 4007,
             EMsg::k_EMsgAMRequestClanData => 4008,
@@ -3708,7 +3618,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgAMSetUserNewsSubscriptions => 4149,
             EMsg::k_EMsgAMSendQueuedEmails => 4152,
             EMsg::k_EMsgAMSetLicenseFlags => 4153,
-            EMsg::k_EMsgCommunityDeleteUserNews => 4155,
             EMsg::k_EMsgAMGetAccountStatus => 4158,
             EMsg::k_EMsgAMGetAccountStatusResponse => 4159,
             EMsg::k_EMsgAMEditBanReason => 4160,
@@ -3786,7 +3695,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgAMNameChange => 4300,
             EMsg::k_EMsgAMGetNameHistory => 4301,
             EMsg::k_EMsgAMGetNameHistoryResponse => 4302,
-            EMsg::k_EMsgAMUpdateProviderStatus => 4305,
             EMsg::k_EMsgAMSupportRemoveAccountSecurity => 4307,
             EMsg::k_EMsgAMIsAccountInCaptchaGracePeriod => 4308,
             EMsg::k_EMsgAMIsAccountInCaptchaGracePeriodResponse => 4309,
@@ -3900,24 +3808,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgPSGetShoppingCartContentsResponse => 5010,
             EMsg::k_EMsgPSAddWalletCreditToShoppingCart => 5011,
             EMsg::k_EMsgPSAddWalletCreditToShoppingCartResponse => 5012,
+            EMsg::k_EMsgPSGetAccountCartContents => 5013,
+            EMsg::k_EMsgPSGetAccountCartContentsResponse => 5014,
             EMsg::k_EMsgBaseUFSRange => 5200,
-            EMsg::k_EMsgClientUFSUploadFileRequest => 5202,
-            EMsg::k_EMsgClientUFSUploadFileResponse => 5203,
-            EMsg::k_EMsgClientUFSUploadFileChunk => 5204,
-            EMsg::k_EMsgClientUFSUploadFileFinished => 5205,
-            EMsg::k_EMsgClientUFSGetFileListForApp => 5206,
-            EMsg::k_EMsgClientUFSGetFileListForAppResponse => 5207,
-            EMsg::k_EMsgClientUFSDownloadRequest => 5210,
-            EMsg::k_EMsgClientUFSDownloadResponse => 5211,
-            EMsg::k_EMsgClientUFSDownloadChunk => 5212,
-            EMsg::k_EMsgClientUFSLoginRequest => 5213,
-            EMsg::k_EMsgClientUFSLoginResponse => 5214,
             EMsg::k_EMsgUFSReloadPartitionInfo => 5215,
-            EMsg::k_EMsgClientUFSTransferHeartbeat => 5216,
             EMsg::k_EMsgUFSSynchronizeFile => 5217,
             EMsg::k_EMsgUFSSynchronizeFileResponse => 5218,
-            EMsg::k_EMsgClientUFSDeleteFileRequest => 5219,
-            EMsg::k_EMsgClientUFSDeleteFileResponse => 5220,
             EMsg::k_EMsgClientUFSGetUGCDetails => 5226,
             EMsg::k_EMsgClientUFSGetUGCDetailsResponse => 5227,
             EMsg::k_EMsgUFSUpdateFileFlags => 5228,
@@ -3943,8 +3839,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgUFSDownloadFinishRequest => 5248,
             EMsg::k_EMsgUFSDownloadFinishResponse => 5249,
             EMsg::k_EMsgUFSFlushURLCache => 5250,
-            EMsg::k_EMsgClientUFSUploadCommit => 5251,
-            EMsg::k_EMsgClientUFSUploadCommitResponse => 5252,
             EMsg::k_EMsgUFSMigrateFileAppID => 5253,
             EMsg::k_EMsgUFSMigrateFileAppIDResponse => 5254,
             EMsg::k_EMsgBaseClient2 => 5400,
@@ -3973,7 +3867,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgClientIsLimitedAccount => 5430,
             EMsg::k_EMsgClientRequestAuthList => 5431,
             EMsg::k_EMsgClientAuthList => 5432,
-            EMsg::k_EMsgClientStat => 5433,
+            EMsg::k_EMsgClientStat_Deprecated => 5433,
             EMsg::k_EMsgClientP2PConnectionInfo => 5434,
             EMsg::k_EMsgClientP2PConnectionFailInfo => 5435,
             EMsg::k_EMsgClientGetDepotDecryptionKey => 5438,
@@ -3995,18 +3889,13 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgClientResetForgottenPassword3 => 5460,
             EMsg::k_EMsgClientRequestForgottenPasswordEmail3 => 5461,
             EMsg::k_EMsgClientNewLoginKey => 5463,
-            EMsg::k_EMsgClientNewLoginKeyAccepted => 5464,
+            EMsg::k_EMsgClientNewLoginKeyAccepted_Deprecated => 5464,
             EMsg::k_EMsgClientLogOnWithHash_Deprecated => 5465,
             EMsg::k_EMsgClientStoreUserStats2 => 5466,
             EMsg::k_EMsgClientStatsUpdated => 5467,
-            EMsg::k_EMsgClientActivateOEMLicense => 5468,
-            EMsg::k_EMsgClientRegisterOEMMachine => 5469,
-            EMsg::k_EMsgClientRegisterOEMMachineResponse => 5470,
-            EMsg::k_EMsgClientRequestedClientStats => 5480,
-            EMsg::k_EMsgClientStat2Int32 => 5481,
-            EMsg::k_EMsgClientStat2 => 5482,
-            EMsg::k_EMsgClientVerifyPassword => 5483,
-            EMsg::k_EMsgClientVerifyPasswordResponse => 5484,
+            EMsg::k_EMsgClientRequestedClientStats_Deprecated => 5480,
+            EMsg::k_EMsgClientStat2Int32_Deprecated => 5481,
+            EMsg::k_EMsgClientStat2_Deprecated => 5482,
             EMsg::k_EMsgClientDRMDownloadRequest => 5485,
             EMsg::k_EMsgClientDRMDownloadResponse => 5486,
             EMsg::k_EMsgClientDRMFinalResult => 5487,
@@ -4057,12 +3946,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgClientUpdateMachineAuthResponse => 5538,
             EMsg::k_EMsgClientReadMachineAuth => 5539,
             EMsg::k_EMsgClientReadMachineAuthResponse => 5540,
-            EMsg::k_EMsgClientRequestMachineAuth => 5541,
-            EMsg::k_EMsgClientRequestMachineAuthResponse => 5542,
             EMsg::k_EMsgClientScreenshotsChanged => 5543,
-            EMsg::k_EMsgClientGetCDNAuthToken => 5546,
-            EMsg::k_EMsgClientGetCDNAuthTokenResponse => 5547,
-            EMsg::k_EMsgClientDownloadRateStatistics => 5548,
+            EMsg::k_EMsgClientLaunchClientApp => 5544,
+            EMsg::k_EMsgClientLaunchClientAppResponse => 5545,
             EMsg::k_EMsgClientRequestAccountData => 5549,
             EMsg::k_EMsgClientRequestAccountDataResponse => 5550,
             EMsg::k_EMsgClientResetForgottenPassword4 => 5551,
@@ -4096,8 +3982,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgClientCommentNotifications => 5582,
             EMsg::k_EMsgClientRequestCommentNotifications => 5583,
             EMsg::k_EMsgClientPersonaChangeResponse => 5584,
-            EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce => 5585,
-            EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse => 5586,
+            EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce_Deprecated => 5585,
+            EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse_Deprecated => 5586,
             EMsg::k_EMsgClientPlayerNicknameList => 5587,
             EMsg::k_EMsgAMClientSetPlayerNickname => 5588,
             EMsg::k_EMsgAMClientSetPlayerNicknameResponse => 5589,
@@ -4145,9 +4031,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgMDSGetDepotManifest => 5829,
             EMsg::k_EMsgMDSGetDepotManifestResponse => 5830,
             EMsg::k_EMsgMDSGetDepotManifestChunk => 5831,
-            EMsg::k_EMsgMDSGetDepotChunk => 5832,
-            EMsg::k_EMsgMDSGetDepotChunkResponse => 5833,
-            EMsg::k_EMsgMDSGetDepotChunkChunk => 5834,
             EMsg::k_EMsgMDSToCSFlushChunk => 5844,
             EMsg::k_EMsgMDSMigrateChunk => 5847,
             EMsg::k_EMsgMDSMigrateChunkResponse => 5848,
@@ -4339,15 +4222,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgClientUGSGetGlobalStatsResponse => 7902,
             EMsg::k_EMsgStoreBase => 8000,
             EMsg::k_EMsgUMQBase => 8100,
-            EMsg::k_EMsgUMQLogonRequest => 8100,
-            EMsg::k_EMsgUMQLogonResponse => 8101,
-            EMsg::k_EMsgUMQLogoffRequest => 8102,
-            EMsg::k_EMsgUMQLogoffResponse => 8103,
-            EMsg::k_EMsgUMQSendChatMessage => 8104,
-            EMsg::k_EMsgUMQIncomingChatMessage => 8105,
-            EMsg::k_EMsgUMQPoll => 8106,
-            EMsg::k_EMsgUMQPollResults => 8107,
-            EMsg::k_EMsgUMQ2AM_ClientMsgBatch => 8108,
             EMsg::k_EMsgWorkshopBase => 8200,
             EMsg::k_EMsgWebAPIBase => 8300,
             EMsg::k_EMsgWebAPIValidateOAuth2Token => 8300,
@@ -4381,6 +4255,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgClientPICSProductInfoResponse => 8904,
             EMsg::k_EMsgClientPICSAccessTokenRequest => 8905,
             EMsg::k_EMsgClientPICSAccessTokenResponse => 8906,
+            EMsg::k_EMsgClientPICSPrivateBetaRequest => 8907,
+            EMsg::k_EMsgClientPICSPrivateBetaResponse => 8908,
             EMsg::k_EMsgWorkerProcess => 9000,
             EMsg::k_EMsgWorkerProcessPingRequest => 9000,
             EMsg::k_EMsgWorkerProcessPingResponse => 9001,
@@ -4432,7 +4308,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgSLCSharedLicensesLockStatus => 9402,
             EMsg::k_EMsgClientSharedLibraryLockStatus => 9405,
             EMsg::k_EMsgClientSharedLibraryStopPlaying => 9406,
-            EMsg::k_EMsgSLCOwnerLibraryChanged => 9407,
             EMsg::k_EMsgSLCSharedLibraryChanged => 9408,
             EMsg::k_EMsgRemoteClientBase => 9500,
             EMsg::k_EMsgRemoteClientAuth_OBSOLETE => 9500,
@@ -4452,6 +4327,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgClientUnlockHEVCResponse_OBSOLETE => 9514,
             EMsg::k_EMsgRemoteClientStatusRequest => 9515,
             EMsg::k_EMsgRemoteClientStatusResponse => 9516,
+            EMsg::k_EMsgRemoteClientAuthorizationRequest => 9517,
+            EMsg::k_EMsgRemoteClientAuthorizationResponse => 9518,
+            EMsg::k_EMsgRemoteClientAuthorizationCancelRequest => 9519,
+            EMsg::k_EMsgRemoteClientAuthorizationConfirmed => 9520,
+            EMsg::k_EMsgRemoteClientProofRequest => 9521,
+            EMsg::k_EMsgRemoteClientProofResponse => 9522,
             EMsg::k_EMsgClientConcurrentSessionsBase => 9600,
             EMsg::k_EMsgClientPlayingSessionState => 9600,
             EMsg::k_EMsgClientKickPlayingSession => 9601,
@@ -4497,6 +4378,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             EMsg::k_EMsgWGConnectionValidateUserTokenResponse => 12202,
             EMsg::k_EMsgWGConnectionLegacyWGRequest => 12203,
             EMsg::k_EMsgWGConnectionLegacyWGResponse => 12204,
+            EMsg::k_EMsgClientPendingGameLaunch => 12300,
+            EMsg::k_EMsgClientPendingGameLaunchResponse => 12301,
         }
     }
 
@@ -4582,7 +4465,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             326 => ::std::option::Option::Some(EMsg::k_EMsgGMQueueForFBS),
             327 => ::std::option::Option::Some(EMsg::k_EMsgGMSchemaConversionResults),
             329 => ::std::option::Option::Some(EMsg::k_EMsgGMWriteShellFailureToSQL),
-            330 => ::std::option::Option::Some(EMsg::k_EMsgGMWriteStatsToSOS),
             331 => ::std::option::Option::Some(EMsg::k_EMsgGMGetServiceMethodRouting),
             332 => ::std::option::Option::Some(EMsg::k_EMsgGMGetServiceMethodRoutingResponse),
             334 => ::std::option::Option::Some(EMsg::k_EMsgGMTestNextBuildSchemaConversion),
@@ -4594,7 +4476,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             340 => ::std::option::Option::Some(EMsg::k_EMsgGMGetModifiedConVarsResponse),
             400 => ::std::option::Option::Some(EMsg::k_EMsgBaseAIS),
             402 => ::std::option::Option::Some(EMsg::k_EMsgAISRequestContentDescription),
-            403 => ::std::option::Option::Some(EMsg::k_EMsgAISUpdateAppInfo),
             405 => ::std::option::Option::Some(EMsg::k_EMsgAISGetPackageChangeNumber),
             406 => ::std::option::Option::Some(EMsg::k_EMsgAISGetPackageChangeNumberResponse),
             423 => ::std::option::Option::Some(EMsg::k_EMsgAIGetAppGCFlags),
@@ -4615,15 +4496,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             511 => ::std::option::Option::Some(EMsg::k_EMsgAMCancelLicense),
             512 => ::std::option::Option::Some(EMsg::k_EMsgAMInitPurchase),
             513 => ::std::option::Option::Some(EMsg::k_EMsgAMPurchaseResponse),
-            514 => ::std::option::Option::Some(EMsg::k_EMsgAMGetFinalPrice),
-            515 => ::std::option::Option::Some(EMsg::k_EMsgAMGetFinalPriceResponse),
             516 => ::std::option::Option::Some(EMsg::k_EMsgAMGetLegacyGameKey),
             517 => ::std::option::Option::Some(EMsg::k_EMsgAMGetLegacyGameKeyResponse),
             518 => ::std::option::Option::Some(EMsg::k_EMsgAMFindHungTransactions),
             519 => ::std::option::Option::Some(EMsg::k_EMsgAMSetAccountTrustedRequest),
             522 => ::std::option::Option::Some(EMsg::k_EMsgAMCancelPurchase),
             523 => ::std::option::Option::Some(EMsg::k_EMsgAMNewChallenge),
-            524 => ::std::option::Option::Some(EMsg::k_EMsgAMLoadOEMTickets),
             525 => ::std::option::Option::Some(EMsg::k_EMsgAMFixPendingPurchase),
             526 => ::std::option::Option::Some(EMsg::k_EMsgAMFixPendingPurchaseResponse),
             527 => ::std::option::Option::Some(EMsg::k_EMsgAMIsUserBanned),
@@ -4763,7 +4641,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             779 => ::std::option::Option::Some(EMsg::k_EMsgClientGameConnectTokens),
             780 => ::std::option::Option::Some(EMsg::k_EMsgClientLicenseList),
             782 => ::std::option::Option::Some(EMsg::k_EMsgClientVACBanStatus),
-            783 => ::std::option::Option::Some(EMsg::k_EMsgClientCMList),
             784 => ::std::option::Option::Some(EMsg::k_EMsgClientEncryptPct),
             785 => ::std::option::Option::Some(EMsg::k_EMsgClientGetLegacyGameKeyResponse),
             791 => ::std::option::Option::Some(EMsg::k_EMsgClientAddFriend),
@@ -4981,9 +4858,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             1600 => ::std::option::Option::Some(EMsg::k_EMsgBaseDP),
             1601 => ::std::option::Option::Some(EMsg::k_EMsgDPSetPublishingState),
             1603 => ::std::option::Option::Some(EMsg::k_EMsgDPUniquePlayersStat),
-            1604 => ::std::option::Option::Some(EMsg::k_EMsgDPStreamingUniquePlayersStat),
-            1607 => ::std::option::Option::Some(EMsg::k_EMsgDPBlockingStats),
-            1608 => ::std::option::Option::Some(EMsg::k_EMsgDPNatTraversalStats),
             1612 => ::std::option::Option::Some(EMsg::k_EMsgDPCloudStats),
             1615 => ::std::option::Option::Some(EMsg::k_EMsgDPGetPlayerCount),
             1616 => ::std::option::Option::Some(EMsg::k_EMsgDPGetPlayerCountResponse),
@@ -5002,6 +4876,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             1703 => ::std::option::Option::Some(EMsg::k_EMsgCMSessionRejected),
             1704 => ::std::option::Option::Some(EMsg::k_EMsgCMSetSecrets),
             1705 => ::std::option::Option::Some(EMsg::k_EMsgCMGetSecrets),
+            1706 => ::std::option::Option::Some(EMsg::k_EMsgCMRemotePlayReplyPacket),
             2200 => ::std::option::Option::Some(EMsg::k_EMsgBaseGC),
             2203 => ::std::option::Option::Some(EMsg::k_EMsgGCCmdRevive),
             2206 => ::std::option::Option::Some(EMsg::k_EMsgGCCmdDown),
@@ -5010,7 +4885,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             2209 => ::std::option::Option::Some(EMsg::k_EMsgGCCmdSwitch),
             2210 => ::std::option::Option::Some(EMsg::k_EMsgAMRefreshSessions),
             2212 => ::std::option::Option::Some(EMsg::k_EMsgGCAchievementAwarded),
-            2213 => ::std::option::Option::Some(EMsg::k_EMsgGCSystemMessage),
             2216 => ::std::option::Option::Some(EMsg::k_EMsgGCCmdStatus),
             2217 => ::std::option::Option::Some(EMsg::k_EMsgGCRegisterWebInterfaces_Deprecated),
             2218 => ::std::option::Option::Some(EMsg::k_EMsgGCGetAccountDetails_DEPRECATED),
@@ -5081,12 +4955,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             3404 => ::std::option::Option::Some(EMsg::k_EMsgOGSEndSessionResponse),
             3406 => ::std::option::Option::Some(EMsg::k_EMsgOGSWriteAppSessionRow),
             3600 => ::std::option::Option::Some(EMsg::k_EMsgBaseBRP),
-            3629 => ::std::option::Option::Some(EMsg::k_EMsgBRPPostTransactionTax),
-            3630 => ::std::option::Option::Some(EMsg::k_EMsgBRPPostTransactionTaxResponse),
             4000 => ::std::option::Option::Some(EMsg::k_EMsgBaseAMRange2),
             4001 => ::std::option::Option::Some(EMsg::k_EMsgAMCreateChat),
             4002 => ::std::option::Option::Some(EMsg::k_EMsgAMCreateChatResponse),
-            4005 => ::std::option::Option::Some(EMsg::k_EMsgAMSetProfileURL),
             4006 => ::std::option::Option::Some(EMsg::k_EMsgAMGetAccountEmailAddress),
             4007 => ::std::option::Option::Some(EMsg::k_EMsgAMGetAccountEmailAddressResponse),
             4008 => ::std::option::Option::Some(EMsg::k_EMsgAMRequestClanData),
@@ -5187,7 +5058,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             4149 => ::std::option::Option::Some(EMsg::k_EMsgAMSetUserNewsSubscriptions),
             4152 => ::std::option::Option::Some(EMsg::k_EMsgAMSendQueuedEmails),
             4153 => ::std::option::Option::Some(EMsg::k_EMsgAMSetLicenseFlags),
-            4155 => ::std::option::Option::Some(EMsg::k_EMsgCommunityDeleteUserNews),
             4158 => ::std::option::Option::Some(EMsg::k_EMsgAMGetAccountStatus),
             4159 => ::std::option::Option::Some(EMsg::k_EMsgAMGetAccountStatusResponse),
             4160 => ::std::option::Option::Some(EMsg::k_EMsgAMEditBanReason),
@@ -5265,7 +5135,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             4300 => ::std::option::Option::Some(EMsg::k_EMsgAMNameChange),
             4301 => ::std::option::Option::Some(EMsg::k_EMsgAMGetNameHistory),
             4302 => ::std::option::Option::Some(EMsg::k_EMsgAMGetNameHistoryResponse),
-            4305 => ::std::option::Option::Some(EMsg::k_EMsgAMUpdateProviderStatus),
             4307 => ::std::option::Option::Some(EMsg::k_EMsgAMSupportRemoveAccountSecurity),
             4308 => ::std::option::Option::Some(EMsg::k_EMsgAMIsAccountInCaptchaGracePeriod),
             4309 => ::std::option::Option::Some(EMsg::k_EMsgAMIsAccountInCaptchaGracePeriodResponse),
@@ -5379,24 +5248,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             5010 => ::std::option::Option::Some(EMsg::k_EMsgPSGetShoppingCartContentsResponse),
             5011 => ::std::option::Option::Some(EMsg::k_EMsgPSAddWalletCreditToShoppingCart),
             5012 => ::std::option::Option::Some(EMsg::k_EMsgPSAddWalletCreditToShoppingCartResponse),
+            5013 => ::std::option::Option::Some(EMsg::k_EMsgPSGetAccountCartContents),
+            5014 => ::std::option::Option::Some(EMsg::k_EMsgPSGetAccountCartContentsResponse),
             5200 => ::std::option::Option::Some(EMsg::k_EMsgBaseUFSRange),
-            5202 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadFileRequest),
-            5203 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadFileResponse),
-            5204 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadFileChunk),
-            5205 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadFileFinished),
-            5206 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSGetFileListForApp),
-            5207 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSGetFileListForAppResponse),
-            5210 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDownloadRequest),
-            5211 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDownloadResponse),
-            5212 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDownloadChunk),
-            5213 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSLoginRequest),
-            5214 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSLoginResponse),
             5215 => ::std::option::Option::Some(EMsg::k_EMsgUFSReloadPartitionInfo),
-            5216 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSTransferHeartbeat),
             5217 => ::std::option::Option::Some(EMsg::k_EMsgUFSSynchronizeFile),
             5218 => ::std::option::Option::Some(EMsg::k_EMsgUFSSynchronizeFileResponse),
-            5219 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDeleteFileRequest),
-            5220 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDeleteFileResponse),
             5226 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSGetUGCDetails),
             5227 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSGetUGCDetailsResponse),
             5228 => ::std::option::Option::Some(EMsg::k_EMsgUFSUpdateFileFlags),
@@ -5422,8 +5279,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             5248 => ::std::option::Option::Some(EMsg::k_EMsgUFSDownloadFinishRequest),
             5249 => ::std::option::Option::Some(EMsg::k_EMsgUFSDownloadFinishResponse),
             5250 => ::std::option::Option::Some(EMsg::k_EMsgUFSFlushURLCache),
-            5251 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadCommit),
-            5252 => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadCommitResponse),
             5253 => ::std::option::Option::Some(EMsg::k_EMsgUFSMigrateFileAppID),
             5254 => ::std::option::Option::Some(EMsg::k_EMsgUFSMigrateFileAppIDResponse),
             5400 => ::std::option::Option::Some(EMsg::k_EMsgBaseClient2),
@@ -5452,7 +5307,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             5430 => ::std::option::Option::Some(EMsg::k_EMsgClientIsLimitedAccount),
             5431 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestAuthList),
             5432 => ::std::option::Option::Some(EMsg::k_EMsgClientAuthList),
-            5433 => ::std::option::Option::Some(EMsg::k_EMsgClientStat),
+            5433 => ::std::option::Option::Some(EMsg::k_EMsgClientStat_Deprecated),
             5434 => ::std::option::Option::Some(EMsg::k_EMsgClientP2PConnectionInfo),
             5435 => ::std::option::Option::Some(EMsg::k_EMsgClientP2PConnectionFailInfo),
             5438 => ::std::option::Option::Some(EMsg::k_EMsgClientGetDepotDecryptionKey),
@@ -5474,18 +5329,13 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             5460 => ::std::option::Option::Some(EMsg::k_EMsgClientResetForgottenPassword3),
             5461 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestForgottenPasswordEmail3),
             5463 => ::std::option::Option::Some(EMsg::k_EMsgClientNewLoginKey),
-            5464 => ::std::option::Option::Some(EMsg::k_EMsgClientNewLoginKeyAccepted),
+            5464 => ::std::option::Option::Some(EMsg::k_EMsgClientNewLoginKeyAccepted_Deprecated),
             5465 => ::std::option::Option::Some(EMsg::k_EMsgClientLogOnWithHash_Deprecated),
             5466 => ::std::option::Option::Some(EMsg::k_EMsgClientStoreUserStats2),
             5467 => ::std::option::Option::Some(EMsg::k_EMsgClientStatsUpdated),
-            5468 => ::std::option::Option::Some(EMsg::k_EMsgClientActivateOEMLicense),
-            5469 => ::std::option::Option::Some(EMsg::k_EMsgClientRegisterOEMMachine),
-            5470 => ::std::option::Option::Some(EMsg::k_EMsgClientRegisterOEMMachineResponse),
-            5480 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestedClientStats),
-            5481 => ::std::option::Option::Some(EMsg::k_EMsgClientStat2Int32),
-            5482 => ::std::option::Option::Some(EMsg::k_EMsgClientStat2),
-            5483 => ::std::option::Option::Some(EMsg::k_EMsgClientVerifyPassword),
-            5484 => ::std::option::Option::Some(EMsg::k_EMsgClientVerifyPasswordResponse),
+            5480 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestedClientStats_Deprecated),
+            5481 => ::std::option::Option::Some(EMsg::k_EMsgClientStat2Int32_Deprecated),
+            5482 => ::std::option::Option::Some(EMsg::k_EMsgClientStat2_Deprecated),
             5485 => ::std::option::Option::Some(EMsg::k_EMsgClientDRMDownloadRequest),
             5486 => ::std::option::Option::Some(EMsg::k_EMsgClientDRMDownloadResponse),
             5487 => ::std::option::Option::Some(EMsg::k_EMsgClientDRMFinalResult),
@@ -5536,12 +5386,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             5538 => ::std::option::Option::Some(EMsg::k_EMsgClientUpdateMachineAuthResponse),
             5539 => ::std::option::Option::Some(EMsg::k_EMsgClientReadMachineAuth),
             5540 => ::std::option::Option::Some(EMsg::k_EMsgClientReadMachineAuthResponse),
-            5541 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestMachineAuth),
-            5542 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestMachineAuthResponse),
             5543 => ::std::option::Option::Some(EMsg::k_EMsgClientScreenshotsChanged),
-            5546 => ::std::option::Option::Some(EMsg::k_EMsgClientGetCDNAuthToken),
-            5547 => ::std::option::Option::Some(EMsg::k_EMsgClientGetCDNAuthTokenResponse),
-            5548 => ::std::option::Option::Some(EMsg::k_EMsgClientDownloadRateStatistics),
+            5544 => ::std::option::Option::Some(EMsg::k_EMsgClientLaunchClientApp),
+            5545 => ::std::option::Option::Some(EMsg::k_EMsgClientLaunchClientAppResponse),
             5549 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestAccountData),
             5550 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestAccountDataResponse),
             5551 => ::std::option::Option::Some(EMsg::k_EMsgClientResetForgottenPassword4),
@@ -5575,8 +5422,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             5582 => ::std::option::Option::Some(EMsg::k_EMsgClientCommentNotifications),
             5583 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestCommentNotifications),
             5584 => ::std::option::Option::Some(EMsg::k_EMsgClientPersonaChangeResponse),
-            5585 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce),
-            5586 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse),
+            5585 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce_Deprecated),
+            5586 => ::std::option::Option::Some(EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse_Deprecated),
             5587 => ::std::option::Option::Some(EMsg::k_EMsgClientPlayerNicknameList),
             5588 => ::std::option::Option::Some(EMsg::k_EMsgAMClientSetPlayerNickname),
             5589 => ::std::option::Option::Some(EMsg::k_EMsgAMClientSetPlayerNicknameResponse),
@@ -5624,9 +5471,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             5829 => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotManifest),
             5830 => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotManifestResponse),
             5831 => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotManifestChunk),
-            5832 => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotChunk),
-            5833 => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotChunkResponse),
-            5834 => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotChunkChunk),
             5844 => ::std::option::Option::Some(EMsg::k_EMsgMDSToCSFlushChunk),
             5847 => ::std::option::Option::Some(EMsg::k_EMsgMDSMigrateChunk),
             5848 => ::std::option::Option::Some(EMsg::k_EMsgMDSMigrateChunkResponse),
@@ -5815,14 +5659,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             7902 => ::std::option::Option::Some(EMsg::k_EMsgClientUGSGetGlobalStatsResponse),
             8000 => ::std::option::Option::Some(EMsg::k_EMsgStoreBase),
             8100 => ::std::option::Option::Some(EMsg::k_EMsgUMQBase),
-            8101 => ::std::option::Option::Some(EMsg::k_EMsgUMQLogonResponse),
-            8102 => ::std::option::Option::Some(EMsg::k_EMsgUMQLogoffRequest),
-            8103 => ::std::option::Option::Some(EMsg::k_EMsgUMQLogoffResponse),
-            8104 => ::std::option::Option::Some(EMsg::k_EMsgUMQSendChatMessage),
-            8105 => ::std::option::Option::Some(EMsg::k_EMsgUMQIncomingChatMessage),
-            8106 => ::std::option::Option::Some(EMsg::k_EMsgUMQPoll),
-            8107 => ::std::option::Option::Some(EMsg::k_EMsgUMQPollResults),
-            8108 => ::std::option::Option::Some(EMsg::k_EMsgUMQ2AM_ClientMsgBatch),
             8200 => ::std::option::Option::Some(EMsg::k_EMsgWorkshopBase),
             8300 => ::std::option::Option::Some(EMsg::k_EMsgWebAPIBase),
             8301 => ::std::option::Option::Some(EMsg::k_EMsgWebAPIValidateOAuth2TokenResponse),
@@ -5852,6 +5688,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             8904 => ::std::option::Option::Some(EMsg::k_EMsgClientPICSProductInfoResponse),
             8905 => ::std::option::Option::Some(EMsg::k_EMsgClientPICSAccessTokenRequest),
             8906 => ::std::option::Option::Some(EMsg::k_EMsgClientPICSAccessTokenResponse),
+            8907 => ::std::option::Option::Some(EMsg::k_EMsgClientPICSPrivateBetaRequest),
+            8908 => ::std::option::Option::Some(EMsg::k_EMsgClientPICSPrivateBetaResponse),
             9000 => ::std::option::Option::Some(EMsg::k_EMsgWorkerProcess),
             9001 => ::std::option::Option::Some(EMsg::k_EMsgWorkerProcessPingResponse),
             9002 => ::std::option::Option::Some(EMsg::k_EMsgWorkerProcessShutdown),
@@ -5899,7 +5737,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             9402 => ::std::option::Option::Some(EMsg::k_EMsgSLCSharedLicensesLockStatus),
             9405 => ::std::option::Option::Some(EMsg::k_EMsgClientSharedLibraryLockStatus),
             9406 => ::std::option::Option::Some(EMsg::k_EMsgClientSharedLibraryStopPlaying),
-            9407 => ::std::option::Option::Some(EMsg::k_EMsgSLCOwnerLibraryChanged),
             9408 => ::std::option::Option::Some(EMsg::k_EMsgSLCSharedLibraryChanged),
             9500 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientBase),
             9501 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthResponse_OBSOLETE),
@@ -5918,6 +5755,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             9514 => ::std::option::Option::Some(EMsg::k_EMsgClientUnlockHEVCResponse_OBSOLETE),
             9515 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientStatusRequest),
             9516 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientStatusResponse),
+            9517 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthorizationRequest),
+            9518 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthorizationResponse),
+            9519 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthorizationCancelRequest),
+            9520 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthorizationConfirmed),
+            9521 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientProofRequest),
+            9522 => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientProofResponse),
             9600 => ::std::option::Option::Some(EMsg::k_EMsgClientConcurrentSessionsBase),
             9601 => ::std::option::Option::Some(EMsg::k_EMsgClientKickPlayingSession),
             9700 => ::std::option::Option::Some(EMsg::k_EMsgClientBroadcastBase),
@@ -5954,6 +5797,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             12202 => ::std::option::Option::Some(EMsg::k_EMsgWGConnectionValidateUserTokenResponse),
             12203 => ::std::option::Option::Some(EMsg::k_EMsgWGConnectionLegacyWGRequest),
             12204 => ::std::option::Option::Some(EMsg::k_EMsgWGConnectionLegacyWGResponse),
+            12300 => ::std::option::Option::Some(EMsg::k_EMsgClientPendingGameLaunch),
+            12301 => ::std::option::Option::Some(EMsg::k_EMsgClientPendingGameLaunchResponse),
             _ => ::std::option::Option::None
         }
     }
@@ -6040,7 +5885,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgGMQueueForFBS" => ::std::option::Option::Some(EMsg::k_EMsgGMQueueForFBS),
             "k_EMsgGMSchemaConversionResults" => ::std::option::Option::Some(EMsg::k_EMsgGMSchemaConversionResults),
             "k_EMsgGMWriteShellFailureToSQL" => ::std::option::Option::Some(EMsg::k_EMsgGMWriteShellFailureToSQL),
-            "k_EMsgGMWriteStatsToSOS" => ::std::option::Option::Some(EMsg::k_EMsgGMWriteStatsToSOS),
             "k_EMsgGMGetServiceMethodRouting" => ::std::option::Option::Some(EMsg::k_EMsgGMGetServiceMethodRouting),
             "k_EMsgGMGetServiceMethodRoutingResponse" => ::std::option::Option::Some(EMsg::k_EMsgGMGetServiceMethodRoutingResponse),
             "k_EMsgGMTestNextBuildSchemaConversion" => ::std::option::Option::Some(EMsg::k_EMsgGMTestNextBuildSchemaConversion),
@@ -6052,7 +5896,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgGMGetModifiedConVarsResponse" => ::std::option::Option::Some(EMsg::k_EMsgGMGetModifiedConVarsResponse),
             "k_EMsgBaseAIS" => ::std::option::Option::Some(EMsg::k_EMsgBaseAIS),
             "k_EMsgAISRequestContentDescription" => ::std::option::Option::Some(EMsg::k_EMsgAISRequestContentDescription),
-            "k_EMsgAISUpdateAppInfo" => ::std::option::Option::Some(EMsg::k_EMsgAISUpdateAppInfo),
             "k_EMsgAISGetPackageChangeNumber" => ::std::option::Option::Some(EMsg::k_EMsgAISGetPackageChangeNumber),
             "k_EMsgAISGetPackageChangeNumberResponse" => ::std::option::Option::Some(EMsg::k_EMsgAISGetPackageChangeNumberResponse),
             "k_EMsgAIGetAppGCFlags" => ::std::option::Option::Some(EMsg::k_EMsgAIGetAppGCFlags),
@@ -6073,15 +5916,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgAMCancelLicense" => ::std::option::Option::Some(EMsg::k_EMsgAMCancelLicense),
             "k_EMsgAMInitPurchase" => ::std::option::Option::Some(EMsg::k_EMsgAMInitPurchase),
             "k_EMsgAMPurchaseResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMPurchaseResponse),
-            "k_EMsgAMGetFinalPrice" => ::std::option::Option::Some(EMsg::k_EMsgAMGetFinalPrice),
-            "k_EMsgAMGetFinalPriceResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMGetFinalPriceResponse),
             "k_EMsgAMGetLegacyGameKey" => ::std::option::Option::Some(EMsg::k_EMsgAMGetLegacyGameKey),
             "k_EMsgAMGetLegacyGameKeyResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMGetLegacyGameKeyResponse),
             "k_EMsgAMFindHungTransactions" => ::std::option::Option::Some(EMsg::k_EMsgAMFindHungTransactions),
             "k_EMsgAMSetAccountTrustedRequest" => ::std::option::Option::Some(EMsg::k_EMsgAMSetAccountTrustedRequest),
             "k_EMsgAMCancelPurchase" => ::std::option::Option::Some(EMsg::k_EMsgAMCancelPurchase),
             "k_EMsgAMNewChallenge" => ::std::option::Option::Some(EMsg::k_EMsgAMNewChallenge),
-            "k_EMsgAMLoadOEMTickets" => ::std::option::Option::Some(EMsg::k_EMsgAMLoadOEMTickets),
             "k_EMsgAMFixPendingPurchase" => ::std::option::Option::Some(EMsg::k_EMsgAMFixPendingPurchase),
             "k_EMsgAMFixPendingPurchaseResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMFixPendingPurchaseResponse),
             "k_EMsgAMIsUserBanned" => ::std::option::Option::Some(EMsg::k_EMsgAMIsUserBanned),
@@ -6221,7 +6061,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgClientGameConnectTokens" => ::std::option::Option::Some(EMsg::k_EMsgClientGameConnectTokens),
             "k_EMsgClientLicenseList" => ::std::option::Option::Some(EMsg::k_EMsgClientLicenseList),
             "k_EMsgClientVACBanStatus" => ::std::option::Option::Some(EMsg::k_EMsgClientVACBanStatus),
-            "k_EMsgClientCMList" => ::std::option::Option::Some(EMsg::k_EMsgClientCMList),
             "k_EMsgClientEncryptPct" => ::std::option::Option::Some(EMsg::k_EMsgClientEncryptPct),
             "k_EMsgClientGetLegacyGameKeyResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientGetLegacyGameKeyResponse),
             "k_EMsgClientAddFriend" => ::std::option::Option::Some(EMsg::k_EMsgClientAddFriend),
@@ -6439,9 +6278,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgBaseDP" => ::std::option::Option::Some(EMsg::k_EMsgBaseDP),
             "k_EMsgDPSetPublishingState" => ::std::option::Option::Some(EMsg::k_EMsgDPSetPublishingState),
             "k_EMsgDPUniquePlayersStat" => ::std::option::Option::Some(EMsg::k_EMsgDPUniquePlayersStat),
-            "k_EMsgDPStreamingUniquePlayersStat" => ::std::option::Option::Some(EMsg::k_EMsgDPStreamingUniquePlayersStat),
-            "k_EMsgDPBlockingStats" => ::std::option::Option::Some(EMsg::k_EMsgDPBlockingStats),
-            "k_EMsgDPNatTraversalStats" => ::std::option::Option::Some(EMsg::k_EMsgDPNatTraversalStats),
             "k_EMsgDPCloudStats" => ::std::option::Option::Some(EMsg::k_EMsgDPCloudStats),
             "k_EMsgDPGetPlayerCount" => ::std::option::Option::Some(EMsg::k_EMsgDPGetPlayerCount),
             "k_EMsgDPGetPlayerCountResponse" => ::std::option::Option::Some(EMsg::k_EMsgDPGetPlayerCountResponse),
@@ -6460,6 +6296,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgCMSessionRejected" => ::std::option::Option::Some(EMsg::k_EMsgCMSessionRejected),
             "k_EMsgCMSetSecrets" => ::std::option::Option::Some(EMsg::k_EMsgCMSetSecrets),
             "k_EMsgCMGetSecrets" => ::std::option::Option::Some(EMsg::k_EMsgCMGetSecrets),
+            "k_EMsgCMRemotePlayReplyPacket" => ::std::option::Option::Some(EMsg::k_EMsgCMRemotePlayReplyPacket),
             "k_EMsgBaseGC" => ::std::option::Option::Some(EMsg::k_EMsgBaseGC),
             "k_EMsgGCCmdRevive" => ::std::option::Option::Some(EMsg::k_EMsgGCCmdRevive),
             "k_EMsgGCCmdDown" => ::std::option::Option::Some(EMsg::k_EMsgGCCmdDown),
@@ -6468,7 +6305,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgGCCmdSwitch" => ::std::option::Option::Some(EMsg::k_EMsgGCCmdSwitch),
             "k_EMsgAMRefreshSessions" => ::std::option::Option::Some(EMsg::k_EMsgAMRefreshSessions),
             "k_EMsgGCAchievementAwarded" => ::std::option::Option::Some(EMsg::k_EMsgGCAchievementAwarded),
-            "k_EMsgGCSystemMessage" => ::std::option::Option::Some(EMsg::k_EMsgGCSystemMessage),
             "k_EMsgGCCmdStatus" => ::std::option::Option::Some(EMsg::k_EMsgGCCmdStatus),
             "k_EMsgGCRegisterWebInterfaces_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgGCRegisterWebInterfaces_Deprecated),
             "k_EMsgGCGetAccountDetails_DEPRECATED" => ::std::option::Option::Some(EMsg::k_EMsgGCGetAccountDetails_DEPRECATED),
@@ -6539,12 +6375,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgOGSEndSessionResponse" => ::std::option::Option::Some(EMsg::k_EMsgOGSEndSessionResponse),
             "k_EMsgOGSWriteAppSessionRow" => ::std::option::Option::Some(EMsg::k_EMsgOGSWriteAppSessionRow),
             "k_EMsgBaseBRP" => ::std::option::Option::Some(EMsg::k_EMsgBaseBRP),
-            "k_EMsgBRPPostTransactionTax" => ::std::option::Option::Some(EMsg::k_EMsgBRPPostTransactionTax),
-            "k_EMsgBRPPostTransactionTaxResponse" => ::std::option::Option::Some(EMsg::k_EMsgBRPPostTransactionTaxResponse),
             "k_EMsgBaseAMRange2" => ::std::option::Option::Some(EMsg::k_EMsgBaseAMRange2),
             "k_EMsgAMCreateChat" => ::std::option::Option::Some(EMsg::k_EMsgAMCreateChat),
             "k_EMsgAMCreateChatResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMCreateChatResponse),
-            "k_EMsgAMSetProfileURL" => ::std::option::Option::Some(EMsg::k_EMsgAMSetProfileURL),
             "k_EMsgAMGetAccountEmailAddress" => ::std::option::Option::Some(EMsg::k_EMsgAMGetAccountEmailAddress),
             "k_EMsgAMGetAccountEmailAddressResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMGetAccountEmailAddressResponse),
             "k_EMsgAMRequestClanData" => ::std::option::Option::Some(EMsg::k_EMsgAMRequestClanData),
@@ -6645,7 +6478,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgAMSetUserNewsSubscriptions" => ::std::option::Option::Some(EMsg::k_EMsgAMSetUserNewsSubscriptions),
             "k_EMsgAMSendQueuedEmails" => ::std::option::Option::Some(EMsg::k_EMsgAMSendQueuedEmails),
             "k_EMsgAMSetLicenseFlags" => ::std::option::Option::Some(EMsg::k_EMsgAMSetLicenseFlags),
-            "k_EMsgCommunityDeleteUserNews" => ::std::option::Option::Some(EMsg::k_EMsgCommunityDeleteUserNews),
             "k_EMsgAMGetAccountStatus" => ::std::option::Option::Some(EMsg::k_EMsgAMGetAccountStatus),
             "k_EMsgAMGetAccountStatusResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMGetAccountStatusResponse),
             "k_EMsgAMEditBanReason" => ::std::option::Option::Some(EMsg::k_EMsgAMEditBanReason),
@@ -6723,7 +6555,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgAMNameChange" => ::std::option::Option::Some(EMsg::k_EMsgAMNameChange),
             "k_EMsgAMGetNameHistory" => ::std::option::Option::Some(EMsg::k_EMsgAMGetNameHistory),
             "k_EMsgAMGetNameHistoryResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMGetNameHistoryResponse),
-            "k_EMsgAMUpdateProviderStatus" => ::std::option::Option::Some(EMsg::k_EMsgAMUpdateProviderStatus),
             "k_EMsgAMSupportRemoveAccountSecurity" => ::std::option::Option::Some(EMsg::k_EMsgAMSupportRemoveAccountSecurity),
             "k_EMsgAMIsAccountInCaptchaGracePeriod" => ::std::option::Option::Some(EMsg::k_EMsgAMIsAccountInCaptchaGracePeriod),
             "k_EMsgAMIsAccountInCaptchaGracePeriodResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMIsAccountInCaptchaGracePeriodResponse),
@@ -6837,24 +6668,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgPSGetShoppingCartContentsResponse" => ::std::option::Option::Some(EMsg::k_EMsgPSGetShoppingCartContentsResponse),
             "k_EMsgPSAddWalletCreditToShoppingCart" => ::std::option::Option::Some(EMsg::k_EMsgPSAddWalletCreditToShoppingCart),
             "k_EMsgPSAddWalletCreditToShoppingCartResponse" => ::std::option::Option::Some(EMsg::k_EMsgPSAddWalletCreditToShoppingCartResponse),
+            "k_EMsgPSGetAccountCartContents" => ::std::option::Option::Some(EMsg::k_EMsgPSGetAccountCartContents),
+            "k_EMsgPSGetAccountCartContentsResponse" => ::std::option::Option::Some(EMsg::k_EMsgPSGetAccountCartContentsResponse),
             "k_EMsgBaseUFSRange" => ::std::option::Option::Some(EMsg::k_EMsgBaseUFSRange),
-            "k_EMsgClientUFSUploadFileRequest" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadFileRequest),
-            "k_EMsgClientUFSUploadFileResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadFileResponse),
-            "k_EMsgClientUFSUploadFileChunk" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadFileChunk),
-            "k_EMsgClientUFSUploadFileFinished" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadFileFinished),
-            "k_EMsgClientUFSGetFileListForApp" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSGetFileListForApp),
-            "k_EMsgClientUFSGetFileListForAppResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSGetFileListForAppResponse),
-            "k_EMsgClientUFSDownloadRequest" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDownloadRequest),
-            "k_EMsgClientUFSDownloadResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDownloadResponse),
-            "k_EMsgClientUFSDownloadChunk" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDownloadChunk),
-            "k_EMsgClientUFSLoginRequest" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSLoginRequest),
-            "k_EMsgClientUFSLoginResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSLoginResponse),
             "k_EMsgUFSReloadPartitionInfo" => ::std::option::Option::Some(EMsg::k_EMsgUFSReloadPartitionInfo),
-            "k_EMsgClientUFSTransferHeartbeat" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSTransferHeartbeat),
             "k_EMsgUFSSynchronizeFile" => ::std::option::Option::Some(EMsg::k_EMsgUFSSynchronizeFile),
             "k_EMsgUFSSynchronizeFileResponse" => ::std::option::Option::Some(EMsg::k_EMsgUFSSynchronizeFileResponse),
-            "k_EMsgClientUFSDeleteFileRequest" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDeleteFileRequest),
-            "k_EMsgClientUFSDeleteFileResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSDeleteFileResponse),
             "k_EMsgClientUFSGetUGCDetails" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSGetUGCDetails),
             "k_EMsgClientUFSGetUGCDetailsResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSGetUGCDetailsResponse),
             "k_EMsgUFSUpdateFileFlags" => ::std::option::Option::Some(EMsg::k_EMsgUFSUpdateFileFlags),
@@ -6880,8 +6699,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgUFSDownloadFinishRequest" => ::std::option::Option::Some(EMsg::k_EMsgUFSDownloadFinishRequest),
             "k_EMsgUFSDownloadFinishResponse" => ::std::option::Option::Some(EMsg::k_EMsgUFSDownloadFinishResponse),
             "k_EMsgUFSFlushURLCache" => ::std::option::Option::Some(EMsg::k_EMsgUFSFlushURLCache),
-            "k_EMsgClientUFSUploadCommit" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadCommit),
-            "k_EMsgClientUFSUploadCommitResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUFSUploadCommitResponse),
             "k_EMsgUFSMigrateFileAppID" => ::std::option::Option::Some(EMsg::k_EMsgUFSMigrateFileAppID),
             "k_EMsgUFSMigrateFileAppIDResponse" => ::std::option::Option::Some(EMsg::k_EMsgUFSMigrateFileAppIDResponse),
             "k_EMsgBaseClient2" => ::std::option::Option::Some(EMsg::k_EMsgBaseClient2),
@@ -6910,7 +6727,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgClientIsLimitedAccount" => ::std::option::Option::Some(EMsg::k_EMsgClientIsLimitedAccount),
             "k_EMsgClientRequestAuthList" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestAuthList),
             "k_EMsgClientAuthList" => ::std::option::Option::Some(EMsg::k_EMsgClientAuthList),
-            "k_EMsgClientStat" => ::std::option::Option::Some(EMsg::k_EMsgClientStat),
+            "k_EMsgClientStat_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgClientStat_Deprecated),
             "k_EMsgClientP2PConnectionInfo" => ::std::option::Option::Some(EMsg::k_EMsgClientP2PConnectionInfo),
             "k_EMsgClientP2PConnectionFailInfo" => ::std::option::Option::Some(EMsg::k_EMsgClientP2PConnectionFailInfo),
             "k_EMsgClientGetDepotDecryptionKey" => ::std::option::Option::Some(EMsg::k_EMsgClientGetDepotDecryptionKey),
@@ -6932,18 +6749,13 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgClientResetForgottenPassword3" => ::std::option::Option::Some(EMsg::k_EMsgClientResetForgottenPassword3),
             "k_EMsgClientRequestForgottenPasswordEmail3" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestForgottenPasswordEmail3),
             "k_EMsgClientNewLoginKey" => ::std::option::Option::Some(EMsg::k_EMsgClientNewLoginKey),
-            "k_EMsgClientNewLoginKeyAccepted" => ::std::option::Option::Some(EMsg::k_EMsgClientNewLoginKeyAccepted),
+            "k_EMsgClientNewLoginKeyAccepted_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgClientNewLoginKeyAccepted_Deprecated),
             "k_EMsgClientLogOnWithHash_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgClientLogOnWithHash_Deprecated),
             "k_EMsgClientStoreUserStats2" => ::std::option::Option::Some(EMsg::k_EMsgClientStoreUserStats2),
             "k_EMsgClientStatsUpdated" => ::std::option::Option::Some(EMsg::k_EMsgClientStatsUpdated),
-            "k_EMsgClientActivateOEMLicense" => ::std::option::Option::Some(EMsg::k_EMsgClientActivateOEMLicense),
-            "k_EMsgClientRegisterOEMMachine" => ::std::option::Option::Some(EMsg::k_EMsgClientRegisterOEMMachine),
-            "k_EMsgClientRegisterOEMMachineResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientRegisterOEMMachineResponse),
-            "k_EMsgClientRequestedClientStats" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestedClientStats),
-            "k_EMsgClientStat2Int32" => ::std::option::Option::Some(EMsg::k_EMsgClientStat2Int32),
-            "k_EMsgClientStat2" => ::std::option::Option::Some(EMsg::k_EMsgClientStat2),
-            "k_EMsgClientVerifyPassword" => ::std::option::Option::Some(EMsg::k_EMsgClientVerifyPassword),
-            "k_EMsgClientVerifyPasswordResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientVerifyPasswordResponse),
+            "k_EMsgClientRequestedClientStats_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestedClientStats_Deprecated),
+            "k_EMsgClientStat2Int32_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgClientStat2Int32_Deprecated),
+            "k_EMsgClientStat2_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgClientStat2_Deprecated),
             "k_EMsgClientDRMDownloadRequest" => ::std::option::Option::Some(EMsg::k_EMsgClientDRMDownloadRequest),
             "k_EMsgClientDRMDownloadResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientDRMDownloadResponse),
             "k_EMsgClientDRMFinalResult" => ::std::option::Option::Some(EMsg::k_EMsgClientDRMFinalResult),
@@ -6994,12 +6806,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgClientUpdateMachineAuthResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUpdateMachineAuthResponse),
             "k_EMsgClientReadMachineAuth" => ::std::option::Option::Some(EMsg::k_EMsgClientReadMachineAuth),
             "k_EMsgClientReadMachineAuthResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientReadMachineAuthResponse),
-            "k_EMsgClientRequestMachineAuth" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestMachineAuth),
-            "k_EMsgClientRequestMachineAuthResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestMachineAuthResponse),
             "k_EMsgClientScreenshotsChanged" => ::std::option::Option::Some(EMsg::k_EMsgClientScreenshotsChanged),
-            "k_EMsgClientGetCDNAuthToken" => ::std::option::Option::Some(EMsg::k_EMsgClientGetCDNAuthToken),
-            "k_EMsgClientGetCDNAuthTokenResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientGetCDNAuthTokenResponse),
-            "k_EMsgClientDownloadRateStatistics" => ::std::option::Option::Some(EMsg::k_EMsgClientDownloadRateStatistics),
+            "k_EMsgClientLaunchClientApp" => ::std::option::Option::Some(EMsg::k_EMsgClientLaunchClientApp),
+            "k_EMsgClientLaunchClientAppResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientLaunchClientAppResponse),
             "k_EMsgClientRequestAccountData" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestAccountData),
             "k_EMsgClientRequestAccountDataResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestAccountDataResponse),
             "k_EMsgClientResetForgottenPassword4" => ::std::option::Option::Some(EMsg::k_EMsgClientResetForgottenPassword4),
@@ -7033,8 +6842,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgClientCommentNotifications" => ::std::option::Option::Some(EMsg::k_EMsgClientCommentNotifications),
             "k_EMsgClientRequestCommentNotifications" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestCommentNotifications),
             "k_EMsgClientPersonaChangeResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientPersonaChangeResponse),
-            "k_EMsgClientRequestWebAPIAuthenticateUserNonce" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce),
-            "k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse),
+            "k_EMsgClientRequestWebAPIAuthenticateUserNonce_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce_Deprecated),
+            "k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse_Deprecated" => ::std::option::Option::Some(EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse_Deprecated),
             "k_EMsgClientPlayerNicknameList" => ::std::option::Option::Some(EMsg::k_EMsgClientPlayerNicknameList),
             "k_EMsgAMClientSetPlayerNickname" => ::std::option::Option::Some(EMsg::k_EMsgAMClientSetPlayerNickname),
             "k_EMsgAMClientSetPlayerNicknameResponse" => ::std::option::Option::Some(EMsg::k_EMsgAMClientSetPlayerNicknameResponse),
@@ -7082,9 +6891,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgMDSGetDepotManifest" => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotManifest),
             "k_EMsgMDSGetDepotManifestResponse" => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotManifestResponse),
             "k_EMsgMDSGetDepotManifestChunk" => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotManifestChunk),
-            "k_EMsgMDSGetDepotChunk" => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotChunk),
-            "k_EMsgMDSGetDepotChunkResponse" => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotChunkResponse),
-            "k_EMsgMDSGetDepotChunkChunk" => ::std::option::Option::Some(EMsg::k_EMsgMDSGetDepotChunkChunk),
             "k_EMsgMDSToCSFlushChunk" => ::std::option::Option::Some(EMsg::k_EMsgMDSToCSFlushChunk),
             "k_EMsgMDSMigrateChunk" => ::std::option::Option::Some(EMsg::k_EMsgMDSMigrateChunk),
             "k_EMsgMDSMigrateChunkResponse" => ::std::option::Option::Some(EMsg::k_EMsgMDSMigrateChunkResponse),
@@ -7273,14 +7079,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgClientUGSGetGlobalStatsResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientUGSGetGlobalStatsResponse),
             "k_EMsgStoreBase" => ::std::option::Option::Some(EMsg::k_EMsgStoreBase),
             "k_EMsgUMQBase" => ::std::option::Option::Some(EMsg::k_EMsgUMQBase),
-            "k_EMsgUMQLogonResponse" => ::std::option::Option::Some(EMsg::k_EMsgUMQLogonResponse),
-            "k_EMsgUMQLogoffRequest" => ::std::option::Option::Some(EMsg::k_EMsgUMQLogoffRequest),
-            "k_EMsgUMQLogoffResponse" => ::std::option::Option::Some(EMsg::k_EMsgUMQLogoffResponse),
-            "k_EMsgUMQSendChatMessage" => ::std::option::Option::Some(EMsg::k_EMsgUMQSendChatMessage),
-            "k_EMsgUMQIncomingChatMessage" => ::std::option::Option::Some(EMsg::k_EMsgUMQIncomingChatMessage),
-            "k_EMsgUMQPoll" => ::std::option::Option::Some(EMsg::k_EMsgUMQPoll),
-            "k_EMsgUMQPollResults" => ::std::option::Option::Some(EMsg::k_EMsgUMQPollResults),
-            "k_EMsgUMQ2AM_ClientMsgBatch" => ::std::option::Option::Some(EMsg::k_EMsgUMQ2AM_ClientMsgBatch),
             "k_EMsgWorkshopBase" => ::std::option::Option::Some(EMsg::k_EMsgWorkshopBase),
             "k_EMsgWebAPIBase" => ::std::option::Option::Some(EMsg::k_EMsgWebAPIBase),
             "k_EMsgWebAPIValidateOAuth2TokenResponse" => ::std::option::Option::Some(EMsg::k_EMsgWebAPIValidateOAuth2TokenResponse),
@@ -7310,6 +7108,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgClientPICSProductInfoResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientPICSProductInfoResponse),
             "k_EMsgClientPICSAccessTokenRequest" => ::std::option::Option::Some(EMsg::k_EMsgClientPICSAccessTokenRequest),
             "k_EMsgClientPICSAccessTokenResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientPICSAccessTokenResponse),
+            "k_EMsgClientPICSPrivateBetaRequest" => ::std::option::Option::Some(EMsg::k_EMsgClientPICSPrivateBetaRequest),
+            "k_EMsgClientPICSPrivateBetaResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientPICSPrivateBetaResponse),
             "k_EMsgWorkerProcess" => ::std::option::Option::Some(EMsg::k_EMsgWorkerProcess),
             "k_EMsgWorkerProcessPingResponse" => ::std::option::Option::Some(EMsg::k_EMsgWorkerProcessPingResponse),
             "k_EMsgWorkerProcessShutdown" => ::std::option::Option::Some(EMsg::k_EMsgWorkerProcessShutdown),
@@ -7357,7 +7157,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgSLCSharedLicensesLockStatus" => ::std::option::Option::Some(EMsg::k_EMsgSLCSharedLicensesLockStatus),
             "k_EMsgClientSharedLibraryLockStatus" => ::std::option::Option::Some(EMsg::k_EMsgClientSharedLibraryLockStatus),
             "k_EMsgClientSharedLibraryStopPlaying" => ::std::option::Option::Some(EMsg::k_EMsgClientSharedLibraryStopPlaying),
-            "k_EMsgSLCOwnerLibraryChanged" => ::std::option::Option::Some(EMsg::k_EMsgSLCOwnerLibraryChanged),
             "k_EMsgSLCSharedLibraryChanged" => ::std::option::Option::Some(EMsg::k_EMsgSLCSharedLibraryChanged),
             "k_EMsgRemoteClientBase" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientBase),
             "k_EMsgRemoteClientAuthResponse_OBSOLETE" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthResponse_OBSOLETE),
@@ -7376,6 +7175,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgClientUnlockHEVCResponse_OBSOLETE" => ::std::option::Option::Some(EMsg::k_EMsgClientUnlockHEVCResponse_OBSOLETE),
             "k_EMsgRemoteClientStatusRequest" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientStatusRequest),
             "k_EMsgRemoteClientStatusResponse" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientStatusResponse),
+            "k_EMsgRemoteClientAuthorizationRequest" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthorizationRequest),
+            "k_EMsgRemoteClientAuthorizationResponse" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthorizationResponse),
+            "k_EMsgRemoteClientAuthorizationCancelRequest" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthorizationCancelRequest),
+            "k_EMsgRemoteClientAuthorizationConfirmed" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientAuthorizationConfirmed),
+            "k_EMsgRemoteClientProofRequest" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientProofRequest),
+            "k_EMsgRemoteClientProofResponse" => ::std::option::Option::Some(EMsg::k_EMsgRemoteClientProofResponse),
             "k_EMsgClientConcurrentSessionsBase" => ::std::option::Option::Some(EMsg::k_EMsgClientConcurrentSessionsBase),
             "k_EMsgClientKickPlayingSession" => ::std::option::Option::Some(EMsg::k_EMsgClientKickPlayingSession),
             "k_EMsgClientBroadcastBase" => ::std::option::Option::Some(EMsg::k_EMsgClientBroadcastBase),
@@ -7412,6 +7217,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
             "k_EMsgWGConnectionValidateUserTokenResponse" => ::std::option::Option::Some(EMsg::k_EMsgWGConnectionValidateUserTokenResponse),
             "k_EMsgWGConnectionLegacyWGRequest" => ::std::option::Option::Some(EMsg::k_EMsgWGConnectionLegacyWGRequest),
             "k_EMsgWGConnectionLegacyWGResponse" => ::std::option::Option::Some(EMsg::k_EMsgWGConnectionLegacyWGResponse),
+            "k_EMsgClientPendingGameLaunch" => ::std::option::Option::Some(EMsg::k_EMsgClientPendingGameLaunch),
+            "k_EMsgClientPendingGameLaunchResponse" => ::std::option::Option::Some(EMsg::k_EMsgClientPendingGameLaunchResponse),
             _ => ::std::option::Option::None
         }
     }
@@ -7500,7 +7307,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgGMQueueForFBS,
         EMsg::k_EMsgGMSchemaConversionResults,
         EMsg::k_EMsgGMWriteShellFailureToSQL,
-        EMsg::k_EMsgGMWriteStatsToSOS,
         EMsg::k_EMsgGMGetServiceMethodRouting,
         EMsg::k_EMsgGMGetServiceMethodRoutingResponse,
         EMsg::k_EMsgGMTestNextBuildSchemaConversion,
@@ -7512,7 +7318,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgGMGetModifiedConVarsResponse,
         EMsg::k_EMsgBaseAIS,
         EMsg::k_EMsgAISRequestContentDescription,
-        EMsg::k_EMsgAISUpdateAppInfo,
         EMsg::k_EMsgAISGetPackageChangeNumber,
         EMsg::k_EMsgAISGetPackageChangeNumberResponse,
         EMsg::k_EMsgAIGetAppGCFlags,
@@ -7533,15 +7338,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgAMCancelLicense,
         EMsg::k_EMsgAMInitPurchase,
         EMsg::k_EMsgAMPurchaseResponse,
-        EMsg::k_EMsgAMGetFinalPrice,
-        EMsg::k_EMsgAMGetFinalPriceResponse,
         EMsg::k_EMsgAMGetLegacyGameKey,
         EMsg::k_EMsgAMGetLegacyGameKeyResponse,
         EMsg::k_EMsgAMFindHungTransactions,
         EMsg::k_EMsgAMSetAccountTrustedRequest,
         EMsg::k_EMsgAMCancelPurchase,
         EMsg::k_EMsgAMNewChallenge,
-        EMsg::k_EMsgAMLoadOEMTickets,
         EMsg::k_EMsgAMFixPendingPurchase,
         EMsg::k_EMsgAMFixPendingPurchaseResponse,
         EMsg::k_EMsgAMIsUserBanned,
@@ -7682,7 +7484,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgClientGameConnectTokens,
         EMsg::k_EMsgClientLicenseList,
         EMsg::k_EMsgClientVACBanStatus,
-        EMsg::k_EMsgClientCMList,
         EMsg::k_EMsgClientEncryptPct,
         EMsg::k_EMsgClientGetLegacyGameKeyResponse,
         EMsg::k_EMsgClientAddFriend,
@@ -7904,9 +7705,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgBaseDP,
         EMsg::k_EMsgDPSetPublishingState,
         EMsg::k_EMsgDPUniquePlayersStat,
-        EMsg::k_EMsgDPStreamingUniquePlayersStat,
-        EMsg::k_EMsgDPBlockingStats,
-        EMsg::k_EMsgDPNatTraversalStats,
         EMsg::k_EMsgDPCloudStats,
         EMsg::k_EMsgDPGetPlayerCount,
         EMsg::k_EMsgDPGetPlayerCountResponse,
@@ -7925,6 +7723,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgCMSessionRejected,
         EMsg::k_EMsgCMSetSecrets,
         EMsg::k_EMsgCMGetSecrets,
+        EMsg::k_EMsgCMRemotePlayReplyPacket,
         EMsg::k_EMsgBaseGC,
         EMsg::k_EMsgGCCmdRevive,
         EMsg::k_EMsgGCCmdDown,
@@ -7933,7 +7732,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgGCCmdSwitch,
         EMsg::k_EMsgAMRefreshSessions,
         EMsg::k_EMsgGCAchievementAwarded,
-        EMsg::k_EMsgGCSystemMessage,
         EMsg::k_EMsgGCCmdStatus,
         EMsg::k_EMsgGCRegisterWebInterfaces_Deprecated,
         EMsg::k_EMsgGCGetAccountDetails_DEPRECATED,
@@ -8005,12 +7803,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgOGSEndSessionResponse,
         EMsg::k_EMsgOGSWriteAppSessionRow,
         EMsg::k_EMsgBaseBRP,
-        EMsg::k_EMsgBRPPostTransactionTax,
-        EMsg::k_EMsgBRPPostTransactionTaxResponse,
         EMsg::k_EMsgBaseAMRange2,
         EMsg::k_EMsgAMCreateChat,
         EMsg::k_EMsgAMCreateChatResponse,
-        EMsg::k_EMsgAMSetProfileURL,
         EMsg::k_EMsgAMGetAccountEmailAddress,
         EMsg::k_EMsgAMGetAccountEmailAddressResponse,
         EMsg::k_EMsgAMRequestClanData,
@@ -8111,7 +7906,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgAMSetUserNewsSubscriptions,
         EMsg::k_EMsgAMSendQueuedEmails,
         EMsg::k_EMsgAMSetLicenseFlags,
-        EMsg::k_EMsgCommunityDeleteUserNews,
         EMsg::k_EMsgAMGetAccountStatus,
         EMsg::k_EMsgAMGetAccountStatusResponse,
         EMsg::k_EMsgAMEditBanReason,
@@ -8189,7 +7983,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgAMNameChange,
         EMsg::k_EMsgAMGetNameHistory,
         EMsg::k_EMsgAMGetNameHistoryResponse,
-        EMsg::k_EMsgAMUpdateProviderStatus,
         EMsg::k_EMsgAMSupportRemoveAccountSecurity,
         EMsg::k_EMsgAMIsAccountInCaptchaGracePeriod,
         EMsg::k_EMsgAMIsAccountInCaptchaGracePeriodResponse,
@@ -8303,24 +8096,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgPSGetShoppingCartContentsResponse,
         EMsg::k_EMsgPSAddWalletCreditToShoppingCart,
         EMsg::k_EMsgPSAddWalletCreditToShoppingCartResponse,
+        EMsg::k_EMsgPSGetAccountCartContents,
+        EMsg::k_EMsgPSGetAccountCartContentsResponse,
         EMsg::k_EMsgBaseUFSRange,
-        EMsg::k_EMsgClientUFSUploadFileRequest,
-        EMsg::k_EMsgClientUFSUploadFileResponse,
-        EMsg::k_EMsgClientUFSUploadFileChunk,
-        EMsg::k_EMsgClientUFSUploadFileFinished,
-        EMsg::k_EMsgClientUFSGetFileListForApp,
-        EMsg::k_EMsgClientUFSGetFileListForAppResponse,
-        EMsg::k_EMsgClientUFSDownloadRequest,
-        EMsg::k_EMsgClientUFSDownloadResponse,
-        EMsg::k_EMsgClientUFSDownloadChunk,
-        EMsg::k_EMsgClientUFSLoginRequest,
-        EMsg::k_EMsgClientUFSLoginResponse,
         EMsg::k_EMsgUFSReloadPartitionInfo,
-        EMsg::k_EMsgClientUFSTransferHeartbeat,
         EMsg::k_EMsgUFSSynchronizeFile,
         EMsg::k_EMsgUFSSynchronizeFileResponse,
-        EMsg::k_EMsgClientUFSDeleteFileRequest,
-        EMsg::k_EMsgClientUFSDeleteFileResponse,
         EMsg::k_EMsgClientUFSGetUGCDetails,
         EMsg::k_EMsgClientUFSGetUGCDetailsResponse,
         EMsg::k_EMsgUFSUpdateFileFlags,
@@ -8346,8 +8127,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgUFSDownloadFinishRequest,
         EMsg::k_EMsgUFSDownloadFinishResponse,
         EMsg::k_EMsgUFSFlushURLCache,
-        EMsg::k_EMsgClientUFSUploadCommit,
-        EMsg::k_EMsgClientUFSUploadCommitResponse,
         EMsg::k_EMsgUFSMigrateFileAppID,
         EMsg::k_EMsgUFSMigrateFileAppIDResponse,
         EMsg::k_EMsgBaseClient2,
@@ -8376,7 +8155,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgClientIsLimitedAccount,
         EMsg::k_EMsgClientRequestAuthList,
         EMsg::k_EMsgClientAuthList,
-        EMsg::k_EMsgClientStat,
+        EMsg::k_EMsgClientStat_Deprecated,
         EMsg::k_EMsgClientP2PConnectionInfo,
         EMsg::k_EMsgClientP2PConnectionFailInfo,
         EMsg::k_EMsgClientGetDepotDecryptionKey,
@@ -8398,18 +8177,13 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgClientResetForgottenPassword3,
         EMsg::k_EMsgClientRequestForgottenPasswordEmail3,
         EMsg::k_EMsgClientNewLoginKey,
-        EMsg::k_EMsgClientNewLoginKeyAccepted,
+        EMsg::k_EMsgClientNewLoginKeyAccepted_Deprecated,
         EMsg::k_EMsgClientLogOnWithHash_Deprecated,
         EMsg::k_EMsgClientStoreUserStats2,
         EMsg::k_EMsgClientStatsUpdated,
-        EMsg::k_EMsgClientActivateOEMLicense,
-        EMsg::k_EMsgClientRegisterOEMMachine,
-        EMsg::k_EMsgClientRegisterOEMMachineResponse,
-        EMsg::k_EMsgClientRequestedClientStats,
-        EMsg::k_EMsgClientStat2Int32,
-        EMsg::k_EMsgClientStat2,
-        EMsg::k_EMsgClientVerifyPassword,
-        EMsg::k_EMsgClientVerifyPasswordResponse,
+        EMsg::k_EMsgClientRequestedClientStats_Deprecated,
+        EMsg::k_EMsgClientStat2Int32_Deprecated,
+        EMsg::k_EMsgClientStat2_Deprecated,
         EMsg::k_EMsgClientDRMDownloadRequest,
         EMsg::k_EMsgClientDRMDownloadResponse,
         EMsg::k_EMsgClientDRMFinalResult,
@@ -8460,12 +8234,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgClientUpdateMachineAuthResponse,
         EMsg::k_EMsgClientReadMachineAuth,
         EMsg::k_EMsgClientReadMachineAuthResponse,
-        EMsg::k_EMsgClientRequestMachineAuth,
-        EMsg::k_EMsgClientRequestMachineAuthResponse,
         EMsg::k_EMsgClientScreenshotsChanged,
-        EMsg::k_EMsgClientGetCDNAuthToken,
-        EMsg::k_EMsgClientGetCDNAuthTokenResponse,
-        EMsg::k_EMsgClientDownloadRateStatistics,
+        EMsg::k_EMsgClientLaunchClientApp,
+        EMsg::k_EMsgClientLaunchClientAppResponse,
         EMsg::k_EMsgClientRequestAccountData,
         EMsg::k_EMsgClientRequestAccountDataResponse,
         EMsg::k_EMsgClientResetForgottenPassword4,
@@ -8499,8 +8270,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgClientCommentNotifications,
         EMsg::k_EMsgClientRequestCommentNotifications,
         EMsg::k_EMsgClientPersonaChangeResponse,
-        EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce,
-        EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse,
+        EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce_Deprecated,
+        EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse_Deprecated,
         EMsg::k_EMsgClientPlayerNicknameList,
         EMsg::k_EMsgAMClientSetPlayerNickname,
         EMsg::k_EMsgAMClientSetPlayerNicknameResponse,
@@ -8548,9 +8319,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgMDSGetDepotManifest,
         EMsg::k_EMsgMDSGetDepotManifestResponse,
         EMsg::k_EMsgMDSGetDepotManifestChunk,
-        EMsg::k_EMsgMDSGetDepotChunk,
-        EMsg::k_EMsgMDSGetDepotChunkResponse,
-        EMsg::k_EMsgMDSGetDepotChunkChunk,
         EMsg::k_EMsgMDSToCSFlushChunk,
         EMsg::k_EMsgMDSMigrateChunk,
         EMsg::k_EMsgMDSMigrateChunkResponse,
@@ -8742,15 +8510,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgClientUGSGetGlobalStatsResponse,
         EMsg::k_EMsgStoreBase,
         EMsg::k_EMsgUMQBase,
-        EMsg::k_EMsgUMQLogonRequest,
-        EMsg::k_EMsgUMQLogonResponse,
-        EMsg::k_EMsgUMQLogoffRequest,
-        EMsg::k_EMsgUMQLogoffResponse,
-        EMsg::k_EMsgUMQSendChatMessage,
-        EMsg::k_EMsgUMQIncomingChatMessage,
-        EMsg::k_EMsgUMQPoll,
-        EMsg::k_EMsgUMQPollResults,
-        EMsg::k_EMsgUMQ2AM_ClientMsgBatch,
         EMsg::k_EMsgWorkshopBase,
         EMsg::k_EMsgWebAPIBase,
         EMsg::k_EMsgWebAPIValidateOAuth2Token,
@@ -8784,6 +8543,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgClientPICSProductInfoResponse,
         EMsg::k_EMsgClientPICSAccessTokenRequest,
         EMsg::k_EMsgClientPICSAccessTokenResponse,
+        EMsg::k_EMsgClientPICSPrivateBetaRequest,
+        EMsg::k_EMsgClientPICSPrivateBetaResponse,
         EMsg::k_EMsgWorkerProcess,
         EMsg::k_EMsgWorkerProcessPingRequest,
         EMsg::k_EMsgWorkerProcessPingResponse,
@@ -8835,7 +8596,6 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgSLCSharedLicensesLockStatus,
         EMsg::k_EMsgClientSharedLibraryLockStatus,
         EMsg::k_EMsgClientSharedLibraryStopPlaying,
-        EMsg::k_EMsgSLCOwnerLibraryChanged,
         EMsg::k_EMsgSLCSharedLibraryChanged,
         EMsg::k_EMsgRemoteClientBase,
         EMsg::k_EMsgRemoteClientAuth_OBSOLETE,
@@ -8855,6 +8615,12 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgClientUnlockHEVCResponse_OBSOLETE,
         EMsg::k_EMsgRemoteClientStatusRequest,
         EMsg::k_EMsgRemoteClientStatusResponse,
+        EMsg::k_EMsgRemoteClientAuthorizationRequest,
+        EMsg::k_EMsgRemoteClientAuthorizationResponse,
+        EMsg::k_EMsgRemoteClientAuthorizationCancelRequest,
+        EMsg::k_EMsgRemoteClientAuthorizationConfirmed,
+        EMsg::k_EMsgRemoteClientProofRequest,
+        EMsg::k_EMsgRemoteClientProofResponse,
         EMsg::k_EMsgClientConcurrentSessionsBase,
         EMsg::k_EMsgClientPlayingSessionState,
         EMsg::k_EMsgClientKickPlayingSession,
@@ -8900,6 +8666,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMsg {
         EMsg::k_EMsgWGConnectionValidateUserTokenResponse,
         EMsg::k_EMsgWGConnectionLegacyWGRequest,
         EMsg::k_EMsgWGConnectionLegacyWGResponse,
+        EMsg::k_EMsgClientPendingGameLaunch,
+        EMsg::k_EMsgClientPendingGameLaunchResponse,
     ];
 }
 
@@ -9234,6 +9002,8 @@ pub enum ECodecUsageReason {
     k_ECodecUsageReasonBroadcasting = 2,
     // @@protoc_insertion_point(enum_value:ECodecUsageReason.k_ECodecUsageReasonGameVideo)
     k_ECodecUsageReasonGameVideo = 3,
+    // @@protoc_insertion_point(enum_value:ECodecUsageReason.k_ECodecUsageReasonGameRecording)
+    k_ECodecUsageReasonGameRecording = 4,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for ECodecUsageReason {
@@ -9249,6 +9019,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for ECodecUsageReason {
             1 => ::std::option::Option::Some(ECodecUsageReason::k_ECodecUsageReasonRemotePlay),
             2 => ::std::option::Option::Some(ECodecUsageReason::k_ECodecUsageReasonBroadcasting),
             3 => ::std::option::Option::Some(ECodecUsageReason::k_ECodecUsageReasonGameVideo),
+            4 => ::std::option::Option::Some(ECodecUsageReason::k_ECodecUsageReasonGameRecording),
             _ => ::std::option::Option::None
         }
     }
@@ -9259,6 +9030,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for ECodecUsageReason {
             "k_ECodecUsageReasonRemotePlay" => ::std::option::Option::Some(ECodecUsageReason::k_ECodecUsageReasonRemotePlay),
             "k_ECodecUsageReasonBroadcasting" => ::std::option::Option::Some(ECodecUsageReason::k_ECodecUsageReasonBroadcasting),
             "k_ECodecUsageReasonGameVideo" => ::std::option::Option::Some(ECodecUsageReason::k_ECodecUsageReasonGameVideo),
+            "k_ECodecUsageReasonGameRecording" => ::std::option::Option::Some(ECodecUsageReason::k_ECodecUsageReasonGameRecording),
             _ => ::std::option::Option::None
         }
     }
@@ -9268,6 +9040,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for ECodecUsageReason {
         ECodecUsageReason::k_ECodecUsageReasonRemotePlay,
         ECodecUsageReason::k_ECodecUsageReasonBroadcasting,
         ECodecUsageReason::k_ECodecUsageReasonGameVideo,
+        ECodecUsageReason::k_ECodecUsageReasonGameRecording,
     ];
 }
 

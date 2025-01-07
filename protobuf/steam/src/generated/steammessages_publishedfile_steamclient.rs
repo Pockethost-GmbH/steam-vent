@@ -6734,6 +6734,12 @@ pub mod published_file_details {
         pub votes_up: ::std::option::Option<u32>,
         // @@protoc_insertion_point(field:PublishedFileDetails.VoteData.votes_down)
         pub votes_down: ::std::option::Option<u32>,
+        // @@protoc_insertion_point(field:PublishedFileDetails.VoteData.trusted_score)
+        pub trusted_score: ::std::option::Option<f32>,
+        // @@protoc_insertion_point(field:PublishedFileDetails.VoteData.trusted_votes_up)
+        pub trusted_votes_up: ::std::option::Option<u32>,
+        // @@protoc_insertion_point(field:PublishedFileDetails.VoteData.trusted_votes_down)
+        pub trusted_votes_down: ::std::option::Option<u32>,
         // special fields
         // @@protoc_insertion_point(special_field:PublishedFileDetails.VoteData.special_fields)
         pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -6806,6 +6812,63 @@ pub mod published_file_details {
         pub fn set_votes_down(&mut self, v: u32) {
             self.votes_down = ::std::option::Option::Some(v);
         }
+
+        // optional float trusted_score = 4;
+
+        pub fn trusted_score(&self) -> f32 {
+            self.trusted_score.unwrap_or(0.)
+        }
+
+        pub fn clear_trusted_score(&mut self) {
+            self.trusted_score = ::std::option::Option::None;
+        }
+
+        pub fn has_trusted_score(&self) -> bool {
+            self.trusted_score.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_trusted_score(&mut self, v: f32) {
+            self.trusted_score = ::std::option::Option::Some(v);
+        }
+
+        // optional uint32 trusted_votes_up = 5;
+
+        pub fn trusted_votes_up(&self) -> u32 {
+            self.trusted_votes_up.unwrap_or(0)
+        }
+
+        pub fn clear_trusted_votes_up(&mut self) {
+            self.trusted_votes_up = ::std::option::Option::None;
+        }
+
+        pub fn has_trusted_votes_up(&self) -> bool {
+            self.trusted_votes_up.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_trusted_votes_up(&mut self, v: u32) {
+            self.trusted_votes_up = ::std::option::Option::Some(v);
+        }
+
+        // optional uint32 trusted_votes_down = 6;
+
+        pub fn trusted_votes_down(&self) -> u32 {
+            self.trusted_votes_down.unwrap_or(0)
+        }
+
+        pub fn clear_trusted_votes_down(&mut self) {
+            self.trusted_votes_down = ::std::option::Option::None;
+        }
+
+        pub fn has_trusted_votes_down(&self) -> bool {
+            self.trusted_votes_down.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_trusted_votes_down(&mut self, v: u32) {
+            self.trusted_votes_down = ::std::option::Option::Some(v);
+        }
     }
 
     impl ::steam_vent_proto_common::protobuf::Message for VoteData {
@@ -6826,6 +6889,15 @@ pub mod published_file_details {
                     },
                     24 => {
                         self.votes_down = ::std::option::Option::Some(is.read_uint32()?);
+                    },
+                    37 => {
+                        self.trusted_score = ::std::option::Option::Some(is.read_float()?);
+                    },
+                    40 => {
+                        self.trusted_votes_up = ::std::option::Option::Some(is.read_uint32()?);
+                    },
+                    48 => {
+                        self.trusted_votes_down = ::std::option::Option::Some(is.read_uint32()?);
                     },
                     tag => {
                         ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -6848,6 +6920,15 @@ pub mod published_file_details {
             if let Some(v) = self.votes_down {
                 my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(3, v);
             }
+            if let Some(v) = self.trusted_score {
+                my_size += 1 + 4;
+            }
+            if let Some(v) = self.trusted_votes_up {
+                my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(5, v);
+            }
+            if let Some(v) = self.trusted_votes_down {
+                my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(6, v);
+            }
             my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
             self.special_fields.cached_size().set(my_size as u32);
             my_size
@@ -6862,6 +6943,15 @@ pub mod published_file_details {
             }
             if let Some(v) = self.votes_down {
                 os.write_uint32(3, v)?;
+            }
+            if let Some(v) = self.trusted_score {
+                os.write_float(4, v)?;
+            }
+            if let Some(v) = self.trusted_votes_up {
+                os.write_uint32(5, v)?;
+            }
+            if let Some(v) = self.trusted_votes_down {
+                os.write_uint32(6, v)?;
             }
             os.write_unknown_fields(self.special_fields.unknown_fields())?;
             ::std::result::Result::Ok(())
@@ -6883,6 +6973,9 @@ pub mod published_file_details {
             self.score = ::std::option::Option::None;
             self.votes_up = ::std::option::Option::None;
             self.votes_down = ::std::option::Option::None;
+            self.trusted_score = ::std::option::Option::None;
+            self.trusted_votes_up = ::std::option::Option::None;
+            self.trusted_votes_down = ::std::option::Option::None;
             self.special_fields.clear();
         }
 
@@ -6891,6 +6984,9 @@ pub mod published_file_details {
                 score: ::std::option::Option::None,
                 votes_up: ::std::option::Option::None,
                 votes_down: ::std::option::Option::None,
+                trusted_score: ::std::option::Option::None,
+                trusted_votes_up: ::std::option::Option::None,
+                trusted_votes_down: ::std::option::Option::None,
                 special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
             };
             &instance

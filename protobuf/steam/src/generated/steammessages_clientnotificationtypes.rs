@@ -5984,6 +5984,8 @@ pub struct CClientNotificationGameRecordingStop {
     pub game_id: ::std::option::Option<u64>,
     // @@protoc_insertion_point(field:CClientNotificationGameRecordingStop.clip_id)
     pub clip_id: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CClientNotificationGameRecordingStop.duration_secs)
+    pub duration_secs: ::std::option::Option<f32>,
     // special fields
     // @@protoc_insertion_point(special_field:CClientNotificationGameRecordingStop.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -6054,6 +6056,25 @@ impl CClientNotificationGameRecordingStop {
     pub fn take_clip_id(&mut self) -> ::std::string::String {
         self.clip_id.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional float duration_secs = 3;
+
+    pub fn duration_secs(&self) -> f32 {
+        self.duration_secs.unwrap_or(0.)
+    }
+
+    pub fn clear_duration_secs(&mut self) {
+        self.duration_secs = ::std::option::Option::None;
+    }
+
+    pub fn has_duration_secs(&self) -> bool {
+        self.duration_secs.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_duration_secs(&mut self, v: f32) {
+        self.duration_secs = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CClientNotificationGameRecordingStop {
@@ -6071,6 +6092,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientNotificationGameRec
                 },
                 18 => {
                     self.clip_id = ::std::option::Option::Some(is.read_string()?);
+                },
+                29 => {
+                    self.duration_secs = ::std::option::Option::Some(is.read_float()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -6090,6 +6114,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientNotificationGameRec
         if let Some(v) = self.clip_id.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
         }
+        if let Some(v) = self.duration_secs {
+            my_size += 1 + 4;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -6101,6 +6128,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientNotificationGameRec
         }
         if let Some(v) = self.clip_id.as_ref() {
             os.write_string(2, v)?;
+        }
+        if let Some(v) = self.duration_secs {
+            os.write_float(3, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -6121,6 +6151,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientNotificationGameRec
     fn clear(&mut self) {
         self.game_id = ::std::option::Option::None;
         self.clip_id = ::std::option::Option::None;
+        self.duration_secs = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -6128,6 +6159,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientNotificationGameRec
         static instance: CClientNotificationGameRecordingStop = CClientNotificationGameRecordingStop {
             game_id: ::std::option::Option::None,
             clip_id: ::std::option::Option::None,
+            duration_secs: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -6237,6 +6269,196 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientNotificationGameRec
     fn default_instance() -> &'static CClientNotificationGameRecordingUserMarkerAdded {
         static instance: CClientNotificationGameRecordingUserMarkerAdded = CClientNotificationGameRecordingUserMarkerAdded {
             game_id: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CClientNotificationGameRecordingInstantClip)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CClientNotificationGameRecordingInstantClip {
+    // message fields
+    // @@protoc_insertion_point(field:CClientNotificationGameRecordingInstantClip.game_id)
+    pub game_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CClientNotificationGameRecordingInstantClip.clip_id)
+    pub clip_id: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CClientNotificationGameRecordingInstantClip.duration_secs)
+    pub duration_secs: ::std::option::Option<f32>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CClientNotificationGameRecordingInstantClip.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CClientNotificationGameRecordingInstantClip {
+    fn default() -> &'a CClientNotificationGameRecordingInstantClip {
+        <CClientNotificationGameRecordingInstantClip as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CClientNotificationGameRecordingInstantClip {
+    pub fn new() -> CClientNotificationGameRecordingInstantClip {
+        ::std::default::Default::default()
+    }
+
+    // optional fixed64 game_id = 1;
+
+    pub fn game_id(&self) -> u64 {
+        self.game_id.unwrap_or(0)
+    }
+
+    pub fn clear_game_id(&mut self) {
+        self.game_id = ::std::option::Option::None;
+    }
+
+    pub fn has_game_id(&self) -> bool {
+        self.game_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_game_id(&mut self, v: u64) {
+        self.game_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string clip_id = 2;
+
+    pub fn clip_id(&self) -> &str {
+        match self.clip_id.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_clip_id(&mut self) {
+        self.clip_id = ::std::option::Option::None;
+    }
+
+    pub fn has_clip_id(&self) -> bool {
+        self.clip_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_clip_id(&mut self, v: ::std::string::String) {
+        self.clip_id = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_clip_id(&mut self) -> &mut ::std::string::String {
+        if self.clip_id.is_none() {
+            self.clip_id = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.clip_id.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_clip_id(&mut self) -> ::std::string::String {
+        self.clip_id.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional float duration_secs = 3;
+
+    pub fn duration_secs(&self) -> f32 {
+        self.duration_secs.unwrap_or(0.)
+    }
+
+    pub fn clear_duration_secs(&mut self) {
+        self.duration_secs = ::std::option::Option::None;
+    }
+
+    pub fn has_duration_secs(&self) -> bool {
+        self.duration_secs.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_duration_secs(&mut self, v: f32) {
+        self.duration_secs = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CClientNotificationGameRecordingInstantClip {
+    const NAME: &'static str = "CClientNotificationGameRecordingInstantClip";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                9 => {
+                    self.game_id = ::std::option::Option::Some(is.read_fixed64()?);
+                },
+                18 => {
+                    self.clip_id = ::std::option::Option::Some(is.read_string()?);
+                },
+                29 => {
+                    self.duration_secs = ::std::option::Option::Some(is.read_float()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.game_id {
+            my_size += 1 + 8;
+        }
+        if let Some(v) = self.clip_id.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
+        }
+        if let Some(v) = self.duration_secs {
+            my_size += 1 + 4;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.game_id {
+            os.write_fixed64(1, v)?;
+        }
+        if let Some(v) = self.clip_id.as_ref() {
+            os.write_string(2, v)?;
+        }
+        if let Some(v) = self.duration_secs {
+            os.write_float(3, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CClientNotificationGameRecordingInstantClip {
+        CClientNotificationGameRecordingInstantClip::new()
+    }
+
+    fn clear(&mut self) {
+        self.game_id = ::std::option::Option::None;
+        self.clip_id = ::std::option::Option::None;
+        self.duration_secs = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CClientNotificationGameRecordingInstantClip {
+        static instance: CClientNotificationGameRecordingInstantClip = CClientNotificationGameRecordingInstantClip {
+            game_id: ::std::option::Option::None,
+            clip_id: ::std::option::Option::None,
+            duration_secs: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -6362,6 +6584,8 @@ pub enum EClientNotificationType {
     k_EClientNotificationType_GameRecordingStop = 56,
     // @@protoc_insertion_point(enum_value:EClientNotificationType.k_EClientNotificationType_GameRecordingUserMarkerAdded)
     k_EClientNotificationType_GameRecordingUserMarkerAdded = 57,
+    // @@protoc_insertion_point(enum_value:EClientNotificationType.k_EClientNotificationType_GameRecordingInstantClip)
+    k_EClientNotificationType_GameRecordingInstantClip = 58,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EClientNotificationType {
@@ -6431,6 +6655,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EClientNotificationType {
             55 => ::std::option::Option::Some(EClientNotificationType::k_EClientNotificationType_GameRecordingStart),
             56 => ::std::option::Option::Some(EClientNotificationType::k_EClientNotificationType_GameRecordingStop),
             57 => ::std::option::Option::Some(EClientNotificationType::k_EClientNotificationType_GameRecordingUserMarkerAdded),
+            58 => ::std::option::Option::Some(EClientNotificationType::k_EClientNotificationType_GameRecordingInstantClip),
             _ => ::std::option::Option::None
         }
     }
@@ -6495,6 +6720,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EClientNotificationType {
             "k_EClientNotificationType_GameRecordingStart" => ::std::option::Option::Some(EClientNotificationType::k_EClientNotificationType_GameRecordingStart),
             "k_EClientNotificationType_GameRecordingStop" => ::std::option::Option::Some(EClientNotificationType::k_EClientNotificationType_GameRecordingStop),
             "k_EClientNotificationType_GameRecordingUserMarkerAdded" => ::std::option::Option::Some(EClientNotificationType::k_EClientNotificationType_GameRecordingUserMarkerAdded),
+            "k_EClientNotificationType_GameRecordingInstantClip" => ::std::option::Option::Some(EClientNotificationType::k_EClientNotificationType_GameRecordingInstantClip),
             _ => ::std::option::Option::None
         }
     }
@@ -6558,6 +6784,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EClientNotificationType {
         EClientNotificationType::k_EClientNotificationType_GameRecordingStart,
         EClientNotificationType::k_EClientNotificationType_GameRecordingStop,
         EClientNotificationType::k_EClientNotificationType_GameRecordingUserMarkerAdded,
+        EClientNotificationType::k_EClientNotificationType_GameRecordingInstantClip,
     ];
 }
 
@@ -7186,6 +7413,20 @@ impl ::steam_vent_proto_common::RpcMessage for CClientNotificationGameRecordingS
 }
 impl ::steam_vent_proto_common::RpcMessage
 for CClientNotificationGameRecordingUserMarkerAdded {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CClientNotificationGameRecordingInstantClip {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }

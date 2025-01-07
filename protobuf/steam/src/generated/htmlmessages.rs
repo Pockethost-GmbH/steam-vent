@@ -13821,6 +13821,819 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgFileLoadDialogResponse
     }
 }
 
+// @@protoc_insertion_point(message:CMsgRequestProcessInfo)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CMsgRequestProcessInfo {
+    // message fields
+    // @@protoc_insertion_point(field:CMsgRequestProcessInfo.requestid)
+    pub requestid: ::std::option::Option<u64>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CMsgRequestProcessInfo.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CMsgRequestProcessInfo {
+    fn default() -> &'a CMsgRequestProcessInfo {
+        <CMsgRequestProcessInfo as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CMsgRequestProcessInfo {
+    pub fn new() -> CMsgRequestProcessInfo {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 requestid = 1;
+
+    pub fn requestid(&self) -> u64 {
+        self.requestid.unwrap_or(0)
+    }
+
+    pub fn clear_requestid(&mut self) {
+        self.requestid = ::std::option::Option::None;
+    }
+
+    pub fn has_requestid(&self) -> bool {
+        self.requestid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_requestid(&mut self, v: u64) {
+        self.requestid = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CMsgRequestProcessInfo {
+    const NAME: &'static str = "CMsgRequestProcessInfo";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.requestid = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.requestid {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.requestid {
+            os.write_uint64(1, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CMsgRequestProcessInfo {
+        CMsgRequestProcessInfo::new()
+    }
+
+    fn clear(&mut self) {
+        self.requestid = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CMsgRequestProcessInfo {
+        static instance: CMsgRequestProcessInfo = CMsgRequestProcessInfo {
+            requestid: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CMsgProcessInfoNotification)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CMsgProcessInfoNotification {
+    // message fields
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.requestid)
+    pub requestid: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.gpu_status)
+    pub gpu_status: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserGPUStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.canvas_2d)
+    pub canvas_2d: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.canvas_oop_rasterization)
+    pub canvas_oop_rasterization: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.direct_rendering_display_compositor)
+    pub direct_rendering_display_compositor: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.gpu_compositing)
+    pub gpu_compositing: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.multiple_raster_threads)
+    pub multiple_raster_threads: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.opengl)
+    pub opengl: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.rasterization)
+    pub rasterization: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.raw_draw)
+    pub raw_draw: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.skia_graphite)
+    pub skia_graphite: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.video_decode)
+    pub video_decode: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.video_encode)
+    pub video_encode: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.vulkan)
+    pub vulkan: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.webgl)
+    pub webgl: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.webgl2)
+    pub webgl2: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.webgpu)
+    pub webgpu: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // @@protoc_insertion_point(field:CMsgProcessInfoNotification.webnn)
+    pub webnn: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EBrowserFeatureStatus>>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CMsgProcessInfoNotification.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CMsgProcessInfoNotification {
+    fn default() -> &'a CMsgProcessInfoNotification {
+        <CMsgProcessInfoNotification as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CMsgProcessInfoNotification {
+    pub fn new() -> CMsgProcessInfoNotification {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 requestid = 1;
+
+    pub fn requestid(&self) -> u64 {
+        self.requestid.unwrap_or(0)
+    }
+
+    pub fn clear_requestid(&mut self) {
+        self.requestid = ::std::option::Option::None;
+    }
+
+    pub fn has_requestid(&self) -> bool {
+        self.requestid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_requestid(&mut self, v: u64) {
+        self.requestid = ::std::option::Option::Some(v);
+    }
+
+    // optional .EBrowserGPUStatus gpu_status = 2;
+
+    pub fn gpu_status(&self) -> super::enums::EBrowserGPUStatus {
+        match self.gpu_status {
+            Some(e) => e.enum_value_or(super::enums::EBrowserGPUStatus::k_EBrowserGPUStatus_Invalid),
+            None => super::enums::EBrowserGPUStatus::k_EBrowserGPUStatus_Invalid,
+        }
+    }
+
+    pub fn clear_gpu_status(&mut self) {
+        self.gpu_status = ::std::option::Option::None;
+    }
+
+    pub fn has_gpu_status(&self) -> bool {
+        self.gpu_status.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gpu_status(&mut self, v: super::enums::EBrowserGPUStatus) {
+        self.gpu_status = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus canvas_2d = 3;
+
+    pub fn canvas_2d(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.canvas_2d {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_canvas_2d(&mut self) {
+        self.canvas_2d = ::std::option::Option::None;
+    }
+
+    pub fn has_canvas_2d(&self) -> bool {
+        self.canvas_2d.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_canvas_2d(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.canvas_2d = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus canvas_oop_rasterization = 4;
+
+    pub fn canvas_oop_rasterization(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.canvas_oop_rasterization {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_canvas_oop_rasterization(&mut self) {
+        self.canvas_oop_rasterization = ::std::option::Option::None;
+    }
+
+    pub fn has_canvas_oop_rasterization(&self) -> bool {
+        self.canvas_oop_rasterization.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_canvas_oop_rasterization(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.canvas_oop_rasterization = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus direct_rendering_display_compositor = 5;
+
+    pub fn direct_rendering_display_compositor(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.direct_rendering_display_compositor {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_direct_rendering_display_compositor(&mut self) {
+        self.direct_rendering_display_compositor = ::std::option::Option::None;
+    }
+
+    pub fn has_direct_rendering_display_compositor(&self) -> bool {
+        self.direct_rendering_display_compositor.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_direct_rendering_display_compositor(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.direct_rendering_display_compositor = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus gpu_compositing = 6;
+
+    pub fn gpu_compositing(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.gpu_compositing {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_gpu_compositing(&mut self) {
+        self.gpu_compositing = ::std::option::Option::None;
+    }
+
+    pub fn has_gpu_compositing(&self) -> bool {
+        self.gpu_compositing.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gpu_compositing(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.gpu_compositing = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus multiple_raster_threads = 7;
+
+    pub fn multiple_raster_threads(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.multiple_raster_threads {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_multiple_raster_threads(&mut self) {
+        self.multiple_raster_threads = ::std::option::Option::None;
+    }
+
+    pub fn has_multiple_raster_threads(&self) -> bool {
+        self.multiple_raster_threads.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_multiple_raster_threads(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.multiple_raster_threads = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus opengl = 8;
+
+    pub fn opengl(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.opengl {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_opengl(&mut self) {
+        self.opengl = ::std::option::Option::None;
+    }
+
+    pub fn has_opengl(&self) -> bool {
+        self.opengl.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_opengl(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.opengl = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus rasterization = 9;
+
+    pub fn rasterization(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.rasterization {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_rasterization(&mut self) {
+        self.rasterization = ::std::option::Option::None;
+    }
+
+    pub fn has_rasterization(&self) -> bool {
+        self.rasterization.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_rasterization(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.rasterization = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus raw_draw = 10;
+
+    pub fn raw_draw(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.raw_draw {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_raw_draw(&mut self) {
+        self.raw_draw = ::std::option::Option::None;
+    }
+
+    pub fn has_raw_draw(&self) -> bool {
+        self.raw_draw.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_raw_draw(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.raw_draw = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus skia_graphite = 11;
+
+    pub fn skia_graphite(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.skia_graphite {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_skia_graphite(&mut self) {
+        self.skia_graphite = ::std::option::Option::None;
+    }
+
+    pub fn has_skia_graphite(&self) -> bool {
+        self.skia_graphite.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_skia_graphite(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.skia_graphite = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus video_decode = 13;
+
+    pub fn video_decode(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.video_decode {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_video_decode(&mut self) {
+        self.video_decode = ::std::option::Option::None;
+    }
+
+    pub fn has_video_decode(&self) -> bool {
+        self.video_decode.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_video_decode(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.video_decode = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus video_encode = 14;
+
+    pub fn video_encode(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.video_encode {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_video_encode(&mut self) {
+        self.video_encode = ::std::option::Option::None;
+    }
+
+    pub fn has_video_encode(&self) -> bool {
+        self.video_encode.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_video_encode(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.video_encode = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus vulkan = 15;
+
+    pub fn vulkan(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.vulkan {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_vulkan(&mut self) {
+        self.vulkan = ::std::option::Option::None;
+    }
+
+    pub fn has_vulkan(&self) -> bool {
+        self.vulkan.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_vulkan(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.vulkan = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus webgl = 16;
+
+    pub fn webgl(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.webgl {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_webgl(&mut self) {
+        self.webgl = ::std::option::Option::None;
+    }
+
+    pub fn has_webgl(&self) -> bool {
+        self.webgl.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_webgl(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.webgl = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus webgl2 = 17;
+
+    pub fn webgl2(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.webgl2 {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_webgl2(&mut self) {
+        self.webgl2 = ::std::option::Option::None;
+    }
+
+    pub fn has_webgl2(&self) -> bool {
+        self.webgl2.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_webgl2(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.webgl2 = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus webgpu = 18;
+
+    pub fn webgpu(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.webgpu {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_webgpu(&mut self) {
+        self.webgpu = ::std::option::Option::None;
+    }
+
+    pub fn has_webgpu(&self) -> bool {
+        self.webgpu.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_webgpu(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.webgpu = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional .EBrowserFeatureStatus webnn = 19;
+
+    pub fn webnn(&self) -> super::enums::EBrowserFeatureStatus {
+        match self.webnn {
+            Some(e) => e.enum_value_or(super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            None => super::enums::EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        }
+    }
+
+    pub fn clear_webnn(&mut self) {
+        self.webnn = ::std::option::Option::None;
+    }
+
+    pub fn has_webnn(&self) -> bool {
+        self.webnn.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_webnn(&mut self, v: super::enums::EBrowserFeatureStatus) {
+        self.webnn = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CMsgProcessInfoNotification {
+    const NAME: &'static str = "CMsgProcessInfoNotification";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.requestid = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                16 => {
+                    self.gpu_status = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                24 => {
+                    self.canvas_2d = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                32 => {
+                    self.canvas_oop_rasterization = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                40 => {
+                    self.direct_rendering_display_compositor = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                48 => {
+                    self.gpu_compositing = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                56 => {
+                    self.multiple_raster_threads = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                64 => {
+                    self.opengl = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                72 => {
+                    self.rasterization = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                80 => {
+                    self.raw_draw = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                88 => {
+                    self.skia_graphite = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                104 => {
+                    self.video_decode = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                112 => {
+                    self.video_encode = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                120 => {
+                    self.vulkan = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                128 => {
+                    self.webgl = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                136 => {
+                    self.webgl2 = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                144 => {
+                    self.webgpu = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                152 => {
+                    self.webnn = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.requestid {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.gpu_status {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(2, v.value());
+        }
+        if let Some(v) = self.canvas_2d {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(3, v.value());
+        }
+        if let Some(v) = self.canvas_oop_rasterization {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(4, v.value());
+        }
+        if let Some(v) = self.direct_rendering_display_compositor {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(5, v.value());
+        }
+        if let Some(v) = self.gpu_compositing {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(6, v.value());
+        }
+        if let Some(v) = self.multiple_raster_threads {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(7, v.value());
+        }
+        if let Some(v) = self.opengl {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(8, v.value());
+        }
+        if let Some(v) = self.rasterization {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(9, v.value());
+        }
+        if let Some(v) = self.raw_draw {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(10, v.value());
+        }
+        if let Some(v) = self.skia_graphite {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(11, v.value());
+        }
+        if let Some(v) = self.video_decode {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(13, v.value());
+        }
+        if let Some(v) = self.video_encode {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(14, v.value());
+        }
+        if let Some(v) = self.vulkan {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(15, v.value());
+        }
+        if let Some(v) = self.webgl {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(16, v.value());
+        }
+        if let Some(v) = self.webgl2 {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(17, v.value());
+        }
+        if let Some(v) = self.webgpu {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18, v.value());
+        }
+        if let Some(v) = self.webnn {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(19, v.value());
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.requestid {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.gpu_status {
+            os.write_enum(2, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.canvas_2d {
+            os.write_enum(3, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.canvas_oop_rasterization {
+            os.write_enum(4, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.direct_rendering_display_compositor {
+            os.write_enum(5, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.gpu_compositing {
+            os.write_enum(6, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.multiple_raster_threads {
+            os.write_enum(7, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.opengl {
+            os.write_enum(8, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.rasterization {
+            os.write_enum(9, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.raw_draw {
+            os.write_enum(10, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.skia_graphite {
+            os.write_enum(11, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.video_decode {
+            os.write_enum(13, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.video_encode {
+            os.write_enum(14, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.vulkan {
+            os.write_enum(15, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.webgl {
+            os.write_enum(16, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.webgl2 {
+            os.write_enum(17, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.webgpu {
+            os.write_enum(18, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.webnn {
+            os.write_enum(19, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CMsgProcessInfoNotification {
+        CMsgProcessInfoNotification::new()
+    }
+
+    fn clear(&mut self) {
+        self.requestid = ::std::option::Option::None;
+        self.gpu_status = ::std::option::Option::None;
+        self.canvas_2d = ::std::option::Option::None;
+        self.canvas_oop_rasterization = ::std::option::Option::None;
+        self.direct_rendering_display_compositor = ::std::option::Option::None;
+        self.gpu_compositing = ::std::option::Option::None;
+        self.multiple_raster_threads = ::std::option::Option::None;
+        self.opengl = ::std::option::Option::None;
+        self.rasterization = ::std::option::Option::None;
+        self.raw_draw = ::std::option::Option::None;
+        self.skia_graphite = ::std::option::Option::None;
+        self.video_decode = ::std::option::Option::None;
+        self.video_encode = ::std::option::Option::None;
+        self.vulkan = ::std::option::Option::None;
+        self.webgl = ::std::option::Option::None;
+        self.webgl2 = ::std::option::Option::None;
+        self.webgpu = ::std::option::Option::None;
+        self.webnn = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CMsgProcessInfoNotification {
+        static instance: CMsgProcessInfoNotification = CMsgProcessInfoNotification {
+            requestid: ::std::option::Option::None,
+            gpu_status: ::std::option::Option::None,
+            canvas_2d: ::std::option::Option::None,
+            canvas_oop_rasterization: ::std::option::Option::None,
+            direct_rendering_display_compositor: ::std::option::Option::None,
+            gpu_compositing: ::std::option::Option::None,
+            multiple_raster_threads: ::std::option::Option::None,
+            opengl: ::std::option::Option::None,
+            rasterization: ::std::option::Option::None,
+            raw_draw: ::std::option::Option::None,
+            skia_graphite: ::std::option::Option::None,
+            video_decode: ::std::option::Option::None,
+            video_encode: ::std::option::Option::None,
+            vulkan: ::std::option::Option::None,
+            webgl: ::std::option::Option::None,
+            webgl2: ::std::option::Option::None,
+            webgpu: ::std::option::Option::None,
+            webnn: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 // @@protoc_insertion_point(message:CMsgShowToolTip)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CMsgShowToolTip {
@@ -30810,6 +31623,8 @@ impl ::std::default::Default for EJSRegisterMethodType {
 
 const _VENT_PROTO_VERSION_CHECK: () = ::steam_vent_proto_common::VERSION_0_5_0;
 
+#[allow(unused_imports)]
+use crate::enums::*;
 impl ::steam_vent_proto_common::RpcMessage for CMsgKeyUp {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -31682,6 +32497,32 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgFileLoadDialog {
     }
 }
 impl ::steam_vent_proto_common::RpcMessage for CMsgFileLoadDialogResponse {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for CMsgRequestProcessInfo {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for CMsgProcessInfoNotification {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }

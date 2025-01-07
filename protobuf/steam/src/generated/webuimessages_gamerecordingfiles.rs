@@ -37,8 +37,6 @@ pub struct CGameRecordingFile {
     pub temporary_clips: ::std::vec::Vec<::std::string::String>,
     // @@protoc_insertion_point(field:CGameRecordingFile.tags)
     pub tags: ::std::vec::Vec<CGameRecordingTag>,
-    // @@protoc_insertion_point(field:CGameRecordingFile.phases)
-    pub phases: ::std::vec::Vec<CGameRecordingPhase>,
     // special fields
     // @@protoc_insertion_point(special_field:CGameRecordingFile.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -78,9 +76,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingFile {
                 34 => {
                     self.tags.push(is.read_message()?);
                 },
-                42 => {
-                    self.phases.push(is.read_message()?);
-                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -108,10 +103,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingFile {
             let len = value.compute_size();
             my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
         };
-        for value in &self.phases {
-            let len = value.compute_size();
-            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
-        };
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -129,9 +120,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingFile {
         };
         for v in &self.tags {
             ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(4, v, os)?;
-        };
-        for v in &self.phases {
-            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(5, v, os)?;
         };
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -154,7 +142,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingFile {
         self.postgame_events.clear();
         self.temporary_clips.clear();
         self.tags.clear();
-        self.phases.clear();
         self.special_fields.clear();
     }
 
@@ -164,7 +151,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingFile {
             postgame_events: ::std::vec::Vec::new(),
             temporary_clips: ::std::vec::Vec::new(),
             tags: ::std::vec::Vec::new(),
-            phases: ::std::vec::Vec::new(),
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -724,6 +710,8 @@ pub struct CGameRecordingTimelineMetadata {
     pub recordings: ::std::vec::Vec<cgame_recording_timeline_metadata::Recording>,
     // @@protoc_insertion_point(field:CGameRecordingTimelineMetadata.phases)
     pub phases: ::std::vec::Vec<CGameRecordingPhase>,
+    // @@protoc_insertion_point(field:CGameRecordingTimelineMetadata.significant_events)
+    pub significant_events: ::std::vec::Vec<CGameRecordingTimelineEvent>,
     // special fields
     // @@protoc_insertion_point(special_field:CGameRecordingTimelineMetadata.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -862,6 +850,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingTimelineMeta
                 50 => {
                     self.phases.push(is.read_message()?);
                 },
+                58 => {
+                    self.significant_events.push(is.read_message()?);
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -894,6 +885,10 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingTimelineMeta
             let len = value.compute_size();
             my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
         };
+        for value in &self.significant_events {
+            let len = value.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        };
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -918,6 +913,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingTimelineMeta
         for v in &self.phases {
             ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(6, v, os)?;
         };
+        for v in &self.significant_events {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(7, v, os)?;
+        };
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -941,6 +939,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingTimelineMeta
         self.duration_ms = ::std::option::Option::None;
         self.recordings.clear();
         self.phases.clear();
+        self.significant_events.clear();
         self.special_fields.clear();
     }
 
@@ -952,6 +951,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingTimelineMeta
             duration_ms: ::std::option::Option::None,
             recordings: ::std::vec::Vec::new(),
             phases: ::std::vec::Vec::new(),
+            significant_events: ::std::vec::Vec::new(),
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -2539,12 +2539,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingTagInstance 
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CGameRecordingPhase {
     // message fields
-    // @@protoc_insertion_point(field:CGameRecordingPhase.title)
-    pub title: ::std::option::Option<::std::string::String>,
-    // @@protoc_insertion_point(field:CGameRecordingPhase.desc)
-    pub desc: ::std::option::Option<::std::string::String>,
-    // @@protoc_insertion_point(field:CGameRecordingPhase.icon)
-    pub icon: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CGameRecordingPhase.phase_id)
     pub phase_id: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CGameRecordingPhase.duration_ms)
@@ -2555,6 +2549,8 @@ pub struct CGameRecordingPhase {
     pub contained_tags: ::std::vec::Vec<cgame_recording_phase::Tag>,
     // @@protoc_insertion_point(field:CGameRecordingPhase.background_timeline_offset)
     pub background_timeline_offset: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CGameRecordingPhase.attributes)
+    pub attributes: ::std::vec::Vec<CPhaseAttribute>,
     // special fields
     // @@protoc_insertion_point(special_field:CGameRecordingPhase.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -2569,114 +2565,6 @@ impl<'a> ::std::default::Default for &'a CGameRecordingPhase {
 impl CGameRecordingPhase {
     pub fn new() -> CGameRecordingPhase {
         ::std::default::Default::default()
-    }
-
-    // optional string title = 1;
-
-    pub fn title(&self) -> &str {
-        match self.title.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_title(&mut self) {
-        self.title = ::std::option::Option::None;
-    }
-
-    pub fn has_title(&self) -> bool {
-        self.title.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_title(&mut self, v: ::std::string::String) {
-        self.title = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_title(&mut self) -> &mut ::std::string::String {
-        if self.title.is_none() {
-            self.title = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.title.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_title(&mut self) -> ::std::string::String {
-        self.title.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-
-    // optional string desc = 2;
-
-    pub fn desc(&self) -> &str {
-        match self.desc.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_desc(&mut self) {
-        self.desc = ::std::option::Option::None;
-    }
-
-    pub fn has_desc(&self) -> bool {
-        self.desc.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_desc(&mut self, v: ::std::string::String) {
-        self.desc = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_desc(&mut self) -> &mut ::std::string::String {
-        if self.desc.is_none() {
-            self.desc = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.desc.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_desc(&mut self) -> ::std::string::String {
-        self.desc.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-
-    // optional string icon = 3;
-
-    pub fn icon(&self) -> &str {
-        match self.icon.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_icon(&mut self) {
-        self.icon = ::std::option::Option::None;
-    }
-
-    pub fn has_icon(&self) -> bool {
-        self.icon.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_icon(&mut self, v: ::std::string::String) {
-        self.icon = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_icon(&mut self) -> &mut ::std::string::String {
-        if self.icon.is_none() {
-            self.icon = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.icon.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_icon(&mut self) -> ::std::string::String {
-        self.icon.take().unwrap_or_else(|| ::std::string::String::new())
     }
 
     // optional string phase_id = 4;
@@ -2764,15 +2652,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingPhase {
     fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
         while let Some(tag) = is.read_raw_tag_or_eof()? {
             match tag {
-                10 => {
-                    self.title = ::std::option::Option::Some(is.read_string()?);
-                },
-                18 => {
-                    self.desc = ::std::option::Option::Some(is.read_string()?);
-                },
-                26 => {
-                    self.icon = ::std::option::Option::Some(is.read_string()?);
-                },
                 34 => {
                     self.phase_id = ::std::option::Option::Some(is.read_string()?);
                 },
@@ -2788,6 +2667,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingPhase {
                 64 => {
                     self.background_timeline_offset = ::std::option::Option::Some(is.read_uint64()?);
                 },
+                74 => {
+                    self.attributes.push(is.read_message()?);
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -2800,15 +2682,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingPhase {
     #[allow(unused_variables)]
     fn compute_size(&self) -> u64 {
         let mut my_size = 0;
-        if let Some(v) = self.title.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(1, &v);
-        }
-        if let Some(v) = self.desc.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
-        }
-        if let Some(v) = self.icon.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &v);
-        }
         if let Some(v) = self.phase_id.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(4, &v);
         }
@@ -2826,21 +2699,16 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingPhase {
         if let Some(v) = self.background_timeline_offset {
             my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(8, v);
         }
+        for value in &self.attributes {
+            let len = value.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        };
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
     }
 
     fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        if let Some(v) = self.title.as_ref() {
-            os.write_string(1, v)?;
-        }
-        if let Some(v) = self.desc.as_ref() {
-            os.write_string(2, v)?;
-        }
-        if let Some(v) = self.icon.as_ref() {
-            os.write_string(3, v)?;
-        }
         if let Some(v) = self.phase_id.as_ref() {
             os.write_string(4, v)?;
         }
@@ -2856,6 +2724,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingPhase {
         if let Some(v) = self.background_timeline_offset {
             os.write_uint64(8, v)?;
         }
+        for v in &self.attributes {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(9, v, os)?;
+        };
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -2873,27 +2744,23 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingPhase {
     }
 
     fn clear(&mut self) {
-        self.title = ::std::option::Option::None;
-        self.desc = ::std::option::Option::None;
-        self.icon = ::std::option::Option::None;
         self.phase_id = ::std::option::Option::None;
         self.duration_ms = ::std::option::Option::None;
         self.tags.clear();
         self.contained_tags.clear();
         self.background_timeline_offset = ::std::option::Option::None;
+        self.attributes.clear();
         self.special_fields.clear();
     }
 
     fn default_instance() -> &'static CGameRecordingPhase {
         static instance: CGameRecordingPhase = CGameRecordingPhase {
-            title: ::std::option::Option::None,
-            desc: ::std::option::Option::None,
-            icon: ::std::option::Option::None,
             phase_id: ::std::option::Option::None,
             duration_ms: ::std::option::Option::None,
             tags: ::std::vec::Vec::new(),
             contained_tags: ::std::vec::Vec::new(),
             background_timeline_offset: ::std::option::Option::None,
+            attributes: ::std::vec::Vec::new(),
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -3334,6 +3201,213 @@ impl ::steam_vent_proto_common::protobuf::Message for CTimelineTag {
     }
 }
 
+// @@protoc_insertion_point(message:CPhaseAttribute)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CPhaseAttribute {
+    // message fields
+    // @@protoc_insertion_point(field:CPhaseAttribute.group)
+    pub group: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CPhaseAttribute.value)
+    pub value: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CPhaseAttribute.priority)
+    pub priority: ::std::option::Option<u32>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CPhaseAttribute.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CPhaseAttribute {
+    fn default() -> &'a CPhaseAttribute {
+        <CPhaseAttribute as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CPhaseAttribute {
+    pub fn new() -> CPhaseAttribute {
+        ::std::default::Default::default()
+    }
+
+    // optional string group = 1;
+
+    pub fn group(&self) -> &str {
+        match self.group.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_group(&mut self) {
+        self.group = ::std::option::Option::None;
+    }
+
+    pub fn has_group(&self) -> bool {
+        self.group.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_group(&mut self, v: ::std::string::String) {
+        self.group = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_group(&mut self) -> &mut ::std::string::String {
+        if self.group.is_none() {
+            self.group = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.group.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_group(&mut self) -> ::std::string::String {
+        self.group.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string value = 2;
+
+    pub fn value(&self) -> &str {
+        match self.value.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_value(&mut self) {
+        self.value = ::std::option::Option::None;
+    }
+
+    pub fn has_value(&self) -> bool {
+        self.value.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_value(&mut self, v: ::std::string::String) {
+        self.value = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_value(&mut self) -> &mut ::std::string::String {
+        if self.value.is_none() {
+            self.value = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.value.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_value(&mut self) -> ::std::string::String {
+        self.value.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional uint32 priority = 3;
+
+    pub fn priority(&self) -> u32 {
+        self.priority.unwrap_or(0)
+    }
+
+    pub fn clear_priority(&mut self) {
+        self.priority = ::std::option::Option::None;
+    }
+
+    pub fn has_priority(&self) -> bool {
+        self.priority.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_priority(&mut self, v: u32) {
+        self.priority = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CPhaseAttribute {
+    const NAME: &'static str = "CPhaseAttribute";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.group = ::std::option::Option::Some(is.read_string()?);
+                },
+                18 => {
+                    self.value = ::std::option::Option::Some(is.read_string()?);
+                },
+                24 => {
+                    self.priority = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.group.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(1, &v);
+        }
+        if let Some(v) = self.value.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
+        }
+        if let Some(v) = self.priority {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(3, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.group.as_ref() {
+            os.write_string(1, v)?;
+        }
+        if let Some(v) = self.value.as_ref() {
+            os.write_string(2, v)?;
+        }
+        if let Some(v) = self.priority {
+            os.write_uint32(3, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CPhaseAttribute {
+        CPhaseAttribute::new()
+    }
+
+    fn clear(&mut self) {
+        self.group = ::std::option::Option::None;
+        self.value = ::std::option::Option::None;
+        self.priority = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CPhaseAttribute {
+        static instance: CPhaseAttribute = CPhaseAttribute {
+            group: ::std::option::Option::None,
+            value: ::std::option::Option::None,
+            priority: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 
 const _VENT_PROTO_VERSION_CHECK: () = ::steam_vent_proto_common::VERSION_0_5_0;
 
@@ -3448,6 +3522,19 @@ impl ::steam_vent_proto_common::RpcMessage for CGameRecordingPhase {
     }
 }
 impl ::steam_vent_proto_common::RpcMessage for CTimelineTag {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for CPhaseAttribute {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }

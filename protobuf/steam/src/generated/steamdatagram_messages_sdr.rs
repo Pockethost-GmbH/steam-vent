@@ -447,6 +447,14 @@ pub struct CMsgSteamDatagramRouterPingReply {
     pub seconds_until_shutdown: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.client_cookie)
     pub client_cookie: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.recv_tos)
+    pub recv_tos: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.echo_sent_tos)
+    pub echo_sent_tos: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.sent_tos)
+    pub sent_tos: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.echo_request_reply_tos)
+    pub echo_request_reply_tos: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.scoring_penalty_relay_cluster)
     pub scoring_penalty_relay_cluster: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.flags)
@@ -457,6 +465,8 @@ pub struct CMsgSteamDatagramRouterPingReply {
     pub alt_addresses: ::std::vec::Vec<cmsg_steam_datagram_router_ping_reply::AltAddress>,
     // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.dummy_pad)
     pub dummy_pad: ::std::option::Option<::std::vec::Vec<u8>>,
+    // @@protoc_insertion_point(field:CMsgSteamDatagramRouterPingReply.dummy_varint)
+    pub dummy_varint: ::std::option::Option<u64>,
     // special fields
     // @@protoc_insertion_point(special_field:CMsgSteamDatagramRouterPingReply.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -606,6 +616,82 @@ impl CMsgSteamDatagramRouterPingReply {
         self.client_cookie = ::std::option::Option::Some(v);
     }
 
+    // optional uint32 recv_tos = 16;
+
+    pub fn recv_tos(&self) -> u32 {
+        self.recv_tos.unwrap_or(0)
+    }
+
+    pub fn clear_recv_tos(&mut self) {
+        self.recv_tos = ::std::option::Option::None;
+    }
+
+    pub fn has_recv_tos(&self) -> bool {
+        self.recv_tos.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_recv_tos(&mut self, v: u32) {
+        self.recv_tos = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 echo_sent_tos = 17;
+
+    pub fn echo_sent_tos(&self) -> u32 {
+        self.echo_sent_tos.unwrap_or(0)
+    }
+
+    pub fn clear_echo_sent_tos(&mut self) {
+        self.echo_sent_tos = ::std::option::Option::None;
+    }
+
+    pub fn has_echo_sent_tos(&self) -> bool {
+        self.echo_sent_tos.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_echo_sent_tos(&mut self, v: u32) {
+        self.echo_sent_tos = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 sent_tos = 18;
+
+    pub fn sent_tos(&self) -> u32 {
+        self.sent_tos.unwrap_or(0)
+    }
+
+    pub fn clear_sent_tos(&mut self) {
+        self.sent_tos = ::std::option::Option::None;
+    }
+
+    pub fn has_sent_tos(&self) -> bool {
+        self.sent_tos.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_sent_tos(&mut self, v: u32) {
+        self.sent_tos = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 echo_request_reply_tos = 19;
+
+    pub fn echo_request_reply_tos(&self) -> u32 {
+        self.echo_request_reply_tos.unwrap_or(0)
+    }
+
+    pub fn clear_echo_request_reply_tos(&mut self) {
+        self.echo_request_reply_tos = ::std::option::Option::None;
+    }
+
+    pub fn has_echo_request_reply_tos(&self) -> bool {
+        self.echo_request_reply_tos.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_echo_request_reply_tos(&mut self, v: u32) {
+        self.echo_request_reply_tos = ::std::option::Option::Some(v);
+    }
+
     // optional uint32 scoring_penalty_relay_cluster = 9;
 
     pub fn scoring_penalty_relay_cluster(&self) -> u32 {
@@ -679,6 +765,25 @@ impl CMsgSteamDatagramRouterPingReply {
     pub fn take_dummy_pad(&mut self) -> ::std::vec::Vec<u8> {
         self.dummy_pad.take().unwrap_or_else(|| ::std::vec::Vec::new())
     }
+
+    // optional uint64 dummy_varint = 100;
+
+    pub fn dummy_varint(&self) -> u64 {
+        self.dummy_varint.unwrap_or(0)
+    }
+
+    pub fn clear_dummy_varint(&mut self) {
+        self.dummy_varint = ::std::option::Option::None;
+    }
+
+    pub fn has_dummy_varint(&self) -> bool {
+        self.dummy_varint.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_dummy_varint(&mut self, v: u64) {
+        self.dummy_varint = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPingReply {
@@ -736,6 +841,18 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPin
                 69 => {
                     self.client_cookie = ::std::option::Option::Some(is.read_fixed32()?);
                 },
+                128 => {
+                    self.recv_tos = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                136 => {
+                    self.echo_sent_tos = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                144 => {
+                    self.sent_tos = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                152 => {
+                    self.echo_request_reply_tos = ::std::option::Option::Some(is.read_uint32()?);
+                },
                 72 => {
                     self.scoring_penalty_relay_cluster = ::std::option::Option::Some(is.read_uint32()?);
                 },
@@ -750,6 +867,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPin
                 },
                 794 => {
                     self.dummy_pad = ::std::option::Option::Some(is.read_bytes()?);
+                },
+                800 => {
+                    self.dummy_varint = ::std::option::Option::Some(is.read_uint64()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -788,6 +908,18 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPin
         if let Some(v) = self.client_cookie {
             my_size += 1 + 4;
         }
+        if let Some(v) = self.recv_tos {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(16, v);
+        }
+        if let Some(v) = self.echo_sent_tos {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(17, v);
+        }
+        if let Some(v) = self.sent_tos {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(18, v);
+        }
+        if let Some(v) = self.echo_request_reply_tos {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(19, v);
+        }
         if let Some(v) = self.scoring_penalty_relay_cluster {
             my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(9, v);
         }
@@ -804,6 +936,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPin
         };
         if let Some(v) = self.dummy_pad.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::bytes_size(99, &v);
+        }
+        if let Some(v) = self.dummy_varint {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(100, v);
         }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
@@ -836,6 +971,18 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPin
         if let Some(v) = self.client_cookie {
             os.write_fixed32(8, v)?;
         }
+        if let Some(v) = self.recv_tos {
+            os.write_uint32(16, v)?;
+        }
+        if let Some(v) = self.echo_sent_tos {
+            os.write_uint32(17, v)?;
+        }
+        if let Some(v) = self.sent_tos {
+            os.write_uint32(18, v)?;
+        }
+        if let Some(v) = self.echo_request_reply_tos {
+            os.write_uint32(19, v)?;
+        }
         if let Some(v) = self.scoring_penalty_relay_cluster {
             os.write_uint32(9, v)?;
         }
@@ -850,6 +997,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPin
         };
         if let Some(v) = self.dummy_pad.as_ref() {
             os.write_bytes(99, v)?;
+        }
+        if let Some(v) = self.dummy_varint {
+            os.write_uint64(100, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -879,11 +1029,16 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPin
         self.challenge = ::std::option::Option::None;
         self.seconds_until_shutdown = ::std::option::Option::None;
         self.client_cookie = ::std::option::Option::None;
+        self.recv_tos = ::std::option::Option::None;
+        self.echo_sent_tos = ::std::option::Option::None;
+        self.sent_tos = ::std::option::Option::None;
+        self.echo_request_reply_tos = ::std::option::Option::None;
         self.scoring_penalty_relay_cluster = ::std::option::Option::None;
         self.flags = ::std::option::Option::None;
         self.route_exceptions.clear();
         self.alt_addresses.clear();
         self.dummy_pad = ::std::option::Option::None;
+        self.dummy_varint = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -900,11 +1055,16 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramRouterPin
             challenge: ::std::option::Option::None,
             seconds_until_shutdown: ::std::option::Option::None,
             client_cookie: ::std::option::Option::None,
+            recv_tos: ::std::option::Option::None,
+            echo_sent_tos: ::std::option::Option::None,
+            sent_tos: ::std::option::Option::None,
+            echo_request_reply_tos: ::std::option::Option::None,
             scoring_penalty_relay_cluster: ::std::option::Option::None,
             flags: ::std::option::Option::None,
             route_exceptions: ::std::vec::Vec::new(),
             alt_addresses: ::std::vec::Vec::new(),
             dummy_pad: ::std::option::Option::None,
+            dummy_varint: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -3067,6 +3227,230 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramNoSession
     }
 }
 
+// @@protoc_insertion_point(message:CMsgTOSTreatment)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CMsgTOSTreatment {
+    // message fields
+    // @@protoc_insertion_point(field:CMsgTOSTreatment.l4s_detect)
+    pub l4s_detect: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CMsgTOSTreatment.up_ecn1)
+    pub up_ecn1: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CMsgTOSTreatment.down_dscp45)
+    pub down_dscp45: ::std::option::Option<::std::string::String>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CMsgTOSTreatment.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CMsgTOSTreatment {
+    fn default() -> &'a CMsgTOSTreatment {
+        <CMsgTOSTreatment as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CMsgTOSTreatment {
+    pub fn new() -> CMsgTOSTreatment {
+        ::std::default::Default::default()
+    }
+
+    // optional string l4s_detect = 1;
+
+    pub fn l4s_detect(&self) -> &str {
+        match self.l4s_detect.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_l4s_detect(&mut self) {
+        self.l4s_detect = ::std::option::Option::None;
+    }
+
+    pub fn has_l4s_detect(&self) -> bool {
+        self.l4s_detect.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_l4s_detect(&mut self, v: ::std::string::String) {
+        self.l4s_detect = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_l4s_detect(&mut self) -> &mut ::std::string::String {
+        if self.l4s_detect.is_none() {
+            self.l4s_detect = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.l4s_detect.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_l4s_detect(&mut self) -> ::std::string::String {
+        self.l4s_detect.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string up_ecn1 = 2;
+
+    pub fn up_ecn1(&self) -> &str {
+        match self.up_ecn1.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_up_ecn1(&mut self) {
+        self.up_ecn1 = ::std::option::Option::None;
+    }
+
+    pub fn has_up_ecn1(&self) -> bool {
+        self.up_ecn1.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_up_ecn1(&mut self, v: ::std::string::String) {
+        self.up_ecn1 = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_up_ecn1(&mut self) -> &mut ::std::string::String {
+        if self.up_ecn1.is_none() {
+            self.up_ecn1 = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.up_ecn1.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_up_ecn1(&mut self) -> ::std::string::String {
+        self.up_ecn1.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string down_dscp45 = 3;
+
+    pub fn down_dscp45(&self) -> &str {
+        match self.down_dscp45.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_down_dscp45(&mut self) {
+        self.down_dscp45 = ::std::option::Option::None;
+    }
+
+    pub fn has_down_dscp45(&self) -> bool {
+        self.down_dscp45.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_down_dscp45(&mut self, v: ::std::string::String) {
+        self.down_dscp45 = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_down_dscp45(&mut self) -> &mut ::std::string::String {
+        if self.down_dscp45.is_none() {
+            self.down_dscp45 = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.down_dscp45.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_down_dscp45(&mut self) -> ::std::string::String {
+        self.down_dscp45.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CMsgTOSTreatment {
+    const NAME: &'static str = "CMsgTOSTreatment";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.l4s_detect = ::std::option::Option::Some(is.read_string()?);
+                },
+                18 => {
+                    self.up_ecn1 = ::std::option::Option::Some(is.read_string()?);
+                },
+                26 => {
+                    self.down_dscp45 = ::std::option::Option::Some(is.read_string()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.l4s_detect.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(1, &v);
+        }
+        if let Some(v) = self.up_ecn1.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
+        }
+        if let Some(v) = self.down_dscp45.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.l4s_detect.as_ref() {
+            os.write_string(1, v)?;
+        }
+        if let Some(v) = self.up_ecn1.as_ref() {
+            os.write_string(2, v)?;
+        }
+        if let Some(v) = self.down_dscp45.as_ref() {
+            os.write_string(3, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CMsgTOSTreatment {
+        CMsgTOSTreatment::new()
+    }
+
+    fn clear(&mut self) {
+        self.l4s_detect = ::std::option::Option::None;
+        self.up_ecn1 = ::std::option::Option::None;
+        self.down_dscp45 = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CMsgTOSTreatment {
+        static instance: CMsgTOSTreatment = CMsgTOSTreatment {
+            l4s_detect: ::std::option::Option::None,
+            up_ecn1: ::std::option::Option::None,
+            down_dscp45: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 // @@protoc_insertion_point(message:CMsgSteamDatagramClientPingSampleRequest)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CMsgSteamDatagramClientPingSampleRequest {
@@ -3184,6 +3568,8 @@ pub struct CMsgSteamDatagramClientPingSampleReply {
     pub connection_id: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CMsgSteamDatagramClientPingSampleReply.relay_override_active)
     pub relay_override_active: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgSteamDatagramClientPingSampleReply.tos)
+    pub tos: ::steam_vent_proto_common::protobuf::MessageField<CMsgTOSTreatment>,
     // @@protoc_insertion_point(field:CMsgSteamDatagramClientPingSampleReply.pops)
     pub pops: ::std::vec::Vec<cmsg_steam_datagram_client_ping_sample_reply::POP>,
     // @@protoc_insertion_point(field:CMsgSteamDatagramClientPingSampleReply.legacy_data_centers)
@@ -3259,6 +3645,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramClientPin
                 40 => {
                     self.relay_override_active = ::std::option::Option::Some(is.read_bool()?);
                 },
+                50 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.tos)?;
+                },
                 18 => {
                     self.pops.push(is.read_message()?);
                 },
@@ -3283,6 +3672,10 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramClientPin
         if let Some(v) = self.relay_override_active {
             my_size += 1 + 1;
         }
+        if let Some(v) = self.tos.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
         for value in &self.pops {
             let len = value.compute_size();
             my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
@@ -3302,6 +3695,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramClientPin
         }
         if let Some(v) = self.relay_override_active {
             os.write_bool(5, v)?;
+        }
+        if let Some(v) = self.tos.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(6, v, os)?;
         }
         for v in &self.pops {
             ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(2, v, os)?;
@@ -3328,6 +3724,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramClientPin
     fn clear(&mut self) {
         self.connection_id = ::std::option::Option::None;
         self.relay_override_active = ::std::option::Option::None;
+        self.tos.clear();
         self.pops.clear();
         self.legacy_data_centers.clear();
         self.special_fields.clear();
@@ -3337,6 +3734,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgSteamDatagramClientPin
         static instance: CMsgSteamDatagramClientPingSampleReply = CMsgSteamDatagramClientPingSampleReply {
             connection_id: ::std::option::Option::None,
             relay_override_active: ::std::option::Option::None,
+            tos: ::steam_vent_proto_common::protobuf::MessageField::none(),
             pops: ::std::vec::Vec::new(),
             legacy_data_centers: ::std::vec::Vec::new(),
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
@@ -13621,6 +14019,19 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgSteamDatagramNoSessionRelayTo
     }
 }
 impl ::steam_vent_proto_common::RpcMessage for CMsgSteamDatagramNoSessionRelayToPeer {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for CMsgTOSTreatment {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }

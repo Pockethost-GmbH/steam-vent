@@ -912,6 +912,404 @@ impl ::steam_vent_proto_common::protobuf::Message for CSteamEngine_GetGameIDForP
     }
 }
 
+// @@protoc_insertion_point(message:CSteamEngine_SetOverlayEscapeKeyHandling_Notification)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+    // message fields
+    // @@protoc_insertion_point(field:CSteamEngine_SetOverlayEscapeKeyHandling_Notification.gameid)
+    pub gameid: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CSteamEngine_SetOverlayEscapeKeyHandling_Notification.should_handle)
+    pub should_handle: ::std::option::Option<bool>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CSteamEngine_SetOverlayEscapeKeyHandling_Notification.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+    fn default() -> &'a CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+        <CSteamEngine_SetOverlayEscapeKeyHandling_Notification as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+    pub fn new() -> CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+        ::std::default::Default::default()
+    }
+
+    // required uint64 gameid = 1;
+
+    pub fn gameid(&self) -> u64 {
+        self.gameid.unwrap_or(0)
+    }
+
+    pub fn clear_gameid(&mut self) {
+        self.gameid = ::std::option::Option::None;
+    }
+
+    pub fn has_gameid(&self) -> bool {
+        self.gameid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gameid(&mut self, v: u64) {
+        self.gameid = ::std::option::Option::Some(v);
+    }
+
+    // required bool should_handle = 2;
+
+    pub fn should_handle(&self) -> bool {
+        self.should_handle.unwrap_or(false)
+    }
+
+    pub fn clear_should_handle(&mut self) {
+        self.should_handle = ::std::option::Option::None;
+    }
+
+    pub fn has_should_handle(&self) -> bool {
+        self.should_handle.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_should_handle(&mut self, v: bool) {
+        self.should_handle = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+    const NAME: &'static str = "CSteamEngine_SetOverlayEscapeKeyHandling_Notification";
+
+    fn is_initialized(&self) -> bool {
+        if self.gameid.is_none() {
+            return false;
+        }
+        if self.should_handle.is_none() {
+            return false;
+        }
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.gameid = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                16 => {
+                    self.should_handle = ::std::option::Option::Some(is.read_bool()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.gameid {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.should_handle {
+            my_size += 1 + 1;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.gameid {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.should_handle {
+            os.write_bool(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+        CSteamEngine_SetOverlayEscapeKeyHandling_Notification::new()
+    }
+
+    fn clear(&mut self) {
+        self.gameid = ::std::option::Option::None;
+        self.should_handle = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+        static instance: CSteamEngine_SetOverlayEscapeKeyHandling_Notification = CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+            gameid: ::std::option::Option::None,
+            should_handle: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CSteamEngine_SearchAppDataCacheByStoreKeywords_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CSteamEngine_SearchAppDataCacheByStoreKeywords_Request.search_term)
+    pub search_term: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CSteamEngine_SearchAppDataCacheByStoreKeywords_Request.max_results)
+    pub max_results: ::std::option::Option<u32>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CSteamEngine_SearchAppDataCacheByStoreKeywords_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+    fn default() -> &'a CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+        <CSteamEngine_SearchAppDataCacheByStoreKeywords_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+    pub fn new() -> CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional string search_term = 1;
+
+    pub fn search_term(&self) -> &str {
+        match self.search_term.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_search_term(&mut self) {
+        self.search_term = ::std::option::Option::None;
+    }
+
+    pub fn has_search_term(&self) -> bool {
+        self.search_term.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_search_term(&mut self, v: ::std::string::String) {
+        self.search_term = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_search_term(&mut self) -> &mut ::std::string::String {
+        if self.search_term.is_none() {
+            self.search_term = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.search_term.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_search_term(&mut self) -> ::std::string::String {
+        self.search_term.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional uint32 max_results = 2;
+
+    pub fn max_results(&self) -> u32 {
+        self.max_results.unwrap_or(0)
+    }
+
+    pub fn clear_max_results(&mut self) {
+        self.max_results = ::std::option::Option::None;
+    }
+
+    pub fn has_max_results(&self) -> bool {
+        self.max_results.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_max_results(&mut self, v: u32) {
+        self.max_results = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+    const NAME: &'static str = "CSteamEngine_SearchAppDataCacheByStoreKeywords_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.search_term = ::std::option::Option::Some(is.read_string()?);
+                },
+                16 => {
+                    self.max_results = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.search_term.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(1, &v);
+        }
+        if let Some(v) = self.max_results {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.search_term.as_ref() {
+            os.write_string(1, v)?;
+        }
+        if let Some(v) = self.max_results {
+            os.write_uint32(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+        CSteamEngine_SearchAppDataCacheByStoreKeywords_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.search_term = ::std::option::Option::None;
+        self.max_results = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+        static instance: CSteamEngine_SearchAppDataCacheByStoreKeywords_Request = CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+            search_term: ::std::option::Option::None,
+            max_results: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CSteamEngine_SearchAppDataCacheByStoreKeywords_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+    // message fields
+    // @@protoc_insertion_point(field:CSteamEngine_SearchAppDataCacheByStoreKeywords_Response.appids)
+    pub appids: ::std::vec::Vec<u32>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CSteamEngine_SearchAppDataCacheByStoreKeywords_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+    fn default() -> &'a CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+        <CSteamEngine_SearchAppDataCacheByStoreKeywords_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+    pub fn new() -> CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+    const NAME: &'static str = "CSteamEngine_SearchAppDataCacheByStoreKeywords_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    is.read_repeated_packed_uint32_into(&mut self.appids)?;
+                },
+                8 => {
+                    self.appids.push(is.read_uint32()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        for value in &self.appids {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, *value);
+        };
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        for v in &self.appids {
+            os.write_uint32(1, *v)?;
+        };
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+        CSteamEngine_SearchAppDataCacheByStoreKeywords_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.appids.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+        static instance: CSteamEngine_SearchAppDataCacheByStoreKeywords_Response = CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+            appids: ::std::vec::Vec::new(),
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 
 const _VENT_PROTO_VERSION_CHECK: () = ::steam_vent_proto_common::VERSION_0_5_0;
 
@@ -1001,6 +1399,48 @@ impl ::steam_vent_proto_common::RpcMessage for CSteamEngine_GetGameIDForPID_Resp
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessage
+for CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CSteamEngine_SearchAppDataCacheByStoreKeywords_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
 ///
 struct SteamEngine {}
 impl ::steam_vent_proto_common::RpcService for SteamEngine {
@@ -1014,6 +1454,16 @@ impl ::steam_vent_proto_common::RpcMethod
 for CSteamEngine_GetTextFilterDictionary_Request {
     const METHOD_NAME: &'static str = "SteamEngine.GetTextFilterDictionary#1";
     type Response = CSteamEngine_GetTextFilterDictionary_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CSteamEngine_SearchAppDataCacheByStoreKeywords_Request {
+    const METHOD_NAME: &'static str = "SteamEngine.SearchAppDataCacheByStoreKeywords#1";
+    type Response = CSteamEngine_SearchAppDataCacheByStoreKeywords_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CSteamEngine_SetOverlayEscapeKeyHandling_Notification {
+    const METHOD_NAME: &'static str = "SteamEngine.SetOverlayEscapeKeyHandling#1";
+    type Response = WebUINoResponse;
 }
 impl ::steam_vent_proto_common::RpcMethod
 for CSteamEngine_TextFilterDictionaryChanged_Notification {

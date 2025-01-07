@@ -15826,6 +15826,8 @@ pub enum EBroadcastWatchLocation {
     k_EBroadcastWatchLocation_SteamTV_Web = 13,
     // @@protoc_insertion_point(enum_value:EBroadcastWatchLocation.k_EBroadcastWatchLocation_DesktopUI_Overlay)
     k_EBroadcastWatchLocation_DesktopUI_Overlay = 14,
+    // @@protoc_insertion_point(enum_value:EBroadcastWatchLocation.k_EBroadcastWatchLocation_TrailerCarousel)
+    k_EBroadcastWatchLocation_TrailerCarousel = 15,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EBroadcastWatchLocation {
@@ -15852,6 +15854,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EBroadcastWatchLocation {
             12 => ::std::option::Option::Some(EBroadcastWatchLocation::k_EBroadcastWatchLocation_Chat_Friends),
             13 => ::std::option::Option::Some(EBroadcastWatchLocation::k_EBroadcastWatchLocation_SteamTV_Web),
             14 => ::std::option::Option::Some(EBroadcastWatchLocation::k_EBroadcastWatchLocation_DesktopUI_Overlay),
+            15 => ::std::option::Option::Some(EBroadcastWatchLocation::k_EBroadcastWatchLocation_TrailerCarousel),
             _ => ::std::option::Option::None
         }
     }
@@ -15873,6 +15876,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EBroadcastWatchLocation {
             "k_EBroadcastWatchLocation_Chat_Friends" => ::std::option::Option::Some(EBroadcastWatchLocation::k_EBroadcastWatchLocation_Chat_Friends),
             "k_EBroadcastWatchLocation_SteamTV_Web" => ::std::option::Option::Some(EBroadcastWatchLocation::k_EBroadcastWatchLocation_SteamTV_Web),
             "k_EBroadcastWatchLocation_DesktopUI_Overlay" => ::std::option::Option::Some(EBroadcastWatchLocation::k_EBroadcastWatchLocation_DesktopUI_Overlay),
+            "k_EBroadcastWatchLocation_TrailerCarousel" => ::std::option::Option::Some(EBroadcastWatchLocation::k_EBroadcastWatchLocation_TrailerCarousel),
             _ => ::std::option::Option::None
         }
     }
@@ -15893,6 +15897,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EBroadcastWatchLocation {
         EBroadcastWatchLocation::k_EBroadcastWatchLocation_Chat_Friends,
         EBroadcastWatchLocation::k_EBroadcastWatchLocation_SteamTV_Web,
         EBroadcastWatchLocation::k_EBroadcastWatchLocation_DesktopUI_Overlay,
+        EBroadcastWatchLocation::k_EBroadcastWatchLocation_TrailerCarousel,
     ];
 }
 

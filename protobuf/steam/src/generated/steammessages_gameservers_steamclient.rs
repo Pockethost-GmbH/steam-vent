@@ -289,7 +289,7 @@ pub mod cgame_servers_get_server_list_response {
         // @@protoc_insertion_point(field:CGameServers_GetServerList_Response.Server.steamid)
         pub steamid: ::std::option::Option<u64>,
         // @@protoc_insertion_point(field:CGameServers_GetServerList_Response.Server.name)
-        pub name: ::std::option::Option<::std::vec::Vec<u8>>,
+        pub name: ::std::option::Option<::std::string::String>,
         // @@protoc_insertion_point(field:CGameServers_GetServerList_Response.Server.appid)
         pub appid: ::std::option::Option<u32>,
         // @@protoc_insertion_point(field:CGameServers_GetServerList_Response.Server.gamedir)
@@ -425,12 +425,12 @@ pub mod cgame_servers_get_server_list_response {
             self.steamid = ::std::option::Option::Some(v);
         }
 
-        // optional bytes name = 5;
+        // optional string name = 5;
 
-        pub fn name(&self) -> &[u8] {
+        pub fn name(&self) -> &str {
             match self.name.as_ref() {
                 Some(v) => v,
-                None => &[],
+                None => "",
             }
         }
 
@@ -443,22 +443,22 @@ pub mod cgame_servers_get_server_list_response {
         }
 
         // Param is passed by value, moved
-        pub fn set_name(&mut self, v: ::std::vec::Vec<u8>) {
+        pub fn set_name(&mut self, v: ::std::string::String) {
             self.name = ::std::option::Option::Some(v);
         }
 
         // Mutable pointer to the field.
         // If field is not initialized, it is initialized with default value first.
-        pub fn mut_name(&mut self) -> &mut ::std::vec::Vec<u8> {
+        pub fn mut_name(&mut self) -> &mut ::std::string::String {
             if self.name.is_none() {
-                self.name = ::std::option::Option::Some(::std::vec::Vec::new());
+                self.name = ::std::option::Option::Some(::std::string::String::new());
             }
             self.name.as_mut().unwrap()
         }
 
         // Take field
-        pub fn take_name(&mut self) -> ::std::vec::Vec<u8> {
-            self.name.take().unwrap_or_else(|| ::std::vec::Vec::new())
+        pub fn take_name(&mut self) -> ::std::string::String {
+            self.name.take().unwrap_or_else(|| ::std::string::String::new())
         }
 
         // optional uint32 appid = 6;
@@ -834,7 +834,7 @@ pub mod cgame_servers_get_server_list_response {
                         self.steamid = ::std::option::Option::Some(is.read_fixed64()?);
                     },
                     42 => {
-                        self.name = ::std::option::Option::Some(is.read_bytes()?);
+                        self.name = ::std::option::Option::Some(is.read_string()?);
                     },
                     48 => {
                         self.appid = ::std::option::Option::Some(is.read_uint32()?);
@@ -900,7 +900,7 @@ pub mod cgame_servers_get_server_list_response {
                 my_size += 1 + 8;
             }
             if let Some(v) = self.name.as_ref() {
-                my_size += ::steam_vent_proto_common::protobuf::rt::bytes_size(5, &v);
+                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(5, &v);
             }
             if let Some(v) = self.appid {
                 my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(6, v);
@@ -960,7 +960,7 @@ pub mod cgame_servers_get_server_list_response {
                 os.write_fixed64(4, v)?;
             }
             if let Some(v) = self.name.as_ref() {
-                os.write_bytes(5, v)?;
+                os.write_string(5, v)?;
             }
             if let Some(v) = self.appid {
                 os.write_uint32(6, v)?;

@@ -39,6 +39,8 @@ pub struct CContentBuilder_InitDepotBuild_Request {
     pub for_local_cs: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CContentBuilder_InitDepotBuild_Request.target_branch)
     pub target_branch: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CContentBuilder_InitDepotBuild_Request.shader_depot)
+    pub shader_depot: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CContentBuilder_InitDepotBuild_Request.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -166,6 +168,25 @@ impl CContentBuilder_InitDepotBuild_Request {
     pub fn take_target_branch(&mut self) -> ::std::string::String {
         self.target_branch.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional bool shader_depot = 6;
+
+    pub fn shader_depot(&self) -> bool {
+        self.shader_depot.unwrap_or(false)
+    }
+
+    pub fn clear_shader_depot(&mut self) {
+        self.shader_depot = ::std::option::Option::None;
+    }
+
+    pub fn has_shader_depot(&self) -> bool {
+        self.shader_depot.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_shader_depot(&mut self, v: bool) {
+        self.shader_depot = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_InitDepotBuild_Request {
@@ -192,6 +213,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_InitDepotB
                 },
                 42 => {
                     self.target_branch = ::std::option::Option::Some(is.read_string()?);
+                },
+                48 => {
+                    self.shader_depot = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -220,6 +244,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_InitDepotB
         if let Some(v) = self.target_branch.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(5, &v);
         }
+        if let Some(v) = self.shader_depot {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -240,6 +267,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_InitDepotB
         }
         if let Some(v) = self.target_branch.as_ref() {
             os.write_string(5, v)?;
+        }
+        if let Some(v) = self.shader_depot {
+            os.write_bool(6, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -263,6 +293,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_InitDepotB
         self.workshop_itemid = ::std::option::Option::None;
         self.for_local_cs = ::std::option::Option::None;
         self.target_branch = ::std::option::Option::None;
+        self.shader_depot = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -273,6 +304,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_InitDepotB
             workshop_itemid: ::std::option::Option::None,
             for_local_cs: ::std::option::Option::None,
             target_branch: ::std::option::Option::None,
+            shader_depot: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -1856,6 +1888,8 @@ pub struct CContentBuilder_CommitAppBuild_Request {
     pub build_notes: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CContentBuilder_CommitAppBuild_Request.live_branch)
     pub live_branch: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CContentBuilder_CommitAppBuild_Request.for_local_cs)
+    pub for_local_cs: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CContentBuilder_CommitAppBuild_Request.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -1962,6 +1996,25 @@ impl CContentBuilder_CommitAppBuild_Request {
     pub fn take_live_branch(&mut self) -> ::std::string::String {
         self.live_branch.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional bool for_local_cs = 6;
+
+    pub fn for_local_cs(&self) -> bool {
+        self.for_local_cs.unwrap_or(false)
+    }
+
+    pub fn clear_for_local_cs(&mut self) {
+        self.for_local_cs = ::std::option::Option::None;
+    }
+
+    pub fn has_for_local_cs(&self) -> bool {
+        self.for_local_cs.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_for_local_cs(&mut self, v: bool) {
+        self.for_local_cs = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_CommitAppBuild_Request {
@@ -1985,6 +2038,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_CommitAppB
                 },
                 42 => {
                     self.live_branch = ::std::option::Option::Some(is.read_string()?);
+                },
+                48 => {
+                    self.for_local_cs = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -2011,6 +2067,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_CommitAppB
         if let Some(v) = self.live_branch.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(5, &v);
         }
+        if let Some(v) = self.for_local_cs {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -2028,6 +2087,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_CommitAppB
         }
         if let Some(v) = self.live_branch.as_ref() {
             os.write_string(5, v)?;
+        }
+        if let Some(v) = self.for_local_cs {
+            os.write_bool(6, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -2050,6 +2112,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_CommitAppB
         self.depot_manifests.clear();
         self.build_notes = ::std::option::Option::None;
         self.live_branch = ::std::option::Option::None;
+        self.for_local_cs = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -2059,6 +2122,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CContentBuilder_CommitAppB
             depot_manifests: ::std::vec::Vec::new(),
             build_notes: ::std::option::Option::None,
             live_branch: ::std::option::Option::None,
+            for_local_cs: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance

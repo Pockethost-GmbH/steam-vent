@@ -5447,6 +5447,819 @@ pub mod ccommunity_get_avatar_history_response {
     }
 }
 
+// @@protoc_insertion_point(message:CCommunity_GetClanEventCrowdInMetadata_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CCommunity_GetClanEventCrowdInMetadata_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CCommunity_GetClanEventCrowdInMetadata_Request.steamid)
+    pub steamid: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CCommunity_GetClanEventCrowdInMetadata_Request.itemid)
+    pub itemid: ::std::option::Option<u64>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CCommunity_GetClanEventCrowdInMetadata_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CCommunity_GetClanEventCrowdInMetadata_Request {
+    fn default() -> &'a CCommunity_GetClanEventCrowdInMetadata_Request {
+        <CCommunity_GetClanEventCrowdInMetadata_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CCommunity_GetClanEventCrowdInMetadata_Request {
+    pub fn new() -> CCommunity_GetClanEventCrowdInMetadata_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional fixed64 steamid = 1;
+
+    pub fn steamid(&self) -> u64 {
+        self.steamid.unwrap_or(0)
+    }
+
+    pub fn clear_steamid(&mut self) {
+        self.steamid = ::std::option::Option::None;
+    }
+
+    pub fn has_steamid(&self) -> bool {
+        self.steamid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_steamid(&mut self, v: u64) {
+        self.steamid = ::std::option::Option::Some(v);
+    }
+
+    // optional uint64 itemid = 2;
+
+    pub fn itemid(&self) -> u64 {
+        self.itemid.unwrap_or(0)
+    }
+
+    pub fn clear_itemid(&mut self) {
+        self.itemid = ::std::option::Option::None;
+    }
+
+    pub fn has_itemid(&self) -> bool {
+        self.itemid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_itemid(&mut self, v: u64) {
+        self.itemid = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CCommunity_GetClanEventCrowdInMetadata_Request {
+    const NAME: &'static str = "CCommunity_GetClanEventCrowdInMetadata_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                9 => {
+                    self.steamid = ::std::option::Option::Some(is.read_fixed64()?);
+                },
+                16 => {
+                    self.itemid = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.steamid {
+            my_size += 1 + 8;
+        }
+        if let Some(v) = self.itemid {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(2, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.steamid {
+            os.write_fixed64(1, v)?;
+        }
+        if let Some(v) = self.itemid {
+            os.write_uint64(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CCommunity_GetClanEventCrowdInMetadata_Request {
+        CCommunity_GetClanEventCrowdInMetadata_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.steamid = ::std::option::Option::None;
+        self.itemid = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CCommunity_GetClanEventCrowdInMetadata_Request {
+        static instance: CCommunity_GetClanEventCrowdInMetadata_Request = CCommunity_GetClanEventCrowdInMetadata_Request {
+            steamid: ::std::option::Option::None,
+            itemid: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CCommunity_GetClanEventCrowdInMetadata_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CCommunity_GetClanEventCrowdInMetadata_Response {
+    // message fields
+    // @@protoc_insertion_point(field:CCommunity_GetClanEventCrowdInMetadata_Response.crowdin_project_id)
+    pub crowdin_project_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CCommunity_GetClanEventCrowdInMetadata_Response.crowdin_file_id)
+    pub crowdin_file_id: ::std::option::Option<u64>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CCommunity_GetClanEventCrowdInMetadata_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CCommunity_GetClanEventCrowdInMetadata_Response {
+    fn default() -> &'a CCommunity_GetClanEventCrowdInMetadata_Response {
+        <CCommunity_GetClanEventCrowdInMetadata_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CCommunity_GetClanEventCrowdInMetadata_Response {
+    pub fn new() -> CCommunity_GetClanEventCrowdInMetadata_Response {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 crowdin_project_id = 1;
+
+    pub fn crowdin_project_id(&self) -> u64 {
+        self.crowdin_project_id.unwrap_or(0)
+    }
+
+    pub fn clear_crowdin_project_id(&mut self) {
+        self.crowdin_project_id = ::std::option::Option::None;
+    }
+
+    pub fn has_crowdin_project_id(&self) -> bool {
+        self.crowdin_project_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_crowdin_project_id(&mut self, v: u64) {
+        self.crowdin_project_id = ::std::option::Option::Some(v);
+    }
+
+    // optional uint64 crowdin_file_id = 2;
+
+    pub fn crowdin_file_id(&self) -> u64 {
+        self.crowdin_file_id.unwrap_or(0)
+    }
+
+    pub fn clear_crowdin_file_id(&mut self) {
+        self.crowdin_file_id = ::std::option::Option::None;
+    }
+
+    pub fn has_crowdin_file_id(&self) -> bool {
+        self.crowdin_file_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_crowdin_file_id(&mut self, v: u64) {
+        self.crowdin_file_id = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CCommunity_GetClanEventCrowdInMetadata_Response {
+    const NAME: &'static str = "CCommunity_GetClanEventCrowdInMetadata_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.crowdin_project_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                16 => {
+                    self.crowdin_file_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.crowdin_project_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.crowdin_file_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(2, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.crowdin_project_id {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.crowdin_file_id {
+            os.write_uint64(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CCommunity_GetClanEventCrowdInMetadata_Response {
+        CCommunity_GetClanEventCrowdInMetadata_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.crowdin_project_id = ::std::option::Option::None;
+        self.crowdin_file_id = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CCommunity_GetClanEventCrowdInMetadata_Response {
+        static instance: CCommunity_GetClanEventCrowdInMetadata_Response = CCommunity_GetClanEventCrowdInMetadata_Response {
+            crowdin_project_id: ::std::option::Option::None,
+            crowdin_file_id: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CCommunity_GetClanCrowdInMetadata_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CCommunity_GetClanCrowdInMetadata_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CCommunity_GetClanCrowdInMetadata_Request.steamid)
+    pub steamid: ::std::option::Option<u64>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CCommunity_GetClanCrowdInMetadata_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CCommunity_GetClanCrowdInMetadata_Request {
+    fn default() -> &'a CCommunity_GetClanCrowdInMetadata_Request {
+        <CCommunity_GetClanCrowdInMetadata_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CCommunity_GetClanCrowdInMetadata_Request {
+    pub fn new() -> CCommunity_GetClanCrowdInMetadata_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional fixed64 steamid = 1;
+
+    pub fn steamid(&self) -> u64 {
+        self.steamid.unwrap_or(0)
+    }
+
+    pub fn clear_steamid(&mut self) {
+        self.steamid = ::std::option::Option::None;
+    }
+
+    pub fn has_steamid(&self) -> bool {
+        self.steamid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_steamid(&mut self, v: u64) {
+        self.steamid = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CCommunity_GetClanCrowdInMetadata_Request {
+    const NAME: &'static str = "CCommunity_GetClanCrowdInMetadata_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                9 => {
+                    self.steamid = ::std::option::Option::Some(is.read_fixed64()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.steamid {
+            my_size += 1 + 8;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.steamid {
+            os.write_fixed64(1, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CCommunity_GetClanCrowdInMetadata_Request {
+        CCommunity_GetClanCrowdInMetadata_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.steamid = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CCommunity_GetClanCrowdInMetadata_Request {
+        static instance: CCommunity_GetClanCrowdInMetadata_Request = CCommunity_GetClanCrowdInMetadata_Request {
+            steamid: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CCommunity_GetClanCrowdInMetadata_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CCommunity_GetClanCrowdInMetadata_Response {
+    // message fields
+    // @@protoc_insertion_point(field:CCommunity_GetClanCrowdInMetadata_Response.crowdin_project_id)
+    pub crowdin_project_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CCommunity_GetClanCrowdInMetadata_Response.crowdin_directory_id)
+    pub crowdin_directory_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CCommunity_GetClanCrowdInMetadata_Response.push_by_default)
+    pub push_by_default: ::std::option::Option<bool>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CCommunity_GetClanCrowdInMetadata_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CCommunity_GetClanCrowdInMetadata_Response {
+    fn default() -> &'a CCommunity_GetClanCrowdInMetadata_Response {
+        <CCommunity_GetClanCrowdInMetadata_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CCommunity_GetClanCrowdInMetadata_Response {
+    pub fn new() -> CCommunity_GetClanCrowdInMetadata_Response {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 crowdin_project_id = 1;
+
+    pub fn crowdin_project_id(&self) -> u64 {
+        self.crowdin_project_id.unwrap_or(0)
+    }
+
+    pub fn clear_crowdin_project_id(&mut self) {
+        self.crowdin_project_id = ::std::option::Option::None;
+    }
+
+    pub fn has_crowdin_project_id(&self) -> bool {
+        self.crowdin_project_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_crowdin_project_id(&mut self, v: u64) {
+        self.crowdin_project_id = ::std::option::Option::Some(v);
+    }
+
+    // optional uint64 crowdin_directory_id = 2;
+
+    pub fn crowdin_directory_id(&self) -> u64 {
+        self.crowdin_directory_id.unwrap_or(0)
+    }
+
+    pub fn clear_crowdin_directory_id(&mut self) {
+        self.crowdin_directory_id = ::std::option::Option::None;
+    }
+
+    pub fn has_crowdin_directory_id(&self) -> bool {
+        self.crowdin_directory_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_crowdin_directory_id(&mut self, v: u64) {
+        self.crowdin_directory_id = ::std::option::Option::Some(v);
+    }
+
+    // optional bool push_by_default = 3;
+
+    pub fn push_by_default(&self) -> bool {
+        self.push_by_default.unwrap_or(false)
+    }
+
+    pub fn clear_push_by_default(&mut self) {
+        self.push_by_default = ::std::option::Option::None;
+    }
+
+    pub fn has_push_by_default(&self) -> bool {
+        self.push_by_default.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_push_by_default(&mut self, v: bool) {
+        self.push_by_default = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CCommunity_GetClanCrowdInMetadata_Response {
+    const NAME: &'static str = "CCommunity_GetClanCrowdInMetadata_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.crowdin_project_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                16 => {
+                    self.crowdin_directory_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                24 => {
+                    self.push_by_default = ::std::option::Option::Some(is.read_bool()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.crowdin_project_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.crowdin_directory_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(2, v);
+        }
+        if let Some(v) = self.push_by_default {
+            my_size += 1 + 1;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.crowdin_project_id {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.crowdin_directory_id {
+            os.write_uint64(2, v)?;
+        }
+        if let Some(v) = self.push_by_default {
+            os.write_bool(3, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CCommunity_GetClanCrowdInMetadata_Response {
+        CCommunity_GetClanCrowdInMetadata_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.crowdin_project_id = ::std::option::Option::None;
+        self.crowdin_directory_id = ::std::option::Option::None;
+        self.push_by_default = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CCommunity_GetClanCrowdInMetadata_Response {
+        static instance: CCommunity_GetClanCrowdInMetadata_Response = CCommunity_GetClanCrowdInMetadata_Response {
+            crowdin_project_id: ::std::option::Option::None,
+            crowdin_directory_id: ::std::option::Option::None,
+            push_by_default: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CCommunity_FetchTranslationFromCrowdIn_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CCommunity_FetchTranslationFromCrowdIn_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CCommunity_FetchTranslationFromCrowdIn_Request.steamid)
+    pub steamid: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CCommunity_FetchTranslationFromCrowdIn_Request.itemid)
+    pub itemid: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CCommunity_FetchTranslationFromCrowdIn_Request.language)
+    pub language: ::std::option::Option<u32>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CCommunity_FetchTranslationFromCrowdIn_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CCommunity_FetchTranslationFromCrowdIn_Request {
+    fn default() -> &'a CCommunity_FetchTranslationFromCrowdIn_Request {
+        <CCommunity_FetchTranslationFromCrowdIn_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CCommunity_FetchTranslationFromCrowdIn_Request {
+    pub fn new() -> CCommunity_FetchTranslationFromCrowdIn_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional fixed64 steamid = 1;
+
+    pub fn steamid(&self) -> u64 {
+        self.steamid.unwrap_or(0)
+    }
+
+    pub fn clear_steamid(&mut self) {
+        self.steamid = ::std::option::Option::None;
+    }
+
+    pub fn has_steamid(&self) -> bool {
+        self.steamid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_steamid(&mut self, v: u64) {
+        self.steamid = ::std::option::Option::Some(v);
+    }
+
+    // optional uint64 itemid = 2;
+
+    pub fn itemid(&self) -> u64 {
+        self.itemid.unwrap_or(0)
+    }
+
+    pub fn clear_itemid(&mut self) {
+        self.itemid = ::std::option::Option::None;
+    }
+
+    pub fn has_itemid(&self) -> bool {
+        self.itemid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_itemid(&mut self, v: u64) {
+        self.itemid = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 language = 3;
+
+    pub fn language(&self) -> u32 {
+        self.language.unwrap_or(0)
+    }
+
+    pub fn clear_language(&mut self) {
+        self.language = ::std::option::Option::None;
+    }
+
+    pub fn has_language(&self) -> bool {
+        self.language.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_language(&mut self, v: u32) {
+        self.language = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CCommunity_FetchTranslationFromCrowdIn_Request {
+    const NAME: &'static str = "CCommunity_FetchTranslationFromCrowdIn_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                9 => {
+                    self.steamid = ::std::option::Option::Some(is.read_fixed64()?);
+                },
+                16 => {
+                    self.itemid = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                24 => {
+                    self.language = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.steamid {
+            my_size += 1 + 8;
+        }
+        if let Some(v) = self.itemid {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(2, v);
+        }
+        if let Some(v) = self.language {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(3, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.steamid {
+            os.write_fixed64(1, v)?;
+        }
+        if let Some(v) = self.itemid {
+            os.write_uint64(2, v)?;
+        }
+        if let Some(v) = self.language {
+            os.write_uint32(3, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CCommunity_FetchTranslationFromCrowdIn_Request {
+        CCommunity_FetchTranslationFromCrowdIn_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.steamid = ::std::option::Option::None;
+        self.itemid = ::std::option::Option::None;
+        self.language = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CCommunity_FetchTranslationFromCrowdIn_Request {
+        static instance: CCommunity_FetchTranslationFromCrowdIn_Request = CCommunity_FetchTranslationFromCrowdIn_Request {
+            steamid: ::std::option::Option::None,
+            itemid: ::std::option::Option::None,
+            language: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CCommunity_FetchTranslationFromCrowdIn_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CCommunity_FetchTranslationFromCrowdIn_Response {
+    // special fields
+    // @@protoc_insertion_point(special_field:CCommunity_FetchTranslationFromCrowdIn_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CCommunity_FetchTranslationFromCrowdIn_Response {
+    fn default() -> &'a CCommunity_FetchTranslationFromCrowdIn_Response {
+        <CCommunity_FetchTranslationFromCrowdIn_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CCommunity_FetchTranslationFromCrowdIn_Response {
+    pub fn new() -> CCommunity_FetchTranslationFromCrowdIn_Response {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CCommunity_FetchTranslationFromCrowdIn_Response {
+    const NAME: &'static str = "CCommunity_FetchTranslationFromCrowdIn_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CCommunity_FetchTranslationFromCrowdIn_Response {
+        CCommunity_FetchTranslationFromCrowdIn_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CCommunity_FetchTranslationFromCrowdIn_Response {
+        static instance: CCommunity_FetchTranslationFromCrowdIn_Response = CCommunity_FetchTranslationFromCrowdIn_Response {
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 // @@protoc_insertion_point(message:CAppPriority)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CAppPriority {
@@ -8445,6 +9258,8 @@ pub enum EPartnerEventDisplayLocation {
     k_EPartnerEventDisplayLocation_NewsHub = 8,
     // @@protoc_insertion_point(enum_value:EPartnerEventDisplayLocation.k_EPartnerEventDisplayLocation_GamepadHome)
     k_EPartnerEventDisplayLocation_GamepadHome = 9,
+    // @@protoc_insertion_point(enum_value:EPartnerEventDisplayLocation.k_EPartnerEventDisplayLocation_StoreHub)
+    k_EPartnerEventDisplayLocation_StoreHub = 10,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EPartnerEventDisplayLocation {
@@ -8466,6 +9281,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EPartnerEventDisplayLocation 
             7 => ::std::option::Option::Some(EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_StoreFrontPage),
             8 => ::std::option::Option::Some(EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_NewsHub),
             9 => ::std::option::Option::Some(EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_GamepadHome),
+            10 => ::std::option::Option::Some(EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_StoreHub),
             _ => ::std::option::Option::None
         }
     }
@@ -8482,6 +9298,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EPartnerEventDisplayLocation 
             "k_EPartnerEventDisplayLocation_StoreFrontPage" => ::std::option::Option::Some(EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_StoreFrontPage),
             "k_EPartnerEventDisplayLocation_NewsHub" => ::std::option::Option::Some(EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_NewsHub),
             "k_EPartnerEventDisplayLocation_GamepadHome" => ::std::option::Option::Some(EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_GamepadHome),
+            "k_EPartnerEventDisplayLocation_StoreHub" => ::std::option::Option::Some(EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_StoreHub),
             _ => ::std::option::Option::None
         }
     }
@@ -8497,6 +9314,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EPartnerEventDisplayLocation 
         EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_StoreFrontPage,
         EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_NewsHub,
         EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_GamepadHome,
+        EPartnerEventDisplayLocation::k_EPartnerEventDisplayLocation_StoreHub,
     ];
 }
 
@@ -8785,6 +9603,90 @@ impl ::steam_vent_proto_common::RpcMessage for CCommunity_GetAvatarHistory_Reque
     }
 }
 impl ::steam_vent_proto_common::RpcMessage for CCommunity_GetAvatarHistory_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CCommunity_GetClanEventCrowdInMetadata_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CCommunity_GetClanEventCrowdInMetadata_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CCommunity_GetClanCrowdInMetadata_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CCommunity_GetClanCrowdInMetadata_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CCommunity_FetchTranslationFromCrowdIn_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CCommunity_FetchTranslationFromCrowdIn_Response {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }
@@ -9107,6 +10009,11 @@ for CCommunity_DeleteCommentFromThread_Request {
     type Response = CCommunity_DeleteCommentFromThread_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod
+for CCommunity_FetchTranslationFromCrowdIn_Request {
+    const METHOD_NAME: &'static str = "Community.FetchTranslationFromCrowdIn#1";
+    type Response = CCommunity_FetchTranslationFromCrowdIn_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
 for CCommunity_GetAppRichPresenceLocalization_Request {
     const METHOD_NAME: &'static str = "Community.GetAppRichPresenceLocalization#1";
     type Response = CCommunity_GetAppRichPresenceLocalization_Response;
@@ -9127,6 +10034,15 @@ impl ::steam_vent_proto_common::RpcMethod
 for CCommunity_GetClanAnnouncementVoteForUser_Request {
     const METHOD_NAME: &'static str = "Community.GetClanAnnouncementVoteForUser#1";
     type Response = CCommunity_GetClanAnnouncementVoteForUser_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod for CCommunity_GetClanCrowdInMetadata_Request {
+    const METHOD_NAME: &'static str = "Community.GetClanCrowdInMetadata#1";
+    type Response = CCommunity_GetClanCrowdInMetadata_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CCommunity_GetClanEventCrowdInMetadata_Request {
+    const METHOD_NAME: &'static str = "Community.GetClanEventCrowdInMetadata#1";
+    type Response = CCommunity_GetClanEventCrowdInMetadata_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod
 for CCommunity_GetCommentThreadRatings_Request {

@@ -1309,6 +1309,8 @@ pub struct StoreItem {
     pub platforms: ::steam_vent_proto_common::protobuf::MessageField<store_item::Platforms>,
     // @@protoc_insertion_point(field:StoreItem.game_rating)
     pub game_rating: ::steam_vent_proto_common::protobuf::MessageField<StoreGameRating>,
+    // @@protoc_insertion_point(field:StoreItem.is_coming_soon)
+    pub is_coming_soon: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:StoreItem.best_purchase_option)
     pub best_purchase_option: ::steam_vent_proto_common::protobuf::MessageField<store_item::PurchaseOption>,
     // @@protoc_insertion_point(field:StoreItem.purchase_options)
@@ -1608,6 +1610,25 @@ impl StoreItem {
         self.is_early_access = ::std::option::Option::Some(v);
     }
 
+    // optional bool is_coming_soon = 34;
+
+    pub fn is_coming_soon(&self) -> bool {
+        self.is_coming_soon.unwrap_or(false)
+    }
+
+    pub fn clear_is_coming_soon(&mut self) {
+        self.is_coming_soon = ::std::option::Option::None;
+    }
+
+    pub fn has_is_coming_soon(&self) -> bool {
+        self.is_coming_soon.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_is_coming_soon(&mut self, v: bool) {
+        self.is_coming_soon = ::std::option::Option::Some(v);
+    }
+
     // optional string store_url_path_override = 53;
 
     pub fn store_url_path_override(&self) -> &str {
@@ -1871,6 +1892,9 @@ impl ::steam_vent_proto_common::protobuf::Message for StoreItem {
                 266 => {
                     ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.game_rating)?;
                 },
+                272 => {
+                    self.is_coming_soon = ::std::option::Option::Some(is.read_bool()?);
+                },
                 322 => {
                     ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.best_purchase_option)?;
                 },
@@ -2019,6 +2043,9 @@ impl ::steam_vent_proto_common::protobuf::Message for StoreItem {
             let len = v.compute_size();
             my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
         }
+        if let Some(v) = self.is_coming_soon {
+            my_size += 2 + 1;
+        }
         if let Some(v) = self.best_purchase_option.as_ref() {
             let len = v.compute_size();
             my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
@@ -2162,6 +2189,9 @@ impl ::steam_vent_proto_common::protobuf::Message for StoreItem {
         if let Some(v) = self.game_rating.as_ref() {
             ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(33, v, os)?;
         }
+        if let Some(v) = self.is_coming_soon {
+            os.write_bool(34, v)?;
+        }
         if let Some(v) = self.best_purchase_option.as_ref() {
             ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(40, v, os)?;
         }
@@ -2255,6 +2285,7 @@ impl ::steam_vent_proto_common::protobuf::Message for StoreItem {
         self.release.clear();
         self.platforms.clear();
         self.game_rating.clear();
+        self.is_coming_soon = ::std::option::Option::None;
         self.best_purchase_option.clear();
         self.purchase_options.clear();
         self.accessories.clear();
@@ -2302,6 +2333,7 @@ impl ::steam_vent_proto_common::protobuf::Message for StoreItem {
             release: ::steam_vent_proto_common::protobuf::MessageField::none(),
             platforms: ::steam_vent_proto_common::protobuf::MessageField::none(),
             game_rating: ::steam_vent_proto_common::protobuf::MessageField::none(),
+            is_coming_soon: ::std::option::Option::None,
             best_purchase_option: ::steam_vent_proto_common::protobuf::MessageField::none(),
             purchase_options: ::std::vec::Vec::new(),
             accessories: ::std::vec::Vec::new(),
@@ -2333,6 +2365,10 @@ pub mod store_item {
         // message fields
         // @@protoc_insertion_point(field:StoreItem.RelatedItems.parent_appid)
         pub parent_appid: ::std::option::Option<u32>,
+        // @@protoc_insertion_point(field:StoreItem.RelatedItems.demo_appid)
+        pub demo_appid: ::std::vec::Vec<u32>,
+        // @@protoc_insertion_point(field:StoreItem.RelatedItems.standalone_demo_appid)
+        pub standalone_demo_appid: ::std::vec::Vec<u32>,
         // special fields
         // @@protoc_insertion_point(special_field:StoreItem.RelatedItems.special_fields)
         pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -2382,6 +2418,18 @@ pub mod store_item {
                     8 => {
                         self.parent_appid = ::std::option::Option::Some(is.read_uint32()?);
                     },
+                    18 => {
+                        is.read_repeated_packed_uint32_into(&mut self.demo_appid)?;
+                    },
+                    16 => {
+                        self.demo_appid.push(is.read_uint32()?);
+                    },
+                    26 => {
+                        is.read_repeated_packed_uint32_into(&mut self.standalone_demo_appid)?;
+                    },
+                    24 => {
+                        self.standalone_demo_appid.push(is.read_uint32()?);
+                    },
                     tag => {
                         ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                     },
@@ -2397,6 +2445,12 @@ pub mod store_item {
             if let Some(v) = self.parent_appid {
                 my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
             }
+            for value in &self.demo_appid {
+                my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, *value);
+            };
+            for value in &self.standalone_demo_appid {
+                my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(3, *value);
+            };
             my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
             self.special_fields.cached_size().set(my_size as u32);
             my_size
@@ -2406,6 +2460,12 @@ pub mod store_item {
             if let Some(v) = self.parent_appid {
                 os.write_uint32(1, v)?;
             }
+            for v in &self.demo_appid {
+                os.write_uint32(2, *v)?;
+            };
+            for v in &self.standalone_demo_appid {
+                os.write_uint32(3, *v)?;
+            };
             os.write_unknown_fields(self.special_fields.unknown_fields())?;
             ::std::result::Result::Ok(())
         }
@@ -2424,12 +2484,16 @@ pub mod store_item {
 
         fn clear(&mut self) {
             self.parent_appid = ::std::option::Option::None;
+            self.demo_appid.clear();
+            self.standalone_demo_appid.clear();
             self.special_fields.clear();
         }
 
         fn default_instance() -> &'static RelatedItems {
             static instance: RelatedItems = RelatedItems {
                 parent_appid: ::std::option::Option::None,
+                demo_appid: ::std::vec::Vec::new(),
+                standalone_demo_appid: ::std::vec::Vec::new(),
                 special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
             };
             &instance
@@ -5252,26 +5316,22 @@ pub mod store_item {
         pub final_price_in_cents: ::std::option::Option<i64>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.original_price_in_cents)
         pub original_price_in_cents: ::std::option::Option<i64>,
-        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.user_final_price_in_cents)
-        pub user_final_price_in_cents: ::std::option::Option<i64>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.formatted_final_price)
         pub formatted_final_price: ::std::option::Option<::std::string::String>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.formatted_original_price)
         pub formatted_original_price: ::std::option::Option<::std::string::String>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.discount_pct)
         pub discount_pct: ::std::option::Option<i32>,
-        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.user_discount_pct)
-        pub user_discount_pct: ::std::option::Option<i32>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.bundle_discount_pct)
         pub bundle_discount_pct: ::std::option::Option<i32>,
+        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.is_free_to_keep)
+        pub is_free_to_keep: ::std::option::Option<bool>,
+        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.price_before_bundle_discount)
+        pub price_before_bundle_discount: ::std::option::Option<i64>,
+        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.formatted_price_before_bundle_discount)
+        pub formatted_price_before_bundle_discount: ::std::option::Option<::std::string::String>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.active_discounts)
         pub active_discounts: ::std::vec::Vec<purchase_option::Discount>,
-        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.user_active_discounts)
-        pub user_active_discounts: ::std::vec::Vec<purchase_option::Discount>,
-        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.inactive_discounts)
-        pub inactive_discounts: ::std::vec::Vec<purchase_option::Discount>,
-        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.user_can_purchase)
-        pub user_can_purchase: ::std::option::Option<bool>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.user_can_purchase_as_gift)
         pub user_can_purchase_as_gift: ::std::option::Option<bool>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.is_commercial_license)
@@ -5288,6 +5348,8 @@ pub mod store_item {
         pub requires_shipping: ::std::option::Option<bool>,
         // @@protoc_insertion_point(field:StoreItem.PurchaseOption.recurrence_info)
         pub recurrence_info: ::steam_vent_proto_common::protobuf::MessageField<purchase_option::RecurrenceInfo>,
+        // @@protoc_insertion_point(field:StoreItem.PurchaseOption.free_to_keep_ends)
+        pub free_to_keep_ends: ::std::option::Option<u32>,
         // special fields
         // @@protoc_insertion_point(special_field:StoreItem.PurchaseOption.special_fields)
         pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -5416,25 +5478,6 @@ pub mod store_item {
             self.original_price_in_cents = ::std::option::Option::Some(v);
         }
 
-        // optional int64 user_final_price_in_cents = 7;
-
-        pub fn user_final_price_in_cents(&self) -> i64 {
-            self.user_final_price_in_cents.unwrap_or(0)
-        }
-
-        pub fn clear_user_final_price_in_cents(&mut self) {
-            self.user_final_price_in_cents = ::std::option::Option::None;
-        }
-
-        pub fn has_user_final_price_in_cents(&self) -> bool {
-            self.user_final_price_in_cents.is_some()
-        }
-
-        // Param is passed by value, moved
-        pub fn set_user_final_price_in_cents(&mut self, v: i64) {
-            self.user_final_price_in_cents = ::std::option::Option::Some(v);
-        }
-
         // optional string formatted_final_price = 8;
 
         pub fn formatted_final_price(&self) -> &str {
@@ -5526,25 +5569,6 @@ pub mod store_item {
             self.discount_pct = ::std::option::Option::Some(v);
         }
 
-        // optional int32 user_discount_pct = 11;
-
-        pub fn user_discount_pct(&self) -> i32 {
-            self.user_discount_pct.unwrap_or(0)
-        }
-
-        pub fn clear_user_discount_pct(&mut self) {
-            self.user_discount_pct = ::std::option::Option::None;
-        }
-
-        pub fn has_user_discount_pct(&self) -> bool {
-            self.user_discount_pct.is_some()
-        }
-
-        // Param is passed by value, moved
-        pub fn set_user_discount_pct(&mut self, v: i32) {
-            self.user_discount_pct = ::std::option::Option::Some(v);
-        }
-
         // optional int32 bundle_discount_pct = 12;
 
         pub fn bundle_discount_pct(&self) -> i32 {
@@ -5564,23 +5588,78 @@ pub mod store_item {
             self.bundle_discount_pct = ::std::option::Option::Some(v);
         }
 
-        // optional bool user_can_purchase = 30;
+        // optional bool is_free_to_keep = 13;
 
-        pub fn user_can_purchase(&self) -> bool {
-            self.user_can_purchase.unwrap_or(false)
+        pub fn is_free_to_keep(&self) -> bool {
+            self.is_free_to_keep.unwrap_or(false)
         }
 
-        pub fn clear_user_can_purchase(&mut self) {
-            self.user_can_purchase = ::std::option::Option::None;
+        pub fn clear_is_free_to_keep(&mut self) {
+            self.is_free_to_keep = ::std::option::Option::None;
         }
 
-        pub fn has_user_can_purchase(&self) -> bool {
-            self.user_can_purchase.is_some()
+        pub fn has_is_free_to_keep(&self) -> bool {
+            self.is_free_to_keep.is_some()
         }
 
         // Param is passed by value, moved
-        pub fn set_user_can_purchase(&mut self, v: bool) {
-            self.user_can_purchase = ::std::option::Option::Some(v);
+        pub fn set_is_free_to_keep(&mut self, v: bool) {
+            self.is_free_to_keep = ::std::option::Option::Some(v);
+        }
+
+        // optional int64 price_before_bundle_discount = 14;
+
+        pub fn price_before_bundle_discount(&self) -> i64 {
+            self.price_before_bundle_discount.unwrap_or(0)
+        }
+
+        pub fn clear_price_before_bundle_discount(&mut self) {
+            self.price_before_bundle_discount = ::std::option::Option::None;
+        }
+
+        pub fn has_price_before_bundle_discount(&self) -> bool {
+            self.price_before_bundle_discount.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_price_before_bundle_discount(&mut self, v: i64) {
+            self.price_before_bundle_discount = ::std::option::Option::Some(v);
+        }
+
+        // optional string formatted_price_before_bundle_discount = 15;
+
+        pub fn formatted_price_before_bundle_discount(&self) -> &str {
+            match self.formatted_price_before_bundle_discount.as_ref() {
+                Some(v) => v,
+                None => "",
+            }
+        }
+
+        pub fn clear_formatted_price_before_bundle_discount(&mut self) {
+            self.formatted_price_before_bundle_discount = ::std::option::Option::None;
+        }
+
+        pub fn has_formatted_price_before_bundle_discount(&self) -> bool {
+            self.formatted_price_before_bundle_discount.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_formatted_price_before_bundle_discount(&mut self, v: ::std::string::String) {
+            self.formatted_price_before_bundle_discount = ::std::option::Option::Some(v);
+        }
+
+        // Mutable pointer to the field.
+        // If field is not initialized, it is initialized with default value first.
+        pub fn mut_formatted_price_before_bundle_discount(&mut self) -> &mut ::std::string::String {
+            if self.formatted_price_before_bundle_discount.is_none() {
+                self.formatted_price_before_bundle_discount = ::std::option::Option::Some(::std::string::String::new());
+            }
+            self.formatted_price_before_bundle_discount.as_mut().unwrap()
+        }
+
+        // Take field
+        pub fn take_formatted_price_before_bundle_discount(&mut self) -> ::std::string::String {
+            self.formatted_price_before_bundle_discount.take().unwrap_or_else(|| ::std::string::String::new())
         }
 
         // optional bool user_can_purchase_as_gift = 31;
@@ -5662,7 +5741,7 @@ pub mod store_item {
         // optional int32 included_game_count = 43;
 
         pub fn included_game_count(&self) -> i32 {
-            self.included_game_count.unwrap_or(0)
+            self.included_game_count.unwrap_or(1i32)
         }
 
         pub fn clear_included_game_count(&mut self) {
@@ -5715,6 +5794,25 @@ pub mod store_item {
         pub fn set_requires_shipping(&mut self, v: bool) {
             self.requires_shipping = ::std::option::Option::Some(v);
         }
+
+        // optional uint32 free_to_keep_ends = 47;
+
+        pub fn free_to_keep_ends(&self) -> u32 {
+            self.free_to_keep_ends.unwrap_or(0)
+        }
+
+        pub fn clear_free_to_keep_ends(&mut self) {
+            self.free_to_keep_ends = ::std::option::Option::None;
+        }
+
+        pub fn has_free_to_keep_ends(&self) -> bool {
+            self.free_to_keep_ends.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_free_to_keep_ends(&mut self, v: u32) {
+            self.free_to_keep_ends = ::std::option::Option::Some(v);
+        }
     }
 
     impl ::steam_vent_proto_common::protobuf::Message for PurchaseOption {
@@ -5742,9 +5840,6 @@ pub mod store_item {
                     48 => {
                         self.original_price_in_cents = ::std::option::Option::Some(is.read_int64()?);
                     },
-                    56 => {
-                        self.user_final_price_in_cents = ::std::option::Option::Some(is.read_int64()?);
-                    },
                     66 => {
                         self.formatted_final_price = ::std::option::Option::Some(is.read_string()?);
                     },
@@ -5754,23 +5849,20 @@ pub mod store_item {
                     80 => {
                         self.discount_pct = ::std::option::Option::Some(is.read_int32()?);
                     },
-                    88 => {
-                        self.user_discount_pct = ::std::option::Option::Some(is.read_int32()?);
-                    },
                     96 => {
                         self.bundle_discount_pct = ::std::option::Option::Some(is.read_int32()?);
                     },
+                    104 => {
+                        self.is_free_to_keep = ::std::option::Option::Some(is.read_bool()?);
+                    },
+                    112 => {
+                        self.price_before_bundle_discount = ::std::option::Option::Some(is.read_int64()?);
+                    },
+                    122 => {
+                        self.formatted_price_before_bundle_discount = ::std::option::Option::Some(is.read_string()?);
+                    },
                     162 => {
                         self.active_discounts.push(is.read_message()?);
-                    },
-                    170 => {
-                        self.user_active_discounts.push(is.read_message()?);
-                    },
-                    178 => {
-                        self.inactive_discounts.push(is.read_message()?);
-                    },
-                    240 => {
-                        self.user_can_purchase = ::std::option::Option::Some(is.read_bool()?);
                     },
                     248 => {
                         self.user_can_purchase_as_gift = ::std::option::Option::Some(is.read_bool()?);
@@ -5795,6 +5887,9 @@ pub mod store_item {
                     },
                     370 => {
                         ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.recurrence_info)?;
+                    },
+                    376 => {
+                        self.free_to_keep_ends = ::std::option::Option::Some(is.read_uint32()?);
                     },
                     tag => {
                         ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -5823,9 +5918,6 @@ pub mod store_item {
             if let Some(v) = self.original_price_in_cents {
                 my_size += ::steam_vent_proto_common::protobuf::rt::int64_size(6, v);
             }
-            if let Some(v) = self.user_final_price_in_cents {
-                my_size += ::steam_vent_proto_common::protobuf::rt::int64_size(7, v);
-            }
             if let Some(v) = self.formatted_final_price.as_ref() {
                 my_size += ::steam_vent_proto_common::protobuf::rt::string_size(8, &v);
             }
@@ -5835,27 +5927,22 @@ pub mod store_item {
             if let Some(v) = self.discount_pct {
                 my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(10, v);
             }
-            if let Some(v) = self.user_discount_pct {
-                my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(11, v);
-            }
             if let Some(v) = self.bundle_discount_pct {
                 my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(12, v);
+            }
+            if let Some(v) = self.is_free_to_keep {
+                my_size += 1 + 1;
+            }
+            if let Some(v) = self.price_before_bundle_discount {
+                my_size += ::steam_vent_proto_common::protobuf::rt::int64_size(14, v);
+            }
+            if let Some(v) = self.formatted_price_before_bundle_discount.as_ref() {
+                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(15, &v);
             }
             for value in &self.active_discounts {
                 let len = value.compute_size();
                 my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
             };
-            for value in &self.user_active_discounts {
-                let len = value.compute_size();
-                my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
-            };
-            for value in &self.inactive_discounts {
-                let len = value.compute_size();
-                my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
-            };
-            if let Some(v) = self.user_can_purchase {
-                my_size += 2 + 1;
-            }
             if let Some(v) = self.user_can_purchase_as_gift {
                 my_size += 2 + 1;
             }
@@ -5881,6 +5968,9 @@ pub mod store_item {
                 let len = v.compute_size();
                 my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
             }
+            if let Some(v) = self.free_to_keep_ends {
+                my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(47, v);
+            }
             my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
             self.special_fields.cached_size().set(my_size as u32);
             my_size
@@ -5902,9 +5992,6 @@ pub mod store_item {
             if let Some(v) = self.original_price_in_cents {
                 os.write_int64(6, v)?;
             }
-            if let Some(v) = self.user_final_price_in_cents {
-                os.write_int64(7, v)?;
-            }
             if let Some(v) = self.formatted_final_price.as_ref() {
                 os.write_string(8, v)?;
             }
@@ -5914,24 +6001,21 @@ pub mod store_item {
             if let Some(v) = self.discount_pct {
                 os.write_int32(10, v)?;
             }
-            if let Some(v) = self.user_discount_pct {
-                os.write_int32(11, v)?;
-            }
             if let Some(v) = self.bundle_discount_pct {
                 os.write_int32(12, v)?;
+            }
+            if let Some(v) = self.is_free_to_keep {
+                os.write_bool(13, v)?;
+            }
+            if let Some(v) = self.price_before_bundle_discount {
+                os.write_int64(14, v)?;
+            }
+            if let Some(v) = self.formatted_price_before_bundle_discount.as_ref() {
+                os.write_string(15, v)?;
             }
             for v in &self.active_discounts {
                 ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(20, v, os)?;
             };
-            for v in &self.user_active_discounts {
-                ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(21, v, os)?;
-            };
-            for v in &self.inactive_discounts {
-                ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(22, v, os)?;
-            };
-            if let Some(v) = self.user_can_purchase {
-                os.write_bool(30, v)?;
-            }
             if let Some(v) = self.user_can_purchase_as_gift {
                 os.write_bool(31, v)?;
             }
@@ -5956,6 +6040,9 @@ pub mod store_item {
             if let Some(v) = self.recurrence_info.as_ref() {
                 ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(46, v, os)?;
             }
+            if let Some(v) = self.free_to_keep_ends {
+                os.write_uint32(47, v)?;
+            }
             os.write_unknown_fields(self.special_fields.unknown_fields())?;
             ::std::result::Result::Ok(())
         }
@@ -5978,16 +6065,14 @@ pub mod store_item {
             self.purchase_option_name = ::std::option::Option::None;
             self.final_price_in_cents = ::std::option::Option::None;
             self.original_price_in_cents = ::std::option::Option::None;
-            self.user_final_price_in_cents = ::std::option::Option::None;
             self.formatted_final_price = ::std::option::Option::None;
             self.formatted_original_price = ::std::option::Option::None;
             self.discount_pct = ::std::option::Option::None;
-            self.user_discount_pct = ::std::option::Option::None;
             self.bundle_discount_pct = ::std::option::Option::None;
+            self.is_free_to_keep = ::std::option::Option::None;
+            self.price_before_bundle_discount = ::std::option::Option::None;
+            self.formatted_price_before_bundle_discount = ::std::option::Option::None;
             self.active_discounts.clear();
-            self.user_active_discounts.clear();
-            self.inactive_discounts.clear();
-            self.user_can_purchase = ::std::option::Option::None;
             self.user_can_purchase_as_gift = ::std::option::Option::None;
             self.is_commercial_license = ::std::option::Option::None;
             self.should_suppress_discount_pct = ::std::option::Option::None;
@@ -5996,6 +6081,7 @@ pub mod store_item {
             self.lowest_recent_price_in_cents = ::std::option::Option::None;
             self.requires_shipping = ::std::option::Option::None;
             self.recurrence_info.clear();
+            self.free_to_keep_ends = ::std::option::Option::None;
             self.special_fields.clear();
         }
 
@@ -6006,16 +6092,14 @@ pub mod store_item {
                 purchase_option_name: ::std::option::Option::None,
                 final_price_in_cents: ::std::option::Option::None,
                 original_price_in_cents: ::std::option::Option::None,
-                user_final_price_in_cents: ::std::option::Option::None,
                 formatted_final_price: ::std::option::Option::None,
                 formatted_original_price: ::std::option::Option::None,
                 discount_pct: ::std::option::Option::None,
-                user_discount_pct: ::std::option::Option::None,
                 bundle_discount_pct: ::std::option::Option::None,
+                is_free_to_keep: ::std::option::Option::None,
+                price_before_bundle_discount: ::std::option::Option::None,
+                formatted_price_before_bundle_discount: ::std::option::Option::None,
                 active_discounts: ::std::vec::Vec::new(),
-                user_active_discounts: ::std::vec::Vec::new(),
-                inactive_discounts: ::std::vec::Vec::new(),
-                user_can_purchase: ::std::option::Option::None,
                 user_can_purchase_as_gift: ::std::option::Option::None,
                 is_commercial_license: ::std::option::Option::None,
                 should_suppress_discount_pct: ::std::option::Option::None,
@@ -6024,6 +6108,7 @@ pub mod store_item {
                 lowest_recent_price_in_cents: ::std::option::Option::None,
                 requires_shipping: ::std::option::Option::None,
                 recurrence_info: ::steam_vent_proto_common::protobuf::MessageField::none(),
+                free_to_keep_ends: ::std::option::Option::None,
                 special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
             };
             &instance
@@ -7065,6 +7150,8 @@ pub mod store_item {
             pub trailer_name: ::std::option::Option<::std::string::String>,
             // @@protoc_insertion_point(field:StoreItem.Trailers.Trailer.trailer_url_format)
             pub trailer_url_format: ::std::option::Option<::std::string::String>,
+            // @@protoc_insertion_point(field:StoreItem.Trailers.Trailer.trailer_category)
+            pub trailer_category: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::super::ETrailerCategory>>,
             // @@protoc_insertion_point(field:StoreItem.Trailers.Trailer.trailer_480p)
             pub trailer_480p: ::std::vec::Vec<VideoSource>,
             // @@protoc_insertion_point(field:StoreItem.Trailers.Trailer.trailer_max)
@@ -7163,6 +7250,28 @@ pub mod store_item {
             // Take field
             pub fn take_trailer_url_format(&mut self) -> ::std::string::String {
                 self.trailer_url_format.take().unwrap_or_else(|| ::std::string::String::new())
+            }
+
+            // optional .ETrailerCategory trailer_category = 13;
+
+            pub fn trailer_category(&self) -> super::super::ETrailerCategory {
+                match self.trailer_category {
+                    Some(e) => e.enum_value_or(super::super::ETrailerCategory::k_ETrailerCategory_Invalid),
+                    None => super::super::ETrailerCategory::k_ETrailerCategory_Invalid,
+                }
+            }
+
+            pub fn clear_trailer_category(&mut self) {
+                self.trailer_category = ::std::option::Option::None;
+            }
+
+            pub fn has_trailer_category(&self) -> bool {
+                self.trailer_category.is_some()
+            }
+
+            // Param is passed by value, moved
+            pub fn set_trailer_category(&mut self, v: super::super::ETrailerCategory) {
+                self.trailer_category = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
             }
 
             // optional string screenshot_medium = 10;
@@ -7273,6 +7382,9 @@ pub mod store_item {
                         18 => {
                             self.trailer_url_format = ::std::option::Option::Some(is.read_string()?);
                         },
+                        104 => {
+                            self.trailer_category = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                        },
                         26 => {
                             self.trailer_480p.push(is.read_message()?);
                         },
@@ -7309,6 +7421,9 @@ pub mod store_item {
                 if let Some(v) = self.trailer_url_format.as_ref() {
                     my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
                 }
+                if let Some(v) = self.trailer_category {
+                    my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(13, v.value());
+                }
                 for value in &self.trailer_480p {
                     let len = value.compute_size();
                     my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
@@ -7341,6 +7456,9 @@ pub mod store_item {
                 }
                 if let Some(v) = self.trailer_url_format.as_ref() {
                     os.write_string(2, v)?;
+                }
+                if let Some(v) = self.trailer_category {
+                    os.write_enum(13, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
                 }
                 for v in &self.trailer_480p {
                     ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(3, v, os)?;
@@ -7379,6 +7497,7 @@ pub mod store_item {
             fn clear(&mut self) {
                 self.trailer_name = ::std::option::Option::None;
                 self.trailer_url_format = ::std::option::Option::None;
+                self.trailer_category = ::std::option::Option::None;
                 self.trailer_480p.clear();
                 self.trailer_max.clear();
                 self.microtrailer.clear();
@@ -7392,6 +7511,7 @@ pub mod store_item {
                 static instance: Trailer = Trailer {
                     trailer_name: ::std::option::Option::None,
                     trailer_url_format: ::std::option::Option::None,
+                    trailer_category: ::std::option::Option::None,
                     trailer_480p: ::std::vec::Vec::new(),
                     trailer_max: ::std::vec::Vec::new(),
                     microtrailer: ::std::vec::Vec::new(),
@@ -7840,6 +7960,8 @@ pub mod store_item {
         pub link_type: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::EStoreLinkType>>,
         // @@protoc_insertion_point(field:StoreItem.Link.url)
         pub url: ::std::option::Option<::std::string::String>,
+        // @@protoc_insertion_point(field:StoreItem.Link.text)
+        pub text: ::std::option::Option<::std::string::String>,
         // special fields
         // @@protoc_insertion_point(special_field:StoreItem.Link.special_fields)
         pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -7913,6 +8035,42 @@ pub mod store_item {
         pub fn take_url(&mut self) -> ::std::string::String {
             self.url.take().unwrap_or_else(|| ::std::string::String::new())
         }
+
+        // optional string text = 3;
+
+        pub fn text(&self) -> &str {
+            match self.text.as_ref() {
+                Some(v) => v,
+                None => "",
+            }
+        }
+
+        pub fn clear_text(&mut self) {
+            self.text = ::std::option::Option::None;
+        }
+
+        pub fn has_text(&self) -> bool {
+            self.text.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_text(&mut self, v: ::std::string::String) {
+            self.text = ::std::option::Option::Some(v);
+        }
+
+        // Mutable pointer to the field.
+        // If field is not initialized, it is initialized with default value first.
+        pub fn mut_text(&mut self) -> &mut ::std::string::String {
+            if self.text.is_none() {
+                self.text = ::std::option::Option::Some(::std::string::String::new());
+            }
+            self.text.as_mut().unwrap()
+        }
+
+        // Take field
+        pub fn take_text(&mut self) -> ::std::string::String {
+            self.text.take().unwrap_or_else(|| ::std::string::String::new())
+        }
     }
 
     impl ::steam_vent_proto_common::protobuf::Message for Link {
@@ -7930,6 +8088,9 @@ pub mod store_item {
                     },
                     18 => {
                         self.url = ::std::option::Option::Some(is.read_string()?);
+                    },
+                    26 => {
+                        self.text = ::std::option::Option::Some(is.read_string()?);
                     },
                     tag => {
                         ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -7949,6 +8110,9 @@ pub mod store_item {
             if let Some(v) = self.url.as_ref() {
                 my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
             }
+            if let Some(v) = self.text.as_ref() {
+                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &v);
+            }
             my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
             self.special_fields.cached_size().set(my_size as u32);
             my_size
@@ -7960,6 +8124,9 @@ pub mod store_item {
             }
             if let Some(v) = self.url.as_ref() {
                 os.write_string(2, v)?;
+            }
+            if let Some(v) = self.text.as_ref() {
+                os.write_string(3, v)?;
             }
             os.write_unknown_fields(self.special_fields.unknown_fields())?;
             ::std::result::Result::Ok(())
@@ -7980,6 +8147,7 @@ pub mod store_item {
         fn clear(&mut self) {
             self.link_type = ::std::option::Option::None;
             self.url = ::std::option::Option::None;
+            self.text = ::std::option::Option::None;
             self.special_fields.clear();
         }
 
@@ -7987,6 +8155,7 @@ pub mod store_item {
             static instance: Link = Link {
                 link_type: ::std::option::Option::None,
                 url: ::std::option::Option::None,
+                text: ::std::option::Option::None,
                 special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
             };
             &instance
@@ -9153,6 +9322,10 @@ pub mod cstore_browse_get_store_categories_response {
         pub show_in_search: ::std::option::Option<bool>,
         // @@protoc_insertion_point(field:CStoreBrowse_GetStoreCategories_Response.Category.computed)
         pub computed: ::std::option::Option<bool>,
+        // @@protoc_insertion_point(field:CStoreBrowse_GetStoreCategories_Response.Category.edit_url)
+        pub edit_url: ::std::option::Option<::std::string::String>,
+        // @@protoc_insertion_point(field:CStoreBrowse_GetStoreCategories_Response.Category.edit_sort_order)
+        pub edit_sort_order: ::std::option::Option<u32>,
         // special fields
         // @@protoc_insertion_point(special_field:CStoreBrowse_GetStoreCategories_Response.Category.special_fields)
         pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -9355,6 +9528,61 @@ pub mod cstore_browse_get_store_categories_response {
         pub fn set_computed(&mut self, v: bool) {
             self.computed = ::std::option::Option::Some(v);
         }
+
+        // optional string edit_url = 8;
+
+        pub fn edit_url(&self) -> &str {
+            match self.edit_url.as_ref() {
+                Some(v) => v,
+                None => "",
+            }
+        }
+
+        pub fn clear_edit_url(&mut self) {
+            self.edit_url = ::std::option::Option::None;
+        }
+
+        pub fn has_edit_url(&self) -> bool {
+            self.edit_url.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_edit_url(&mut self, v: ::std::string::String) {
+            self.edit_url = ::std::option::Option::Some(v);
+        }
+
+        // Mutable pointer to the field.
+        // If field is not initialized, it is initialized with default value first.
+        pub fn mut_edit_url(&mut self) -> &mut ::std::string::String {
+            if self.edit_url.is_none() {
+                self.edit_url = ::std::option::Option::Some(::std::string::String::new());
+            }
+            self.edit_url.as_mut().unwrap()
+        }
+
+        // Take field
+        pub fn take_edit_url(&mut self) -> ::std::string::String {
+            self.edit_url.take().unwrap_or_else(|| ::std::string::String::new())
+        }
+
+        // optional uint32 edit_sort_order = 9;
+
+        pub fn edit_sort_order(&self) -> u32 {
+            self.edit_sort_order.unwrap_or(0)
+        }
+
+        pub fn clear_edit_sort_order(&mut self) {
+            self.edit_sort_order = ::std::option::Option::None;
+        }
+
+        pub fn has_edit_sort_order(&self) -> bool {
+            self.edit_sort_order.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_edit_sort_order(&mut self, v: u32) {
+            self.edit_sort_order = ::std::option::Option::Some(v);
+        }
     }
 
     impl ::steam_vent_proto_common::protobuf::Message for Category {
@@ -9387,6 +9615,12 @@ pub mod cstore_browse_get_store_categories_response {
                     },
                     56 => {
                         self.computed = ::std::option::Option::Some(is.read_bool()?);
+                    },
+                    66 => {
+                        self.edit_url = ::std::option::Option::Some(is.read_string()?);
+                    },
+                    72 => {
+                        self.edit_sort_order = ::std::option::Option::Some(is.read_uint32()?);
                     },
                     tag => {
                         ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -9421,6 +9655,12 @@ pub mod cstore_browse_get_store_categories_response {
             if let Some(v) = self.computed {
                 my_size += 1 + 1;
             }
+            if let Some(v) = self.edit_url.as_ref() {
+                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(8, &v);
+            }
+            if let Some(v) = self.edit_sort_order {
+                my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(9, v);
+            }
             my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
             self.special_fields.cached_size().set(my_size as u32);
             my_size
@@ -9448,6 +9688,12 @@ pub mod cstore_browse_get_store_categories_response {
             if let Some(v) = self.computed {
                 os.write_bool(7, v)?;
             }
+            if let Some(v) = self.edit_url.as_ref() {
+                os.write_string(8, v)?;
+            }
+            if let Some(v) = self.edit_sort_order {
+                os.write_uint32(9, v)?;
+            }
             os.write_unknown_fields(self.special_fields.unknown_fields())?;
             ::std::result::Result::Ok(())
         }
@@ -9472,6 +9718,8 @@ pub mod cstore_browse_get_store_categories_response {
             self.image_url = ::std::option::Option::None;
             self.show_in_search = ::std::option::Option::None;
             self.computed = ::std::option::Option::None;
+            self.edit_url = ::std::option::Option::None;
+            self.edit_sort_order = ::std::option::Option::None;
             self.special_fields.clear();
         }
 
@@ -9484,6 +9732,484 @@ pub mod cstore_browse_get_store_categories_response {
                 image_url: ::std::option::Option::None,
                 show_in_search: ::std::option::Option::None,
                 computed: ::std::option::Option::None,
+                edit_url: ::std::option::Option::None,
+                edit_sort_order: ::std::option::Option::None,
+                special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+            };
+            &instance
+        }
+    }
+}
+
+// @@protoc_insertion_point(message:CStoreBrowse_GetPriceStops_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CStoreBrowse_GetPriceStops_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CStoreBrowse_GetPriceStops_Request.country_code)
+    pub country_code: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CStoreBrowse_GetPriceStops_Request.currency_code)
+    pub currency_code: ::std::option::Option<::std::string::String>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CStoreBrowse_GetPriceStops_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CStoreBrowse_GetPriceStops_Request {
+    fn default() -> &'a CStoreBrowse_GetPriceStops_Request {
+        <CStoreBrowse_GetPriceStops_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CStoreBrowse_GetPriceStops_Request {
+    pub fn new() -> CStoreBrowse_GetPriceStops_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional string country_code = 1;
+
+    pub fn country_code(&self) -> &str {
+        match self.country_code.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_country_code(&mut self) {
+        self.country_code = ::std::option::Option::None;
+    }
+
+    pub fn has_country_code(&self) -> bool {
+        self.country_code.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_country_code(&mut self, v: ::std::string::String) {
+        self.country_code = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_country_code(&mut self) -> &mut ::std::string::String {
+        if self.country_code.is_none() {
+            self.country_code = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.country_code.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_country_code(&mut self) -> ::std::string::String {
+        self.country_code.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string currency_code = 2;
+
+    pub fn currency_code(&self) -> &str {
+        match self.currency_code.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_currency_code(&mut self) {
+        self.currency_code = ::std::option::Option::None;
+    }
+
+    pub fn has_currency_code(&self) -> bool {
+        self.currency_code.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_currency_code(&mut self, v: ::std::string::String) {
+        self.currency_code = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_currency_code(&mut self) -> &mut ::std::string::String {
+        if self.currency_code.is_none() {
+            self.currency_code = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.currency_code.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_currency_code(&mut self) -> ::std::string::String {
+        self.currency_code.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CStoreBrowse_GetPriceStops_Request {
+    const NAME: &'static str = "CStoreBrowse_GetPriceStops_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.country_code = ::std::option::Option::Some(is.read_string()?);
+                },
+                18 => {
+                    self.currency_code = ::std::option::Option::Some(is.read_string()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.country_code.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(1, &v);
+        }
+        if let Some(v) = self.currency_code.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.country_code.as_ref() {
+            os.write_string(1, v)?;
+        }
+        if let Some(v) = self.currency_code.as_ref() {
+            os.write_string(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CStoreBrowse_GetPriceStops_Request {
+        CStoreBrowse_GetPriceStops_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.country_code = ::std::option::Option::None;
+        self.currency_code = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CStoreBrowse_GetPriceStops_Request {
+        static instance: CStoreBrowse_GetPriceStops_Request = CStoreBrowse_GetPriceStops_Request {
+            country_code: ::std::option::Option::None,
+            currency_code: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CStoreBrowse_GetPriceStops_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CStoreBrowse_GetPriceStops_Response {
+    // message fields
+    // @@protoc_insertion_point(field:CStoreBrowse_GetPriceStops_Response.price_stops)
+    pub price_stops: ::std::vec::Vec<cstore_browse_get_price_stops_response::PriceStop>,
+    // @@protoc_insertion_point(field:CStoreBrowse_GetPriceStops_Response.currency_code)
+    pub currency_code: ::std::option::Option<::std::string::String>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CStoreBrowse_GetPriceStops_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CStoreBrowse_GetPriceStops_Response {
+    fn default() -> &'a CStoreBrowse_GetPriceStops_Response {
+        <CStoreBrowse_GetPriceStops_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CStoreBrowse_GetPriceStops_Response {
+    pub fn new() -> CStoreBrowse_GetPriceStops_Response {
+        ::std::default::Default::default()
+    }
+
+    // optional string currency_code = 2;
+
+    pub fn currency_code(&self) -> &str {
+        match self.currency_code.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_currency_code(&mut self) {
+        self.currency_code = ::std::option::Option::None;
+    }
+
+    pub fn has_currency_code(&self) -> bool {
+        self.currency_code.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_currency_code(&mut self, v: ::std::string::String) {
+        self.currency_code = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_currency_code(&mut self) -> &mut ::std::string::String {
+        if self.currency_code.is_none() {
+            self.currency_code = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.currency_code.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_currency_code(&mut self) -> ::std::string::String {
+        self.currency_code.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CStoreBrowse_GetPriceStops_Response {
+    const NAME: &'static str = "CStoreBrowse_GetPriceStops_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.price_stops.push(is.read_message()?);
+                },
+                18 => {
+                    self.currency_code = ::std::option::Option::Some(is.read_string()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        for value in &self.price_stops {
+            let len = value.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        };
+        if let Some(v) = self.currency_code.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        for v in &self.price_stops {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(1, v, os)?;
+        };
+        if let Some(v) = self.currency_code.as_ref() {
+            os.write_string(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CStoreBrowse_GetPriceStops_Response {
+        CStoreBrowse_GetPriceStops_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.price_stops.clear();
+        self.currency_code = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CStoreBrowse_GetPriceStops_Response {
+        static instance: CStoreBrowse_GetPriceStops_Response = CStoreBrowse_GetPriceStops_Response {
+            price_stops: ::std::vec::Vec::new(),
+            currency_code: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+/// Nested message and enums of message `CStoreBrowse_GetPriceStops_Response`
+pub mod cstore_browse_get_price_stops_response {
+    // @@protoc_insertion_point(message:CStoreBrowse_GetPriceStops_Response.PriceStop)
+    #[derive(PartialEq,Clone,Default,Debug)]
+    pub struct PriceStop {
+        // message fields
+        // @@protoc_insertion_point(field:CStoreBrowse_GetPriceStops_Response.PriceStop.formatted_amount)
+        pub formatted_amount: ::std::option::Option<::std::string::String>,
+        // @@protoc_insertion_point(field:CStoreBrowse_GetPriceStops_Response.PriceStop.amount_in_cents)
+        pub amount_in_cents: ::std::option::Option<i64>,
+        // special fields
+        // @@protoc_insertion_point(special_field:CStoreBrowse_GetPriceStops_Response.PriceStop.special_fields)
+        pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+    }
+
+    impl<'a> ::std::default::Default for &'a PriceStop {
+        fn default() -> &'a PriceStop {
+            <PriceStop as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+        }
+    }
+
+    impl PriceStop {
+        pub fn new() -> PriceStop {
+            ::std::default::Default::default()
+        }
+
+        // optional string formatted_amount = 1;
+
+        pub fn formatted_amount(&self) -> &str {
+            match self.formatted_amount.as_ref() {
+                Some(v) => v,
+                None => "",
+            }
+        }
+
+        pub fn clear_formatted_amount(&mut self) {
+            self.formatted_amount = ::std::option::Option::None;
+        }
+
+        pub fn has_formatted_amount(&self) -> bool {
+            self.formatted_amount.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_formatted_amount(&mut self, v: ::std::string::String) {
+            self.formatted_amount = ::std::option::Option::Some(v);
+        }
+
+        // Mutable pointer to the field.
+        // If field is not initialized, it is initialized with default value first.
+        pub fn mut_formatted_amount(&mut self) -> &mut ::std::string::String {
+            if self.formatted_amount.is_none() {
+                self.formatted_amount = ::std::option::Option::Some(::std::string::String::new());
+            }
+            self.formatted_amount.as_mut().unwrap()
+        }
+
+        // Take field
+        pub fn take_formatted_amount(&mut self) -> ::std::string::String {
+            self.formatted_amount.take().unwrap_or_else(|| ::std::string::String::new())
+        }
+
+        // optional int64 amount_in_cents = 2;
+
+        pub fn amount_in_cents(&self) -> i64 {
+            self.amount_in_cents.unwrap_or(0)
+        }
+
+        pub fn clear_amount_in_cents(&mut self) {
+            self.amount_in_cents = ::std::option::Option::None;
+        }
+
+        pub fn has_amount_in_cents(&self) -> bool {
+            self.amount_in_cents.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_amount_in_cents(&mut self, v: i64) {
+            self.amount_in_cents = ::std::option::Option::Some(v);
+        }
+    }
+
+    impl ::steam_vent_proto_common::protobuf::Message for PriceStop {
+        const NAME: &'static str = "PriceStop";
+
+        fn is_initialized(&self) -> bool {
+            true
+        }
+
+        fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+            while let Some(tag) = is.read_raw_tag_or_eof()? {
+                match tag {
+                    10 => {
+                        self.formatted_amount = ::std::option::Option::Some(is.read_string()?);
+                    },
+                    16 => {
+                        self.amount_in_cents = ::std::option::Option::Some(is.read_int64()?);
+                    },
+                    tag => {
+                        ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                    },
+                };
+            }
+            ::std::result::Result::Ok(())
+        }
+
+        // Compute sizes of nested messages
+        #[allow(unused_variables)]
+        fn compute_size(&self) -> u64 {
+            let mut my_size = 0;
+            if let Some(v) = self.formatted_amount.as_ref() {
+                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(1, &v);
+            }
+            if let Some(v) = self.amount_in_cents {
+                my_size += ::steam_vent_proto_common::protobuf::rt::int64_size(2, v);
+            }
+            my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+            self.special_fields.cached_size().set(my_size as u32);
+            my_size
+        }
+
+        fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+            if let Some(v) = self.formatted_amount.as_ref() {
+                os.write_string(1, v)?;
+            }
+            if let Some(v) = self.amount_in_cents {
+                os.write_int64(2, v)?;
+            }
+            os.write_unknown_fields(self.special_fields.unknown_fields())?;
+            ::std::result::Result::Ok(())
+        }
+
+        fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+            &self.special_fields
+        }
+
+        fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+            &mut self.special_fields
+        }
+
+        fn new() -> PriceStop {
+            PriceStop::new()
+        }
+
+        fn clear(&mut self) {
+            self.formatted_amount = ::std::option::Option::None;
+            self.amount_in_cents = ::std::option::Option::None;
+            self.special_fields.clear();
+        }
+
+        fn default_instance() -> &'static PriceStop {
+            static instance: PriceStop = PriceStop {
+                formatted_amount: ::std::option::Option::None,
+                amount_in_cents: ::std::option::Option::None,
                 special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
             };
             &instance
@@ -11721,6 +12447,76 @@ impl ::std::default::Default for EUserReviewScore {
 
 
 #[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+// @@protoc_insertion_point(enum:ETrailerCategory)
+pub enum ETrailerCategory {
+    // @@protoc_insertion_point(enum_value:ETrailerCategory.k_ETrailerCategory_Invalid)
+    k_ETrailerCategory_Invalid = 0,
+    // @@protoc_insertion_point(enum_value:ETrailerCategory.k_ETrailerCategory_Gameplay)
+    k_ETrailerCategory_Gameplay = 1,
+    // @@protoc_insertion_point(enum_value:ETrailerCategory.k_ETrailerCategory_Teaser)
+    k_ETrailerCategory_Teaser = 2,
+    // @@protoc_insertion_point(enum_value:ETrailerCategory.k_ETrailerCategory_Cinematic)
+    k_ETrailerCategory_Cinematic = 3,
+    // @@protoc_insertion_point(enum_value:ETrailerCategory.k_ETrailerCategory_Update)
+    k_ETrailerCategory_Update = 4,
+    // @@protoc_insertion_point(enum_value:ETrailerCategory.k_ETrailerCategory_Accolades)
+    k_ETrailerCategory_Accolades = 5,
+    // @@protoc_insertion_point(enum_value:ETrailerCategory.k_ETrailerCategory_Interview)
+    k_ETrailerCategory_Interview = 6,
+}
+
+impl ::steam_vent_proto_common::protobuf::Enum for ETrailerCategory {
+    const NAME: &'static str = "ETrailerCategory";
+
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<ETrailerCategory> {
+        match value {
+            0 => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Invalid),
+            1 => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Gameplay),
+            2 => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Teaser),
+            3 => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Cinematic),
+            4 => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Update),
+            5 => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Accolades),
+            6 => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Interview),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn from_str(str: &str) -> ::std::option::Option<ETrailerCategory> {
+        match str {
+            "k_ETrailerCategory_Invalid" => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Invalid),
+            "k_ETrailerCategory_Gameplay" => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Gameplay),
+            "k_ETrailerCategory_Teaser" => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Teaser),
+            "k_ETrailerCategory_Cinematic" => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Cinematic),
+            "k_ETrailerCategory_Update" => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Update),
+            "k_ETrailerCategory_Accolades" => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Accolades),
+            "k_ETrailerCategory_Interview" => ::std::option::Option::Some(ETrailerCategory::k_ETrailerCategory_Interview),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    const VALUES: &'static [ETrailerCategory] = &[
+        ETrailerCategory::k_ETrailerCategory_Invalid,
+        ETrailerCategory::k_ETrailerCategory_Gameplay,
+        ETrailerCategory::k_ETrailerCategory_Teaser,
+        ETrailerCategory::k_ETrailerCategory_Cinematic,
+        ETrailerCategory::k_ETrailerCategory_Update,
+        ETrailerCategory::k_ETrailerCategory_Accolades,
+        ETrailerCategory::k_ETrailerCategory_Interview,
+    ];
+}
+
+impl ::std::default::Default for ETrailerCategory {
+    fn default() -> Self {
+        ETrailerCategory::k_ETrailerCategory_Invalid
+    }
+}
+
+
+#[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
 // @@protoc_insertion_point(enum:EStoreBrowseFilterFailure)
 pub enum EStoreBrowseFilterFailure {
     // @@protoc_insertion_point(enum_value:EStoreBrowseFilterFailure.k_EStoreBrowseFilterFailure_None)
@@ -11800,8 +12596,42 @@ pub enum EStoreLinkType {
     k_EStoreLinkType_Twitch = 4,
     // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Discord)
     k_EStoreLinkType_Discord = 5,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_QQ)
+    k_EStoreLinkType_QQ = 6,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_VK)
+    k_EStoreLinkType_VK = 7,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Bilibili)
+    k_EStoreLinkType_Bilibili = 8,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Weibo)
+    k_EStoreLinkType_Weibo = 9,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Reddit)
+    k_EStoreLinkType_Reddit = 10,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Instagram)
+    k_EStoreLinkType_Instagram = 11,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Tumblr)
+    k_EStoreLinkType_Tumblr = 12,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Tieba)
+    k_EStoreLinkType_Tieba = 13,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Tiktok)
+    k_EStoreLinkType_Tiktok = 14,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Telegram)
+    k_EStoreLinkType_Telegram = 15,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_LinkedIn)
+    k_EStoreLinkType_LinkedIn = 16,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_WeChat)
+    k_EStoreLinkType_WeChat = 17,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_QQLink)
+    k_EStoreLinkType_QQLink = 18,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Douyin)
+    k_EStoreLinkType_Douyin = 19,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Bluesky)
+    k_EStoreLinkType_Bluesky = 20,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Mastodon)
+    k_EStoreLinkType_Mastodon = 21,
+    // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_Threads)
+    k_EStoreLinkType_Threads = 22,
     // @@protoc_insertion_point(enum_value:EStoreLinkType.k_EStoreLinkType_MAX)
-    k_EStoreLinkType_MAX = 6,
+    k_EStoreLinkType_MAX = 23,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EStoreLinkType {
@@ -11819,7 +12649,24 @@ impl ::steam_vent_proto_common::protobuf::Enum for EStoreLinkType {
             3 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Twitter),
             4 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Twitch),
             5 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Discord),
-            6 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_MAX),
+            6 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_QQ),
+            7 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_VK),
+            8 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Bilibili),
+            9 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Weibo),
+            10 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Reddit),
+            11 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Instagram),
+            12 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Tumblr),
+            13 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Tieba),
+            14 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Tiktok),
+            15 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Telegram),
+            16 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_LinkedIn),
+            17 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_WeChat),
+            18 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_QQLink),
+            19 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Douyin),
+            20 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Bluesky),
+            21 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Mastodon),
+            22 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Threads),
+            23 => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_MAX),
             _ => ::std::option::Option::None
         }
     }
@@ -11832,6 +12679,23 @@ impl ::steam_vent_proto_common::protobuf::Enum for EStoreLinkType {
             "k_EStoreLinkType_Twitter" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Twitter),
             "k_EStoreLinkType_Twitch" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Twitch),
             "k_EStoreLinkType_Discord" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Discord),
+            "k_EStoreLinkType_QQ" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_QQ),
+            "k_EStoreLinkType_VK" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_VK),
+            "k_EStoreLinkType_Bilibili" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Bilibili),
+            "k_EStoreLinkType_Weibo" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Weibo),
+            "k_EStoreLinkType_Reddit" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Reddit),
+            "k_EStoreLinkType_Instagram" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Instagram),
+            "k_EStoreLinkType_Tumblr" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Tumblr),
+            "k_EStoreLinkType_Tieba" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Tieba),
+            "k_EStoreLinkType_Tiktok" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Tiktok),
+            "k_EStoreLinkType_Telegram" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Telegram),
+            "k_EStoreLinkType_LinkedIn" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_LinkedIn),
+            "k_EStoreLinkType_WeChat" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_WeChat),
+            "k_EStoreLinkType_QQLink" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_QQLink),
+            "k_EStoreLinkType_Douyin" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Douyin),
+            "k_EStoreLinkType_Bluesky" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Bluesky),
+            "k_EStoreLinkType_Mastodon" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Mastodon),
+            "k_EStoreLinkType_Threads" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_Threads),
             "k_EStoreLinkType_MAX" => ::std::option::Option::Some(EStoreLinkType::k_EStoreLinkType_MAX),
             _ => ::std::option::Option::None
         }
@@ -11844,6 +12708,23 @@ impl ::steam_vent_proto_common::protobuf::Enum for EStoreLinkType {
         EStoreLinkType::k_EStoreLinkType_Twitter,
         EStoreLinkType::k_EStoreLinkType_Twitch,
         EStoreLinkType::k_EStoreLinkType_Discord,
+        EStoreLinkType::k_EStoreLinkType_QQ,
+        EStoreLinkType::k_EStoreLinkType_VK,
+        EStoreLinkType::k_EStoreLinkType_Bilibili,
+        EStoreLinkType::k_EStoreLinkType_Weibo,
+        EStoreLinkType::k_EStoreLinkType_Reddit,
+        EStoreLinkType::k_EStoreLinkType_Instagram,
+        EStoreLinkType::k_EStoreLinkType_Tumblr,
+        EStoreLinkType::k_EStoreLinkType_Tieba,
+        EStoreLinkType::k_EStoreLinkType_Tiktok,
+        EStoreLinkType::k_EStoreLinkType_Telegram,
+        EStoreLinkType::k_EStoreLinkType_LinkedIn,
+        EStoreLinkType::k_EStoreLinkType_WeChat,
+        EStoreLinkType::k_EStoreLinkType_QQLink,
+        EStoreLinkType::k_EStoreLinkType_Douyin,
+        EStoreLinkType::k_EStoreLinkType_Bluesky,
+        EStoreLinkType::k_EStoreLinkType_Mastodon,
+        EStoreLinkType::k_EStoreLinkType_Threads,
         EStoreLinkType::k_EStoreLinkType_MAX,
     ];
 }
@@ -12063,6 +12944,32 @@ impl ::steam_vent_proto_common::RpcMessage for CStoreBrowse_GetStoreCategories_R
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessage for CStoreBrowse_GetPriceStops_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for CStoreBrowse_GetPriceStops_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
 impl ::steam_vent_proto_common::RpcMessage for CStoreBrowse_GetDLCForApps_Request {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -12174,6 +13081,10 @@ impl ::steam_vent_proto_common::RpcMethod for CStoreBrowse_GetHardwareItems_Requ
 impl ::steam_vent_proto_common::RpcMethod for CStoreBrowse_GetItems_Request {
     const METHOD_NAME: &'static str = "StoreBrowse.GetItems#1";
     type Response = CStoreBrowse_GetItems_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod for CStoreBrowse_GetPriceStops_Request {
+    const METHOD_NAME: &'static str = "StoreBrowse.GetPriceStops#1";
+    type Response = CStoreBrowse_GetPriceStops_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod for CStoreBrowse_GetStoreCategories_Request {
     const METHOD_NAME: &'static str = "StoreBrowse.GetStoreCategories#1";

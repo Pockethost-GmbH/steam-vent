@@ -760,6 +760,8 @@ pub struct CMsgClientSettings {
     pub skip_steamvr_install_dialog: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.always_show_user_chooser)
     pub always_show_user_chooser: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.os_version_unsupported)
+    pub os_version_unsupported: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.show_family_sharing_notifications)
     pub show_family_sharing_notifications: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.show_copy_count_in_library)
@@ -882,6 +884,8 @@ pub struct CMsgClientSettings {
     pub download_throttle_while_streaming: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.download_throttle_rate)
     pub download_throttle_rate: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.default_app_update_behavior)
+    pub default_app_update_behavior: ::std::option::Option<i32>,
     // @@protoc_insertion_point(field:CMsgClientSettings.cloud_enabled)
     pub cloud_enabled: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.show_screenshot_manager)
@@ -920,6 +924,8 @@ pub struct CMsgClientSettings {
     pub broadcast_chat_corner: ::std::option::Option<i32>,
     // @@protoc_insertion_point(field:CMsgClientSettings.gamestream_hardware_video_encode)
     pub gamestream_hardware_video_encode: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamestream_enable_video_h265)
+    pub gamestream_enable_video_h265: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.steam_input_configurator_error_msg_enable)
     pub steam_input_configurator_error_msg_enable: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.controller_guide_button_focus_steam)
@@ -940,6 +946,10 @@ pub struct CMsgClientSettings {
     pub turn_off_controller_on_exit: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.controller_combine_nintendo_joycons)
     pub controller_combine_nintendo_joycons: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.controller_enable_chord)
+    pub controller_enable_chord: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.controller_poll_rate)
+    pub controller_poll_rate: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.startup_movie_id)
     pub startup_movie_id: ::std::option::Option<u64>,
     // @@protoc_insertion_point(field:CMsgClientSettings.startup_movie_local_path)
@@ -964,8 +974,8 @@ pub struct CMsgClientSettings {
     pub g_background_tg: ::steam_vent_proto_common::protobuf::MessageField<CMsgHotkey>,
     // @@protoc_insertion_point(field:CMsgClientSettings.g_background_a_m)
     pub g_background_a_m: ::std::option::Option<bool>,
-    // @@protoc_insertion_point(field:CMsgClientSettings.g_background_br)
-    pub g_background_br: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_video_bitrate)
+    pub gamerecording_video_bitrate: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CMsgClientSettings.g_background_a_s)
     pub g_background_a_s: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.g_background_mode)
@@ -974,6 +984,32 @@ pub struct CMsgClientSettings {
     pub g_background_audio: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<EGRAudio>>,
     // @@protoc_insertion_point(field:CMsgClientSettings.g_max_fps)
     pub g_max_fps: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_hotkey_ic)
+    pub gamerecording_hotkey_ic: ::steam_vent_proto_common::protobuf::MessageField<CMsgHotkey>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_ic_seconds)
+    pub gamerecording_ic_seconds: ::std::option::Option<f32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_export_limit_type)
+    pub gamerecording_export_limit_type: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<EGRExportLimitType>>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_export_limit_size_mb)
+    pub gamerecording_export_limit_size_mb: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_export_limit_bitrate)
+    pub gamerecording_export_limit_bitrate: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_export_limit_width)
+    pub gamerecording_export_limit_width: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_export_limit_height)
+    pub gamerecording_export_limit_height: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_export_limit_frame_rate)
+    pub gamerecording_export_limit_frame_rate: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_export_directory)
+    pub gamerecording_export_directory: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_export_codec)
+    pub gamerecording_export_codec: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EExportCodec>>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_video_maxheight)
+    pub gamerecording_video_maxheight: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_force_mic_mono)
+    pub gamerecording_force_mic_mono: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamerecording_automatic_gain_control)
+    pub gamerecording_automatic_gain_control: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.show_timestamps_in_console)
     pub show_timestamps_in_console: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.force_oobe)
@@ -988,6 +1024,10 @@ pub struct CMsgClientSettings {
     pub force_fake_mandatory_update: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.hdr_compat_testing)
     pub hdr_compat_testing: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.developer_mode_enabled)
+    pub developer_mode_enabled: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.show_advanced_update_channels)
+    pub show_advanced_update_channels: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.gamescope_hdr_visualization)
     pub gamescope_hdr_visualization: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EHDRVisualization>>,
     // @@protoc_insertion_point(field:CMsgClientSettings.gamescope_app_target_framerate)
@@ -1010,6 +1050,12 @@ pub struct CMsgClientSettings {
     pub gamescope_composite_debug: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgClientSettings.gamescope_force_composite)
     pub gamescope_force_composite: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamescope_game_resolution_global)
+    pub gamescope_game_resolution_global: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamescope_guide_hotkey)
+    pub gamescope_guide_hotkey: ::steam_vent_proto_common::protobuf::MessageField<CMsgHotkey>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.gamescope_qam_hotkey)
+    pub gamescope_qam_hotkey: ::steam_vent_proto_common::protobuf::MessageField<CMsgHotkey>,
     // @@protoc_insertion_point(field:CMsgClientSettings.steamos_status_led_brightness)
     pub steamos_status_led_brightness: ::std::option::Option<i32>,
     // @@protoc_insertion_point(field:CMsgClientSettings.steamos_tdp_limit_enabled)
@@ -1040,8 +1086,12 @@ pub struct CMsgClientSettings {
     pub setting_validation_float: ::std::option::Option<f32>,
     // @@protoc_insertion_point(field:CMsgClientSettings.setting_validation_string)
     pub setting_validation_string: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.setting_validation_hotkey)
+    pub setting_validation_hotkey: ::steam_vent_proto_common::protobuf::MessageField<CMsgHotkey>,
     // @@protoc_insertion_point(field:CMsgClientSettings.system_bluetooth_enabled)
     pub system_bluetooth_enabled: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgClientSettings.vr_show_perf_graph_in_hmd)
+    pub vr_show_perf_graph_in_hmd: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CMsgClientSettings.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -1413,6 +1463,25 @@ impl CMsgClientSettings {
     // Param is passed by value, moved
     pub fn set_always_show_user_chooser(&mut self, v: bool) {
         self.always_show_user_chooser = ::std::option::Option::Some(v);
+    }
+
+    // optional bool os_version_unsupported = 21;
+
+    pub fn os_version_unsupported(&self) -> bool {
+        self.os_version_unsupported.unwrap_or(false)
+    }
+
+    pub fn clear_os_version_unsupported(&mut self) {
+        self.os_version_unsupported = ::std::option::Option::None;
+    }
+
+    pub fn has_os_version_unsupported(&self) -> bool {
+        self.os_version_unsupported.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_os_version_unsupported(&mut self, v: bool) {
+        self.os_version_unsupported = ::std::option::Option::Some(v);
     }
 
     // optional bool show_family_sharing_notifications = 3000;
@@ -2602,6 +2671,25 @@ impl CMsgClientSettings {
         self.download_throttle_rate = ::std::option::Option::Some(v);
     }
 
+    // optional int32 default_app_update_behavior = 8013;
+
+    pub fn default_app_update_behavior(&self) -> i32 {
+        self.default_app_update_behavior.unwrap_or(0)
+    }
+
+    pub fn clear_default_app_update_behavior(&mut self) {
+        self.default_app_update_behavior = ::std::option::Option::None;
+    }
+
+    pub fn has_default_app_update_behavior(&self) -> bool {
+        self.default_app_update_behavior.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_default_app_update_behavior(&mut self, v: i32) {
+        self.default_app_update_behavior = ::std::option::Option::Some(v);
+    }
+
     // optional bool cloud_enabled = 10000;
 
     pub fn cloud_enabled(&self) -> bool {
@@ -2969,6 +3057,25 @@ impl CMsgClientSettings {
         self.gamestream_hardware_video_encode = ::std::option::Option::Some(v);
     }
 
+    // optional bool gamestream_enable_video_h265 = 13001;
+
+    pub fn gamestream_enable_video_h265(&self) -> bool {
+        self.gamestream_enable_video_h265.unwrap_or(false)
+    }
+
+    pub fn clear_gamestream_enable_video_h265(&mut self) {
+        self.gamestream_enable_video_h265 = ::std::option::Option::None;
+    }
+
+    pub fn has_gamestream_enable_video_h265(&self) -> bool {
+        self.gamestream_enable_video_h265.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamestream_enable_video_h265(&mut self, v: bool) {
+        self.gamestream_enable_video_h265 = ::std::option::Option::Some(v);
+    }
+
     // optional bool steam_input_configurator_error_msg_enable = 14001;
 
     pub fn steam_input_configurator_error_msg_enable(&self) -> bool {
@@ -3157,6 +3264,44 @@ impl CMsgClientSettings {
     // Param is passed by value, moved
     pub fn set_controller_combine_nintendo_joycons(&mut self, v: bool) {
         self.controller_combine_nintendo_joycons = ::std::option::Option::Some(v);
+    }
+
+    // optional bool controller_enable_chord = 140011;
+
+    pub fn controller_enable_chord(&self) -> bool {
+        self.controller_enable_chord.unwrap_or(false)
+    }
+
+    pub fn clear_controller_enable_chord(&mut self) {
+        self.controller_enable_chord = ::std::option::Option::None;
+    }
+
+    pub fn has_controller_enable_chord(&self) -> bool {
+        self.controller_enable_chord.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_controller_enable_chord(&mut self, v: bool) {
+        self.controller_enable_chord = ::std::option::Option::Some(v);
+    }
+
+    // optional bool controller_poll_rate = 140012;
+
+    pub fn controller_poll_rate(&self) -> bool {
+        self.controller_poll_rate.unwrap_or(false)
+    }
+
+    pub fn clear_controller_poll_rate(&mut self) {
+        self.controller_poll_rate = ::std::option::Option::None;
+    }
+
+    pub fn has_controller_poll_rate(&self) -> bool {
+        self.controller_poll_rate.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_controller_poll_rate(&mut self, v: bool) {
+        self.controller_poll_rate = ::std::option::Option::Some(v);
     }
 
     // optional uint64 startup_movie_id = 16000;
@@ -3400,23 +3545,40 @@ impl CMsgClientSettings {
         self.g_background_a_m = ::std::option::Option::Some(v);
     }
 
-    // optional int32 g_background_br = 18210;
+    // optional string gamerecording_video_bitrate = 18210;
 
-    pub fn g_background_br(&self) -> i32 {
-        self.g_background_br.unwrap_or(0)
+    pub fn gamerecording_video_bitrate(&self) -> &str {
+        match self.gamerecording_video_bitrate.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
     }
 
-    pub fn clear_g_background_br(&mut self) {
-        self.g_background_br = ::std::option::Option::None;
+    pub fn clear_gamerecording_video_bitrate(&mut self) {
+        self.gamerecording_video_bitrate = ::std::option::Option::None;
     }
 
-    pub fn has_g_background_br(&self) -> bool {
-        self.g_background_br.is_some()
+    pub fn has_gamerecording_video_bitrate(&self) -> bool {
+        self.gamerecording_video_bitrate.is_some()
     }
 
     // Param is passed by value, moved
-    pub fn set_g_background_br(&mut self, v: i32) {
-        self.g_background_br = ::std::option::Option::Some(v);
+    pub fn set_gamerecording_video_bitrate(&mut self, v: ::std::string::String) {
+        self.gamerecording_video_bitrate = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_gamerecording_video_bitrate(&mut self) -> &mut ::std::string::String {
+        if self.gamerecording_video_bitrate.is_none() {
+            self.gamerecording_video_bitrate = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.gamerecording_video_bitrate.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_gamerecording_video_bitrate(&mut self) -> ::std::string::String {
+        self.gamerecording_video_bitrate.take().unwrap_or_else(|| ::std::string::String::new())
     }
 
     // optional bool g_background_a_s = 18211;
@@ -3499,6 +3661,257 @@ impl CMsgClientSettings {
     // Param is passed by value, moved
     pub fn set_g_max_fps(&mut self, v: i32) {
         self.g_max_fps = ::std::option::Option::Some(v);
+    }
+
+    // optional float gamerecording_ic_seconds = 18216;
+
+    pub fn gamerecording_ic_seconds(&self) -> f32 {
+        self.gamerecording_ic_seconds.unwrap_or(0.)
+    }
+
+    pub fn clear_gamerecording_ic_seconds(&mut self) {
+        self.gamerecording_ic_seconds = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_ic_seconds(&self) -> bool {
+        self.gamerecording_ic_seconds.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_ic_seconds(&mut self, v: f32) {
+        self.gamerecording_ic_seconds = ::std::option::Option::Some(v);
+    }
+
+    // optional .EGRExportLimitType gamerecording_export_limit_type = 18217;
+
+    pub fn gamerecording_export_limit_type(&self) -> EGRExportLimitType {
+        match self.gamerecording_export_limit_type {
+            Some(e) => e.enum_value_or(EGRExportLimitType::k_EGRExportLimitType_Native),
+            None => EGRExportLimitType::k_EGRExportLimitType_Native,
+        }
+    }
+
+    pub fn clear_gamerecording_export_limit_type(&mut self) {
+        self.gamerecording_export_limit_type = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_export_limit_type(&self) -> bool {
+        self.gamerecording_export_limit_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_export_limit_type(&mut self, v: EGRExportLimitType) {
+        self.gamerecording_export_limit_type = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional int32 gamerecording_export_limit_size_mb = 18218;
+
+    pub fn gamerecording_export_limit_size_mb(&self) -> i32 {
+        self.gamerecording_export_limit_size_mb.unwrap_or(0)
+    }
+
+    pub fn clear_gamerecording_export_limit_size_mb(&mut self) {
+        self.gamerecording_export_limit_size_mb = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_export_limit_size_mb(&self) -> bool {
+        self.gamerecording_export_limit_size_mb.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_export_limit_size_mb(&mut self, v: i32) {
+        self.gamerecording_export_limit_size_mb = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 gamerecording_export_limit_bitrate = 18219;
+
+    pub fn gamerecording_export_limit_bitrate(&self) -> i32 {
+        self.gamerecording_export_limit_bitrate.unwrap_or(0)
+    }
+
+    pub fn clear_gamerecording_export_limit_bitrate(&mut self) {
+        self.gamerecording_export_limit_bitrate = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_export_limit_bitrate(&self) -> bool {
+        self.gamerecording_export_limit_bitrate.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_export_limit_bitrate(&mut self, v: i32) {
+        self.gamerecording_export_limit_bitrate = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 gamerecording_export_limit_width = 18220;
+
+    pub fn gamerecording_export_limit_width(&self) -> i32 {
+        self.gamerecording_export_limit_width.unwrap_or(0)
+    }
+
+    pub fn clear_gamerecording_export_limit_width(&mut self) {
+        self.gamerecording_export_limit_width = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_export_limit_width(&self) -> bool {
+        self.gamerecording_export_limit_width.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_export_limit_width(&mut self, v: i32) {
+        self.gamerecording_export_limit_width = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 gamerecording_export_limit_height = 18221;
+
+    pub fn gamerecording_export_limit_height(&self) -> i32 {
+        self.gamerecording_export_limit_height.unwrap_or(0)
+    }
+
+    pub fn clear_gamerecording_export_limit_height(&mut self) {
+        self.gamerecording_export_limit_height = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_export_limit_height(&self) -> bool {
+        self.gamerecording_export_limit_height.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_export_limit_height(&mut self, v: i32) {
+        self.gamerecording_export_limit_height = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 gamerecording_export_limit_frame_rate = 18222;
+
+    pub fn gamerecording_export_limit_frame_rate(&self) -> i32 {
+        self.gamerecording_export_limit_frame_rate.unwrap_or(0)
+    }
+
+    pub fn clear_gamerecording_export_limit_frame_rate(&mut self) {
+        self.gamerecording_export_limit_frame_rate = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_export_limit_frame_rate(&self) -> bool {
+        self.gamerecording_export_limit_frame_rate.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_export_limit_frame_rate(&mut self, v: i32) {
+        self.gamerecording_export_limit_frame_rate = ::std::option::Option::Some(v);
+    }
+
+    // optional string gamerecording_export_directory = 18223;
+
+    pub fn gamerecording_export_directory(&self) -> &str {
+        match self.gamerecording_export_directory.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_gamerecording_export_directory(&mut self) {
+        self.gamerecording_export_directory = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_export_directory(&self) -> bool {
+        self.gamerecording_export_directory.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_export_directory(&mut self, v: ::std::string::String) {
+        self.gamerecording_export_directory = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_gamerecording_export_directory(&mut self) -> &mut ::std::string::String {
+        if self.gamerecording_export_directory.is_none() {
+            self.gamerecording_export_directory = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.gamerecording_export_directory.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_gamerecording_export_directory(&mut self) -> ::std::string::String {
+        self.gamerecording_export_directory.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional .EExportCodec gamerecording_export_codec = 18224;
+
+    pub fn gamerecording_export_codec(&self) -> super::enums::EExportCodec {
+        match self.gamerecording_export_codec {
+            Some(e) => e.enum_value_or(super::enums::EExportCodec::k_EExportCodec_Default),
+            None => super::enums::EExportCodec::k_EExportCodec_Default,
+        }
+    }
+
+    pub fn clear_gamerecording_export_codec(&mut self) {
+        self.gamerecording_export_codec = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_export_codec(&self) -> bool {
+        self.gamerecording_export_codec.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_export_codec(&mut self, v: super::enums::EExportCodec) {
+        self.gamerecording_export_codec = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional int32 gamerecording_video_maxheight = 18225;
+
+    pub fn gamerecording_video_maxheight(&self) -> i32 {
+        self.gamerecording_video_maxheight.unwrap_or(0)
+    }
+
+    pub fn clear_gamerecording_video_maxheight(&mut self) {
+        self.gamerecording_video_maxheight = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_video_maxheight(&self) -> bool {
+        self.gamerecording_video_maxheight.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_video_maxheight(&mut self, v: i32) {
+        self.gamerecording_video_maxheight = ::std::option::Option::Some(v);
+    }
+
+    // optional bool gamerecording_force_mic_mono = 18226;
+
+    pub fn gamerecording_force_mic_mono(&self) -> bool {
+        self.gamerecording_force_mic_mono.unwrap_or(false)
+    }
+
+    pub fn clear_gamerecording_force_mic_mono(&mut self) {
+        self.gamerecording_force_mic_mono = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_force_mic_mono(&self) -> bool {
+        self.gamerecording_force_mic_mono.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_force_mic_mono(&mut self, v: bool) {
+        self.gamerecording_force_mic_mono = ::std::option::Option::Some(v);
+    }
+
+    // optional bool gamerecording_automatic_gain_control = 18227;
+
+    pub fn gamerecording_automatic_gain_control(&self) -> bool {
+        self.gamerecording_automatic_gain_control.unwrap_or(false)
+    }
+
+    pub fn clear_gamerecording_automatic_gain_control(&mut self) {
+        self.gamerecording_automatic_gain_control = ::std::option::Option::None;
+    }
+
+    pub fn has_gamerecording_automatic_gain_control(&self) -> bool {
+        self.gamerecording_automatic_gain_control.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamerecording_automatic_gain_control(&mut self, v: bool) {
+        self.gamerecording_automatic_gain_control = ::std::option::Option::Some(v);
     }
 
     // optional bool show_timestamps_in_console = 20000;
@@ -3632,6 +4045,44 @@ impl CMsgClientSettings {
     // Param is passed by value, moved
     pub fn set_hdr_compat_testing(&mut self, v: bool) {
         self.hdr_compat_testing = ::std::option::Option::Some(v);
+    }
+
+    // optional bool developer_mode_enabled = 20007;
+
+    pub fn developer_mode_enabled(&self) -> bool {
+        self.developer_mode_enabled.unwrap_or(false)
+    }
+
+    pub fn clear_developer_mode_enabled(&mut self) {
+        self.developer_mode_enabled = ::std::option::Option::None;
+    }
+
+    pub fn has_developer_mode_enabled(&self) -> bool {
+        self.developer_mode_enabled.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_developer_mode_enabled(&mut self, v: bool) {
+        self.developer_mode_enabled = ::std::option::Option::Some(v);
+    }
+
+    // optional bool show_advanced_update_channels = 20008;
+
+    pub fn show_advanced_update_channels(&self) -> bool {
+        self.show_advanced_update_channels.unwrap_or(false)
+    }
+
+    pub fn clear_show_advanced_update_channels(&mut self) {
+        self.show_advanced_update_channels = ::std::option::Option::None;
+    }
+
+    pub fn has_show_advanced_update_channels(&self) -> bool {
+        self.show_advanced_update_channels.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_show_advanced_update_channels(&mut self, v: bool) {
+        self.show_advanced_update_channels = ::std::option::Option::Some(v);
     }
 
     // optional .EHDRVisualization gamescope_hdr_visualization = 21001;
@@ -3844,6 +4295,42 @@ impl CMsgClientSettings {
     // Param is passed by value, moved
     pub fn set_gamescope_force_composite(&mut self, v: bool) {
         self.gamescope_force_composite = ::std::option::Option::Some(v);
+    }
+
+    // optional string gamescope_game_resolution_global = 21012;
+
+    pub fn gamescope_game_resolution_global(&self) -> &str {
+        match self.gamescope_game_resolution_global.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_gamescope_game_resolution_global(&mut self) {
+        self.gamescope_game_resolution_global = ::std::option::Option::None;
+    }
+
+    pub fn has_gamescope_game_resolution_global(&self) -> bool {
+        self.gamescope_game_resolution_global.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gamescope_game_resolution_global(&mut self, v: ::std::string::String) {
+        self.gamescope_game_resolution_global = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_gamescope_game_resolution_global(&mut self) -> &mut ::std::string::String {
+        if self.gamescope_game_resolution_global.is_none() {
+            self.gamescope_game_resolution_global = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.gamescope_game_resolution_global.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_gamescope_game_resolution_global(&mut self) -> ::std::string::String {
+        self.gamescope_game_resolution_global.take().unwrap_or_else(|| ::std::string::String::new())
     }
 
     // optional int32 steamos_status_led_brightness = 22000;
@@ -4169,6 +4656,25 @@ impl CMsgClientSettings {
     pub fn set_system_bluetooth_enabled(&mut self, v: bool) {
         self.system_bluetooth_enabled = ::std::option::Option::Some(v);
     }
+
+    // optional bool vr_show_perf_graph_in_hmd = 25000;
+
+    pub fn vr_show_perf_graph_in_hmd(&self) -> bool {
+        self.vr_show_perf_graph_in_hmd.unwrap_or(false)
+    }
+
+    pub fn clear_vr_show_perf_graph_in_hmd(&mut self) {
+        self.vr_show_perf_graph_in_hmd = ::std::option::Option::None;
+    }
+
+    pub fn has_vr_show_perf_graph_in_hmd(&self) -> bool {
+        self.vr_show_perf_graph_in_hmd.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_vr_show_perf_graph_in_hmd(&mut self, v: bool) {
+        self.vr_show_perf_graph_in_hmd = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
@@ -4231,6 +4737,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 },
                 160 => {
                     self.always_show_user_chooser = ::std::option::Option::Some(is.read_bool()?);
+                },
+                168 => {
+                    self.os_version_unsupported = ::std::option::Option::Some(is.read_bool()?);
                 },
                 24000 => {
                     self.show_family_sharing_notifications = ::std::option::Option::Some(is.read_bool()?);
@@ -4415,6 +4924,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 64096 => {
                     self.download_throttle_rate = ::std::option::Option::Some(is.read_int32()?);
                 },
+                64104 => {
+                    self.default_app_update_behavior = ::std::option::Option::Some(is.read_int32()?);
+                },
                 80000 => {
                     self.cloud_enabled = ::std::option::Option::Some(is.read_bool()?);
                 },
@@ -4472,6 +4984,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 104000 => {
                     self.gamestream_hardware_video_encode = ::std::option::Option::Some(is.read_bool()?);
                 },
+                104008 => {
+                    self.gamestream_enable_video_h265 = ::std::option::Option::Some(is.read_bool()?);
+                },
                 112008 => {
                     self.steam_input_configurator_error_msg_enable = ::std::option::Option::Some(is.read_bool()?);
                 },
@@ -4501,6 +5016,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 },
                 112080 => {
                     self.controller_combine_nintendo_joycons = ::std::option::Option::Some(is.read_bool()?);
+                },
+                1120088 => {
+                    self.controller_enable_chord = ::std::option::Option::Some(is.read_bool()?);
+                },
+                1120096 => {
+                    self.controller_poll_rate = ::std::option::Option::Some(is.read_bool()?);
                 },
                 128000 => {
                     self.startup_movie_id = ::std::option::Option::Some(is.read_uint64()?);
@@ -4538,8 +5059,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 145672 => {
                     self.g_background_a_m = ::std::option::Option::Some(is.read_bool()?);
                 },
-                145680 => {
-                    self.g_background_br = ::std::option::Option::Some(is.read_int32()?);
+                145682 => {
+                    self.gamerecording_video_bitrate = ::std::option::Option::Some(is.read_string()?);
                 },
                 145688 => {
                     self.g_background_a_s = ::std::option::Option::Some(is.read_bool()?);
@@ -4552,6 +5073,45 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 },
                 145712 => {
                     self.g_max_fps = ::std::option::Option::Some(is.read_int32()?);
+                },
+                145722 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.gamerecording_hotkey_ic)?;
+                },
+                145733 => {
+                    self.gamerecording_ic_seconds = ::std::option::Option::Some(is.read_float()?);
+                },
+                145736 => {
+                    self.gamerecording_export_limit_type = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                145744 => {
+                    self.gamerecording_export_limit_size_mb = ::std::option::Option::Some(is.read_int32()?);
+                },
+                145752 => {
+                    self.gamerecording_export_limit_bitrate = ::std::option::Option::Some(is.read_int32()?);
+                },
+                145760 => {
+                    self.gamerecording_export_limit_width = ::std::option::Option::Some(is.read_int32()?);
+                },
+                145768 => {
+                    self.gamerecording_export_limit_height = ::std::option::Option::Some(is.read_int32()?);
+                },
+                145776 => {
+                    self.gamerecording_export_limit_frame_rate = ::std::option::Option::Some(is.read_int32()?);
+                },
+                145786 => {
+                    self.gamerecording_export_directory = ::std::option::Option::Some(is.read_string()?);
+                },
+                145792 => {
+                    self.gamerecording_export_codec = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                145800 => {
+                    self.gamerecording_video_maxheight = ::std::option::Option::Some(is.read_int32()?);
+                },
+                145808 => {
+                    self.gamerecording_force_mic_mono = ::std::option::Option::Some(is.read_bool()?);
+                },
+                145816 => {
+                    self.gamerecording_automatic_gain_control = ::std::option::Option::Some(is.read_bool()?);
                 },
                 160000 => {
                     self.show_timestamps_in_console = ::std::option::Option::Some(is.read_bool()?);
@@ -4573,6 +5133,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 },
                 160048 => {
                     self.hdr_compat_testing = ::std::option::Option::Some(is.read_bool()?);
+                },
+                160056 => {
+                    self.developer_mode_enabled = ::std::option::Option::Some(is.read_bool()?);
+                },
+                160064 => {
+                    self.show_advanced_update_channels = ::std::option::Option::Some(is.read_bool()?);
                 },
                 168008 => {
                     self.gamescope_hdr_visualization = ::std::option::Option::Some(is.read_enum_or_unknown()?);
@@ -4606,6 +5172,15 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 },
                 168088 => {
                     self.gamescope_force_composite = ::std::option::Option::Some(is.read_bool()?);
+                },
+                168098 => {
+                    self.gamescope_game_resolution_global = ::std::option::Option::Some(is.read_string()?);
+                },
+                168106 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.gamescope_guide_hotkey)?;
+                },
+                168114 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.gamescope_qam_hotkey)?;
                 },
                 176000 => {
                     self.steamos_status_led_brightness = ::std::option::Option::Some(is.read_int32()?);
@@ -4652,8 +5227,14 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
                 184058 => {
                     self.setting_validation_string = ::std::option::Option::Some(is.read_string()?);
                 },
+                184066 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.setting_validation_hotkey)?;
+                },
                 192000 => {
                     self.system_bluetooth_enabled = ::std::option::Option::Some(is.read_bool()?);
+                },
+                200000 => {
+                    self.vr_show_perf_graph_in_hmd = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -4716,6 +5297,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             my_size += 2 + 1;
         }
         if let Some(v) = self.always_show_user_chooser {
+            my_size += 2 + 1;
+        }
+        if let Some(v) = self.os_version_unsupported {
             my_size += 2 + 1;
         }
         if let Some(v) = self.show_family_sharing_notifications {
@@ -4904,6 +5488,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         if let Some(v) = self.download_throttle_rate {
             my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(8012, v);
         }
+        if let Some(v) = self.default_app_update_behavior {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(8013, v);
+        }
         if let Some(v) = self.cloud_enabled {
             my_size += 3 + 1;
         }
@@ -4961,6 +5548,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         if let Some(v) = self.gamestream_hardware_video_encode {
             my_size += 3 + 1;
         }
+        if let Some(v) = self.gamestream_enable_video_h265 {
+            my_size += 3 + 1;
+        }
         if let Some(v) = self.steam_input_configurator_error_msg_enable {
             my_size += 3 + 1;
         }
@@ -4989,6 +5579,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             my_size += 3 + 1;
         }
         if let Some(v) = self.controller_combine_nintendo_joycons {
+            my_size += 3 + 1;
+        }
+        if let Some(v) = self.controller_enable_chord {
+            my_size += 3 + 1;
+        }
+        if let Some(v) = self.controller_poll_rate {
             my_size += 3 + 1;
         }
         if let Some(v) = self.startup_movie_id {
@@ -5029,8 +5625,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         if let Some(v) = self.g_background_a_m {
             my_size += 3 + 1;
         }
-        if let Some(v) = self.g_background_br {
-            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18210, v);
+        if let Some(v) = self.gamerecording_video_bitrate.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(18210, &v);
         }
         if let Some(v) = self.g_background_a_s {
             my_size += 3 + 1;
@@ -5043,6 +5639,46 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         }
         if let Some(v) = self.g_max_fps {
             my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18214, v);
+        }
+        if let Some(v) = self.gamerecording_hotkey_ic.as_ref() {
+            let len = v.compute_size();
+            my_size += 3 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        if let Some(v) = self.gamerecording_ic_seconds {
+            my_size += 3 + 4;
+        }
+        if let Some(v) = self.gamerecording_export_limit_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18217, v.value());
+        }
+        if let Some(v) = self.gamerecording_export_limit_size_mb {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18218, v);
+        }
+        if let Some(v) = self.gamerecording_export_limit_bitrate {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18219, v);
+        }
+        if let Some(v) = self.gamerecording_export_limit_width {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18220, v);
+        }
+        if let Some(v) = self.gamerecording_export_limit_height {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18221, v);
+        }
+        if let Some(v) = self.gamerecording_export_limit_frame_rate {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18222, v);
+        }
+        if let Some(v) = self.gamerecording_export_directory.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(18223, &v);
+        }
+        if let Some(v) = self.gamerecording_export_codec {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18224, v.value());
+        }
+        if let Some(v) = self.gamerecording_video_maxheight {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(18225, v);
+        }
+        if let Some(v) = self.gamerecording_force_mic_mono {
+            my_size += 3 + 1;
+        }
+        if let Some(v) = self.gamerecording_automatic_gain_control {
+            my_size += 3 + 1;
         }
         if let Some(v) = self.show_timestamps_in_console {
             my_size += 3 + 1;
@@ -5063,6 +5699,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             my_size += 3 + 1;
         }
         if let Some(v) = self.hdr_compat_testing {
+            my_size += 3 + 1;
+        }
+        if let Some(v) = self.developer_mode_enabled {
+            my_size += 3 + 1;
+        }
+        if let Some(v) = self.show_advanced_update_channels {
             my_size += 3 + 1;
         }
         if let Some(v) = self.gamescope_hdr_visualization {
@@ -5097,6 +5739,17 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         }
         if let Some(v) = self.gamescope_force_composite {
             my_size += 3 + 1;
+        }
+        if let Some(v) = self.gamescope_game_resolution_global.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(21012, &v);
+        }
+        if let Some(v) = self.gamescope_guide_hotkey.as_ref() {
+            let len = v.compute_size();
+            my_size += 3 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        if let Some(v) = self.gamescope_qam_hotkey.as_ref() {
+            let len = v.compute_size();
+            my_size += 3 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
         }
         if let Some(v) = self.steamos_status_led_brightness {
             my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(22000, v);
@@ -5143,7 +5796,14 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         if let Some(v) = self.setting_validation_string.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(23007, &v);
         }
+        if let Some(v) = self.setting_validation_hotkey.as_ref() {
+            let len = v.compute_size();
+            my_size += 3 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
         if let Some(v) = self.system_bluetooth_enabled {
+            my_size += 3 + 1;
+        }
+        if let Some(v) = self.vr_show_perf_graph_in_hmd {
             my_size += 3 + 1;
         }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
@@ -5202,6 +5862,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         }
         if let Some(v) = self.always_show_user_chooser {
             os.write_bool(20, v)?;
+        }
+        if let Some(v) = self.os_version_unsupported {
+            os.write_bool(21, v)?;
         }
         if let Some(v) = self.show_family_sharing_notifications {
             os.write_bool(3000, v)?;
@@ -5386,6 +6049,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         if let Some(v) = self.download_throttle_rate {
             os.write_int32(8012, v)?;
         }
+        if let Some(v) = self.default_app_update_behavior {
+            os.write_int32(8013, v)?;
+        }
         if let Some(v) = self.cloud_enabled {
             os.write_bool(10000, v)?;
         }
@@ -5443,6 +6109,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         if let Some(v) = self.gamestream_hardware_video_encode {
             os.write_bool(13000, v)?;
         }
+        if let Some(v) = self.gamestream_enable_video_h265 {
+            os.write_bool(13001, v)?;
+        }
         if let Some(v) = self.steam_input_configurator_error_msg_enable {
             os.write_bool(14001, v)?;
         }
@@ -5472,6 +6141,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         }
         if let Some(v) = self.controller_combine_nintendo_joycons {
             os.write_bool(14010, v)?;
+        }
+        if let Some(v) = self.controller_enable_chord {
+            os.write_bool(140011, v)?;
+        }
+        if let Some(v) = self.controller_poll_rate {
+            os.write_bool(140012, v)?;
         }
         if let Some(v) = self.startup_movie_id {
             os.write_uint64(16000, v)?;
@@ -5509,8 +6184,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         if let Some(v) = self.g_background_a_m {
             os.write_bool(18209, v)?;
         }
-        if let Some(v) = self.g_background_br {
-            os.write_int32(18210, v)?;
+        if let Some(v) = self.gamerecording_video_bitrate.as_ref() {
+            os.write_string(18210, v)?;
         }
         if let Some(v) = self.g_background_a_s {
             os.write_bool(18211, v)?;
@@ -5523,6 +6198,45 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         }
         if let Some(v) = self.g_max_fps {
             os.write_int32(18214, v)?;
+        }
+        if let Some(v) = self.gamerecording_hotkey_ic.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(18215, v, os)?;
+        }
+        if let Some(v) = self.gamerecording_ic_seconds {
+            os.write_float(18216, v)?;
+        }
+        if let Some(v) = self.gamerecording_export_limit_type {
+            os.write_enum(18217, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.gamerecording_export_limit_size_mb {
+            os.write_int32(18218, v)?;
+        }
+        if let Some(v) = self.gamerecording_export_limit_bitrate {
+            os.write_int32(18219, v)?;
+        }
+        if let Some(v) = self.gamerecording_export_limit_width {
+            os.write_int32(18220, v)?;
+        }
+        if let Some(v) = self.gamerecording_export_limit_height {
+            os.write_int32(18221, v)?;
+        }
+        if let Some(v) = self.gamerecording_export_limit_frame_rate {
+            os.write_int32(18222, v)?;
+        }
+        if let Some(v) = self.gamerecording_export_directory.as_ref() {
+            os.write_string(18223, v)?;
+        }
+        if let Some(v) = self.gamerecording_export_codec {
+            os.write_enum(18224, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        if let Some(v) = self.gamerecording_video_maxheight {
+            os.write_int32(18225, v)?;
+        }
+        if let Some(v) = self.gamerecording_force_mic_mono {
+            os.write_bool(18226, v)?;
+        }
+        if let Some(v) = self.gamerecording_automatic_gain_control {
+            os.write_bool(18227, v)?;
         }
         if let Some(v) = self.show_timestamps_in_console {
             os.write_bool(20000, v)?;
@@ -5544,6 +6258,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         }
         if let Some(v) = self.hdr_compat_testing {
             os.write_bool(20006, v)?;
+        }
+        if let Some(v) = self.developer_mode_enabled {
+            os.write_bool(20007, v)?;
+        }
+        if let Some(v) = self.show_advanced_update_channels {
+            os.write_bool(20008, v)?;
         }
         if let Some(v) = self.gamescope_hdr_visualization {
             os.write_enum(21001, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
@@ -5577,6 +6297,15 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         }
         if let Some(v) = self.gamescope_force_composite {
             os.write_bool(21011, v)?;
+        }
+        if let Some(v) = self.gamescope_game_resolution_global.as_ref() {
+            os.write_string(21012, v)?;
+        }
+        if let Some(v) = self.gamescope_guide_hotkey.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(21013, v, os)?;
+        }
+        if let Some(v) = self.gamescope_qam_hotkey.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(21014, v, os)?;
         }
         if let Some(v) = self.steamos_status_led_brightness {
             os.write_int32(22000, v)?;
@@ -5623,8 +6352,14 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         if let Some(v) = self.setting_validation_string.as_ref() {
             os.write_string(23007, v)?;
         }
+        if let Some(v) = self.setting_validation_hotkey.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(23008, v, os)?;
+        }
         if let Some(v) = self.system_bluetooth_enabled {
             os.write_bool(24000, v)?;
+        }
+        if let Some(v) = self.vr_show_perf_graph_in_hmd {
+            os.write_bool(25000, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -5660,6 +6395,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         self.small_mode = ::std::option::Option::None;
         self.skip_steamvr_install_dialog = ::std::option::Option::None;
         self.always_show_user_chooser = ::std::option::Option::None;
+        self.os_version_unsupported = ::std::option::Option::None;
         self.show_family_sharing_notifications = ::std::option::Option::None;
         self.show_copy_count_in_library = ::std::option::Option::None;
         self.overlay_fps_counter_corner = ::std::option::Option::None;
@@ -5721,6 +6457,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         self.download_while_app_running = ::std::option::Option::None;
         self.download_throttle_while_streaming = ::std::option::Option::None;
         self.download_throttle_rate = ::std::option::Option::None;
+        self.default_app_update_behavior = ::std::option::Option::None;
         self.cloud_enabled = ::std::option::Option::None;
         self.show_screenshot_manager = ::std::option::Option::None;
         self.music_volume = ::std::option::Option::None;
@@ -5740,6 +6477,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         self.broadcast_show_live_reminder = ::std::option::Option::None;
         self.broadcast_chat_corner = ::std::option::Option::None;
         self.gamestream_hardware_video_encode = ::std::option::Option::None;
+        self.gamestream_enable_video_h265 = ::std::option::Option::None;
         self.steam_input_configurator_error_msg_enable = ::std::option::Option::None;
         self.controller_guide_button_focus_steam = ::std::option::Option::None;
         self.controller_ps_support = ::std::option::Option::None;
@@ -5750,6 +6488,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         self.controller_power_off_timeout = ::std::option::Option::None;
         self.turn_off_controller_on_exit = ::std::option::Option::None;
         self.controller_combine_nintendo_joycons = ::std::option::Option::None;
+        self.controller_enable_chord = ::std::option::Option::None;
+        self.controller_poll_rate = ::std::option::Option::None;
         self.startup_movie_id = ::std::option::Option::None;
         self.startup_movie_local_path = ::std::option::Option::None;
         self.startup_movie_shuffle = ::std::option::Option::None;
@@ -5762,11 +6502,24 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         self.g_background_mk.clear();
         self.g_background_tg.clear();
         self.g_background_a_m = ::std::option::Option::None;
-        self.g_background_br = ::std::option::Option::None;
+        self.gamerecording_video_bitrate = ::std::option::Option::None;
         self.g_background_a_s = ::std::option::Option::None;
         self.g_background_mode = ::std::option::Option::None;
         self.g_background_audio = ::std::option::Option::None;
         self.g_max_fps = ::std::option::Option::None;
+        self.gamerecording_hotkey_ic.clear();
+        self.gamerecording_ic_seconds = ::std::option::Option::None;
+        self.gamerecording_export_limit_type = ::std::option::Option::None;
+        self.gamerecording_export_limit_size_mb = ::std::option::Option::None;
+        self.gamerecording_export_limit_bitrate = ::std::option::Option::None;
+        self.gamerecording_export_limit_width = ::std::option::Option::None;
+        self.gamerecording_export_limit_height = ::std::option::Option::None;
+        self.gamerecording_export_limit_frame_rate = ::std::option::Option::None;
+        self.gamerecording_export_directory = ::std::option::Option::None;
+        self.gamerecording_export_codec = ::std::option::Option::None;
+        self.gamerecording_video_maxheight = ::std::option::Option::None;
+        self.gamerecording_force_mic_mono = ::std::option::Option::None;
+        self.gamerecording_automatic_gain_control = ::std::option::Option::None;
         self.show_timestamps_in_console = ::std::option::Option::None;
         self.force_oobe = ::std::option::Option::None;
         self.override_browser_composer_mode = ::std::option::Option::None;
@@ -5774,6 +6527,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         self.force_deck_perf_tab = ::std::option::Option::None;
         self.force_fake_mandatory_update = ::std::option::Option::None;
         self.hdr_compat_testing = ::std::option::Option::None;
+        self.developer_mode_enabled = ::std::option::Option::None;
+        self.show_advanced_update_channels = ::std::option::Option::None;
         self.gamescope_hdr_visualization = ::std::option::Option::None;
         self.gamescope_app_target_framerate = ::std::option::Option::None;
         self.gamescope_enable_app_target_framerate = ::std::option::Option::None;
@@ -5785,6 +6540,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         self.gamescope_allow_tearing = ::std::option::Option::None;
         self.gamescope_composite_debug = ::std::option::Option::None;
         self.gamescope_force_composite = ::std::option::Option::None;
+        self.gamescope_game_resolution_global = ::std::option::Option::None;
+        self.gamescope_guide_hotkey.clear();
+        self.gamescope_qam_hotkey.clear();
         self.steamos_status_led_brightness = ::std::option::Option::None;
         self.steamos_tdp_limit_enabled = ::std::option::Option::None;
         self.steamos_tdp_limit = ::std::option::Option::None;
@@ -5800,7 +6558,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
         self.setting_validation_uint64 = ::std::option::Option::None;
         self.setting_validation_float = ::std::option::Option::None;
         self.setting_validation_string = ::std::option::Option::None;
+        self.setting_validation_hotkey.clear();
         self.system_bluetooth_enabled = ::std::option::Option::None;
+        self.vr_show_perf_graph_in_hmd = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -5823,6 +6583,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             small_mode: ::std::option::Option::None,
             skip_steamvr_install_dialog: ::std::option::Option::None,
             always_show_user_chooser: ::std::option::Option::None,
+            os_version_unsupported: ::std::option::Option::None,
             show_family_sharing_notifications: ::std::option::Option::None,
             show_copy_count_in_library: ::std::option::Option::None,
             overlay_fps_counter_corner: ::std::option::Option::None,
@@ -5884,6 +6645,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             download_while_app_running: ::std::option::Option::None,
             download_throttle_while_streaming: ::std::option::Option::None,
             download_throttle_rate: ::std::option::Option::None,
+            default_app_update_behavior: ::std::option::Option::None,
             cloud_enabled: ::std::option::Option::None,
             show_screenshot_manager: ::std::option::Option::None,
             music_volume: ::std::option::Option::None,
@@ -5903,6 +6665,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             broadcast_show_live_reminder: ::std::option::Option::None,
             broadcast_chat_corner: ::std::option::Option::None,
             gamestream_hardware_video_encode: ::std::option::Option::None,
+            gamestream_enable_video_h265: ::std::option::Option::None,
             steam_input_configurator_error_msg_enable: ::std::option::Option::None,
             controller_guide_button_focus_steam: ::std::option::Option::None,
             controller_ps_support: ::std::option::Option::None,
@@ -5913,6 +6676,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             controller_power_off_timeout: ::std::option::Option::None,
             turn_off_controller_on_exit: ::std::option::Option::None,
             controller_combine_nintendo_joycons: ::std::option::Option::None,
+            controller_enable_chord: ::std::option::Option::None,
+            controller_poll_rate: ::std::option::Option::None,
             startup_movie_id: ::std::option::Option::None,
             startup_movie_local_path: ::std::option::Option::None,
             startup_movie_shuffle: ::std::option::Option::None,
@@ -5925,11 +6690,24 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             g_background_mk: ::steam_vent_proto_common::protobuf::MessageField::none(),
             g_background_tg: ::steam_vent_proto_common::protobuf::MessageField::none(),
             g_background_a_m: ::std::option::Option::None,
-            g_background_br: ::std::option::Option::None,
+            gamerecording_video_bitrate: ::std::option::Option::None,
             g_background_a_s: ::std::option::Option::None,
             g_background_mode: ::std::option::Option::None,
             g_background_audio: ::std::option::Option::None,
             g_max_fps: ::std::option::Option::None,
+            gamerecording_hotkey_ic: ::steam_vent_proto_common::protobuf::MessageField::none(),
+            gamerecording_ic_seconds: ::std::option::Option::None,
+            gamerecording_export_limit_type: ::std::option::Option::None,
+            gamerecording_export_limit_size_mb: ::std::option::Option::None,
+            gamerecording_export_limit_bitrate: ::std::option::Option::None,
+            gamerecording_export_limit_width: ::std::option::Option::None,
+            gamerecording_export_limit_height: ::std::option::Option::None,
+            gamerecording_export_limit_frame_rate: ::std::option::Option::None,
+            gamerecording_export_directory: ::std::option::Option::None,
+            gamerecording_export_codec: ::std::option::Option::None,
+            gamerecording_video_maxheight: ::std::option::Option::None,
+            gamerecording_force_mic_mono: ::std::option::Option::None,
+            gamerecording_automatic_gain_control: ::std::option::Option::None,
             show_timestamps_in_console: ::std::option::Option::None,
             force_oobe: ::std::option::Option::None,
             override_browser_composer_mode: ::std::option::Option::None,
@@ -5937,6 +6715,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             force_deck_perf_tab: ::std::option::Option::None,
             force_fake_mandatory_update: ::std::option::Option::None,
             hdr_compat_testing: ::std::option::Option::None,
+            developer_mode_enabled: ::std::option::Option::None,
+            show_advanced_update_channels: ::std::option::Option::None,
             gamescope_hdr_visualization: ::std::option::Option::None,
             gamescope_app_target_framerate: ::std::option::Option::None,
             gamescope_enable_app_target_framerate: ::std::option::Option::None,
@@ -5948,6 +6728,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             gamescope_allow_tearing: ::std::option::Option::None,
             gamescope_composite_debug: ::std::option::Option::None,
             gamescope_force_composite: ::std::option::Option::None,
+            gamescope_game_resolution_global: ::std::option::Option::None,
+            gamescope_guide_hotkey: ::steam_vent_proto_common::protobuf::MessageField::none(),
+            gamescope_qam_hotkey: ::steam_vent_proto_common::protobuf::MessageField::none(),
             steamos_status_led_brightness: ::std::option::Option::None,
             steamos_tdp_limit_enabled: ::std::option::Option::None,
             steamos_tdp_limit: ::std::option::Option::None,
@@ -5963,7 +6746,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientSettings {
             setting_validation_uint64: ::std::option::Option::None,
             setting_validation_float: ::std::option::Option::None,
             setting_validation_string: ::std::option::Option::None,
+            setting_validation_hotkey: ::steam_vent_proto_common::protobuf::MessageField::none(),
             system_bluetooth_enabled: ::std::option::Option::None,
+            vr_show_perf_graph_in_hmd: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -6099,6 +6884,8 @@ pub enum ESettingProfileMode {
     k_ESettingProfileMode_PerGame = 1,
     // @@protoc_insertion_point(enum_value:ESettingProfileMode.k_ESettingProfileMode_PerGamePerDisplay)
     k_ESettingProfileMode_PerGamePerDisplay = 2,
+    // @@protoc_insertion_point(enum_value:ESettingProfileMode.k_ESettingProfileMode_PerDisplay)
+    k_ESettingProfileMode_PerDisplay = 3,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for ESettingProfileMode {
@@ -6113,6 +6900,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for ESettingProfileMode {
             0 => ::std::option::Option::Some(ESettingProfileMode::k_ESettingProfileMode_None),
             1 => ::std::option::Option::Some(ESettingProfileMode::k_ESettingProfileMode_PerGame),
             2 => ::std::option::Option::Some(ESettingProfileMode::k_ESettingProfileMode_PerGamePerDisplay),
+            3 => ::std::option::Option::Some(ESettingProfileMode::k_ESettingProfileMode_PerDisplay),
             _ => ::std::option::Option::None
         }
     }
@@ -6122,6 +6910,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for ESettingProfileMode {
             "k_ESettingProfileMode_None" => ::std::option::Option::Some(ESettingProfileMode::k_ESettingProfileMode_None),
             "k_ESettingProfileMode_PerGame" => ::std::option::Option::Some(ESettingProfileMode::k_ESettingProfileMode_PerGame),
             "k_ESettingProfileMode_PerGamePerDisplay" => ::std::option::Option::Some(ESettingProfileMode::k_ESettingProfileMode_PerGamePerDisplay),
+            "k_ESettingProfileMode_PerDisplay" => ::std::option::Option::Some(ESettingProfileMode::k_ESettingProfileMode_PerDisplay),
             _ => ::std::option::Option::None
         }
     }
@@ -6130,6 +6919,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for ESettingProfileMode {
         ESettingProfileMode::k_ESettingProfileMode_None,
         ESettingProfileMode::k_ESettingProfileMode_PerGame,
         ESettingProfileMode::k_ESettingProfileMode_PerGamePerDisplay,
+        ESettingProfileMode::k_ESettingProfileMode_PerDisplay,
     ];
 }
 
@@ -6236,6 +7026,56 @@ impl ::steam_vent_proto_common::protobuf::Enum for EGRAudio {
 impl ::std::default::Default for EGRAudio {
     fn default() -> Self {
         EGRAudio::k_EGRAudio_Game
+    }
+}
+
+
+#[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+// @@protoc_insertion_point(enum:EGRExportLimitType)
+pub enum EGRExportLimitType {
+    // @@protoc_insertion_point(enum_value:EGRExportLimitType.k_EGRExportLimitType_Native)
+    k_EGRExportLimitType_Native = 0,
+    // @@protoc_insertion_point(enum_value:EGRExportLimitType.k_EGRExportLimitType_FileSize)
+    k_EGRExportLimitType_FileSize = 1,
+    // @@protoc_insertion_point(enum_value:EGRExportLimitType.k_EGRExportLimitType_Advanced)
+    k_EGRExportLimitType_Advanced = 2,
+}
+
+impl ::steam_vent_proto_common::protobuf::Enum for EGRExportLimitType {
+    const NAME: &'static str = "EGRExportLimitType";
+
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<EGRExportLimitType> {
+        match value {
+            0 => ::std::option::Option::Some(EGRExportLimitType::k_EGRExportLimitType_Native),
+            1 => ::std::option::Option::Some(EGRExportLimitType::k_EGRExportLimitType_FileSize),
+            2 => ::std::option::Option::Some(EGRExportLimitType::k_EGRExportLimitType_Advanced),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn from_str(str: &str) -> ::std::option::Option<EGRExportLimitType> {
+        match str {
+            "k_EGRExportLimitType_Native" => ::std::option::Option::Some(EGRExportLimitType::k_EGRExportLimitType_Native),
+            "k_EGRExportLimitType_FileSize" => ::std::option::Option::Some(EGRExportLimitType::k_EGRExportLimitType_FileSize),
+            "k_EGRExportLimitType_Advanced" => ::std::option::Option::Some(EGRExportLimitType::k_EGRExportLimitType_Advanced),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    const VALUES: &'static [EGRExportLimitType] = &[
+        EGRExportLimitType::k_EGRExportLimitType_Native,
+        EGRExportLimitType::k_EGRExportLimitType_FileSize,
+        EGRExportLimitType::k_EGRExportLimitType_Advanced,
+    ];
+}
+
+impl ::std::default::Default for EGRExportLimitType {
+    fn default() -> Self {
+        EGRExportLimitType::k_EGRExportLimitType_Native
     }
 }
 

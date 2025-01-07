@@ -4929,6 +4929,292 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientMetrics_ReportClien
     }
 }
 
+// @@protoc_insertion_point(message:CClientMetrics_ReportLinuxStats_Notification)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CClientMetrics_ReportLinuxStats_Notification {
+    // message fields
+    // @@protoc_insertion_point(field:CClientMetrics_ReportLinuxStats_Notification.glibc_version_major)
+    pub glibc_version_major: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CClientMetrics_ReportLinuxStats_Notification.glibc_version_minor)
+    pub glibc_version_minor: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CClientMetrics_ReportLinuxStats_Notification.account_type)
+    pub account_type: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CClientMetrics_ReportLinuxStats_Notification.launcher_type)
+    pub launcher_type: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CClientMetrics_ReportLinuxStats_Notification.game_server_appid)
+    pub game_server_appid: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CClientMetrics_ReportLinuxStats_Notification.process_name)
+    pub process_name: ::std::option::Option<::std::string::String>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CClientMetrics_ReportLinuxStats_Notification.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CClientMetrics_ReportLinuxStats_Notification {
+    fn default() -> &'a CClientMetrics_ReportLinuxStats_Notification {
+        <CClientMetrics_ReportLinuxStats_Notification as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CClientMetrics_ReportLinuxStats_Notification {
+    pub fn new() -> CClientMetrics_ReportLinuxStats_Notification {
+        ::std::default::Default::default()
+    }
+
+    // optional int32 glibc_version_major = 1;
+
+    pub fn glibc_version_major(&self) -> i32 {
+        self.glibc_version_major.unwrap_or(0)
+    }
+
+    pub fn clear_glibc_version_major(&mut self) {
+        self.glibc_version_major = ::std::option::Option::None;
+    }
+
+    pub fn has_glibc_version_major(&self) -> bool {
+        self.glibc_version_major.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_glibc_version_major(&mut self, v: i32) {
+        self.glibc_version_major = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 glibc_version_minor = 2;
+
+    pub fn glibc_version_minor(&self) -> i32 {
+        self.glibc_version_minor.unwrap_or(0)
+    }
+
+    pub fn clear_glibc_version_minor(&mut self) {
+        self.glibc_version_minor = ::std::option::Option::None;
+    }
+
+    pub fn has_glibc_version_minor(&self) -> bool {
+        self.glibc_version_minor.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_glibc_version_minor(&mut self, v: i32) {
+        self.glibc_version_minor = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 account_type = 3;
+
+    pub fn account_type(&self) -> i32 {
+        self.account_type.unwrap_or(0)
+    }
+
+    pub fn clear_account_type(&mut self) {
+        self.account_type = ::std::option::Option::None;
+    }
+
+    pub fn has_account_type(&self) -> bool {
+        self.account_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_account_type(&mut self, v: i32) {
+        self.account_type = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 launcher_type = 4;
+
+    pub fn launcher_type(&self) -> i32 {
+        self.launcher_type.unwrap_or(0)
+    }
+
+    pub fn clear_launcher_type(&mut self) {
+        self.launcher_type = ::std::option::Option::None;
+    }
+
+    pub fn has_launcher_type(&self) -> bool {
+        self.launcher_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_launcher_type(&mut self, v: i32) {
+        self.launcher_type = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 game_server_appid = 5;
+
+    pub fn game_server_appid(&self) -> i32 {
+        self.game_server_appid.unwrap_or(0)
+    }
+
+    pub fn clear_game_server_appid(&mut self) {
+        self.game_server_appid = ::std::option::Option::None;
+    }
+
+    pub fn has_game_server_appid(&self) -> bool {
+        self.game_server_appid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_game_server_appid(&mut self, v: i32) {
+        self.game_server_appid = ::std::option::Option::Some(v);
+    }
+
+    // optional string process_name = 6;
+
+    pub fn process_name(&self) -> &str {
+        match self.process_name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_process_name(&mut self) {
+        self.process_name = ::std::option::Option::None;
+    }
+
+    pub fn has_process_name(&self) -> bool {
+        self.process_name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_process_name(&mut self, v: ::std::string::String) {
+        self.process_name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_process_name(&mut self) -> &mut ::std::string::String {
+        if self.process_name.is_none() {
+            self.process_name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.process_name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_process_name(&mut self) -> ::std::string::String {
+        self.process_name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CClientMetrics_ReportLinuxStats_Notification {
+    const NAME: &'static str = "CClientMetrics_ReportLinuxStats_Notification";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.glibc_version_major = ::std::option::Option::Some(is.read_int32()?);
+                },
+                16 => {
+                    self.glibc_version_minor = ::std::option::Option::Some(is.read_int32()?);
+                },
+                24 => {
+                    self.account_type = ::std::option::Option::Some(is.read_int32()?);
+                },
+                32 => {
+                    self.launcher_type = ::std::option::Option::Some(is.read_int32()?);
+                },
+                40 => {
+                    self.game_server_appid = ::std::option::Option::Some(is.read_int32()?);
+                },
+                50 => {
+                    self.process_name = ::std::option::Option::Some(is.read_string()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.glibc_version_major {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(1, v);
+        }
+        if let Some(v) = self.glibc_version_minor {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(2, v);
+        }
+        if let Some(v) = self.account_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(3, v);
+        }
+        if let Some(v) = self.launcher_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(4, v);
+        }
+        if let Some(v) = self.game_server_appid {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(5, v);
+        }
+        if let Some(v) = self.process_name.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(6, &v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.glibc_version_major {
+            os.write_int32(1, v)?;
+        }
+        if let Some(v) = self.glibc_version_minor {
+            os.write_int32(2, v)?;
+        }
+        if let Some(v) = self.account_type {
+            os.write_int32(3, v)?;
+        }
+        if let Some(v) = self.launcher_type {
+            os.write_int32(4, v)?;
+        }
+        if let Some(v) = self.game_server_appid {
+            os.write_int32(5, v)?;
+        }
+        if let Some(v) = self.process_name.as_ref() {
+            os.write_string(6, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CClientMetrics_ReportLinuxStats_Notification {
+        CClientMetrics_ReportLinuxStats_Notification::new()
+    }
+
+    fn clear(&mut self) {
+        self.glibc_version_major = ::std::option::Option::None;
+        self.glibc_version_minor = ::std::option::Option::None;
+        self.account_type = ::std::option::Option::None;
+        self.launcher_type = ::std::option::Option::None;
+        self.game_server_appid = ::std::option::Option::None;
+        self.process_name = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CClientMetrics_ReportLinuxStats_Notification {
+        static instance: CClientMetrics_ReportLinuxStats_Notification = CClientMetrics_ReportLinuxStats_Notification {
+            glibc_version_major: ::std::option::Option::None,
+            glibc_version_minor: ::std::option::Option::None,
+            account_type: ::std::option::Option::None,
+            launcher_type: ::std::option::Option::None,
+            game_server_appid: ::std::option::Option::None,
+            process_name: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 // @@protoc_insertion_point(message:CClientMetrics_ClipShare_Notification)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CClientMetrics_ClipShare_Notification {
@@ -5567,6 +5853,8 @@ pub struct CClientMetrics_EndGameRecording_Notification {
     pub bytes: ::std::option::Option<u64>,
     // @@protoc_insertion_point(field:CClientMetrics_EndGameRecording_Notification.gameid)
     pub gameid: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CClientMetrics_EndGameRecording_Notification.instant_clip)
+    pub instant_clip: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CClientMetrics_EndGameRecording_Notification.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -5661,6 +5949,25 @@ impl CClientMetrics_EndGameRecording_Notification {
     pub fn set_gameid(&mut self, v: u64) {
         self.gameid = ::std::option::Option::Some(v);
     }
+
+    // optional bool instant_clip = 5;
+
+    pub fn instant_clip(&self) -> bool {
+        self.instant_clip.unwrap_or(false)
+    }
+
+    pub fn clear_instant_clip(&mut self) {
+        self.instant_clip = ::std::option::Option::None;
+    }
+
+    pub fn has_instant_clip(&self) -> bool {
+        self.instant_clip.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_instant_clip(&mut self, v: bool) {
+        self.instant_clip = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CClientMetrics_EndGameRecording_Notification {
@@ -5684,6 +5991,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientMetrics_EndGameReco
                 },
                 33 => {
                     self.gameid = ::std::option::Option::Some(is.read_fixed64()?);
+                },
+                40 => {
+                    self.instant_clip = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -5709,6 +6019,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientMetrics_EndGameReco
         if let Some(v) = self.gameid {
             my_size += 1 + 8;
         }
+        if let Some(v) = self.instant_clip {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -5726,6 +6039,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientMetrics_EndGameReco
         }
         if let Some(v) = self.gameid {
             os.write_fixed64(4, v)?;
+        }
+        if let Some(v) = self.instant_clip {
+            os.write_bool(5, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -5748,6 +6064,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientMetrics_EndGameReco
         self.seconds = ::std::option::Option::None;
         self.bytes = ::std::option::Option::None;
         self.gameid = ::std::option::Option::None;
+        self.instant_clip = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -5757,6 +6074,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CClientMetrics_EndGameReco
             seconds: ::std::option::Option::None,
             bytes: ::std::option::Option::None,
             gameid: ::std::option::Option::None,
+            instant_clip: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -5944,6 +6262,8 @@ pub enum EClipRangeMethod {
     k_EClipRangeMethod_Drag = 5,
     // @@protoc_insertion_point(enum_value:EClipRangeMethod.k_EClipRangeMethod_EntireClip)
     k_EClipRangeMethod_EntireClip = 6,
+    // @@protoc_insertion_point(enum_value:EClipRangeMethod.k_EClipRangeMethod_PhaseRecording)
+    k_EClipRangeMethod_PhaseRecording = 7,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EClipRangeMethod {
@@ -5961,6 +6281,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EClipRangeMethod {
             4 => ::std::option::Option::Some(EClipRangeMethod::k_EClipRangeMethod_ContextMenu),
             5 => ::std::option::Option::Some(EClipRangeMethod::k_EClipRangeMethod_Drag),
             6 => ::std::option::Option::Some(EClipRangeMethod::k_EClipRangeMethod_EntireClip),
+            7 => ::std::option::Option::Some(EClipRangeMethod::k_EClipRangeMethod_PhaseRecording),
             _ => ::std::option::Option::None
         }
     }
@@ -5973,6 +6294,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EClipRangeMethod {
             "k_EClipRangeMethod_ContextMenu" => ::std::option::Option::Some(EClipRangeMethod::k_EClipRangeMethod_ContextMenu),
             "k_EClipRangeMethod_Drag" => ::std::option::Option::Some(EClipRangeMethod::k_EClipRangeMethod_Drag),
             "k_EClipRangeMethod_EntireClip" => ::std::option::Option::Some(EClipRangeMethod::k_EClipRangeMethod_EntireClip),
+            "k_EClipRangeMethod_PhaseRecording" => ::std::option::Option::Some(EClipRangeMethod::k_EClipRangeMethod_PhaseRecording),
             _ => ::std::option::Option::None
         }
     }
@@ -5984,6 +6306,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EClipRangeMethod {
         EClipRangeMethod::k_EClipRangeMethod_ContextMenu,
         EClipRangeMethod::k_EClipRangeMethod_Drag,
         EClipRangeMethod::k_EClipRangeMethod_EntireClip,
+        EClipRangeMethod::k_EClipRangeMethod_PhaseRecording,
     ];
 }
 
@@ -6213,6 +6536,20 @@ for CClientMetrics_ReportClientArgs_Notification {
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessage
+for CClientMetrics_ReportLinuxStats_Notification {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
 impl ::steam_vent_proto_common::RpcMessage for CClientMetrics_ClipShare_Notification {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -6313,6 +6650,11 @@ for CClientMetrics_ReportClientArgs_Notification {
 impl ::steam_vent_proto_common::RpcMethod
 for CClientMetrics_ReportClientError_Notification {
     const METHOD_NAME: &'static str = "ClientMetrics.ReportClientError#1";
+    type Response = ();
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CClientMetrics_ReportLinuxStats_Notification {
+    const METHOD_NAME: &'static str = "ClientMetrics.ReportLinuxStats#1";
     type Response = ();
 }
 impl ::steam_vent_proto_common::RpcMethod

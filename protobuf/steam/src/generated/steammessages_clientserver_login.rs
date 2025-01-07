@@ -5628,11 +5628,6 @@ for CMsgClientRequestWebAPIAuthenticateUserNonce {
         self.compute_size() as usize
     }
 }
-impl ::steam_vent_proto_common::RpcMessageWithKind
-for CMsgClientRequestWebAPIAuthenticateUserNonce {
-    type KindEnum = crate::enums_clientserver::EMsg;
-    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonce;
-}
 impl ::steam_vent_proto_common::RpcMessage
 for CMsgClientRequestWebAPIAuthenticateUserNonceResponse {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
@@ -5646,11 +5641,6 @@ for CMsgClientRequestWebAPIAuthenticateUserNonceResponse {
         use ::steam_vent_proto_common::protobuf::Message;
         self.compute_size() as usize
     }
-}
-impl ::steam_vent_proto_common::RpcMessageWithKind
-for CMsgClientRequestWebAPIAuthenticateUserNonceResponse {
-    type KindEnum = crate::enums_clientserver::EMsg;
-    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientRequestWebAPIAuthenticateUserNonceResponse;
 }
 impl ::steam_vent_proto_common::RpcMessage for CMsgClientLogOff {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
@@ -5715,10 +5705,6 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgClientNewLoginKeyAccepted {
         use ::steam_vent_proto_common::protobuf::Message;
         self.compute_size() as usize
     }
-}
-impl ::steam_vent_proto_common::RpcMessageWithKind for CMsgClientNewLoginKeyAccepted {
-    type KindEnum = crate::enums_clientserver::EMsg;
-    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientNewLoginKeyAccepted;
 }
 impl ::steam_vent_proto_common::RpcMessage for CMsgClientAccountInfo {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {

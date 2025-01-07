@@ -942,6 +942,8 @@ pub struct CEconItem_DescriptionLine {
     pub color: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CEconItem_DescriptionLine.label)
     pub label: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CEconItem_DescriptionLine.name)
+    pub name: ::std::option::Option<::std::string::String>,
     // special fields
     // @@protoc_insertion_point(special_field:CEconItem_DescriptionLine.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -1101,6 +1103,42 @@ impl CEconItem_DescriptionLine {
     pub fn take_label(&mut self) -> ::std::string::String {
         self.label.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional string name = 5;
+
+    pub fn name(&self) -> &str {
+        match self.name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_name(&mut self) {
+        self.name = ::std::option::Option::None;
+    }
+
+    pub fn has_name(&self) -> bool {
+        self.name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_name(&mut self, v: ::std::string::String) {
+        self.name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_name(&mut self) -> &mut ::std::string::String {
+        if self.name.is_none() {
+            self.name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_name(&mut self) -> ::std::string::String {
+        self.name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CEconItem_DescriptionLine {
@@ -1124,6 +1162,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_DescriptionLine 
                 },
                 34 => {
                     self.label = ::std::option::Option::Some(is.read_string()?);
+                },
+                42 => {
+                    self.name = ::std::option::Option::Some(is.read_string()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -1149,6 +1190,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_DescriptionLine 
         if let Some(v) = self.label.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(4, &v);
         }
+        if let Some(v) = self.name.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(5, &v);
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -1166,6 +1210,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_DescriptionLine 
         }
         if let Some(v) = self.label.as_ref() {
             os.write_string(4, v)?;
+        }
+        if let Some(v) = self.name.as_ref() {
+            os.write_string(5, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -1188,6 +1235,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_DescriptionLine 
         self.value = ::std::option::Option::None;
         self.color = ::std::option::Option::None;
         self.label = ::std::option::Option::None;
+        self.name = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -1197,6 +1245,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_DescriptionLine 
             value: ::std::option::Option::None,
             color: ::std::option::Option::None,
             label: ::std::option::Option::None,
+            name: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -1442,6 +1491,8 @@ pub struct CEconItem_Description {
     pub market_buy_country_restriction: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CEconItem_Description.market_sell_country_restriction)
     pub market_sell_country_restriction: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CEconItem_Description.sealed)
+    pub sealed: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CEconItem_Description.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -2079,6 +2130,25 @@ impl CEconItem_Description {
     pub fn take_market_sell_country_restriction(&mut self) -> ::std::string::String {
         self.market_sell_country_restriction.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional bool sealed = 32;
+
+    pub fn sealed(&self) -> bool {
+        self.sealed.unwrap_or(false)
+    }
+
+    pub fn clear_sealed(&mut self) {
+        self.sealed = ::std::option::Option::None;
+    }
+
+    pub fn has_sealed(&self) -> bool {
+        self.sealed.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_sealed(&mut self, v: bool) {
+        self.sealed = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CEconItem_Description {
@@ -2180,6 +2250,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_Description {
                 },
                 250 => {
                     self.market_sell_country_restriction = ::std::option::Option::Some(is.read_string()?);
+                },
+                256 => {
+                    self.sealed = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -2290,6 +2363,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_Description {
         if let Some(v) = self.market_sell_country_restriction.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(31, &v);
         }
+        if let Some(v) = self.sealed {
+            my_size += 2 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -2386,6 +2462,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_Description {
         if let Some(v) = self.market_sell_country_restriction.as_ref() {
             os.write_string(31, v)?;
         }
+        if let Some(v) = self.sealed {
+            os.write_bool(32, v)?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -2433,6 +2512,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_Description {
         self.item_expiration = ::std::option::Option::None;
         self.market_buy_country_restriction = ::std::option::Option::None;
         self.market_sell_country_restriction = ::std::option::Option::None;
+        self.sealed = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -2468,6 +2548,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CEconItem_Description {
             item_expiration: ::std::option::Option::None,
             market_buy_country_restriction: ::std::option::Option::None,
             market_sell_country_restriction: ::std::option::Option::None,
+            sealed: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance

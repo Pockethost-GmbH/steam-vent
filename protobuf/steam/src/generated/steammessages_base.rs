@@ -1798,6 +1798,403 @@ pub mod cmsg_proto_buf_header {
 
 }
 
+// @@protoc_insertion_point(message:CMsgKubeRPCPacket)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CMsgKubeRPCPacket {
+    // message fields
+    // @@protoc_insertion_point(field:CMsgKubeRPCPacket.hdr)
+    pub hdr: ::steam_vent_proto_common::protobuf::MessageField<cmsg_kube_rpcpacket::Hdr>,
+    // @@protoc_insertion_point(field:CMsgKubeRPCPacket.payload)
+    pub payload: ::std::option::Option<::std::vec::Vec<u8>>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CMsgKubeRPCPacket.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CMsgKubeRPCPacket {
+    fn default() -> &'a CMsgKubeRPCPacket {
+        <CMsgKubeRPCPacket as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CMsgKubeRPCPacket {
+    pub fn new() -> CMsgKubeRPCPacket {
+        ::std::default::Default::default()
+    }
+
+    // optional bytes payload = 2;
+
+    pub fn payload(&self) -> &[u8] {
+        match self.payload.as_ref() {
+            Some(v) => v,
+            None => &[],
+        }
+    }
+
+    pub fn clear_payload(&mut self) {
+        self.payload = ::std::option::Option::None;
+    }
+
+    pub fn has_payload(&self) -> bool {
+        self.payload.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_payload(&mut self, v: ::std::vec::Vec<u8>) {
+        self.payload = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_payload(&mut self) -> &mut ::std::vec::Vec<u8> {
+        if self.payload.is_none() {
+            self.payload = ::std::option::Option::Some(::std::vec::Vec::new());
+        }
+        self.payload.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_payload(&mut self) -> ::std::vec::Vec<u8> {
+        self.payload.take().unwrap_or_else(|| ::std::vec::Vec::new())
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CMsgKubeRPCPacket {
+    const NAME: &'static str = "CMsgKubeRPCPacket";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.hdr)?;
+                },
+                18 => {
+                    self.payload = ::std::option::Option::Some(is.read_bytes()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.hdr.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        if let Some(v) = self.payload.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::bytes_size(2, &v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.hdr.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(1, v, os)?;
+        }
+        if let Some(v) = self.payload.as_ref() {
+            os.write_bytes(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CMsgKubeRPCPacket {
+        CMsgKubeRPCPacket::new()
+    }
+
+    fn clear(&mut self) {
+        self.hdr.clear();
+        self.payload = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CMsgKubeRPCPacket {
+        static instance: CMsgKubeRPCPacket = CMsgKubeRPCPacket {
+            hdr: ::steam_vent_proto_common::protobuf::MessageField::none(),
+            payload: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+/// Nested message and enums of message `CMsgKubeRPCPacket`
+pub mod cmsg_kube_rpcpacket {
+    // @@protoc_insertion_point(message:CMsgKubeRPCPacket.Hdr)
+    #[derive(PartialEq,Clone,Default,Debug)]
+    pub struct Hdr {
+        // message fields
+        // @@protoc_insertion_point(field:CMsgKubeRPCPacket.Hdr.sysid_source)
+        pub sysid_source: ::std::option::Option<u32>,
+        // @@protoc_insertion_point(field:CMsgKubeRPCPacket.Hdr.is_fbs_universe)
+        pub is_fbs_universe: ::std::option::Option<bool>,
+        // @@protoc_insertion_point(field:CMsgKubeRPCPacket.Hdr.jobid_source)
+        pub jobid_source: ::std::option::Option<u64>,
+        // @@protoc_insertion_point(field:CMsgKubeRPCPacket.Hdr.eresult)
+        pub eresult: ::std::option::Option<i32>,
+        // @@protoc_insertion_point(field:CMsgKubeRPCPacket.Hdr.error_message)
+        pub error_message: ::std::option::Option<::std::string::String>,
+        // special fields
+        // @@protoc_insertion_point(special_field:CMsgKubeRPCPacket.Hdr.special_fields)
+        pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+    }
+
+    impl<'a> ::std::default::Default for &'a Hdr {
+        fn default() -> &'a Hdr {
+            <Hdr as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+        }
+    }
+
+    impl Hdr {
+        pub fn new() -> Hdr {
+            ::std::default::Default::default()
+        }
+
+        // optional uint32 sysid_source = 1;
+
+        pub fn sysid_source(&self) -> u32 {
+            self.sysid_source.unwrap_or(0)
+        }
+
+        pub fn clear_sysid_source(&mut self) {
+            self.sysid_source = ::std::option::Option::None;
+        }
+
+        pub fn has_sysid_source(&self) -> bool {
+            self.sysid_source.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_sysid_source(&mut self, v: u32) {
+            self.sysid_source = ::std::option::Option::Some(v);
+        }
+
+        // optional bool is_fbs_universe = 2;
+
+        pub fn is_fbs_universe(&self) -> bool {
+            self.is_fbs_universe.unwrap_or(false)
+        }
+
+        pub fn clear_is_fbs_universe(&mut self) {
+            self.is_fbs_universe = ::std::option::Option::None;
+        }
+
+        pub fn has_is_fbs_universe(&self) -> bool {
+            self.is_fbs_universe.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_is_fbs_universe(&mut self, v: bool) {
+            self.is_fbs_universe = ::std::option::Option::Some(v);
+        }
+
+        // optional fixed64 jobid_source = 3;
+
+        pub fn jobid_source(&self) -> u64 {
+            self.jobid_source.unwrap_or(18446744073709551615u64)
+        }
+
+        pub fn clear_jobid_source(&mut self) {
+            self.jobid_source = ::std::option::Option::None;
+        }
+
+        pub fn has_jobid_source(&self) -> bool {
+            self.jobid_source.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_jobid_source(&mut self, v: u64) {
+            self.jobid_source = ::std::option::Option::Some(v);
+        }
+
+        // optional int32 eresult = 4;
+
+        pub fn eresult(&self) -> i32 {
+            self.eresult.unwrap_or(2i32)
+        }
+
+        pub fn clear_eresult(&mut self) {
+            self.eresult = ::std::option::Option::None;
+        }
+
+        pub fn has_eresult(&self) -> bool {
+            self.eresult.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_eresult(&mut self, v: i32) {
+            self.eresult = ::std::option::Option::Some(v);
+        }
+
+        // optional string error_message = 5;
+
+        pub fn error_message(&self) -> &str {
+            match self.error_message.as_ref() {
+                Some(v) => v,
+                None => "",
+            }
+        }
+
+        pub fn clear_error_message(&mut self) {
+            self.error_message = ::std::option::Option::None;
+        }
+
+        pub fn has_error_message(&self) -> bool {
+            self.error_message.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_error_message(&mut self, v: ::std::string::String) {
+            self.error_message = ::std::option::Option::Some(v);
+        }
+
+        // Mutable pointer to the field.
+        // If field is not initialized, it is initialized with default value first.
+        pub fn mut_error_message(&mut self) -> &mut ::std::string::String {
+            if self.error_message.is_none() {
+                self.error_message = ::std::option::Option::Some(::std::string::String::new());
+            }
+            self.error_message.as_mut().unwrap()
+        }
+
+        // Take field
+        pub fn take_error_message(&mut self) -> ::std::string::String {
+            self.error_message.take().unwrap_or_else(|| ::std::string::String::new())
+        }
+    }
+
+    impl ::steam_vent_proto_common::protobuf::Message for Hdr {
+        const NAME: &'static str = "Hdr";
+
+        fn is_initialized(&self) -> bool {
+            true
+        }
+
+        fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+            while let Some(tag) = is.read_raw_tag_or_eof()? {
+                match tag {
+                    8 => {
+                        self.sysid_source = ::std::option::Option::Some(is.read_uint32()?);
+                    },
+                    16 => {
+                        self.is_fbs_universe = ::std::option::Option::Some(is.read_bool()?);
+                    },
+                    25 => {
+                        self.jobid_source = ::std::option::Option::Some(is.read_fixed64()?);
+                    },
+                    32 => {
+                        self.eresult = ::std::option::Option::Some(is.read_int32()?);
+                    },
+                    42 => {
+                        self.error_message = ::std::option::Option::Some(is.read_string()?);
+                    },
+                    tag => {
+                        ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                    },
+                };
+            }
+            ::std::result::Result::Ok(())
+        }
+
+        // Compute sizes of nested messages
+        #[allow(unused_variables)]
+        fn compute_size(&self) -> u64 {
+            let mut my_size = 0;
+            if let Some(v) = self.sysid_source {
+                my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
+            }
+            if let Some(v) = self.is_fbs_universe {
+                my_size += 1 + 1;
+            }
+            if let Some(v) = self.jobid_source {
+                my_size += 1 + 8;
+            }
+            if let Some(v) = self.eresult {
+                my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(4, v);
+            }
+            if let Some(v) = self.error_message.as_ref() {
+                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(5, &v);
+            }
+            my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+            self.special_fields.cached_size().set(my_size as u32);
+            my_size
+        }
+
+        fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+            if let Some(v) = self.sysid_source {
+                os.write_uint32(1, v)?;
+            }
+            if let Some(v) = self.is_fbs_universe {
+                os.write_bool(2, v)?;
+            }
+            if let Some(v) = self.jobid_source {
+                os.write_fixed64(3, v)?;
+            }
+            if let Some(v) = self.eresult {
+                os.write_int32(4, v)?;
+            }
+            if let Some(v) = self.error_message.as_ref() {
+                os.write_string(5, v)?;
+            }
+            os.write_unknown_fields(self.special_fields.unknown_fields())?;
+            ::std::result::Result::Ok(())
+        }
+
+        fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+            &self.special_fields
+        }
+
+        fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+            &mut self.special_fields
+        }
+
+        fn new() -> Hdr {
+            Hdr::new()
+        }
+
+        fn clear(&mut self) {
+            self.sysid_source = ::std::option::Option::None;
+            self.is_fbs_universe = ::std::option::Option::None;
+            self.jobid_source = ::std::option::Option::None;
+            self.eresult = ::std::option::Option::None;
+            self.error_message = ::std::option::Option::None;
+            self.special_fields.clear();
+        }
+
+        fn default_instance() -> &'static Hdr {
+            static instance: Hdr = Hdr {
+                sysid_source: ::std::option::Option::None,
+                is_fbs_universe: ::std::option::Option::None,
+                jobid_source: ::std::option::Option::None,
+                eresult: ::std::option::Option::None,
+                error_message: ::std::option::Option::None,
+                special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+            };
+            &instance
+        }
+    }
+}
+
 // @@protoc_insertion_point(message:CMsgMulti)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CMsgMulti {
@@ -5700,6 +6097,8 @@ pub struct CClanEventData {
     pub build_id: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CClanEventData.build_branch)
     pub build_branch: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CClanEventData.unlisted)
+    pub unlisted: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CClanEventData.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -6352,6 +6751,25 @@ impl CClanEventData {
     pub fn take_build_branch(&mut self) -> ::std::string::String {
         self.build_branch.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional bool unlisted = 31;
+
+    pub fn unlisted(&self) -> bool {
+        self.unlisted.unwrap_or(false)
+    }
+
+    pub fn clear_unlisted(&mut self) {
+        self.unlisted = ::std::option::Option::None;
+    }
+
+    pub fn has_unlisted(&self) -> bool {
+        self.unlisted.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unlisted(&mut self, v: bool) {
+        self.unlisted = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CClanEventData {
@@ -6457,6 +6875,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClanEventData {
                 242 => {
                     self.build_branch = ::std::option::Option::Some(is.read_string()?);
                 },
+                248 => {
+                    self.unlisted = ::std::option::Option::Some(is.read_bool()?);
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -6560,6 +6981,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClanEventData {
         if let Some(v) = self.build_branch.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(30, &v);
         }
+        if let Some(v) = self.unlisted {
+            my_size += 2 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -6656,6 +7080,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CClanEventData {
         if let Some(v) = self.build_branch.as_ref() {
             os.write_string(30, v)?;
         }
+        if let Some(v) = self.unlisted {
+            os.write_bool(31, v)?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -6703,6 +7130,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CClanEventData {
         self.referenced_appids.clear();
         self.build_id = ::std::option::Option::None;
         self.build_branch = ::std::option::Option::None;
+        self.unlisted = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -6738,6 +7166,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CClanEventData {
             referenced_appids: ::std::vec::Vec::new(),
             build_id: ::std::option::Option::None,
             build_branch: ::std::option::Option::None,
+            unlisted: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -8612,6 +9041,19 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgGCRoutingProtoBufHeader {
     }
 }
 impl ::steam_vent_proto_common::RpcMessage for CMsgProtoBufHeader {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for CMsgKubeRPCPacket {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }

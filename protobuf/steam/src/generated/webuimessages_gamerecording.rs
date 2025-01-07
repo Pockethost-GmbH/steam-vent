@@ -25,28 +25,28 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::steam_vent_proto_common::protobuf::VERSION_3_5_1;
 
-// @@protoc_insertion_point(message:CGameRecording_GetActiveTimelineApps_Request)
+// @@protoc_insertion_point(message:CGameRecording_GetAppsWithBackgroundVideo_Request)
 #[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecording_GetActiveTimelineApps_Request {
+pub struct CGameRecording_GetAppsWithBackgroundVideo_Request {
     // special fields
-    // @@protoc_insertion_point(special_field:CGameRecording_GetActiveTimelineApps_Request.special_fields)
+    // @@protoc_insertion_point(special_field:CGameRecording_GetAppsWithBackgroundVideo_Request.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
 }
 
-impl<'a> ::std::default::Default for &'a CGameRecording_GetActiveTimelineApps_Request {
-    fn default() -> &'a CGameRecording_GetActiveTimelineApps_Request {
-        <CGameRecording_GetActiveTimelineApps_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a CGameRecording_GetAppsWithBackgroundVideo_Request {
+    fn default() -> &'a CGameRecording_GetAppsWithBackgroundVideo_Request {
+        <CGameRecording_GetAppsWithBackgroundVideo_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
     }
 }
 
-impl CGameRecording_GetActiveTimelineApps_Request {
-    pub fn new() -> CGameRecording_GetActiveTimelineApps_Request {
+impl CGameRecording_GetAppsWithBackgroundVideo_Request {
+    pub fn new() -> CGameRecording_GetAppsWithBackgroundVideo_Request {
         ::std::default::Default::default()
     }
 }
 
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_GetActiveTimelineApps_Request {
-    const NAME: &'static str = "CGameRecording_GetActiveTimelineApps_Request";
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_GetAppsWithBackgroundVideo_Request {
+    const NAME: &'static str = "CGameRecording_GetAppsWithBackgroundVideo_Request";
 
     fn is_initialized(&self) -> bool {
         true
@@ -85,47 +85,47 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_GetActiveTi
         &mut self.special_fields
     }
 
-    fn new() -> CGameRecording_GetActiveTimelineApps_Request {
-        CGameRecording_GetActiveTimelineApps_Request::new()
+    fn new() -> CGameRecording_GetAppsWithBackgroundVideo_Request {
+        CGameRecording_GetAppsWithBackgroundVideo_Request::new()
     }
 
     fn clear(&mut self) {
         self.special_fields.clear();
     }
 
-    fn default_instance() -> &'static CGameRecording_GetActiveTimelineApps_Request {
-        static instance: CGameRecording_GetActiveTimelineApps_Request = CGameRecording_GetActiveTimelineApps_Request {
+    fn default_instance() -> &'static CGameRecording_GetAppsWithBackgroundVideo_Request {
+        static instance: CGameRecording_GetAppsWithBackgroundVideo_Request = CGameRecording_GetAppsWithBackgroundVideo_Request {
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
     }
 }
 
-// @@protoc_insertion_point(message:CGameRecording_GetActiveTimelineApps_Response)
+// @@protoc_insertion_point(message:CGameRecording_GetAppsWithBackgroundVideo_Response)
 #[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecording_GetActiveTimelineApps_Response {
+pub struct CGameRecording_GetAppsWithBackgroundVideo_Response {
     // message fields
-    // @@protoc_insertion_point(field:CGameRecording_GetActiveTimelineApps_Response.apps)
-    pub apps: ::std::vec::Vec<cgame_recording_get_active_timeline_apps_response::App>,
+    // @@protoc_insertion_point(field:CGameRecording_GetAppsWithBackgroundVideo_Response.apps)
+    pub apps: ::std::vec::Vec<cgame_recording_get_apps_with_background_video_response::App>,
     // special fields
-    // @@protoc_insertion_point(special_field:CGameRecording_GetActiveTimelineApps_Response.special_fields)
+    // @@protoc_insertion_point(special_field:CGameRecording_GetAppsWithBackgroundVideo_Response.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
 }
 
-impl<'a> ::std::default::Default for &'a CGameRecording_GetActiveTimelineApps_Response {
-    fn default() -> &'a CGameRecording_GetActiveTimelineApps_Response {
-        <CGameRecording_GetActiveTimelineApps_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a CGameRecording_GetAppsWithBackgroundVideo_Response {
+    fn default() -> &'a CGameRecording_GetAppsWithBackgroundVideo_Response {
+        <CGameRecording_GetAppsWithBackgroundVideo_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
     }
 }
 
-impl CGameRecording_GetActiveTimelineApps_Response {
-    pub fn new() -> CGameRecording_GetActiveTimelineApps_Response {
+impl CGameRecording_GetAppsWithBackgroundVideo_Response {
+    pub fn new() -> CGameRecording_GetAppsWithBackgroundVideo_Response {
         ::std::default::Default::default()
     }
 }
 
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_GetActiveTimelineApps_Response {
-    const NAME: &'static str = "CGameRecording_GetActiveTimelineApps_Response";
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_GetAppsWithBackgroundVideo_Response {
+    const NAME: &'static str = "CGameRecording_GetAppsWithBackgroundVideo_Response";
 
     fn is_initialized(&self) -> bool {
         true
@@ -174,8 +174,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_GetActiveTi
         &mut self.special_fields
     }
 
-    fn new() -> CGameRecording_GetActiveTimelineApps_Response {
-        CGameRecording_GetActiveTimelineApps_Response::new()
+    fn new() -> CGameRecording_GetAppsWithBackgroundVideo_Response {
+        CGameRecording_GetAppsWithBackgroundVideo_Response::new()
     }
 
     fn clear(&mut self) {
@@ -183,8 +183,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_GetActiveTi
         self.special_fields.clear();
     }
 
-    fn default_instance() -> &'static CGameRecording_GetActiveTimelineApps_Response {
-        static instance: CGameRecording_GetActiveTimelineApps_Response = CGameRecording_GetActiveTimelineApps_Response {
+    fn default_instance() -> &'static CGameRecording_GetAppsWithBackgroundVideo_Response {
+        static instance: CGameRecording_GetAppsWithBackgroundVideo_Response = CGameRecording_GetAppsWithBackgroundVideo_Response {
             apps: ::std::vec::Vec::new(),
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
@@ -192,28 +192,28 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_GetActiveTi
     }
 }
 
-/// Nested message and enums of message `CGameRecording_GetActiveTimelineApps_Response`
-pub mod cgame_recording_get_active_timeline_apps_response {
-    // @@protoc_insertion_point(message:CGameRecording_GetActiveTimelineApps_Response.App)
+/// Nested message and enums of message `CGameRecording_GetAppsWithBackgroundVideo_Response`
+pub mod cgame_recording_get_apps_with_background_video_response {
+    // @@protoc_insertion_point(message:CGameRecording_GetAppsWithBackgroundVideo_Response.App)
     #[derive(PartialEq,Clone,Default,Debug)]
     pub struct App {
         // message fields
-        // @@protoc_insertion_point(field:CGameRecording_GetActiveTimelineApps_Response.App.game_id)
+        // @@protoc_insertion_point(field:CGameRecording_GetAppsWithBackgroundVideo_Response.App.game_id)
         pub game_id: ::std::option::Option<u64>,
-        // @@protoc_insertion_point(field:CGameRecording_GetActiveTimelineApps_Response.App.most_recent_start_time)
+        // @@protoc_insertion_point(field:CGameRecording_GetAppsWithBackgroundVideo_Response.App.most_recent_start_time)
         pub most_recent_start_time: ::std::option::Option<u32>,
-        // @@protoc_insertion_point(field:CGameRecording_GetActiveTimelineApps_Response.App.recording_type)
+        // @@protoc_insertion_point(field:CGameRecording_GetAppsWithBackgroundVideo_Response.App.recording_type)
         pub recording_type: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::super::enums::EGameRecordingType>>,
-        // @@protoc_insertion_point(field:CGameRecording_GetActiveTimelineApps_Response.App.video_duration_seconds)
+        // @@protoc_insertion_point(field:CGameRecording_GetAppsWithBackgroundVideo_Response.App.video_duration_seconds)
         pub video_duration_seconds: ::std::option::Option<f64>,
-        // @@protoc_insertion_point(field:CGameRecording_GetActiveTimelineApps_Response.App.timeline_duration_seconds)
+        // @@protoc_insertion_point(field:CGameRecording_GetAppsWithBackgroundVideo_Response.App.timeline_duration_seconds)
         pub timeline_duration_seconds: ::std::option::Option<f64>,
-        // @@protoc_insertion_point(field:CGameRecording_GetActiveTimelineApps_Response.App.is_active)
+        // @@protoc_insertion_point(field:CGameRecording_GetAppsWithBackgroundVideo_Response.App.is_active)
         pub is_active: ::std::option::Option<bool>,
-        // @@protoc_insertion_point(field:CGameRecording_GetActiveTimelineApps_Response.App.file_size)
+        // @@protoc_insertion_point(field:CGameRecording_GetAppsWithBackgroundVideo_Response.App.file_size)
         pub file_size: ::std::option::Option<u64>,
         // special fields
-        // @@protoc_insertion_point(special_field:CGameRecording_GetActiveTimelineApps_Response.App.special_fields)
+        // @@protoc_insertion_point(special_field:CGameRecording_GetAppsWithBackgroundVideo_Response.App.special_fields)
         pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
     }
 
@@ -994,6 +994,8 @@ pub struct CGameRecording_QueryPhases_Request {
     pub filter_search_string: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Request.filter_tags)
     pub filter_tags: ::std::vec::Vec<cgame_recording_query_phases_request::Tag>,
+    // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Request.filter_phase_id)
+    pub filter_phase_id: ::std::option::Option<::std::string::String>,
     // special fields
     // @@protoc_insertion_point(special_field:CGameRecording_QueryPhases_Request.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -1102,6 +1104,42 @@ impl CGameRecording_QueryPhases_Request {
     pub fn take_filter_search_string(&mut self) -> ::std::string::String {
         self.filter_search_string.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional string filter_phase_id = 13;
+
+    pub fn filter_phase_id(&self) -> &str {
+        match self.filter_phase_id.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_filter_phase_id(&mut self) {
+        self.filter_phase_id = ::std::option::Option::None;
+    }
+
+    pub fn has_filter_phase_id(&self) -> bool {
+        self.filter_phase_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_filter_phase_id(&mut self, v: ::std::string::String) {
+        self.filter_phase_id = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_filter_phase_id(&mut self) -> &mut ::std::string::String {
+        if self.filter_phase_id.is_none() {
+            self.filter_phase_id = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.filter_phase_id.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_filter_phase_id(&mut self) -> ::std::string::String {
+        self.filter_phase_id.take().unwrap_or_else(|| ::std::string::String::new())
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_QueryPhases_Request {
@@ -1128,6 +1166,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_QueryPhases
                 },
                 98 => {
                     self.filter_tags.push(is.read_message()?);
+                },
+                106 => {
+                    self.filter_phase_id = ::std::option::Option::Some(is.read_string()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -1157,6 +1198,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_QueryPhases
             let len = value.compute_size();
             my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
         };
+        if let Some(v) = self.filter_phase_id.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(13, &v);
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -1178,6 +1222,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_QueryPhases
         for v in &self.filter_tags {
             ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(12, v, os)?;
         };
+        if let Some(v) = self.filter_phase_id.as_ref() {
+            os.write_string(13, v)?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -1200,6 +1247,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_QueryPhases
         self.filter_gameid = ::std::option::Option::None;
         self.filter_search_string = ::std::option::Option::None;
         self.filter_tags.clear();
+        self.filter_phase_id = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -1210,6 +1258,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_QueryPhases
             filter_gameid: ::std::option::Option::None,
             filter_search_string: ::std::option::Option::None,
             filter_tags: ::std::vec::Vec::new(),
+            filter_phase_id: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -1525,12 +1574,6 @@ pub mod cgame_recording_query_phases_response {
         // message fields
         // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.game_id)
         pub game_id: ::std::option::Option<u64>,
-        // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.title)
-        pub title: ::std::option::Option<::std::string::String>,
-        // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.desc)
-        pub desc: ::std::option::Option<::std::string::String>,
-        // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.icon)
-        pub icon: ::std::option::Option<::std::string::String>,
         // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.date_recorded)
         pub date_recorded: ::std::option::Option<u32>,
         // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.duration_ms)
@@ -1549,6 +1592,14 @@ pub mod cgame_recording_query_phases_response {
         pub start_ms: ::std::option::Option<u64>,
         // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.screenshots)
         pub screenshots: ::std::vec::Vec<u32>,
+        // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.active)
+        pub active: ::std::option::Option<bool>,
+        // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.phase_id)
+        pub phase_id: ::std::option::Option<::std::string::String>,
+        // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.significant_events)
+        pub significant_events: ::std::vec::Vec<super::CTimelineEntry>,
+        // @@protoc_insertion_point(field:CGameRecording_QueryPhases_Response.Phase.attributes)
+        pub attributes: ::std::vec::Vec<super::super::webuimessages_gamerecordingfiles::CPhaseAttribute>,
         // special fields
         // @@protoc_insertion_point(special_field:CGameRecording_QueryPhases_Response.Phase.special_fields)
         pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -1582,114 +1633,6 @@ pub mod cgame_recording_query_phases_response {
         // Param is passed by value, moved
         pub fn set_game_id(&mut self, v: u64) {
             self.game_id = ::std::option::Option::Some(v);
-        }
-
-        // optional string title = 2;
-
-        pub fn title(&self) -> &str {
-            match self.title.as_ref() {
-                Some(v) => v,
-                None => "",
-            }
-        }
-
-        pub fn clear_title(&mut self) {
-            self.title = ::std::option::Option::None;
-        }
-
-        pub fn has_title(&self) -> bool {
-            self.title.is_some()
-        }
-
-        // Param is passed by value, moved
-        pub fn set_title(&mut self, v: ::std::string::String) {
-            self.title = ::std::option::Option::Some(v);
-        }
-
-        // Mutable pointer to the field.
-        // If field is not initialized, it is initialized with default value first.
-        pub fn mut_title(&mut self) -> &mut ::std::string::String {
-            if self.title.is_none() {
-                self.title = ::std::option::Option::Some(::std::string::String::new());
-            }
-            self.title.as_mut().unwrap()
-        }
-
-        // Take field
-        pub fn take_title(&mut self) -> ::std::string::String {
-            self.title.take().unwrap_or_else(|| ::std::string::String::new())
-        }
-
-        // optional string desc = 3;
-
-        pub fn desc(&self) -> &str {
-            match self.desc.as_ref() {
-                Some(v) => v,
-                None => "",
-            }
-        }
-
-        pub fn clear_desc(&mut self) {
-            self.desc = ::std::option::Option::None;
-        }
-
-        pub fn has_desc(&self) -> bool {
-            self.desc.is_some()
-        }
-
-        // Param is passed by value, moved
-        pub fn set_desc(&mut self, v: ::std::string::String) {
-            self.desc = ::std::option::Option::Some(v);
-        }
-
-        // Mutable pointer to the field.
-        // If field is not initialized, it is initialized with default value first.
-        pub fn mut_desc(&mut self) -> &mut ::std::string::String {
-            if self.desc.is_none() {
-                self.desc = ::std::option::Option::Some(::std::string::String::new());
-            }
-            self.desc.as_mut().unwrap()
-        }
-
-        // Take field
-        pub fn take_desc(&mut self) -> ::std::string::String {
-            self.desc.take().unwrap_or_else(|| ::std::string::String::new())
-        }
-
-        // optional string icon = 4;
-
-        pub fn icon(&self) -> &str {
-            match self.icon.as_ref() {
-                Some(v) => v,
-                None => "",
-            }
-        }
-
-        pub fn clear_icon(&mut self) {
-            self.icon = ::std::option::Option::None;
-        }
-
-        pub fn has_icon(&self) -> bool {
-            self.icon.is_some()
-        }
-
-        // Param is passed by value, moved
-        pub fn set_icon(&mut self, v: ::std::string::String) {
-            self.icon = ::std::option::Option::Some(v);
-        }
-
-        // Mutable pointer to the field.
-        // If field is not initialized, it is initialized with default value first.
-        pub fn mut_icon(&mut self) -> &mut ::std::string::String {
-            if self.icon.is_none() {
-                self.icon = ::std::option::Option::Some(::std::string::String::new());
-            }
-            self.icon.as_mut().unwrap()
-        }
-
-        // Take field
-        pub fn take_icon(&mut self) -> ::std::string::String {
-            self.icon.take().unwrap_or_else(|| ::std::string::String::new())
         }
 
         // optional uint32 date_recorded = 5;
@@ -1770,6 +1713,61 @@ pub mod cgame_recording_query_phases_response {
         pub fn set_start_ms(&mut self, v: u64) {
             self.start_ms = ::std::option::Option::Some(v);
         }
+
+        // optional bool active = 14;
+
+        pub fn active(&self) -> bool {
+            self.active.unwrap_or(false)
+        }
+
+        pub fn clear_active(&mut self) {
+            self.active = ::std::option::Option::None;
+        }
+
+        pub fn has_active(&self) -> bool {
+            self.active.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_active(&mut self, v: bool) {
+            self.active = ::std::option::Option::Some(v);
+        }
+
+        // optional string phase_id = 15;
+
+        pub fn phase_id(&self) -> &str {
+            match self.phase_id.as_ref() {
+                Some(v) => v,
+                None => "",
+            }
+        }
+
+        pub fn clear_phase_id(&mut self) {
+            self.phase_id = ::std::option::Option::None;
+        }
+
+        pub fn has_phase_id(&self) -> bool {
+            self.phase_id.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_phase_id(&mut self, v: ::std::string::String) {
+            self.phase_id = ::std::option::Option::Some(v);
+        }
+
+        // Mutable pointer to the field.
+        // If field is not initialized, it is initialized with default value first.
+        pub fn mut_phase_id(&mut self) -> &mut ::std::string::String {
+            if self.phase_id.is_none() {
+                self.phase_id = ::std::option::Option::Some(::std::string::String::new());
+            }
+            self.phase_id.as_mut().unwrap()
+        }
+
+        // Take field
+        pub fn take_phase_id(&mut self) -> ::std::string::String {
+            self.phase_id.take().unwrap_or_else(|| ::std::string::String::new())
+        }
     }
 
     impl ::steam_vent_proto_common::protobuf::Message for Phase {
@@ -1784,15 +1782,6 @@ pub mod cgame_recording_query_phases_response {
                 match tag {
                     8 => {
                         self.game_id = ::std::option::Option::Some(is.read_uint64()?);
-                    },
-                    18 => {
-                        self.title = ::std::option::Option::Some(is.read_string()?);
-                    },
-                    26 => {
-                        self.desc = ::std::option::Option::Some(is.read_string()?);
-                    },
-                    34 => {
-                        self.icon = ::std::option::Option::Some(is.read_string()?);
                     },
                     40 => {
                         self.date_recorded = ::std::option::Option::Some(is.read_uint32()?);
@@ -1824,6 +1813,18 @@ pub mod cgame_recording_query_phases_response {
                     104 => {
                         self.screenshots.push(is.read_uint32()?);
                     },
+                    112 => {
+                        self.active = ::std::option::Option::Some(is.read_bool()?);
+                    },
+                    122 => {
+                        self.phase_id = ::std::option::Option::Some(is.read_string()?);
+                    },
+                    130 => {
+                        self.significant_events.push(is.read_message()?);
+                    },
+                    138 => {
+                        self.attributes.push(is.read_message()?);
+                    },
                     tag => {
                         ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                     },
@@ -1838,15 +1839,6 @@ pub mod cgame_recording_query_phases_response {
             let mut my_size = 0;
             if let Some(v) = self.game_id {
                 my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
-            }
-            if let Some(v) = self.title.as_ref() {
-                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
-            }
-            if let Some(v) = self.desc.as_ref() {
-                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &v);
-            }
-            if let Some(v) = self.icon.as_ref() {
-                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(4, &v);
             }
             if let Some(v) = self.date_recorded {
                 my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(5, v);
@@ -1878,6 +1870,20 @@ pub mod cgame_recording_query_phases_response {
             for value in &self.screenshots {
                 my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(13, *value);
             };
+            if let Some(v) = self.active {
+                my_size += 1 + 1;
+            }
+            if let Some(v) = self.phase_id.as_ref() {
+                my_size += ::steam_vent_proto_common::protobuf::rt::string_size(15, &v);
+            }
+            for value in &self.significant_events {
+                let len = value.compute_size();
+                my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+            };
+            for value in &self.attributes {
+                let len = value.compute_size();
+                my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+            };
             my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
             self.special_fields.cached_size().set(my_size as u32);
             my_size
@@ -1886,15 +1892,6 @@ pub mod cgame_recording_query_phases_response {
         fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
             if let Some(v) = self.game_id {
                 os.write_uint64(1, v)?;
-            }
-            if let Some(v) = self.title.as_ref() {
-                os.write_string(2, v)?;
-            }
-            if let Some(v) = self.desc.as_ref() {
-                os.write_string(3, v)?;
-            }
-            if let Some(v) = self.icon.as_ref() {
-                os.write_string(4, v)?;
             }
             if let Some(v) = self.date_recorded {
                 os.write_uint32(5, v)?;
@@ -1923,6 +1920,18 @@ pub mod cgame_recording_query_phases_response {
             for v in &self.screenshots {
                 os.write_uint32(13, *v)?;
             };
+            if let Some(v) = self.active {
+                os.write_bool(14, v)?;
+            }
+            if let Some(v) = self.phase_id.as_ref() {
+                os.write_string(15, v)?;
+            }
+            for v in &self.significant_events {
+                ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(16, v, os)?;
+            };
+            for v in &self.attributes {
+                ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(17, v, os)?;
+            };
             os.write_unknown_fields(self.special_fields.unknown_fields())?;
             ::std::result::Result::Ok(())
         }
@@ -1941,9 +1950,6 @@ pub mod cgame_recording_query_phases_response {
 
         fn clear(&mut self) {
             self.game_id = ::std::option::Option::None;
-            self.title = ::std::option::Option::None;
-            self.desc = ::std::option::Option::None;
-            self.icon = ::std::option::Option::None;
             self.date_recorded = ::std::option::Option::None;
             self.duration_ms = ::std::option::Option::None;
             self.tags.clear();
@@ -1953,15 +1959,16 @@ pub mod cgame_recording_query_phases_response {
             self.type_ = ::std::option::Option::None;
             self.start_ms = ::std::option::Option::None;
             self.screenshots.clear();
+            self.active = ::std::option::Option::None;
+            self.phase_id = ::std::option::Option::None;
+            self.significant_events.clear();
+            self.attributes.clear();
             self.special_fields.clear();
         }
 
         fn default_instance() -> &'static Phase {
             static instance: Phase = Phase {
                 game_id: ::std::option::Option::None,
-                title: ::std::option::Option::None,
-                desc: ::std::option::Option::None,
-                icon: ::std::option::Option::None,
                 date_recorded: ::std::option::Option::None,
                 duration_ms: ::std::option::Option::None,
                 tags: ::std::vec::Vec::new(),
@@ -1971,6 +1978,10 @@ pub mod cgame_recording_query_phases_response {
                 type_: ::std::option::Option::None,
                 start_ms: ::std::option::Option::None,
                 screenshots: ::std::vec::Vec::new(),
+                active: ::std::option::Option::None,
+                phase_id: ::std::option::Option::None,
+                significant_events: ::std::vec::Vec::new(),
+                attributes: ::std::vec::Vec::new(),
                 special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
             };
             &instance
@@ -3375,6 +3386,8 @@ pub struct CTimelineEntry {
     pub tag: ::std::vec::Vec<super::webuimessages_gamerecordingfiles::CTimelineTag>,
     // @@protoc_insertion_point(field:CTimelineEntry.phase_id)
     pub phase_id: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CTimelineEntry.attributes)
+    pub attributes: ::std::vec::Vec<super::webuimessages_gamerecordingfiles::CPhaseAttribute>,
     // special fields
     // @@protoc_insertion_point(special_field:CTimelineEntry.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -3857,6 +3870,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CTimelineEntry {
                 146 => {
                     self.phase_id = ::std::option::Option::Some(is.read_string()?);
                 },
+                154 => {
+                    self.attributes.push(is.read_message()?);
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -3918,6 +3934,10 @@ impl ::steam_vent_proto_common::protobuf::Message for CTimelineEntry {
         if let Some(v) = self.phase_id.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(18, &v);
         }
+        for value in &self.attributes {
+            let len = value.compute_size();
+            my_size += 2 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        };
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -3972,6 +3992,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CTimelineEntry {
         if let Some(v) = self.phase_id.as_ref() {
             os.write_string(18, v)?;
         }
+        for v in &self.attributes {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(19, v, os)?;
+        };
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -4005,6 +4028,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CTimelineEntry {
         self.achievement_name = ::std::option::Option::None;
         self.tag.clear();
         self.phase_id = ::std::option::Option::None;
+        self.attributes.clear();
         self.special_fields.clear();
     }
 
@@ -4026,6 +4050,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CTimelineEntry {
             achievement_name: ::std::option::Option::None,
             tag: ::std::vec::Vec::new(),
             phase_id: ::std::option::Option::None,
+            attributes: ::std::vec::Vec::new(),
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -4149,6 +4174,196 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_TimelineEnt
         static instance: CGameRecording_TimelineEntryChanged_Notification = CGameRecording_TimelineEntryChanged_Notification {
             entry: ::steam_vent_proto_common::protobuf::MessageField::none(),
             game_id: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGameRecording_TimelineEntryRemoved_Notification)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGameRecording_TimelineEntryRemoved_Notification {
+    // message fields
+    // @@protoc_insertion_point(field:CGameRecording_TimelineEntryRemoved_Notification.game_id)
+    pub game_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CGameRecording_TimelineEntryRemoved_Notification.timeline_id)
+    pub timeline_id: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CGameRecording_TimelineEntryRemoved_Notification.entry_id)
+    pub entry_id: ::std::option::Option<u64>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CGameRecording_TimelineEntryRemoved_Notification.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGameRecording_TimelineEntryRemoved_Notification {
+    fn default() -> &'a CGameRecording_TimelineEntryRemoved_Notification {
+        <CGameRecording_TimelineEntryRemoved_Notification as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGameRecording_TimelineEntryRemoved_Notification {
+    pub fn new() -> CGameRecording_TimelineEntryRemoved_Notification {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 game_id = 1;
+
+    pub fn game_id(&self) -> u64 {
+        self.game_id.unwrap_or(0)
+    }
+
+    pub fn clear_game_id(&mut self) {
+        self.game_id = ::std::option::Option::None;
+    }
+
+    pub fn has_game_id(&self) -> bool {
+        self.game_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_game_id(&mut self, v: u64) {
+        self.game_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string timeline_id = 2;
+
+    pub fn timeline_id(&self) -> &str {
+        match self.timeline_id.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_timeline_id(&mut self) {
+        self.timeline_id = ::std::option::Option::None;
+    }
+
+    pub fn has_timeline_id(&self) -> bool {
+        self.timeline_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_timeline_id(&mut self, v: ::std::string::String) {
+        self.timeline_id = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_timeline_id(&mut self) -> &mut ::std::string::String {
+        if self.timeline_id.is_none() {
+            self.timeline_id = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.timeline_id.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_timeline_id(&mut self) -> ::std::string::String {
+        self.timeline_id.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional uint64 entry_id = 3;
+
+    pub fn entry_id(&self) -> u64 {
+        self.entry_id.unwrap_or(0)
+    }
+
+    pub fn clear_entry_id(&mut self) {
+        self.entry_id = ::std::option::Option::None;
+    }
+
+    pub fn has_entry_id(&self) -> bool {
+        self.entry_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_entry_id(&mut self, v: u64) {
+        self.entry_id = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_TimelineEntryRemoved_Notification {
+    const NAME: &'static str = "CGameRecording_TimelineEntryRemoved_Notification";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.game_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                18 => {
+                    self.timeline_id = ::std::option::Option::Some(is.read_string()?);
+                },
+                24 => {
+                    self.entry_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.game_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.timeline_id.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
+        }
+        if let Some(v) = self.entry_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(3, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.game_id {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.timeline_id.as_ref() {
+            os.write_string(2, v)?;
+        }
+        if let Some(v) = self.entry_id {
+            os.write_uint64(3, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGameRecording_TimelineEntryRemoved_Notification {
+        CGameRecording_TimelineEntryRemoved_Notification::new()
+    }
+
+    fn clear(&mut self) {
+        self.game_id = ::std::option::Option::None;
+        self.timeline_id = ::std::option::Option::None;
+        self.entry_id = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGameRecording_TimelineEntryRemoved_Notification {
+        static instance: CGameRecording_TimelineEntryRemoved_Notification = CGameRecording_TimelineEntryRemoved_Notification {
+            game_id: ::std::option::Option::None,
+            timeline_id: ::std::option::Option::None,
+            entry_id: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -4334,6 +4549,381 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_PostGameHig
     fn default_instance() -> &'static CGameRecording_PostGameHighlightsChanged_Notification {
         static instance: CGameRecording_PostGameHighlightsChanged_Notification = CGameRecording_PostGameHighlightsChanged_Notification {
             game_id: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGameRecording_OpenOverlayToGamePhase_Notification)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGameRecording_OpenOverlayToGamePhase_Notification {
+    // message fields
+    // @@protoc_insertion_point(field:CGameRecording_OpenOverlayToGamePhase_Notification.game_id)
+    pub game_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CGameRecording_OpenOverlayToGamePhase_Notification.phase_id)
+    pub phase_id: ::std::option::Option<::std::string::String>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CGameRecording_OpenOverlayToGamePhase_Notification.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGameRecording_OpenOverlayToGamePhase_Notification {
+    fn default() -> &'a CGameRecording_OpenOverlayToGamePhase_Notification {
+        <CGameRecording_OpenOverlayToGamePhase_Notification as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGameRecording_OpenOverlayToGamePhase_Notification {
+    pub fn new() -> CGameRecording_OpenOverlayToGamePhase_Notification {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 game_id = 1;
+
+    pub fn game_id(&self) -> u64 {
+        self.game_id.unwrap_or(0)
+    }
+
+    pub fn clear_game_id(&mut self) {
+        self.game_id = ::std::option::Option::None;
+    }
+
+    pub fn has_game_id(&self) -> bool {
+        self.game_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_game_id(&mut self, v: u64) {
+        self.game_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string phase_id = 2;
+
+    pub fn phase_id(&self) -> &str {
+        match self.phase_id.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_phase_id(&mut self) {
+        self.phase_id = ::std::option::Option::None;
+    }
+
+    pub fn has_phase_id(&self) -> bool {
+        self.phase_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_phase_id(&mut self, v: ::std::string::String) {
+        self.phase_id = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_phase_id(&mut self) -> &mut ::std::string::String {
+        if self.phase_id.is_none() {
+            self.phase_id = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.phase_id.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_phase_id(&mut self) -> ::std::string::String {
+        self.phase_id.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_OpenOverlayToGamePhase_Notification {
+    const NAME: &'static str = "CGameRecording_OpenOverlayToGamePhase_Notification";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.game_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                18 => {
+                    self.phase_id = ::std::option::Option::Some(is.read_string()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.game_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.phase_id.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.game_id {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.phase_id.as_ref() {
+            os.write_string(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGameRecording_OpenOverlayToGamePhase_Notification {
+        CGameRecording_OpenOverlayToGamePhase_Notification::new()
+    }
+
+    fn clear(&mut self) {
+        self.game_id = ::std::option::Option::None;
+        self.phase_id = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGameRecording_OpenOverlayToGamePhase_Notification {
+        static instance: CGameRecording_OpenOverlayToGamePhase_Notification = CGameRecording_OpenOverlayToGamePhase_Notification {
+            game_id: ::std::option::Option::None,
+            phase_id: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGameRecording_OpenOverlayToTimelineEvent_Notification)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGameRecording_OpenOverlayToTimelineEvent_Notification {
+    // message fields
+    // @@protoc_insertion_point(field:CGameRecording_OpenOverlayToTimelineEvent_Notification.game_id)
+    pub game_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CGameRecording_OpenOverlayToTimelineEvent_Notification.entry_id)
+    pub entry_id: ::std::option::Option<u64>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CGameRecording_OpenOverlayToTimelineEvent_Notification.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGameRecording_OpenOverlayToTimelineEvent_Notification {
+    fn default() -> &'a CGameRecording_OpenOverlayToTimelineEvent_Notification {
+        <CGameRecording_OpenOverlayToTimelineEvent_Notification as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGameRecording_OpenOverlayToTimelineEvent_Notification {
+    pub fn new() -> CGameRecording_OpenOverlayToTimelineEvent_Notification {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 game_id = 1;
+
+    pub fn game_id(&self) -> u64 {
+        self.game_id.unwrap_or(0)
+    }
+
+    pub fn clear_game_id(&mut self) {
+        self.game_id = ::std::option::Option::None;
+    }
+
+    pub fn has_game_id(&self) -> bool {
+        self.game_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_game_id(&mut self, v: u64) {
+        self.game_id = ::std::option::Option::Some(v);
+    }
+
+    // optional uint64 entry_id = 2;
+
+    pub fn entry_id(&self) -> u64 {
+        self.entry_id.unwrap_or(0)
+    }
+
+    pub fn clear_entry_id(&mut self) {
+        self.entry_id = ::std::option::Option::None;
+    }
+
+    pub fn has_entry_id(&self) -> bool {
+        self.entry_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_entry_id(&mut self, v: u64) {
+        self.entry_id = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_OpenOverlayToTimelineEvent_Notification {
+    const NAME: &'static str = "CGameRecording_OpenOverlayToTimelineEvent_Notification";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.game_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                16 => {
+                    self.entry_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.game_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.entry_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(2, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.game_id {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.entry_id {
+            os.write_uint64(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGameRecording_OpenOverlayToTimelineEvent_Notification {
+        CGameRecording_OpenOverlayToTimelineEvent_Notification::new()
+    }
+
+    fn clear(&mut self) {
+        self.game_id = ::std::option::Option::None;
+        self.entry_id = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGameRecording_OpenOverlayToTimelineEvent_Notification {
+        static instance: CGameRecording_OpenOverlayToTimelineEvent_Notification = CGameRecording_OpenOverlayToTimelineEvent_Notification {
+            game_id: ::std::option::Option::None,
+            entry_id: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGameRecording_PhaseListChanged_Notification)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGameRecording_PhaseListChanged_Notification {
+    // special fields
+    // @@protoc_insertion_point(special_field:CGameRecording_PhaseListChanged_Notification.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGameRecording_PhaseListChanged_Notification {
+    fn default() -> &'a CGameRecording_PhaseListChanged_Notification {
+        <CGameRecording_PhaseListChanged_Notification as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGameRecording_PhaseListChanged_Notification {
+    pub fn new() -> CGameRecording_PhaseListChanged_Notification {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_PhaseListChanged_Notification {
+    const NAME: &'static str = "CGameRecording_PhaseListChanged_Notification";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGameRecording_PhaseListChanged_Notification {
+        CGameRecording_PhaseListChanged_Notification::new()
+    }
+
+    fn clear(&mut self) {
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGameRecording_PhaseListChanged_Notification {
+        static instance: CGameRecording_PhaseListChanged_Notification = CGameRecording_PhaseListChanged_Notification {
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -5062,6 +5652,8 @@ pub struct CGameRecording_SaveClip_Request {
     pub src_clip_id: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CGameRecording_SaveClip_Request.temporary)
     pub temporary: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CGameRecording_SaveClip_Request.force_thumbnail)
+    pub force_thumbnail: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CGameRecording_SaveClip_Request.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -5187,6 +5779,25 @@ impl CGameRecording_SaveClip_Request {
     pub fn set_temporary(&mut self, v: bool) {
         self.temporary = ::std::option::Option::Some(v);
     }
+
+    // optional bool force_thumbnail = 7;
+
+    pub fn force_thumbnail(&self) -> bool {
+        self.force_thumbnail.unwrap_or(false)
+    }
+
+    pub fn clear_force_thumbnail(&mut self) {
+        self.force_thumbnail = ::std::option::Option::None;
+    }
+
+    pub fn has_force_thumbnail(&self) -> bool {
+        self.force_thumbnail.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_force_thumbnail(&mut self, v: bool) {
+        self.force_thumbnail = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_SaveClip_Request {
@@ -5216,6 +5827,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_SaveClip_Re
                 },
                 48 => {
                     self.temporary = ::std::option::Option::Some(is.read_bool()?);
+                },
+                56 => {
+                    self.force_thumbnail = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -5249,6 +5863,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_SaveClip_Re
         if let Some(v) = self.temporary {
             my_size += 1 + 1;
         }
+        if let Some(v) = self.force_thumbnail {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -5273,6 +5890,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_SaveClip_Re
         if let Some(v) = self.temporary {
             os.write_bool(6, v)?;
         }
+        if let Some(v) = self.force_thumbnail {
+            os.write_bool(7, v)?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -5296,6 +5916,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_SaveClip_Re
         self.name = ::std::option::Option::None;
         self.src_clip_id = ::std::option::Option::None;
         self.temporary = ::std::option::Option::None;
+        self.force_thumbnail = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -5307,6 +5928,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_SaveClip_Re
             name: ::std::option::Option::None,
             src_clip_id: ::std::option::Option::None,
             temporary: ::std::option::Option::None,
+            force_thumbnail: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -5779,6 +6401,8 @@ pub struct CGameRecording_ExportClip_Settings {
     pub height: ::std::option::Option<i32>,
     // @@protoc_insertion_point(field:CGameRecording_ExportClip_Settings.frames_per_second)
     pub frames_per_second: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CGameRecording_ExportClip_Settings.codec)
+    pub codec: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::EExportCodec>>,
     // special fields
     // @@protoc_insertion_point(special_field:CGameRecording_ExportClip_Settings.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -5870,6 +6494,28 @@ impl CGameRecording_ExportClip_Settings {
     pub fn set_frames_per_second(&mut self, v: i32) {
         self.frames_per_second = ::std::option::Option::Some(v);
     }
+
+    // optional .EExportCodec codec = 5;
+
+    pub fn codec(&self) -> super::enums::EExportCodec {
+        match self.codec {
+            Some(e) => e.enum_value_or(super::enums::EExportCodec::k_EExportCodec_Default),
+            None => super::enums::EExportCodec::k_EExportCodec_Default,
+        }
+    }
+
+    pub fn clear_codec(&mut self) {
+        self.codec = ::std::option::Option::None;
+    }
+
+    pub fn has_codec(&self) -> bool {
+        self.codec.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_codec(&mut self, v: super::enums::EExportCodec) {
+        self.codec = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_Settings {
@@ -5893,6 +6539,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
                 },
                 32 => {
                     self.frames_per_second = ::std::option::Option::Some(is.read_int32()?);
+                },
+                40 => {
+                    self.codec = ::std::option::Option::Some(is.read_enum_or_unknown()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -5918,6 +6567,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
         if let Some(v) = self.frames_per_second {
             my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(4, v);
         }
+        if let Some(v) = self.codec {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(5, v.value());
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -5935,6 +6587,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
         }
         if let Some(v) = self.frames_per_second {
             os.write_int32(4, v)?;
+        }
+        if let Some(v) = self.codec {
+            os.write_enum(5, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -5957,6 +6612,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
         self.width = ::std::option::Option::None;
         self.height = ::std::option::Option::None;
         self.frames_per_second = ::std::option::Option::None;
+        self.codec = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -5966,6 +6622,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
             width: ::std::option::Option::None,
             height: ::std::option::Option::None,
             frames_per_second: ::std::option::Option::None,
+            codec: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -5982,6 +6639,8 @@ pub struct CGameRecording_ExportClip_Request {
     pub export_mp4_path: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CGameRecording_ExportClip_Request.settings)
     pub settings: ::steam_vent_proto_common::protobuf::MessageField<CGameRecording_ExportClip_Settings>,
+    // @@protoc_insertion_point(field:CGameRecording_ExportClip_Request.use_unique_filename)
+    pub use_unique_filename: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CGameRecording_ExportClip_Request.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -6069,6 +6728,25 @@ impl CGameRecording_ExportClip_Request {
     pub fn take_export_mp4_path(&mut self) -> ::std::string::String {
         self.export_mp4_path.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional bool use_unique_filename = 4;
+
+    pub fn use_unique_filename(&self) -> bool {
+        self.use_unique_filename.unwrap_or(false)
+    }
+
+    pub fn clear_use_unique_filename(&mut self) {
+        self.use_unique_filename = ::std::option::Option::None;
+    }
+
+    pub fn has_use_unique_filename(&self) -> bool {
+        self.use_unique_filename.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_use_unique_filename(&mut self, v: bool) {
+        self.use_unique_filename = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_Request {
@@ -6089,6 +6767,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
                 },
                 26 => {
                     ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.settings)?;
+                },
+                32 => {
+                    self.use_unique_filename = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -6112,6 +6793,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
             let len = v.compute_size();
             my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
         }
+        if let Some(v) = self.use_unique_filename {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -6126,6 +6810,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
         }
         if let Some(v) = self.settings.as_ref() {
             ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(3, v, os)?;
+        }
+        if let Some(v) = self.use_unique_filename {
+            os.write_bool(4, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -6147,6 +6834,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
         self.clip_id = ::std::option::Option::None;
         self.export_mp4_path = ::std::option::Option::None;
         self.settings.clear();
+        self.use_unique_filename = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -6155,6 +6843,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
             clip_id: ::std::option::Option::None,
             export_mp4_path: ::std::option::Option::None,
             settings: ::steam_vent_proto_common::protobuf::MessageField::none(),
+            use_unique_filename: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -6231,6 +6920,301 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClip_
 
     fn default_instance() -> &'static CGameRecording_ExportClip_Response {
         static instance: CGameRecording_ExportClip_Response = CGameRecording_ExportClip_Response {
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGameRecording_ExportClipPreview_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGameRecording_ExportClipPreview_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CGameRecording_ExportClipPreview_Request.clip_id)
+    pub clip_id: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CGameRecording_ExportClipPreview_Request.settings)
+    pub settings: ::steam_vent_proto_common::protobuf::MessageField<CGameRecording_ExportClip_Settings>,
+    // @@protoc_insertion_point(field:CGameRecording_ExportClipPreview_Request.run_policy_checks)
+    pub run_policy_checks: ::std::option::Option<bool>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CGameRecording_ExportClipPreview_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGameRecording_ExportClipPreview_Request {
+    fn default() -> &'a CGameRecording_ExportClipPreview_Request {
+        <CGameRecording_ExportClipPreview_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGameRecording_ExportClipPreview_Request {
+    pub fn new() -> CGameRecording_ExportClipPreview_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional string clip_id = 1;
+
+    pub fn clip_id(&self) -> &str {
+        match self.clip_id.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_clip_id(&mut self) {
+        self.clip_id = ::std::option::Option::None;
+    }
+
+    pub fn has_clip_id(&self) -> bool {
+        self.clip_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_clip_id(&mut self, v: ::std::string::String) {
+        self.clip_id = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_clip_id(&mut self) -> &mut ::std::string::String {
+        if self.clip_id.is_none() {
+            self.clip_id = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.clip_id.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_clip_id(&mut self) -> ::std::string::String {
+        self.clip_id.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional bool run_policy_checks = 3;
+
+    pub fn run_policy_checks(&self) -> bool {
+        self.run_policy_checks.unwrap_or(false)
+    }
+
+    pub fn clear_run_policy_checks(&mut self) {
+        self.run_policy_checks = ::std::option::Option::None;
+    }
+
+    pub fn has_run_policy_checks(&self) -> bool {
+        self.run_policy_checks.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_run_policy_checks(&mut self, v: bool) {
+        self.run_policy_checks = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClipPreview_Request {
+    const NAME: &'static str = "CGameRecording_ExportClipPreview_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.clip_id = ::std::option::Option::Some(is.read_string()?);
+                },
+                18 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.settings)?;
+                },
+                24 => {
+                    self.run_policy_checks = ::std::option::Option::Some(is.read_bool()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.clip_id.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(1, &v);
+        }
+        if let Some(v) = self.settings.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        if let Some(v) = self.run_policy_checks {
+            my_size += 1 + 1;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.clip_id.as_ref() {
+            os.write_string(1, v)?;
+        }
+        if let Some(v) = self.settings.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(2, v, os)?;
+        }
+        if let Some(v) = self.run_policy_checks {
+            os.write_bool(3, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGameRecording_ExportClipPreview_Request {
+        CGameRecording_ExportClipPreview_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.clip_id = ::std::option::Option::None;
+        self.settings.clear();
+        self.run_policy_checks = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGameRecording_ExportClipPreview_Request {
+        static instance: CGameRecording_ExportClipPreview_Request = CGameRecording_ExportClipPreview_Request {
+            clip_id: ::std::option::Option::None,
+            settings: ::steam_vent_proto_common::protobuf::MessageField::none(),
+            run_policy_checks: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGameRecording_ExportClipPreview_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGameRecording_ExportClipPreview_Response {
+    // message fields
+    // @@protoc_insertion_point(field:CGameRecording_ExportClipPreview_Response.estimated_size)
+    pub estimated_size: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CGameRecording_ExportClipPreview_Response.settings)
+    pub settings: ::steam_vent_proto_common::protobuf::MessageField<CGameRecording_ExportClip_Settings>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CGameRecording_ExportClipPreview_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGameRecording_ExportClipPreview_Response {
+    fn default() -> &'a CGameRecording_ExportClipPreview_Response {
+        <CGameRecording_ExportClipPreview_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGameRecording_ExportClipPreview_Response {
+    pub fn new() -> CGameRecording_ExportClipPreview_Response {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 estimated_size = 1;
+
+    pub fn estimated_size(&self) -> u64 {
+        self.estimated_size.unwrap_or(0)
+    }
+
+    pub fn clear_estimated_size(&mut self) {
+        self.estimated_size = ::std::option::Option::None;
+    }
+
+    pub fn has_estimated_size(&self) -> bool {
+        self.estimated_size.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_estimated_size(&mut self, v: u64) {
+        self.estimated_size = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_ExportClipPreview_Response {
+    const NAME: &'static str = "CGameRecording_ExportClipPreview_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.estimated_size = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                18 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.settings)?;
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.estimated_size {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.settings.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.estimated_size {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.settings.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(2, v, os)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGameRecording_ExportClipPreview_Response {
+        CGameRecording_ExportClipPreview_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.estimated_size = ::std::option::Option::None;
+        self.settings.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGameRecording_ExportClipPreview_Response {
+        static instance: CGameRecording_ExportClipPreview_Response = CGameRecording_ExportClipPreview_Response {
+            estimated_size: ::std::option::Option::None,
+            settings: ::steam_vent_proto_common::protobuf::MessageField::none(),
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -10927,6 +11911,12 @@ pub struct CGameRecording_PerGameSettings {
     pub gameid: ::std::option::Option<u64>,
     // @@protoc_insertion_point(field:CGameRecording_PerGameSettings.enabled)
     pub enabled: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CGameRecording_PerGameSettings.minutes)
+    pub minutes: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CGameRecording_PerGameSettings.bitrate)
+    pub bitrate: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CGameRecording_PerGameSettings.infinite)
+    pub infinite: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CGameRecording_PerGameSettings.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -10980,6 +11970,80 @@ impl CGameRecording_PerGameSettings {
     pub fn set_enabled(&mut self, v: bool) {
         self.enabled = ::std::option::Option::Some(v);
     }
+
+    // optional uint32 minutes = 3;
+
+    pub fn minutes(&self) -> u32 {
+        self.minutes.unwrap_or(0)
+    }
+
+    pub fn clear_minutes(&mut self) {
+        self.minutes = ::std::option::Option::None;
+    }
+
+    pub fn has_minutes(&self) -> bool {
+        self.minutes.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_minutes(&mut self, v: u32) {
+        self.minutes = ::std::option::Option::Some(v);
+    }
+
+    // optional string bitrate = 4;
+
+    pub fn bitrate(&self) -> &str {
+        match self.bitrate.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_bitrate(&mut self) {
+        self.bitrate = ::std::option::Option::None;
+    }
+
+    pub fn has_bitrate(&self) -> bool {
+        self.bitrate.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_bitrate(&mut self, v: ::std::string::String) {
+        self.bitrate = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_bitrate(&mut self) -> &mut ::std::string::String {
+        if self.bitrate.is_none() {
+            self.bitrate = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.bitrate.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_bitrate(&mut self) -> ::std::string::String {
+        self.bitrate.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional bool infinite = 5;
+
+    pub fn infinite(&self) -> bool {
+        self.infinite.unwrap_or(false)
+    }
+
+    pub fn clear_infinite(&mut self) {
+        self.infinite = ::std::option::Option::None;
+    }
+
+    pub fn has_infinite(&self) -> bool {
+        self.infinite.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_infinite(&mut self, v: bool) {
+        self.infinite = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_PerGameSettings {
@@ -10997,6 +12061,15 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_PerGameSett
                 },
                 16 => {
                     self.enabled = ::std::option::Option::Some(is.read_bool()?);
+                },
+                24 => {
+                    self.minutes = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                34 => {
+                    self.bitrate = ::std::option::Option::Some(is.read_string()?);
+                },
+                40 => {
+                    self.infinite = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -11016,6 +12089,15 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_PerGameSett
         if let Some(v) = self.enabled {
             my_size += 1 + 1;
         }
+        if let Some(v) = self.minutes {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(3, v);
+        }
+        if let Some(v) = self.bitrate.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(4, &v);
+        }
+        if let Some(v) = self.infinite {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -11027,6 +12109,15 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_PerGameSett
         }
         if let Some(v) = self.enabled {
             os.write_bool(2, v)?;
+        }
+        if let Some(v) = self.minutes {
+            os.write_uint32(3, v)?;
+        }
+        if let Some(v) = self.bitrate.as_ref() {
+            os.write_string(4, v)?;
+        }
+        if let Some(v) = self.infinite {
+            os.write_bool(5, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -11047,6 +12138,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_PerGameSett
     fn clear(&mut self) {
         self.gameid = ::std::option::Option::None;
         self.enabled = ::std::option::Option::None;
+        self.minutes = ::std::option::Option::None;
+        self.bitrate = ::std::option::Option::None;
+        self.infinite = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -11054,6 +12148,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_PerGameSett
         static instance: CGameRecording_PerGameSettings = CGameRecording_PerGameSettings {
             gameid: ::std::option::Option::None,
             enabled: ::std::option::Option::None,
+            minutes: ::std::option::Option::None,
+            bitrate: ::std::option::Option::None,
+            infinite: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -11388,6 +12485,191 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_SetPerGameS
 
     fn default_instance() -> &'static CGameRecording_SetPerGameSettings_Response {
         static instance: CGameRecording_SetPerGameSettings_Response = CGameRecording_SetPerGameSettings_Response {
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGameRecording_DeletePerGameSettings_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGameRecording_DeletePerGameSettings_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CGameRecording_DeletePerGameSettings_Request.gameid)
+    pub gameid: ::std::option::Option<u64>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CGameRecording_DeletePerGameSettings_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGameRecording_DeletePerGameSettings_Request {
+    fn default() -> &'a CGameRecording_DeletePerGameSettings_Request {
+        <CGameRecording_DeletePerGameSettings_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGameRecording_DeletePerGameSettings_Request {
+    pub fn new() -> CGameRecording_DeletePerGameSettings_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional fixed64 gameid = 1;
+
+    pub fn gameid(&self) -> u64 {
+        self.gameid.unwrap_or(0)
+    }
+
+    pub fn clear_gameid(&mut self) {
+        self.gameid = ::std::option::Option::None;
+    }
+
+    pub fn has_gameid(&self) -> bool {
+        self.gameid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_gameid(&mut self, v: u64) {
+        self.gameid = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_DeletePerGameSettings_Request {
+    const NAME: &'static str = "CGameRecording_DeletePerGameSettings_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                9 => {
+                    self.gameid = ::std::option::Option::Some(is.read_fixed64()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.gameid {
+            my_size += 1 + 8;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.gameid {
+            os.write_fixed64(1, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGameRecording_DeletePerGameSettings_Request {
+        CGameRecording_DeletePerGameSettings_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.gameid = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGameRecording_DeletePerGameSettings_Request {
+        static instance: CGameRecording_DeletePerGameSettings_Request = CGameRecording_DeletePerGameSettings_Request {
+            gameid: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGameRecording_DeletePerGameSettings_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGameRecording_DeletePerGameSettings_Response {
+    // special fields
+    // @@protoc_insertion_point(special_field:CGameRecording_DeletePerGameSettings_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGameRecording_DeletePerGameSettings_Response {
+    fn default() -> &'a CGameRecording_DeletePerGameSettings_Response {
+        <CGameRecording_DeletePerGameSettings_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGameRecording_DeletePerGameSettings_Response {
+    pub fn new() -> CGameRecording_DeletePerGameSettings_Response {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_DeletePerGameSettings_Response {
+    const NAME: &'static str = "CGameRecording_DeletePerGameSettings_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGameRecording_DeletePerGameSettings_Response {
+        CGameRecording_DeletePerGameSettings_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGameRecording_DeletePerGameSettings_Response {
+        static instance: CGameRecording_DeletePerGameSettings_Response = CGameRecording_DeletePerGameSettings_Response {
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -11763,1306 +13045,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CGameRecording_SwitchBackg
 
     fn default_instance() -> &'static CGameRecording_SwitchBackgroundRecordingGame_Response {
         static instance: CGameRecording_SwitchBackgroundRecordingGame_Response = CGameRecording_SwitchBackgroundRecordingGame_Response {
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_AddTimelineHighlightMarker_Request)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-    // message fields
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineHighlightMarker_Request.appid)
-    pub appid: ::std::option::Option<u32>,
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineHighlightMarker_Request.icon)
-    pub icon: ::std::option::Option<::std::string::String>,
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineHighlightMarker_Request.title)
-    pub title: ::std::option::Option<::std::string::String>,
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineHighlightMarker_Request.desc)
-    pub desc: ::std::option::Option<::std::string::String>,
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_AddTimelineHighlightMarker_Request.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-    fn default() -> &'a CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-        <CGameRecordingDebug_AddTimelineHighlightMarker_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-    pub fn new() -> CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-        ::std::default::Default::default()
-    }
-
-    // optional uint32 appid = 1;
-
-    pub fn appid(&self) -> u32 {
-        self.appid.unwrap_or(0)
-    }
-
-    pub fn clear_appid(&mut self) {
-        self.appid = ::std::option::Option::None;
-    }
-
-    pub fn has_appid(&self) -> bool {
-        self.appid.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_appid(&mut self, v: u32) {
-        self.appid = ::std::option::Option::Some(v);
-    }
-
-    // optional string icon = 2;
-
-    pub fn icon(&self) -> &str {
-        match self.icon.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_icon(&mut self) {
-        self.icon = ::std::option::Option::None;
-    }
-
-    pub fn has_icon(&self) -> bool {
-        self.icon.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_icon(&mut self, v: ::std::string::String) {
-        self.icon = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_icon(&mut self) -> &mut ::std::string::String {
-        if self.icon.is_none() {
-            self.icon = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.icon.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_icon(&mut self) -> ::std::string::String {
-        self.icon.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-
-    // optional string title = 3;
-
-    pub fn title(&self) -> &str {
-        match self.title.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_title(&mut self) {
-        self.title = ::std::option::Option::None;
-    }
-
-    pub fn has_title(&self) -> bool {
-        self.title.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_title(&mut self, v: ::std::string::String) {
-        self.title = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_title(&mut self) -> &mut ::std::string::String {
-        if self.title.is_none() {
-            self.title = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.title.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_title(&mut self) -> ::std::string::String {
-        self.title.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-
-    // optional string desc = 4;
-
-    pub fn desc(&self) -> &str {
-        match self.desc.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_desc(&mut self) {
-        self.desc = ::std::option::Option::None;
-    }
-
-    pub fn has_desc(&self) -> bool {
-        self.desc.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_desc(&mut self, v: ::std::string::String) {
-        self.desc = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_desc(&mut self) -> &mut ::std::string::String {
-        if self.desc.is_none() {
-            self.desc = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.desc.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_desc(&mut self) -> ::std::string::String {
-        self.desc.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-    const NAME: &'static str = "CGameRecordingDebug_AddTimelineHighlightMarker_Request";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                8 => {
-                    self.appid = ::std::option::Option::Some(is.read_uint32()?);
-                },
-                18 => {
-                    self.icon = ::std::option::Option::Some(is.read_string()?);
-                },
-                26 => {
-                    self.title = ::std::option::Option::Some(is.read_string()?);
-                },
-                34 => {
-                    self.desc = ::std::option::Option::Some(is.read_string()?);
-                },
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        if let Some(v) = self.appid {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
-        }
-        if let Some(v) = self.icon.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
-        }
-        if let Some(v) = self.title.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &v);
-        }
-        if let Some(v) = self.desc.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(4, &v);
-        }
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        if let Some(v) = self.appid {
-            os.write_uint32(1, v)?;
-        }
-        if let Some(v) = self.icon.as_ref() {
-            os.write_string(2, v)?;
-        }
-        if let Some(v) = self.title.as_ref() {
-            os.write_string(3, v)?;
-        }
-        if let Some(v) = self.desc.as_ref() {
-            os.write_string(4, v)?;
-        }
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-        CGameRecordingDebug_AddTimelineHighlightMarker_Request::new()
-    }
-
-    fn clear(&mut self) {
-        self.appid = ::std::option::Option::None;
-        self.icon = ::std::option::Option::None;
-        self.title = ::std::option::Option::None;
-        self.desc = ::std::option::Option::None;
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-        static instance: CGameRecordingDebug_AddTimelineHighlightMarker_Request = CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-            appid: ::std::option::Option::None,
-            icon: ::std::option::Option::None,
-            title: ::std::option::Option::None,
-            desc: ::std::option::Option::None,
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_AddTimelineHighlightMarker_Response)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_AddTimelineHighlightMarker_Response.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-    fn default() -> &'a CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-        <CGameRecordingDebug_AddTimelineHighlightMarker_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-    pub fn new() -> CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-        ::std::default::Default::default()
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-    const NAME: &'static str = "CGameRecordingDebug_AddTimelineHighlightMarker_Response";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-        CGameRecordingDebug_AddTimelineHighlightMarker_Response::new()
-    }
-
-    fn clear(&mut self) {
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-        static instance: CGameRecordingDebug_AddTimelineHighlightMarker_Response = CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_AddTimelineTimestamp_Request)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_AddTimelineTimestamp_Request {
-    // message fields
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineTimestamp_Request.appid)
-    pub appid: ::std::option::Option<u32>,
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineTimestamp_Request.title)
-    pub title: ::std::option::Option<::std::string::String>,
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_AddTimelineTimestamp_Request.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_AddTimelineTimestamp_Request {
-    fn default() -> &'a CGameRecordingDebug_AddTimelineTimestamp_Request {
-        <CGameRecordingDebug_AddTimelineTimestamp_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_AddTimelineTimestamp_Request {
-    pub fn new() -> CGameRecordingDebug_AddTimelineTimestamp_Request {
-        ::std::default::Default::default()
-    }
-
-    // optional uint32 appid = 1;
-
-    pub fn appid(&self) -> u32 {
-        self.appid.unwrap_or(0)
-    }
-
-    pub fn clear_appid(&mut self) {
-        self.appid = ::std::option::Option::None;
-    }
-
-    pub fn has_appid(&self) -> bool {
-        self.appid.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_appid(&mut self, v: u32) {
-        self.appid = ::std::option::Option::Some(v);
-    }
-
-    // optional string title = 2;
-
-    pub fn title(&self) -> &str {
-        match self.title.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_title(&mut self) {
-        self.title = ::std::option::Option::None;
-    }
-
-    pub fn has_title(&self) -> bool {
-        self.title.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_title(&mut self, v: ::std::string::String) {
-        self.title = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_title(&mut self) -> &mut ::std::string::String {
-        if self.title.is_none() {
-            self.title = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.title.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_title(&mut self) -> ::std::string::String {
-        self.title.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_AddTimelineTimestamp_Request {
-    const NAME: &'static str = "CGameRecordingDebug_AddTimelineTimestamp_Request";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                8 => {
-                    self.appid = ::std::option::Option::Some(is.read_uint32()?);
-                },
-                18 => {
-                    self.title = ::std::option::Option::Some(is.read_string()?);
-                },
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        if let Some(v) = self.appid {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
-        }
-        if let Some(v) = self.title.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
-        }
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        if let Some(v) = self.appid {
-            os.write_uint32(1, v)?;
-        }
-        if let Some(v) = self.title.as_ref() {
-            os.write_string(2, v)?;
-        }
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_AddTimelineTimestamp_Request {
-        CGameRecordingDebug_AddTimelineTimestamp_Request::new()
-    }
-
-    fn clear(&mut self) {
-        self.appid = ::std::option::Option::None;
-        self.title = ::std::option::Option::None;
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_AddTimelineTimestamp_Request {
-        static instance: CGameRecordingDebug_AddTimelineTimestamp_Request = CGameRecordingDebug_AddTimelineTimestamp_Request {
-            appid: ::std::option::Option::None,
-            title: ::std::option::Option::None,
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_AddTimelineTimestamp_Response)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_AddTimelineTimestamp_Response {
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_AddTimelineTimestamp_Response.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_AddTimelineTimestamp_Response {
-    fn default() -> &'a CGameRecordingDebug_AddTimelineTimestamp_Response {
-        <CGameRecordingDebug_AddTimelineTimestamp_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_AddTimelineTimestamp_Response {
-    pub fn new() -> CGameRecordingDebug_AddTimelineTimestamp_Response {
-        ::std::default::Default::default()
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_AddTimelineTimestamp_Response {
-    const NAME: &'static str = "CGameRecordingDebug_AddTimelineTimestamp_Response";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_AddTimelineTimestamp_Response {
-        CGameRecordingDebug_AddTimelineTimestamp_Response::new()
-    }
-
-    fn clear(&mut self) {
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_AddTimelineTimestamp_Response {
-        static instance: CGameRecordingDebug_AddTimelineTimestamp_Response = CGameRecordingDebug_AddTimelineTimestamp_Response {
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_AddTimelineRangeStart_Request)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_AddTimelineRangeStart_Request {
-    // message fields
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineRangeStart_Request.appid)
-    pub appid: ::std::option::Option<u32>,
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineRangeStart_Request.id)
-    pub id: ::std::option::Option<::std::string::String>,
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineRangeStart_Request.title)
-    pub title: ::std::option::Option<::std::string::String>,
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_AddTimelineRangeStart_Request.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_AddTimelineRangeStart_Request {
-    fn default() -> &'a CGameRecordingDebug_AddTimelineRangeStart_Request {
-        <CGameRecordingDebug_AddTimelineRangeStart_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_AddTimelineRangeStart_Request {
-    pub fn new() -> CGameRecordingDebug_AddTimelineRangeStart_Request {
-        ::std::default::Default::default()
-    }
-
-    // optional uint32 appid = 1;
-
-    pub fn appid(&self) -> u32 {
-        self.appid.unwrap_or(0)
-    }
-
-    pub fn clear_appid(&mut self) {
-        self.appid = ::std::option::Option::None;
-    }
-
-    pub fn has_appid(&self) -> bool {
-        self.appid.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_appid(&mut self, v: u32) {
-        self.appid = ::std::option::Option::Some(v);
-    }
-
-    // optional string id = 2;
-
-    pub fn id(&self) -> &str {
-        match self.id.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_id(&mut self) {
-        self.id = ::std::option::Option::None;
-    }
-
-    pub fn has_id(&self) -> bool {
-        self.id.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_id(&mut self, v: ::std::string::String) {
-        self.id = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_id(&mut self) -> &mut ::std::string::String {
-        if self.id.is_none() {
-            self.id = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.id.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_id(&mut self) -> ::std::string::String {
-        self.id.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-
-    // optional string title = 3;
-
-    pub fn title(&self) -> &str {
-        match self.title.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_title(&mut self) {
-        self.title = ::std::option::Option::None;
-    }
-
-    pub fn has_title(&self) -> bool {
-        self.title.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_title(&mut self, v: ::std::string::String) {
-        self.title = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_title(&mut self) -> &mut ::std::string::String {
-        if self.title.is_none() {
-            self.title = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.title.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_title(&mut self) -> ::std::string::String {
-        self.title.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_AddTimelineRangeStart_Request {
-    const NAME: &'static str = "CGameRecordingDebug_AddTimelineRangeStart_Request";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                8 => {
-                    self.appid = ::std::option::Option::Some(is.read_uint32()?);
-                },
-                18 => {
-                    self.id = ::std::option::Option::Some(is.read_string()?);
-                },
-                26 => {
-                    self.title = ::std::option::Option::Some(is.read_string()?);
-                },
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        if let Some(v) = self.appid {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
-        }
-        if let Some(v) = self.id.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
-        }
-        if let Some(v) = self.title.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &v);
-        }
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        if let Some(v) = self.appid {
-            os.write_uint32(1, v)?;
-        }
-        if let Some(v) = self.id.as_ref() {
-            os.write_string(2, v)?;
-        }
-        if let Some(v) = self.title.as_ref() {
-            os.write_string(3, v)?;
-        }
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_AddTimelineRangeStart_Request {
-        CGameRecordingDebug_AddTimelineRangeStart_Request::new()
-    }
-
-    fn clear(&mut self) {
-        self.appid = ::std::option::Option::None;
-        self.id = ::std::option::Option::None;
-        self.title = ::std::option::Option::None;
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_AddTimelineRangeStart_Request {
-        static instance: CGameRecordingDebug_AddTimelineRangeStart_Request = CGameRecordingDebug_AddTimelineRangeStart_Request {
-            appid: ::std::option::Option::None,
-            id: ::std::option::Option::None,
-            title: ::std::option::Option::None,
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_AddTimelineRangeStart_Response)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_AddTimelineRangeStart_Response {
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_AddTimelineRangeStart_Response.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_AddTimelineRangeStart_Response {
-    fn default() -> &'a CGameRecordingDebug_AddTimelineRangeStart_Response {
-        <CGameRecordingDebug_AddTimelineRangeStart_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_AddTimelineRangeStart_Response {
-    pub fn new() -> CGameRecordingDebug_AddTimelineRangeStart_Response {
-        ::std::default::Default::default()
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_AddTimelineRangeStart_Response {
-    const NAME: &'static str = "CGameRecordingDebug_AddTimelineRangeStart_Response";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_AddTimelineRangeStart_Response {
-        CGameRecordingDebug_AddTimelineRangeStart_Response::new()
-    }
-
-    fn clear(&mut self) {
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_AddTimelineRangeStart_Response {
-        static instance: CGameRecordingDebug_AddTimelineRangeStart_Response = CGameRecordingDebug_AddTimelineRangeStart_Response {
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_AddTimelineRangeEnd_Request)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_AddTimelineRangeEnd_Request {
-    // message fields
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineRangeEnd_Request.appid)
-    pub appid: ::std::option::Option<u32>,
-    // @@protoc_insertion_point(field:CGameRecordingDebug_AddTimelineRangeEnd_Request.id)
-    pub id: ::std::option::Option<::std::string::String>,
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_AddTimelineRangeEnd_Request.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_AddTimelineRangeEnd_Request {
-    fn default() -> &'a CGameRecordingDebug_AddTimelineRangeEnd_Request {
-        <CGameRecordingDebug_AddTimelineRangeEnd_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_AddTimelineRangeEnd_Request {
-    pub fn new() -> CGameRecordingDebug_AddTimelineRangeEnd_Request {
-        ::std::default::Default::default()
-    }
-
-    // optional uint32 appid = 1;
-
-    pub fn appid(&self) -> u32 {
-        self.appid.unwrap_or(0)
-    }
-
-    pub fn clear_appid(&mut self) {
-        self.appid = ::std::option::Option::None;
-    }
-
-    pub fn has_appid(&self) -> bool {
-        self.appid.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_appid(&mut self, v: u32) {
-        self.appid = ::std::option::Option::Some(v);
-    }
-
-    // optional string id = 2;
-
-    pub fn id(&self) -> &str {
-        match self.id.as_ref() {
-            Some(v) => v,
-            None => "",
-        }
-    }
-
-    pub fn clear_id(&mut self) {
-        self.id = ::std::option::Option::None;
-    }
-
-    pub fn has_id(&self) -> bool {
-        self.id.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_id(&mut self, v: ::std::string::String) {
-        self.id = ::std::option::Option::Some(v);
-    }
-
-    // Mutable pointer to the field.
-    // If field is not initialized, it is initialized with default value first.
-    pub fn mut_id(&mut self) -> &mut ::std::string::String {
-        if self.id.is_none() {
-            self.id = ::std::option::Option::Some(::std::string::String::new());
-        }
-        self.id.as_mut().unwrap()
-    }
-
-    // Take field
-    pub fn take_id(&mut self) -> ::std::string::String {
-        self.id.take().unwrap_or_else(|| ::std::string::String::new())
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_AddTimelineRangeEnd_Request {
-    const NAME: &'static str = "CGameRecordingDebug_AddTimelineRangeEnd_Request";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                8 => {
-                    self.appid = ::std::option::Option::Some(is.read_uint32()?);
-                },
-                18 => {
-                    self.id = ::std::option::Option::Some(is.read_string()?);
-                },
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        if let Some(v) = self.appid {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
-        }
-        if let Some(v) = self.id.as_ref() {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
-        }
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        if let Some(v) = self.appid {
-            os.write_uint32(1, v)?;
-        }
-        if let Some(v) = self.id.as_ref() {
-            os.write_string(2, v)?;
-        }
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_AddTimelineRangeEnd_Request {
-        CGameRecordingDebug_AddTimelineRangeEnd_Request::new()
-    }
-
-    fn clear(&mut self) {
-        self.appid = ::std::option::Option::None;
-        self.id = ::std::option::Option::None;
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_AddTimelineRangeEnd_Request {
-        static instance: CGameRecordingDebug_AddTimelineRangeEnd_Request = CGameRecordingDebug_AddTimelineRangeEnd_Request {
-            appid: ::std::option::Option::None,
-            id: ::std::option::Option::None,
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_AddTimelineRangeEnd_Response)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_AddTimelineRangeEnd_Response {
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_AddTimelineRangeEnd_Response.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_AddTimelineRangeEnd_Response {
-    fn default() -> &'a CGameRecordingDebug_AddTimelineRangeEnd_Response {
-        <CGameRecordingDebug_AddTimelineRangeEnd_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_AddTimelineRangeEnd_Response {
-    pub fn new() -> CGameRecordingDebug_AddTimelineRangeEnd_Response {
-        ::std::default::Default::default()
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_AddTimelineRangeEnd_Response {
-    const NAME: &'static str = "CGameRecordingDebug_AddTimelineRangeEnd_Response";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_AddTimelineRangeEnd_Response {
-        CGameRecordingDebug_AddTimelineRangeEnd_Response::new()
-    }
-
-    fn clear(&mut self) {
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_AddTimelineRangeEnd_Response {
-        static instance: CGameRecordingDebug_AddTimelineRangeEnd_Response = CGameRecordingDebug_AddTimelineRangeEnd_Response {
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_SetTimelineGameMode_Request)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_SetTimelineGameMode_Request {
-    // message fields
-    // @@protoc_insertion_point(field:CGameRecordingDebug_SetTimelineGameMode_Request.appid)
-    pub appid: ::std::option::Option<u32>,
-    // @@protoc_insertion_point(field:CGameRecordingDebug_SetTimelineGameMode_Request.mode)
-    pub mode: ::std::option::Option<u32>,
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_SetTimelineGameMode_Request.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_SetTimelineGameMode_Request {
-    fn default() -> &'a CGameRecordingDebug_SetTimelineGameMode_Request {
-        <CGameRecordingDebug_SetTimelineGameMode_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_SetTimelineGameMode_Request {
-    pub fn new() -> CGameRecordingDebug_SetTimelineGameMode_Request {
-        ::std::default::Default::default()
-    }
-
-    // optional uint32 appid = 1;
-
-    pub fn appid(&self) -> u32 {
-        self.appid.unwrap_or(0)
-    }
-
-    pub fn clear_appid(&mut self) {
-        self.appid = ::std::option::Option::None;
-    }
-
-    pub fn has_appid(&self) -> bool {
-        self.appid.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_appid(&mut self, v: u32) {
-        self.appid = ::std::option::Option::Some(v);
-    }
-
-    // optional uint32 mode = 2;
-
-    pub fn mode(&self) -> u32 {
-        self.mode.unwrap_or(0)
-    }
-
-    pub fn clear_mode(&mut self) {
-        self.mode = ::std::option::Option::None;
-    }
-
-    pub fn has_mode(&self) -> bool {
-        self.mode.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_mode(&mut self, v: u32) {
-        self.mode = ::std::option::Option::Some(v);
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_SetTimelineGameMode_Request {
-    const NAME: &'static str = "CGameRecordingDebug_SetTimelineGameMode_Request";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                8 => {
-                    self.appid = ::std::option::Option::Some(is.read_uint32()?);
-                },
-                16 => {
-                    self.mode = ::std::option::Option::Some(is.read_uint32()?);
-                },
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        if let Some(v) = self.appid {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
-        }
-        if let Some(v) = self.mode {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
-        }
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        if let Some(v) = self.appid {
-            os.write_uint32(1, v)?;
-        }
-        if let Some(v) = self.mode {
-            os.write_uint32(2, v)?;
-        }
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_SetTimelineGameMode_Request {
-        CGameRecordingDebug_SetTimelineGameMode_Request::new()
-    }
-
-    fn clear(&mut self) {
-        self.appid = ::std::option::Option::None;
-        self.mode = ::std::option::Option::None;
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_SetTimelineGameMode_Request {
-        static instance: CGameRecordingDebug_SetTimelineGameMode_Request = CGameRecordingDebug_SetTimelineGameMode_Request {
-            appid: ::std::option::Option::None,
-            mode: ::std::option::Option::None,
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
-// @@protoc_insertion_point(message:CGameRecordingDebug_SetTimelineGameMode_Response)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CGameRecordingDebug_SetTimelineGameMode_Response {
-    // special fields
-    // @@protoc_insertion_point(special_field:CGameRecordingDebug_SetTimelineGameMode_Response.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CGameRecordingDebug_SetTimelineGameMode_Response {
-    fn default() -> &'a CGameRecordingDebug_SetTimelineGameMode_Response {
-        <CGameRecordingDebug_SetTimelineGameMode_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CGameRecordingDebug_SetTimelineGameMode_Response {
-    pub fn new() -> CGameRecordingDebug_SetTimelineGameMode_Response {
-        ::std::default::Default::default()
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CGameRecordingDebug_SetTimelineGameMode_Response {
-    const NAME: &'static str = "CGameRecordingDebug_SetTimelineGameMode_Response";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CGameRecordingDebug_SetTimelineGameMode_Response {
-        CGameRecordingDebug_SetTimelineGameMode_Response::new()
-    }
-
-    fn clear(&mut self) {
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CGameRecordingDebug_SetTimelineGameMode_Response {
-        static instance: CGameRecordingDebug_SetTimelineGameMode_Response = CGameRecordingDebug_SetTimelineGameMode_Response {
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -13475,7 +13457,7 @@ use crate::webuimessages_base::*;
 #[allow(unused_imports)]
 use crate::webuimessages_gamerecordingfiles::*;
 impl ::steam_vent_proto_common::RpcMessage
-for CGameRecording_GetActiveTimelineApps_Request {
+for CGameRecording_GetAppsWithBackgroundVideo_Request {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }
@@ -13489,7 +13471,7 @@ for CGameRecording_GetActiveTimelineApps_Request {
     }
 }
 impl ::steam_vent_proto_common::RpcMessage
-for CGameRecording_GetActiveTimelineApps_Response {
+for CGameRecording_GetAppsWithBackgroundVideo_Response {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }
@@ -13721,6 +13703,20 @@ for CGameRecording_TimelineEntryChanged_Notification {
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessage
+for CGameRecording_TimelineEntryRemoved_Notification {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
 impl ::steam_vent_proto_common::RpcMessage for CGameRecording_LowDiskSpace_Notification {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -13736,6 +13732,48 @@ impl ::steam_vent_proto_common::RpcMessage for CGameRecording_LowDiskSpace_Notif
 }
 impl ::steam_vent_proto_common::RpcMessage
 for CGameRecording_PostGameHighlightsChanged_Notification {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CGameRecording_OpenOverlayToGamePhase_Notification {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CGameRecording_OpenOverlayToTimelineEvent_Notification {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CGameRecording_PhaseListChanged_Notification {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }
@@ -13840,6 +13878,33 @@ impl ::steam_vent_proto_common::RpcMessage for CGameRecording_ExportClip_Request
     }
 }
 impl ::steam_vent_proto_common::RpcMessage for CGameRecording_ExportClip_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for CGameRecording_ExportClipPreview_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CGameRecording_ExportClipPreview_Response {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }
@@ -14395,6 +14460,34 @@ for CGameRecording_SetPerGameSettings_Response {
     }
 }
 impl ::steam_vent_proto_common::RpcMessage
+for CGameRecording_DeletePerGameSettings_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CGameRecording_DeletePerGameSettings_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
 for CGameRecording_UploadProgress_Notification {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -14436,180 +14529,10 @@ for CGameRecording_SwitchBackgroundRecordingGame_Response {
         self.compute_size() as usize
     }
 }
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_AddTimelineHighlightMarker_Response {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_AddTimelineTimestamp_Request {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_AddTimelineTimestamp_Response {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_AddTimelineRangeStart_Request {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_AddTimelineRangeStart_Response {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_AddTimelineRangeEnd_Request {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_AddTimelineRangeEnd_Response {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_SetTimelineGameMode_Request {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessage
-for CGameRecordingDebug_SetTimelineGameMode_Response {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
 ///
 struct GameRecording {}
 impl ::steam_vent_proto_common::RpcService for GameRecording {
     const SERVICE_NAME: &'static str = "GameRecording";
-}
-///
-struct GameRecordingDebug {}
-impl ::steam_vent_proto_common::RpcService for GameRecordingDebug {
-    const SERVICE_NAME: &'static str = "GameRecordingDebug";
-}
-impl ::steam_vent_proto_common::RpcMethod
-for CGameRecordingDebug_AddTimelineHighlightMarker_Request {
-    const METHOD_NAME: &'static str = "GameRecordingDebug.AddTimelineHighlightMarker#1";
-    type Response = CGameRecordingDebug_AddTimelineHighlightMarker_Response;
-}
-impl ::steam_vent_proto_common::RpcMethod
-for CGameRecordingDebug_AddTimelineRangeEnd_Request {
-    const METHOD_NAME: &'static str = "GameRecordingDebug.AddTimelineRangeEnd#1";
-    type Response = CGameRecordingDebug_AddTimelineRangeEnd_Response;
-}
-impl ::steam_vent_proto_common::RpcMethod
-for CGameRecordingDebug_AddTimelineRangeStart_Request {
-    const METHOD_NAME: &'static str = "GameRecordingDebug.AddTimelineRangeStart#1";
-    type Response = CGameRecordingDebug_AddTimelineRangeStart_Response;
-}
-impl ::steam_vent_proto_common::RpcMethod
-for CGameRecordingDebug_AddTimelineTimestamp_Request {
-    const METHOD_NAME: &'static str = "GameRecordingDebug.AddTimelineTimestamp#1";
-    type Response = CGameRecordingDebug_AddTimelineTimestamp_Response;
-}
-impl ::steam_vent_proto_common::RpcMethod
-for CGameRecordingDebug_SetTimelineGameMode_Request {
-    const METHOD_NAME: &'static str = "GameRecordingDebug.SetTimelineGameMode#1";
-    type Response = CGameRecordingDebug_SetTimelineGameMode_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod
 for CGameRecording_CleanupBackgroundRecordings_Request {
@@ -14628,6 +14551,15 @@ impl ::steam_vent_proto_common::RpcMethod for CGameRecording_DeleteClip_Request 
     const METHOD_NAME: &'static str = "GameRecording.DeleteClip#1";
     type Response = CGameRecording_DeleteClip_Response;
 }
+impl ::steam_vent_proto_common::RpcMethod
+for CGameRecording_DeletePerGameSettings_Request {
+    const METHOD_NAME: &'static str = "GameRecording.DeletePerGameSettings#1";
+    type Response = CGameRecording_DeletePerGameSettings_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod for CGameRecording_ExportClipPreview_Request {
+    const METHOD_NAME: &'static str = "GameRecording.ExportClipPreview#1";
+    type Response = CGameRecording_ExportClipPreview_Response;
+}
 impl ::steam_vent_proto_common::RpcMethod for CGameRecording_ExportClip_Request {
     const METHOD_NAME: &'static str = "GameRecording.ExportClip#1";
     type Response = CGameRecording_ExportClip_Response;
@@ -14638,14 +14570,14 @@ for CGameRecording_ExportProgress_Notification {
     type Response = WebUINoResponse;
 }
 impl ::steam_vent_proto_common::RpcMethod
-for CGameRecording_GetActiveTimelineApps_Request {
-    const METHOD_NAME: &'static str = "GameRecording.GetActiveTimelineApps#1";
-    type Response = CGameRecording_GetActiveTimelineApps_Response;
-}
-impl ::steam_vent_proto_common::RpcMethod
 for CGameRecording_GetAndTrimPostGameHighlights_Request {
     const METHOD_NAME: &'static str = "GameRecording.GetAndTrimPostGameHighlights#1";
     type Response = CGameRecording_GetAndTrimPostGameHighlights_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CGameRecording_GetAppsWithBackgroundVideo_Request {
+    const METHOD_NAME: &'static str = "GameRecording.GetAppsWithBackgroundVideo#1";
+    type Response = CGameRecording_GetAppsWithBackgroundVideo_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod
 for CGameRecording_GetAvailableDiskSpace_Request {
@@ -14705,6 +14637,21 @@ for CGameRecording_ManuallyDeleteRecordingsForApps_Request {
     type Response = CGameRecording_ManuallyDeleteRecordingsForApps_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod
+for CGameRecording_OpenOverlayToGamePhase_Notification {
+    const METHOD_NAME: &'static str = "GameRecording.NotifyOpenOverlayToGamePhase#1";
+    type Response = WebUINoResponse;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CGameRecording_OpenOverlayToTimelineEvent_Notification {
+    const METHOD_NAME: &'static str = "GameRecording.NotifyOpenOverlayToTimelineEvent#1";
+    type Response = WebUINoResponse;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CGameRecording_PhaseListChanged_Notification {
+    const METHOD_NAME: &'static str = "GameRecording.NotifyPhaseListChanged#1";
+    type Response = WebUINoResponse;
+}
+impl ::steam_vent_proto_common::RpcMethod
 for CGameRecording_PostGameHighlightsChanged_Notification {
     const METHOD_NAME: &'static str = "GameRecording.NotifyPostGameHighlightsChanged#1";
     type Response = WebUINoResponse;
@@ -14751,6 +14698,11 @@ for CGameRecording_TimelineChanged_Notification {
 impl ::steam_vent_proto_common::RpcMethod
 for CGameRecording_TimelineEntryChanged_Notification {
     const METHOD_NAME: &'static str = "GameRecording.NotifyTimelineEntryChanged#1";
+    type Response = WebUINoResponse;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CGameRecording_TimelineEntryRemoved_Notification {
+    const METHOD_NAME: &'static str = "GameRecording.NotifyTimelineEntryRemoved#1";
     type Response = WebUINoResponse;
 }
 impl ::steam_vent_proto_common::RpcMethod for CGameRecording_UploadClipToSteam_Request {

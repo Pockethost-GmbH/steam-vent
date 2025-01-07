@@ -7346,6 +7346,8 @@ pub struct CStore_GetWishlistDemoEmailStatus_Request {
     pub appid: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CStore_GetWishlistDemoEmailStatus_Request.demo_appid)
     pub demo_appid: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CStore_GetWishlistDemoEmailStatus_Request.allow_late_firing)
+    pub allow_late_firing: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CStore_GetWishlistDemoEmailStatus_Request.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -7399,6 +7401,25 @@ impl CStore_GetWishlistDemoEmailStatus_Request {
     pub fn set_demo_appid(&mut self, v: u32) {
         self.demo_appid = ::std::option::Option::Some(v);
     }
+
+    // optional bool allow_late_firing = 3;
+
+    pub fn allow_late_firing(&self) -> bool {
+        self.allow_late_firing.unwrap_or(false)
+    }
+
+    pub fn clear_allow_late_firing(&mut self) {
+        self.allow_late_firing = ::std::option::Option::None;
+    }
+
+    pub fn has_allow_late_firing(&self) -> bool {
+        self.allow_late_firing.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_allow_late_firing(&mut self, v: bool) {
+        self.allow_late_firing = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CStore_GetWishlistDemoEmailStatus_Request {
@@ -7416,6 +7437,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_GetWishlistDemoEmai
                 },
                 16 => {
                     self.demo_appid = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                24 => {
+                    self.allow_late_firing = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -7435,6 +7459,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_GetWishlistDemoEmai
         if let Some(v) = self.demo_appid {
             my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
         }
+        if let Some(v) = self.allow_late_firing {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -7446,6 +7473,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_GetWishlistDemoEmai
         }
         if let Some(v) = self.demo_appid {
             os.write_uint32(2, v)?;
+        }
+        if let Some(v) = self.allow_late_firing {
+            os.write_bool(3, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -7466,6 +7496,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_GetWishlistDemoEmai
     fn clear(&mut self) {
         self.appid = ::std::option::Option::None;
         self.demo_appid = ::std::option::Option::None;
+        self.allow_late_firing = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -7473,6 +7504,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_GetWishlistDemoEmai
         static instance: CStore_GetWishlistDemoEmailStatus_Request = CStore_GetWishlistDemoEmailStatus_Request {
             appid: ::std::option::Option::None,
             demo_appid: ::std::option::Option::None,
+            allow_late_firing: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -7660,6 +7692,8 @@ pub struct CStore_QueueWishlistDemoEmailToFire_Request {
     pub appid: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CStore_QueueWishlistDemoEmailToFire_Request.demo_appid)
     pub demo_appid: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CStore_QueueWishlistDemoEmailToFire_Request.allow_late_firing)
+    pub allow_late_firing: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CStore_QueueWishlistDemoEmailToFire_Request.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -7713,6 +7747,25 @@ impl CStore_QueueWishlistDemoEmailToFire_Request {
     pub fn set_demo_appid(&mut self, v: u32) {
         self.demo_appid = ::std::option::Option::Some(v);
     }
+
+    // optional bool allow_late_firing = 3;
+
+    pub fn allow_late_firing(&self) -> bool {
+        self.allow_late_firing.unwrap_or(false)
+    }
+
+    pub fn clear_allow_late_firing(&mut self) {
+        self.allow_late_firing = ::std::option::Option::None;
+    }
+
+    pub fn has_allow_late_firing(&self) -> bool {
+        self.allow_late_firing.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_allow_late_firing(&mut self, v: bool) {
+        self.allow_late_firing = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CStore_QueueWishlistDemoEmailToFire_Request {
@@ -7730,6 +7783,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_QueueWishlistDemoEm
                 },
                 16 => {
                     self.demo_appid = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                24 => {
+                    self.allow_late_firing = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -7749,6 +7805,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_QueueWishlistDemoEm
         if let Some(v) = self.demo_appid {
             my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
         }
+        if let Some(v) = self.allow_late_firing {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -7760,6 +7819,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_QueueWishlistDemoEm
         }
         if let Some(v) = self.demo_appid {
             os.write_uint32(2, v)?;
+        }
+        if let Some(v) = self.allow_late_firing {
+            os.write_bool(3, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -7780,6 +7842,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_QueueWishlistDemoEm
     fn clear(&mut self) {
         self.appid = ::std::option::Option::None;
         self.demo_appid = ::std::option::Option::None;
+        self.allow_late_firing = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -7787,6 +7850,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStore_QueueWishlistDemoEm
         static instance: CStore_QueueWishlistDemoEmailToFire_Request = CStore_QueueWishlistDemoEmailToFire_Request {
             appid: ::std::option::Option::None,
             demo_appid: ::std::option::Option::None,
+            allow_late_firing: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance

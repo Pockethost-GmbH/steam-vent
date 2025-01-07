@@ -5114,6 +5114,8 @@ pub struct ProfileItem {
     pub equipped_flags: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:ProfileItem.profile_colors)
     pub profile_colors: ::std::vec::Vec<profile_item::ProfileColor>,
+    // @@protoc_insertion_point(field:ProfileItem.tiled)
+    pub tiled: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:ProfileItem.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -5548,6 +5550,25 @@ impl ProfileItem {
     pub fn set_equipped_flags(&mut self, v: u32) {
         self.equipped_flags = ::std::option::Option::Some(v);
     }
+
+    // optional bool tiled = 16;
+
+    pub fn tiled(&self) -> bool {
+        self.tiled.unwrap_or(false)
+    }
+
+    pub fn clear_tiled(&mut self) {
+        self.tiled = ::std::option::Option::None;
+    }
+
+    pub fn has_tiled(&self) -> bool {
+        self.tiled.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tiled(&mut self, v: bool) {
+        self.tiled = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for ProfileItem {
@@ -5604,6 +5625,9 @@ impl ::steam_vent_proto_common::protobuf::Message for ProfileItem {
                 },
                 122 => {
                     self.profile_colors.push(is.read_message()?);
+                },
+                128 => {
+                    self.tiled = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -5663,6 +5687,9 @@ impl ::steam_vent_proto_common::protobuf::Message for ProfileItem {
             let len = value.compute_size();
             my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
         };
+        if let Some(v) = self.tiled {
+            my_size += 2 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -5714,6 +5741,9 @@ impl ::steam_vent_proto_common::protobuf::Message for ProfileItem {
         for v in &self.profile_colors {
             ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(15, v, os)?;
         };
+        if let Some(v) = self.tiled {
+            os.write_bool(16, v)?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -5746,6 +5776,7 @@ impl ::steam_vent_proto_common::protobuf::Message for ProfileItem {
         self.movie_mp4_small = ::std::option::Option::None;
         self.equipped_flags = ::std::option::Option::None;
         self.profile_colors.clear();
+        self.tiled = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -5766,6 +5797,7 @@ impl ::steam_vent_proto_common::protobuf::Message for ProfileItem {
             movie_mp4_small: ::std::option::Option::None,
             equipped_flags: ::std::option::Option::None,
             profile_colors: ::std::vec::Vec::new(),
+            tiled: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance

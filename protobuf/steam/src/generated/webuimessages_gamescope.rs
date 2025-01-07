@@ -401,6 +401,8 @@ pub struct CMsgGamescopeState {
     pub is_hdr_visualization_supported: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CMsgGamescopeState.is_mura_correction_supported)
     pub is_mura_correction_supported: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CMsgGamescopeState.is_global_action_binding_supported)
+    pub is_global_action_binding_supported: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CMsgGamescopeState.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -587,6 +589,25 @@ impl CMsgGamescopeState {
     pub fn set_is_mura_correction_supported(&mut self, v: bool) {
         self.is_mura_correction_supported = ::std::option::Option::Some(v);
     }
+
+    // optional bool is_global_action_binding_supported = 11;
+
+    pub fn is_global_action_binding_supported(&self) -> bool {
+        self.is_global_action_binding_supported.unwrap_or(false)
+    }
+
+    pub fn clear_is_global_action_binding_supported(&mut self) {
+        self.is_global_action_binding_supported = ::std::option::Option::None;
+    }
+
+    pub fn has_is_global_action_binding_supported(&self) -> bool {
+        self.is_global_action_binding_supported.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_is_global_action_binding_supported(&mut self, v: bool) {
+        self.is_global_action_binding_supported = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CMsgGamescopeState {
@@ -628,6 +649,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgGamescopeState {
                 },
                 80 => {
                     self.is_mura_correction_supported = ::std::option::Option::Some(is.read_bool()?);
+                },
+                88 => {
+                    self.is_global_action_binding_supported = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -672,6 +696,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgGamescopeState {
         if let Some(v) = self.is_mura_correction_supported {
             my_size += 1 + 1;
         }
+        if let Some(v) = self.is_global_action_binding_supported {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -708,6 +735,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgGamescopeState {
         if let Some(v) = self.is_mura_correction_supported {
             os.write_bool(10, v)?;
         }
+        if let Some(v) = self.is_global_action_binding_supported {
+            os.write_bool(11, v)?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -735,6 +765,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgGamescopeState {
         self.is_refresh_rate_switching_restricted = ::std::option::Option::None;
         self.is_hdr_visualization_supported = ::std::option::Option::None;
         self.is_mura_correction_supported = ::std::option::Option::None;
+        self.is_global_action_binding_supported = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -750,6 +781,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgGamescopeState {
             is_refresh_rate_switching_restricted: ::std::option::Option::None,
             is_hdr_visualization_supported: ::std::option::Option::None,
             is_mura_correction_supported: ::std::option::Option::None,
+            is_global_action_binding_supported: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -1251,6 +1283,158 @@ impl ::steam_vent_proto_common::protobuf::Message for CGamescope_SetBlurParams_R
     }
 }
 
+// @@protoc_insertion_point(message:CGamescope_ReArmMuraCalibration_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGamescope_ReArmMuraCalibration_Request {
+    // special fields
+    // @@protoc_insertion_point(special_field:CGamescope_ReArmMuraCalibration_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGamescope_ReArmMuraCalibration_Request {
+    fn default() -> &'a CGamescope_ReArmMuraCalibration_Request {
+        <CGamescope_ReArmMuraCalibration_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGamescope_ReArmMuraCalibration_Request {
+    pub fn new() -> CGamescope_ReArmMuraCalibration_Request {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGamescope_ReArmMuraCalibration_Request {
+    const NAME: &'static str = "CGamescope_ReArmMuraCalibration_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGamescope_ReArmMuraCalibration_Request {
+        CGamescope_ReArmMuraCalibration_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGamescope_ReArmMuraCalibration_Request {
+        static instance: CGamescope_ReArmMuraCalibration_Request = CGamescope_ReArmMuraCalibration_Request {
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CGamescope_ReArmMuraCalibration_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CGamescope_ReArmMuraCalibration_Response {
+    // special fields
+    // @@protoc_insertion_point(special_field:CGamescope_ReArmMuraCalibration_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CGamescope_ReArmMuraCalibration_Response {
+    fn default() -> &'a CGamescope_ReArmMuraCalibration_Response {
+        <CGamescope_ReArmMuraCalibration_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CGamescope_ReArmMuraCalibration_Response {
+    pub fn new() -> CGamescope_ReArmMuraCalibration_Response {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CGamescope_ReArmMuraCalibration_Response {
+    const NAME: &'static str = "CGamescope_ReArmMuraCalibration_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CGamescope_ReArmMuraCalibration_Response {
+        CGamescope_ReArmMuraCalibration_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CGamescope_ReArmMuraCalibration_Response {
+        static instance: CGamescope_ReArmMuraCalibration_Response = CGamescope_ReArmMuraCalibration_Response {
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 
 const _VENT_PROTO_VERSION_CHECK: () = ::steam_vent_proto_common::VERSION_0_5_0;
 
@@ -1351,6 +1535,32 @@ impl ::steam_vent_proto_common::RpcMessage for CGamescope_SetBlurParams_Response
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessage for CGamescope_ReArmMuraCalibration_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage for CGamescope_ReArmMuraCalibration_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
 ///
 struct Gamescope {}
 impl ::steam_vent_proto_common::RpcService for Gamescope {
@@ -1359,6 +1569,10 @@ impl ::steam_vent_proto_common::RpcService for Gamescope {
 impl ::steam_vent_proto_common::RpcMethod for CGamescope_GetState_Request {
     const METHOD_NAME: &'static str = "Gamescope.GetState#1";
     type Response = CGamescope_GetState_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod for CGamescope_ReArmMuraCalibration_Request {
+    const METHOD_NAME: &'static str = "Gamescope.ReArmMuraCalibration#1";
+    type Response = CGamescope_ReArmMuraCalibration_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod for CGamescope_SetBlurParams_Request {
     const METHOD_NAME: &'static str = "Gamescope.SetBlurParams#1";

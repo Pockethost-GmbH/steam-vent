@@ -4111,6 +4111,10 @@ pub struct CCloud_PendingRemoteOperation {
     pub client_id: ::std::option::Option<u64>,
     // @@protoc_insertion_point(field:CCloud_PendingRemoteOperation.time_last_updated)
     pub time_last_updated: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CCloud_PendingRemoteOperation.os_type)
+    pub os_type: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CCloud_PendingRemoteOperation.device_type)
+    pub device_type: ::std::option::Option<i32>,
     // special fields
     // @@protoc_insertion_point(special_field:CCloud_PendingRemoteOperation.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -4222,6 +4226,44 @@ impl CCloud_PendingRemoteOperation {
     pub fn set_time_last_updated(&mut self, v: u32) {
         self.time_last_updated = ::std::option::Option::Some(v);
     }
+
+    // optional int32 os_type = 5;
+
+    pub fn os_type(&self) -> i32 {
+        self.os_type.unwrap_or(0)
+    }
+
+    pub fn clear_os_type(&mut self) {
+        self.os_type = ::std::option::Option::None;
+    }
+
+    pub fn has_os_type(&self) -> bool {
+        self.os_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_os_type(&mut self, v: i32) {
+        self.os_type = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 device_type = 6;
+
+    pub fn device_type(&self) -> i32 {
+        self.device_type.unwrap_or(0)
+    }
+
+    pub fn clear_device_type(&mut self) {
+        self.device_type = ::std::option::Option::None;
+    }
+
+    pub fn has_device_type(&self) -> bool {
+        self.device_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_device_type(&mut self, v: i32) {
+        self.device_type = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CCloud_PendingRemoteOperation {
@@ -4245,6 +4287,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CCloud_PendingRemoteOperat
                 },
                 32 => {
                     self.time_last_updated = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                40 => {
+                    self.os_type = ::std::option::Option::Some(is.read_int32()?);
+                },
+                48 => {
+                    self.device_type = ::std::option::Option::Some(is.read_int32()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -4270,6 +4318,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CCloud_PendingRemoteOperat
         if let Some(v) = self.time_last_updated {
             my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(4, v);
         }
+        if let Some(v) = self.os_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(5, v);
+        }
+        if let Some(v) = self.device_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(6, v);
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -4287,6 +4341,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CCloud_PendingRemoteOperat
         }
         if let Some(v) = self.time_last_updated {
             os.write_uint32(4, v)?;
+        }
+        if let Some(v) = self.os_type {
+            os.write_int32(5, v)?;
+        }
+        if let Some(v) = self.device_type {
+            os.write_int32(6, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -4309,6 +4369,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CCloud_PendingRemoteOperat
         self.machine_name = ::std::option::Option::None;
         self.client_id = ::std::option::Option::None;
         self.time_last_updated = ::std::option::Option::None;
+        self.os_type = ::std::option::Option::None;
+        self.device_type = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -4318,6 +4380,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CCloud_PendingRemoteOperat
             machine_name: ::std::option::Option::None,
             client_id: ::std::option::Option::None,
             time_last_updated: ::std::option::Option::None,
+            os_type: ::std::option::Option::None,
+            device_type: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance

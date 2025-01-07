@@ -384,6 +384,10 @@ pub enum EContentCheckProvider {
     k_EContentCheckProvider_Local = 3,
     // @@protoc_insertion_point(enum_value:EContentCheckProvider.k_EContentCheckProvider_GoogleVertexAI)
     k_EContentCheckProvider_GoogleVertexAI = 4,
+    // @@protoc_insertion_point(enum_value:EContentCheckProvider.k_EContentCheckProvider_GoogleGemini)
+    k_EContentCheckProvider_GoogleGemini = 5,
+    // @@protoc_insertion_point(enum_value:EContentCheckProvider.k_EContentCheckProvider_SteamLearn)
+    k_EContentCheckProvider_SteamLearn = 6,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EContentCheckProvider {
@@ -400,6 +404,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EContentCheckProvider {
             2 => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_Amazon),
             3 => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_Local),
             4 => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_GoogleVertexAI),
+            5 => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_GoogleGemini),
+            6 => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_SteamLearn),
             _ => ::std::option::Option::None
         }
     }
@@ -411,6 +417,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EContentCheckProvider {
             "k_EContentCheckProvider_Amazon" => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_Amazon),
             "k_EContentCheckProvider_Local" => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_Local),
             "k_EContentCheckProvider_GoogleVertexAI" => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_GoogleVertexAI),
+            "k_EContentCheckProvider_GoogleGemini" => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_GoogleGemini),
+            "k_EContentCheckProvider_SteamLearn" => ::std::option::Option::Some(EContentCheckProvider::k_EContentCheckProvider_SteamLearn),
             _ => ::std::option::Option::None
         }
     }
@@ -421,6 +429,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for EContentCheckProvider {
         EContentCheckProvider::k_EContentCheckProvider_Amazon,
         EContentCheckProvider::k_EContentCheckProvider_Local,
         EContentCheckProvider::k_EContentCheckProvider_GoogleVertexAI,
+        EContentCheckProvider::k_EContentCheckProvider_GoogleGemini,
+        EContentCheckProvider::k_EContentCheckProvider_SteamLearn,
     ];
 }
 
@@ -886,10 +896,12 @@ impl ::std::default::Default for ESystemFanControlMode {
 pub enum EStartupMovieVariant {
     // @@protoc_insertion_point(enum_value:EStartupMovieVariant.k_EStartupMovieVariant_Invalid)
     k_EStartupMovieVariant_Invalid = 0,
-    // @@protoc_insertion_point(enum_value:EStartupMovieVariant.k_EStartupMovieVariant_Default)
-    k_EStartupMovieVariant_Default = 1,
-    // @@protoc_insertion_point(enum_value:EStartupMovieVariant.k_EStartupMovieVariant_Orange)
-    k_EStartupMovieVariant_Orange = 2,
+    // @@protoc_insertion_point(enum_value:EStartupMovieVariant.k_EStartupMovieVariant_Generic)
+    k_EStartupMovieVariant_Generic = 1,
+    // @@protoc_insertion_point(enum_value:EStartupMovieVariant.k_EStartupMovieVariant_DeckBlue)
+    k_EStartupMovieVariant_DeckBlue = 2,
+    // @@protoc_insertion_point(enum_value:EStartupMovieVariant.k_EStartupMovieVariant_DeckOrange)
+    k_EStartupMovieVariant_DeckOrange = 3,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EStartupMovieVariant {
@@ -902,8 +914,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EStartupMovieVariant {
     fn from_i32(value: i32) -> ::std::option::Option<EStartupMovieVariant> {
         match value {
             0 => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_Invalid),
-            1 => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_Default),
-            2 => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_Orange),
+            1 => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_Generic),
+            2 => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_DeckBlue),
+            3 => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_DeckOrange),
             _ => ::std::option::Option::None
         }
     }
@@ -911,16 +924,18 @@ impl ::steam_vent_proto_common::protobuf::Enum for EStartupMovieVariant {
     fn from_str(str: &str) -> ::std::option::Option<EStartupMovieVariant> {
         match str {
             "k_EStartupMovieVariant_Invalid" => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_Invalid),
-            "k_EStartupMovieVariant_Default" => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_Default),
-            "k_EStartupMovieVariant_Orange" => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_Orange),
+            "k_EStartupMovieVariant_Generic" => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_Generic),
+            "k_EStartupMovieVariant_DeckBlue" => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_DeckBlue),
+            "k_EStartupMovieVariant_DeckOrange" => ::std::option::Option::Some(EStartupMovieVariant::k_EStartupMovieVariant_DeckOrange),
             _ => ::std::option::Option::None
         }
     }
 
     const VALUES: &'static [EStartupMovieVariant] = &[
         EStartupMovieVariant::k_EStartupMovieVariant_Invalid,
-        EStartupMovieVariant::k_EStartupMovieVariant_Default,
-        EStartupMovieVariant::k_EStartupMovieVariant_Orange,
+        EStartupMovieVariant::k_EStartupMovieVariant_Generic,
+        EStartupMovieVariant::k_EStartupMovieVariant_DeckBlue,
+        EStartupMovieVariant::k_EStartupMovieVariant_DeckOrange,
     ];
 }
 
@@ -2757,6 +2772,331 @@ impl ::std::default::Default for EOSBranch {
 
 
 #[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+// @@protoc_insertion_point(enum:EBrowserGPUStatus)
+pub enum EBrowserGPUStatus {
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_Invalid)
+    k_EBrowserGPUStatus_Invalid = 0,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_Enabled)
+    k_EBrowserGPUStatus_Enabled = 1,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_DisabledUnknown)
+    k_EBrowserGPUStatus_DisabledUnknown = 2,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_DisabledCrashCount)
+    k_EBrowserGPUStatus_DisabledCrashCount = 4,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_DisabledBlocklist)
+    k_EBrowserGPUStatus_DisabledBlocklist = 5,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_DisabledJSRequest)
+    k_EBrowserGPUStatus_DisabledJSRequest = 6,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_DisabledCommandLine)
+    k_EBrowserGPUStatus_DisabledCommandLine = 7,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_DisabledRuntimeDetect)
+    k_EBrowserGPUStatus_DisabledRuntimeDetect = 8,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_DisabledChildCommandLine)
+    k_EBrowserGPUStatus_DisabledChildCommandLine = 9,
+    // @@protoc_insertion_point(enum_value:EBrowserGPUStatus.k_EBrowserGPUStatus_DisabledCompositingCommandLine)
+    k_EBrowserGPUStatus_DisabledCompositingCommandLine = 10,
+}
+
+impl ::steam_vent_proto_common::protobuf::Enum for EBrowserGPUStatus {
+    const NAME: &'static str = "EBrowserGPUStatus";
+
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<EBrowserGPUStatus> {
+        match value {
+            0 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_Invalid),
+            1 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_Enabled),
+            2 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledUnknown),
+            4 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCrashCount),
+            5 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledBlocklist),
+            6 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledJSRequest),
+            7 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCommandLine),
+            8 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledRuntimeDetect),
+            9 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledChildCommandLine),
+            10 => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCompositingCommandLine),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn from_str(str: &str) -> ::std::option::Option<EBrowserGPUStatus> {
+        match str {
+            "k_EBrowserGPUStatus_Invalid" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_Invalid),
+            "k_EBrowserGPUStatus_Enabled" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_Enabled),
+            "k_EBrowserGPUStatus_DisabledUnknown" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledUnknown),
+            "k_EBrowserGPUStatus_DisabledCrashCount" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCrashCount),
+            "k_EBrowserGPUStatus_DisabledBlocklist" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledBlocklist),
+            "k_EBrowserGPUStatus_DisabledJSRequest" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledJSRequest),
+            "k_EBrowserGPUStatus_DisabledCommandLine" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCommandLine),
+            "k_EBrowserGPUStatus_DisabledRuntimeDetect" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledRuntimeDetect),
+            "k_EBrowserGPUStatus_DisabledChildCommandLine" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledChildCommandLine),
+            "k_EBrowserGPUStatus_DisabledCompositingCommandLine" => ::std::option::Option::Some(EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCompositingCommandLine),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    const VALUES: &'static [EBrowserGPUStatus] = &[
+        EBrowserGPUStatus::k_EBrowserGPUStatus_Invalid,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_Enabled,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledUnknown,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCrashCount,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledBlocklist,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledJSRequest,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCommandLine,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledRuntimeDetect,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledChildCommandLine,
+        EBrowserGPUStatus::k_EBrowserGPUStatus_DisabledCompositingCommandLine,
+    ];
+}
+
+impl ::std::default::Default for EBrowserGPUStatus {
+    fn default() -> Self {
+        EBrowserGPUStatus::k_EBrowserGPUStatus_Invalid
+    }
+}
+
+
+#[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+// @@protoc_insertion_point(enum:EBrowserFeatureStatus)
+pub enum EBrowserFeatureStatus {
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_Invalid)
+    k_EBrowserFeatureStatus_Invalid = 0,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_NotFound)
+    k_EBrowserFeatureStatus_NotFound = 1,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_Unknown)
+    k_EBrowserFeatureStatus_Unknown = 2,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_DisabledSoftware)
+    k_EBrowserFeatureStatus_DisabledSoftware = 3,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_DisabledOff)
+    k_EBrowserFeatureStatus_DisabledOff = 4,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_DisabledOffOk)
+    k_EBrowserFeatureStatus_DisabledOffOk = 5,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_UnavailableSoftware)
+    k_EBrowserFeatureStatus_UnavailableSoftware = 6,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_UnavailableOff)
+    k_EBrowserFeatureStatus_UnavailableOff = 7,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_UnavailableOffOk)
+    k_EBrowserFeatureStatus_UnavailableOffOk = 8,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_EnabledReadback)
+    k_EBrowserFeatureStatus_EnabledReadback = 9,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_EnabledForce)
+    k_EBrowserFeatureStatus_EnabledForce = 10,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_Enabled)
+    k_EBrowserFeatureStatus_Enabled = 11,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_EnabledOn)
+    k_EBrowserFeatureStatus_EnabledOn = 12,
+    // @@protoc_insertion_point(enum_value:EBrowserFeatureStatus.k_EBrowserFeatureStatus_EnabledForceOn)
+    k_EBrowserFeatureStatus_EnabledForceOn = 13,
+}
+
+impl ::steam_vent_proto_common::protobuf::Enum for EBrowserFeatureStatus {
+    const NAME: &'static str = "EBrowserFeatureStatus";
+
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<EBrowserFeatureStatus> {
+        match value {
+            0 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            1 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_NotFound),
+            2 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_Unknown),
+            3 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledSoftware),
+            4 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledOff),
+            5 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledOffOk),
+            6 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableSoftware),
+            7 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableOff),
+            8 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableOffOk),
+            9 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledReadback),
+            10 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledForce),
+            11 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_Enabled),
+            12 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledOn),
+            13 => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledForceOn),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn from_str(str: &str) -> ::std::option::Option<EBrowserFeatureStatus> {
+        match str {
+            "k_EBrowserFeatureStatus_Invalid" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid),
+            "k_EBrowserFeatureStatus_NotFound" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_NotFound),
+            "k_EBrowserFeatureStatus_Unknown" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_Unknown),
+            "k_EBrowserFeatureStatus_DisabledSoftware" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledSoftware),
+            "k_EBrowserFeatureStatus_DisabledOff" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledOff),
+            "k_EBrowserFeatureStatus_DisabledOffOk" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledOffOk),
+            "k_EBrowserFeatureStatus_UnavailableSoftware" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableSoftware),
+            "k_EBrowserFeatureStatus_UnavailableOff" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableOff),
+            "k_EBrowserFeatureStatus_UnavailableOffOk" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableOffOk),
+            "k_EBrowserFeatureStatus_EnabledReadback" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledReadback),
+            "k_EBrowserFeatureStatus_EnabledForce" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledForce),
+            "k_EBrowserFeatureStatus_Enabled" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_Enabled),
+            "k_EBrowserFeatureStatus_EnabledOn" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledOn),
+            "k_EBrowserFeatureStatus_EnabledForceOn" => ::std::option::Option::Some(EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledForceOn),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    const VALUES: &'static [EBrowserFeatureStatus] = &[
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_NotFound,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_Unknown,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledSoftware,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledOff,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_DisabledOffOk,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableSoftware,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableOff,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_UnavailableOffOk,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledReadback,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledForce,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_Enabled,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledOn,
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_EnabledForceOn,
+    ];
+}
+
+impl ::std::default::Default for EBrowserFeatureStatus {
+    fn default() -> Self {
+        EBrowserFeatureStatus::k_EBrowserFeatureStatus_Invalid
+    }
+}
+
+
+#[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+// @@protoc_insertion_point(enum:EGpuDriverId)
+pub enum EGpuDriverId {
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_Invalid)
+    k_EGpuDriverId_Invalid = 0,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_Unknown)
+    k_EGpuDriverId_Unknown = 1,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_AmdProprietary)
+    k_EGpuDriverId_AmdProprietary = 2,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_AmdOpenSource)
+    k_EGpuDriverId_AmdOpenSource = 3,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaRadv)
+    k_EGpuDriverId_MesaRadv = 4,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_NvidiaProprietary)
+    k_EGpuDriverId_NvidiaProprietary = 5,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_IntelPropietary)
+    k_EGpuDriverId_IntelPropietary = 6,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaIntel)
+    k_EGpuDriverId_MesaIntel = 7,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_QualcommProprietary)
+    k_EGpuDriverId_QualcommProprietary = 8,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_ArmProprietary)
+    k_EGpuDriverId_ArmProprietary = 9,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_GoogleSwiftshader)
+    k_EGpuDriverId_GoogleSwiftshader = 10,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_BroadcomProprietary)
+    k_EGpuDriverId_BroadcomProprietary = 11,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaLLVMPipe)
+    k_EGpuDriverId_MesaLLVMPipe = 12,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MoltenVK)
+    k_EGpuDriverId_MoltenVK = 13,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaTurnip)
+    k_EGpuDriverId_MesaTurnip = 14,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaPanVK)
+    k_EGpuDriverId_MesaPanVK = 15,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaVenus)
+    k_EGpuDriverId_MesaVenus = 16,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaDozen)
+    k_EGpuDriverId_MesaDozen = 17,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaNVK)
+    k_EGpuDriverId_MesaNVK = 18,
+    // @@protoc_insertion_point(enum_value:EGpuDriverId.k_EGpuDriverId_MesaHoneyKrisp)
+    k_EGpuDriverId_MesaHoneyKrisp = 19,
+}
+
+impl ::steam_vent_proto_common::protobuf::Enum for EGpuDriverId {
+    const NAME: &'static str = "EGpuDriverId";
+
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<EGpuDriverId> {
+        match value {
+            0 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_Invalid),
+            1 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_Unknown),
+            2 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_AmdProprietary),
+            3 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_AmdOpenSource),
+            4 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaRadv),
+            5 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_NvidiaProprietary),
+            6 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_IntelPropietary),
+            7 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaIntel),
+            8 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_QualcommProprietary),
+            9 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_ArmProprietary),
+            10 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_GoogleSwiftshader),
+            11 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_BroadcomProprietary),
+            12 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaLLVMPipe),
+            13 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MoltenVK),
+            14 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaTurnip),
+            15 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaPanVK),
+            16 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaVenus),
+            17 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaDozen),
+            18 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaNVK),
+            19 => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaHoneyKrisp),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn from_str(str: &str) -> ::std::option::Option<EGpuDriverId> {
+        match str {
+            "k_EGpuDriverId_Invalid" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_Invalid),
+            "k_EGpuDriverId_Unknown" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_Unknown),
+            "k_EGpuDriverId_AmdProprietary" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_AmdProprietary),
+            "k_EGpuDriverId_AmdOpenSource" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_AmdOpenSource),
+            "k_EGpuDriverId_MesaRadv" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaRadv),
+            "k_EGpuDriverId_NvidiaProprietary" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_NvidiaProprietary),
+            "k_EGpuDriverId_IntelPropietary" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_IntelPropietary),
+            "k_EGpuDriverId_MesaIntel" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaIntel),
+            "k_EGpuDriverId_QualcommProprietary" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_QualcommProprietary),
+            "k_EGpuDriverId_ArmProprietary" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_ArmProprietary),
+            "k_EGpuDriverId_GoogleSwiftshader" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_GoogleSwiftshader),
+            "k_EGpuDriverId_BroadcomProprietary" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_BroadcomProprietary),
+            "k_EGpuDriverId_MesaLLVMPipe" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaLLVMPipe),
+            "k_EGpuDriverId_MoltenVK" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MoltenVK),
+            "k_EGpuDriverId_MesaTurnip" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaTurnip),
+            "k_EGpuDriverId_MesaPanVK" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaPanVK),
+            "k_EGpuDriverId_MesaVenus" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaVenus),
+            "k_EGpuDriverId_MesaDozen" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaDozen),
+            "k_EGpuDriverId_MesaNVK" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaNVK),
+            "k_EGpuDriverId_MesaHoneyKrisp" => ::std::option::Option::Some(EGpuDriverId::k_EGpuDriverId_MesaHoneyKrisp),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    const VALUES: &'static [EGpuDriverId] = &[
+        EGpuDriverId::k_EGpuDriverId_Invalid,
+        EGpuDriverId::k_EGpuDriverId_Unknown,
+        EGpuDriverId::k_EGpuDriverId_AmdProprietary,
+        EGpuDriverId::k_EGpuDriverId_AmdOpenSource,
+        EGpuDriverId::k_EGpuDriverId_MesaRadv,
+        EGpuDriverId::k_EGpuDriverId_NvidiaProprietary,
+        EGpuDriverId::k_EGpuDriverId_IntelPropietary,
+        EGpuDriverId::k_EGpuDriverId_MesaIntel,
+        EGpuDriverId::k_EGpuDriverId_QualcommProprietary,
+        EGpuDriverId::k_EGpuDriverId_ArmProprietary,
+        EGpuDriverId::k_EGpuDriverId_GoogleSwiftshader,
+        EGpuDriverId::k_EGpuDriverId_BroadcomProprietary,
+        EGpuDriverId::k_EGpuDriverId_MesaLLVMPipe,
+        EGpuDriverId::k_EGpuDriverId_MoltenVK,
+        EGpuDriverId::k_EGpuDriverId_MesaTurnip,
+        EGpuDriverId::k_EGpuDriverId_MesaPanVK,
+        EGpuDriverId::k_EGpuDriverId_MesaVenus,
+        EGpuDriverId::k_EGpuDriverId_MesaDozen,
+        EGpuDriverId::k_EGpuDriverId_MesaNVK,
+        EGpuDriverId::k_EGpuDriverId_MesaHoneyKrisp,
+    ];
+}
+
+impl ::std::default::Default for EGpuDriverId {
+    fn default() -> Self {
+        EGpuDriverId::k_EGpuDriverId_Invalid
+    }
+}
+
+
+#[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
 // @@protoc_insertion_point(enum:ECommunityItemClass)
 pub enum ECommunityItemClass {
     // @@protoc_insertion_point(enum_value:ECommunityItemClass.k_ECommunityItemClass_Invalid)
@@ -3588,6 +3928,10 @@ pub enum ECompromiseDetectionType {
     k_ECompromiseDetectionType_ApiCallRate = 2,
     // @@protoc_insertion_point(enum_value:ECompromiseDetectionType.k_ECompromiseDetectionType_Manual)
     k_ECompromiseDetectionType_Manual = 3,
+    // @@protoc_insertion_point(enum_value:ECompromiseDetectionType.k_ECompromiseDetectionType_TicketAction)
+    k_ECompromiseDetectionType_TicketAction = 4,
+    // @@protoc_insertion_point(enum_value:ECompromiseDetectionType.k_ECompromiseDetectionType_MaliciousRefund)
+    k_ECompromiseDetectionType_MaliciousRefund = 5,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for ECompromiseDetectionType {
@@ -3603,6 +3947,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for ECompromiseDetectionType {
             1 => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_TradeEvent),
             2 => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_ApiCallRate),
             3 => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_Manual),
+            4 => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_TicketAction),
+            5 => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_MaliciousRefund),
             _ => ::std::option::Option::None
         }
     }
@@ -3613,6 +3959,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for ECompromiseDetectionType {
             "k_ECompromiseDetectionType_TradeEvent" => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_TradeEvent),
             "k_ECompromiseDetectionType_ApiCallRate" => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_ApiCallRate),
             "k_ECompromiseDetectionType_Manual" => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_Manual),
+            "k_ECompromiseDetectionType_TicketAction" => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_TicketAction),
+            "k_ECompromiseDetectionType_MaliciousRefund" => ::std::option::Option::Some(ECompromiseDetectionType::k_ECompromiseDetectionType_MaliciousRefund),
             _ => ::std::option::Option::None
         }
     }
@@ -3622,6 +3970,8 @@ impl ::steam_vent_proto_common::protobuf::Enum for ECompromiseDetectionType {
         ECompromiseDetectionType::k_ECompromiseDetectionType_TradeEvent,
         ECompromiseDetectionType::k_ECompromiseDetectionType_ApiCallRate,
         ECompromiseDetectionType::k_ECompromiseDetectionType_Manual,
+        ECompromiseDetectionType::k_ECompromiseDetectionType_TicketAction,
+        ECompromiseDetectionType::k_ECompromiseDetectionType_MaliciousRefund,
     ];
 }
 
@@ -3794,6 +4144,56 @@ impl ::steam_vent_proto_common::protobuf::Enum for EGameRecordingType {
 impl ::std::default::Default for EGameRecordingType {
     fn default() -> Self {
         EGameRecordingType::k_EGameRecordingType_Unknown
+    }
+}
+
+
+#[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+// @@protoc_insertion_point(enum:EExportCodec)
+pub enum EExportCodec {
+    // @@protoc_insertion_point(enum_value:EExportCodec.k_EExportCodec_Default)
+    k_EExportCodec_Default = 0,
+    // @@protoc_insertion_point(enum_value:EExportCodec.k_EExportCodec_H264)
+    k_EExportCodec_H264 = 1,
+    // @@protoc_insertion_point(enum_value:EExportCodec.k_EExportCodec_H265)
+    k_EExportCodec_H265 = 2,
+}
+
+impl ::steam_vent_proto_common::protobuf::Enum for EExportCodec {
+    const NAME: &'static str = "EExportCodec";
+
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<EExportCodec> {
+        match value {
+            0 => ::std::option::Option::Some(EExportCodec::k_EExportCodec_Default),
+            1 => ::std::option::Option::Some(EExportCodec::k_EExportCodec_H264),
+            2 => ::std::option::Option::Some(EExportCodec::k_EExportCodec_H265),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn from_str(str: &str) -> ::std::option::Option<EExportCodec> {
+        match str {
+            "k_EExportCodec_Default" => ::std::option::Option::Some(EExportCodec::k_EExportCodec_Default),
+            "k_EExportCodec_H264" => ::std::option::Option::Some(EExportCodec::k_EExportCodec_H264),
+            "k_EExportCodec_H265" => ::std::option::Option::Some(EExportCodec::k_EExportCodec_H265),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    const VALUES: &'static [EExportCodec] = &[
+        EExportCodec::k_EExportCodec_Default,
+        EExportCodec::k_EExportCodec_H264,
+        EExportCodec::k_EExportCodec_H265,
+    ];
+}
+
+impl ::std::default::Default for EExportCodec {
+    fn default() -> Self {
+        EExportCodec::k_EExportCodec_Default
     }
 }
 

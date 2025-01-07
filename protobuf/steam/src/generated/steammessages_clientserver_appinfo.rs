@@ -4053,6 +4053,10 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgClientPICSPrivateBetaRequest 
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessageWithKind for CMsgClientPICSPrivateBetaRequest {
+    type KindEnum = crate::enums_clientserver::EMsg;
+    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientPICSPrivateBetaRequest;
+}
 impl ::steam_vent_proto_common::RpcMessage for CMsgClientPICSPrivateBetaResponse {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -4065,4 +4069,9 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgClientPICSPrivateBetaResponse
         use ::steam_vent_proto_common::protobuf::Message;
         self.compute_size() as usize
     }
+}
+impl ::steam_vent_proto_common::RpcMessageWithKind
+for CMsgClientPICSPrivateBetaResponse {
+    type KindEnum = crate::enums_clientserver::EMsg;
+    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientPICSPrivateBetaResponse;
 }

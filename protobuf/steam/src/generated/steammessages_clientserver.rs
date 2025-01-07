@@ -565,160 +565,6 @@ impl ::steam_vent_proto_common::protobuf::Message for CMsgClientTicketAuthComple
     }
 }
 
-// @@protoc_insertion_point(message:CMsgClientCMList)
-#[derive(PartialEq,Clone,Default,Debug)]
-pub struct CMsgClientCMList {
-    // message fields
-    // @@protoc_insertion_point(field:CMsgClientCMList.cm_addresses)
-    pub cm_addresses: ::std::vec::Vec<u32>,
-    // @@protoc_insertion_point(field:CMsgClientCMList.cm_ports)
-    pub cm_ports: ::std::vec::Vec<u32>,
-    // @@protoc_insertion_point(field:CMsgClientCMList.cm_websocket_addresses)
-    pub cm_websocket_addresses: ::std::vec::Vec<::std::string::String>,
-    // @@protoc_insertion_point(field:CMsgClientCMList.percent_default_to_websocket)
-    pub percent_default_to_websocket: ::std::option::Option<u32>,
-    // special fields
-    // @@protoc_insertion_point(special_field:CMsgClientCMList.special_fields)
-    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
-}
-
-impl<'a> ::std::default::Default for &'a CMsgClientCMList {
-    fn default() -> &'a CMsgClientCMList {
-        <CMsgClientCMList as ::steam_vent_proto_common::protobuf::Message>::default_instance()
-    }
-}
-
-impl CMsgClientCMList {
-    pub fn new() -> CMsgClientCMList {
-        ::std::default::Default::default()
-    }
-
-    // optional uint32 percent_default_to_websocket = 4;
-
-    pub fn percent_default_to_websocket(&self) -> u32 {
-        self.percent_default_to_websocket.unwrap_or(0)
-    }
-
-    pub fn clear_percent_default_to_websocket(&mut self) {
-        self.percent_default_to_websocket = ::std::option::Option::None;
-    }
-
-    pub fn has_percent_default_to_websocket(&self) -> bool {
-        self.percent_default_to_websocket.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_percent_default_to_websocket(&mut self, v: u32) {
-        self.percent_default_to_websocket = ::std::option::Option::Some(v);
-    }
-}
-
-impl ::steam_vent_proto_common::protobuf::Message for CMsgClientCMList {
-    const NAME: &'static str = "CMsgClientCMList";
-
-    fn is_initialized(&self) -> bool {
-        true
-    }
-
-    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        while let Some(tag) = is.read_raw_tag_or_eof()? {
-            match tag {
-                10 => {
-                    is.read_repeated_packed_uint32_into(&mut self.cm_addresses)?;
-                },
-                8 => {
-                    self.cm_addresses.push(is.read_uint32()?);
-                },
-                18 => {
-                    is.read_repeated_packed_uint32_into(&mut self.cm_ports)?;
-                },
-                16 => {
-                    self.cm_ports.push(is.read_uint32()?);
-                },
-                26 => {
-                    self.cm_websocket_addresses.push(is.read_string()?);
-                },
-                32 => {
-                    self.percent_default_to_websocket = ::std::option::Option::Some(is.read_uint32()?);
-                },
-                tag => {
-                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
-                },
-            };
-        }
-        ::std::result::Result::Ok(())
-    }
-
-    // Compute sizes of nested messages
-    #[allow(unused_variables)]
-    fn compute_size(&self) -> u64 {
-        let mut my_size = 0;
-        for value in &self.cm_addresses {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, *value);
-        };
-        for value in &self.cm_ports {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, *value);
-        };
-        for value in &self.cm_websocket_addresses {
-            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &value);
-        };
-        if let Some(v) = self.percent_default_to_websocket {
-            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(4, v);
-        }
-        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
-        self.special_fields.cached_size().set(my_size as u32);
-        my_size
-    }
-
-    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        for v in &self.cm_addresses {
-            os.write_uint32(1, *v)?;
-        };
-        for v in &self.cm_ports {
-            os.write_uint32(2, *v)?;
-        };
-        for v in &self.cm_websocket_addresses {
-            os.write_string(3, &v)?;
-        };
-        if let Some(v) = self.percent_default_to_websocket {
-            os.write_uint32(4, v)?;
-        }
-        os.write_unknown_fields(self.special_fields.unknown_fields())?;
-        ::std::result::Result::Ok(())
-    }
-
-    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
-        &self.special_fields
-    }
-
-    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
-        &mut self.special_fields
-    }
-
-    fn new() -> CMsgClientCMList {
-        CMsgClientCMList::new()
-    }
-
-    fn clear(&mut self) {
-        self.cm_addresses.clear();
-        self.cm_ports.clear();
-        self.cm_websocket_addresses.clear();
-        self.percent_default_to_websocket = ::std::option::Option::None;
-        self.special_fields.clear();
-    }
-
-    fn default_instance() -> &'static CMsgClientCMList {
-        static instance: CMsgClientCMList = CMsgClientCMList {
-            cm_addresses: ::std::vec::Vec::new(),
-            cm_ports: ::std::vec::Vec::new(),
-            cm_websocket_addresses: ::std::vec::Vec::new(),
-            percent_default_to_websocket: ::std::option::Option::None,
-            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
-        };
-        &instance
-    }
-}
-
 // @@protoc_insertion_point(message:CMsgClientP2PConnectionInfo)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CMsgClientP2PConnectionInfo {
@@ -11490,23 +11336,6 @@ impl ::steam_vent_proto_common::RpcMessageWithKind for CMsgClientTicketAuthCompl
     type KindEnum = crate::enums_clientserver::EMsg;
     const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientTicketAuthComplete;
 }
-impl ::steam_vent_proto_common::RpcMessage for CMsgClientCMList {
-    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
-        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
-    }
-    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.write_to_writer(writer)
-    }
-    fn encode_size(&self) -> usize {
-        use ::steam_vent_proto_common::protobuf::Message;
-        self.compute_size() as usize
-    }
-}
-impl ::steam_vent_proto_common::RpcMessageWithKind for CMsgClientCMList {
-    type KindEnum = crate::enums_clientserver::EMsg;
-    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientCMList;
-}
 impl ::steam_vent_proto_common::RpcMessage for CMsgClientP2PConnectionInfo {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -11820,10 +11649,6 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgClientRequestedClientStats {
         self.compute_size() as usize
     }
 }
-impl ::steam_vent_proto_common::RpcMessageWithKind for CMsgClientRequestedClientStats {
-    type KindEnum = crate::enums_clientserver::EMsg;
-    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientRequestedClientStats;
-}
 impl ::steam_vent_proto_common::RpcMessage for CMsgClientStat2 {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -11836,10 +11661,6 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgClientStat2 {
         use ::steam_vent_proto_common::protobuf::Message;
         self.compute_size() as usize
     }
-}
-impl ::steam_vent_proto_common::RpcMessageWithKind for CMsgClientStat2 {
-    type KindEnum = crate::enums_clientserver::EMsg;
-    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientStat2;
 }
 impl ::steam_vent_proto_common::RpcMessage for CMsgClientInviteToGame {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {

@@ -374,6 +374,8 @@ pub struct CAuthentication_DeviceDetails {
     pub client_count: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CAuthentication_DeviceDetails.machine_id)
     pub machine_id: ::std::option::Option<::std::vec::Vec<u8>>,
+    // @@protoc_insertion_point(field:CAuthentication_DeviceDetails.app_type)
+    pub app_type: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<EAuthTokenAppType>>,
     // special fields
     // @@protoc_insertion_point(special_field:CAuthentication_DeviceDetails.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -540,6 +542,28 @@ impl CAuthentication_DeviceDetails {
     pub fn take_machine_id(&mut self) -> ::std::vec::Vec<u8> {
         self.machine_id.take().unwrap_or_else(|| ::std::vec::Vec::new())
     }
+
+    // optional .EAuthTokenAppType app_type = 7;
+
+    pub fn app_type(&self) -> EAuthTokenAppType {
+        match self.app_type {
+            Some(e) => e.enum_value_or(EAuthTokenAppType::k_EAuthTokenAppType_Unknown),
+            None => EAuthTokenAppType::k_EAuthTokenAppType_Unknown,
+        }
+    }
+
+    pub fn clear_app_type(&mut self) {
+        self.app_type = ::std::option::Option::None;
+    }
+
+    pub fn has_app_type(&self) -> bool {
+        self.app_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_app_type(&mut self, v: EAuthTokenAppType) {
+        self.app_type = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_DeviceDetails {
@@ -569,6 +593,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_DeviceDeta
                 },
                 50 => {
                     self.machine_id = ::std::option::Option::Some(is.read_bytes()?);
+                },
+                56 => {
+                    self.app_type = ::std::option::Option::Some(is.read_enum_or_unknown()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -600,6 +627,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_DeviceDeta
         if let Some(v) = self.machine_id.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::bytes_size(6, &v);
         }
+        if let Some(v) = self.app_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(7, v.value());
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -624,6 +654,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_DeviceDeta
         if let Some(v) = self.machine_id.as_ref() {
             os.write_bytes(6, v)?;
         }
+        if let Some(v) = self.app_type {
+            os.write_enum(7, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -647,6 +680,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_DeviceDeta
         self.gaming_device_type = ::std::option::Option::None;
         self.client_count = ::std::option::Option::None;
         self.machine_id = ::std::option::Option::None;
+        self.app_type = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -658,6 +692,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_DeviceDeta
             gaming_device_type: ::std::option::Option::None,
             client_count: ::std::option::Option::None,
             machine_id: ::std::option::Option::None,
+            app_type: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -3013,6 +3048,10 @@ pub struct CAuthentication_GetAuthSessionInfo_Response {
     pub high_usage_login: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionInfo_Response.requested_persistence)
     pub requested_persistence: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<super::enums::ESessionPersistence>>,
+    // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionInfo_Response.device_trust)
+    pub device_trust: ::std::option::Option<i32>,
+    // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionInfo_Response.app_type)
+    pub app_type: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<EAuthTokenAppType>>,
     // special fields
     // @@protoc_insertion_point(special_field:CAuthentication_GetAuthSessionInfo_Response.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -3367,6 +3406,47 @@ impl CAuthentication_GetAuthSessionInfo_Response {
     pub fn set_requested_persistence(&mut self, v: super::enums::ESessionPersistence) {
         self.requested_persistence = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
     }
+
+    // optional int32 device_trust = 13;
+
+    pub fn device_trust(&self) -> i32 {
+        self.device_trust.unwrap_or(0)
+    }
+
+    pub fn clear_device_trust(&mut self) {
+        self.device_trust = ::std::option::Option::None;
+    }
+
+    pub fn has_device_trust(&self) -> bool {
+        self.device_trust.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_device_trust(&mut self, v: i32) {
+        self.device_trust = ::std::option::Option::Some(v);
+    }
+
+    // optional .EAuthTokenAppType app_type = 14;
+
+    pub fn app_type(&self) -> EAuthTokenAppType {
+        match self.app_type {
+            Some(e) => e.enum_value_or(EAuthTokenAppType::k_EAuthTokenAppType_Unknown),
+            None => EAuthTokenAppType::k_EAuthTokenAppType_Unknown,
+        }
+    }
+
+    pub fn clear_app_type(&mut self) {
+        self.app_type = ::std::option::Option::None;
+    }
+
+    pub fn has_app_type(&self) -> bool {
+        self.app_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_app_type(&mut self, v: EAuthTokenAppType) {
+        self.app_type = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_GetAuthSessionInfo_Response {
@@ -3414,6 +3494,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_GetAuthSes
                 },
                 96 => {
                     self.requested_persistence = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                104 => {
+                    self.device_trust = ::std::option::Option::Some(is.read_int32()?);
+                },
+                112 => {
+                    self.app_type = ::std::option::Option::Some(is.read_enum_or_unknown()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -3463,6 +3549,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_GetAuthSes
         if let Some(v) = self.requested_persistence {
             my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(12, v.value());
         }
+        if let Some(v) = self.device_trust {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(13, v);
+        }
+        if let Some(v) = self.app_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(14, v.value());
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -3505,6 +3597,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_GetAuthSes
         if let Some(v) = self.requested_persistence {
             os.write_enum(12, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
         }
+        if let Some(v) = self.device_trust {
+            os.write_int32(13, v)?;
+        }
+        if let Some(v) = self.app_type {
+            os.write_enum(14, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -3534,6 +3632,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_GetAuthSes
         self.requestor_location_mismatch = ::std::option::Option::None;
         self.high_usage_login = ::std::option::Option::None;
         self.requested_persistence = ::std::option::Option::None;
+        self.device_trust = ::std::option::Option::None;
+        self.app_type = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -3551,9 +3651,791 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_GetAuthSes
             requestor_location_mismatch: ::std::option::Option::None,
             high_usage_login: ::std::option::Option::None,
             requested_persistence: ::std::option::Option::None,
+            device_trust: ::std::option::Option::None,
+            app_type: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CAuthentication_GetAuthSessionRiskInfo_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CAuthentication_GetAuthSessionRiskInfo_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionRiskInfo_Request.client_id)
+    pub client_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionRiskInfo_Request.language)
+    pub language: ::std::option::Option<u32>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CAuthentication_GetAuthSessionRiskInfo_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CAuthentication_GetAuthSessionRiskInfo_Request {
+    fn default() -> &'a CAuthentication_GetAuthSessionRiskInfo_Request {
+        <CAuthentication_GetAuthSessionRiskInfo_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CAuthentication_GetAuthSessionRiskInfo_Request {
+    pub fn new() -> CAuthentication_GetAuthSessionRiskInfo_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 client_id = 1;
+
+    pub fn client_id(&self) -> u64 {
+        self.client_id.unwrap_or(0)
+    }
+
+    pub fn clear_client_id(&mut self) {
+        self.client_id = ::std::option::Option::None;
+    }
+
+    pub fn has_client_id(&self) -> bool {
+        self.client_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_client_id(&mut self, v: u64) {
+        self.client_id = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 language = 2;
+
+    pub fn language(&self) -> u32 {
+        self.language.unwrap_or(0)
+    }
+
+    pub fn clear_language(&mut self) {
+        self.language = ::std::option::Option::None;
+    }
+
+    pub fn has_language(&self) -> bool {
+        self.language.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_language(&mut self, v: u32) {
+        self.language = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_GetAuthSessionRiskInfo_Request {
+    const NAME: &'static str = "CAuthentication_GetAuthSessionRiskInfo_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.client_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                16 => {
+                    self.language = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.client_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.language {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.client_id {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.language {
+            os.write_uint32(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CAuthentication_GetAuthSessionRiskInfo_Request {
+        CAuthentication_GetAuthSessionRiskInfo_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.client_id = ::std::option::Option::None;
+        self.language = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CAuthentication_GetAuthSessionRiskInfo_Request {
+        static instance: CAuthentication_GetAuthSessionRiskInfo_Request = CAuthentication_GetAuthSessionRiskInfo_Request {
+            client_id: ::std::option::Option::None,
+            language: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CAuthentication_GetAuthSessionRiskInfo_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CAuthentication_GetAuthSessionRiskInfo_Response {
+    // message fields
+    // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionRiskInfo_Response.location_confirmer)
+    pub location_confirmer: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionRiskInfo_Response.location_requestor)
+    pub location_requestor: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionRiskInfo_Response.location_other)
+    pub location_other: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CAuthentication_GetAuthSessionRiskInfo_Response.platform_type)
+    pub platform_type: ::std::option::Option<::steam_vent_proto_common::protobuf::EnumOrUnknown<EAuthTokenPlatformType>>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CAuthentication_GetAuthSessionRiskInfo_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CAuthentication_GetAuthSessionRiskInfo_Response {
+    fn default() -> &'a CAuthentication_GetAuthSessionRiskInfo_Response {
+        <CAuthentication_GetAuthSessionRiskInfo_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CAuthentication_GetAuthSessionRiskInfo_Response {
+    pub fn new() -> CAuthentication_GetAuthSessionRiskInfo_Response {
+        ::std::default::Default::default()
+    }
+
+    // optional string location_confirmer = 1;
+
+    pub fn location_confirmer(&self) -> &str {
+        match self.location_confirmer.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_location_confirmer(&mut self) {
+        self.location_confirmer = ::std::option::Option::None;
+    }
+
+    pub fn has_location_confirmer(&self) -> bool {
+        self.location_confirmer.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_location_confirmer(&mut self, v: ::std::string::String) {
+        self.location_confirmer = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_location_confirmer(&mut self) -> &mut ::std::string::String {
+        if self.location_confirmer.is_none() {
+            self.location_confirmer = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.location_confirmer.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_location_confirmer(&mut self) -> ::std::string::String {
+        self.location_confirmer.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string location_requestor = 2;
+
+    pub fn location_requestor(&self) -> &str {
+        match self.location_requestor.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_location_requestor(&mut self) {
+        self.location_requestor = ::std::option::Option::None;
+    }
+
+    pub fn has_location_requestor(&self) -> bool {
+        self.location_requestor.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_location_requestor(&mut self, v: ::std::string::String) {
+        self.location_requestor = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_location_requestor(&mut self) -> &mut ::std::string::String {
+        if self.location_requestor.is_none() {
+            self.location_requestor = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.location_requestor.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_location_requestor(&mut self) -> ::std::string::String {
+        self.location_requestor.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string location_other = 3;
+
+    pub fn location_other(&self) -> &str {
+        match self.location_other.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_location_other(&mut self) {
+        self.location_other = ::std::option::Option::None;
+    }
+
+    pub fn has_location_other(&self) -> bool {
+        self.location_other.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_location_other(&mut self, v: ::std::string::String) {
+        self.location_other = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_location_other(&mut self) -> &mut ::std::string::String {
+        if self.location_other.is_none() {
+            self.location_other = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.location_other.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_location_other(&mut self) -> ::std::string::String {
+        self.location_other.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional .EAuthTokenPlatformType platform_type = 4;
+
+    pub fn platform_type(&self) -> EAuthTokenPlatformType {
+        match self.platform_type {
+            Some(e) => e.enum_value_or(EAuthTokenPlatformType::k_EAuthTokenPlatformType_Unknown),
+            None => EAuthTokenPlatformType::k_EAuthTokenPlatformType_Unknown,
+        }
+    }
+
+    pub fn clear_platform_type(&mut self) {
+        self.platform_type = ::std::option::Option::None;
+    }
+
+    pub fn has_platform_type(&self) -> bool {
+        self.platform_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_platform_type(&mut self, v: EAuthTokenPlatformType) {
+        self.platform_type = ::std::option::Option::Some(::steam_vent_proto_common::protobuf::EnumOrUnknown::new(v));
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_GetAuthSessionRiskInfo_Response {
+    const NAME: &'static str = "CAuthentication_GetAuthSessionRiskInfo_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.location_confirmer = ::std::option::Option::Some(is.read_string()?);
+                },
+                18 => {
+                    self.location_requestor = ::std::option::Option::Some(is.read_string()?);
+                },
+                26 => {
+                    self.location_other = ::std::option::Option::Some(is.read_string()?);
+                },
+                32 => {
+                    self.platform_type = ::std::option::Option::Some(is.read_enum_or_unknown()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.location_confirmer.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(1, &v);
+        }
+        if let Some(v) = self.location_requestor.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(2, &v);
+        }
+        if let Some(v) = self.location_other.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &v);
+        }
+        if let Some(v) = self.platform_type {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(4, v.value());
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.location_confirmer.as_ref() {
+            os.write_string(1, v)?;
+        }
+        if let Some(v) = self.location_requestor.as_ref() {
+            os.write_string(2, v)?;
+        }
+        if let Some(v) = self.location_other.as_ref() {
+            os.write_string(3, v)?;
+        }
+        if let Some(v) = self.platform_type {
+            os.write_enum(4, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(&v))?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CAuthentication_GetAuthSessionRiskInfo_Response {
+        CAuthentication_GetAuthSessionRiskInfo_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.location_confirmer = ::std::option::Option::None;
+        self.location_requestor = ::std::option::Option::None;
+        self.location_other = ::std::option::Option::None;
+        self.platform_type = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CAuthentication_GetAuthSessionRiskInfo_Response {
+        static instance: CAuthentication_GetAuthSessionRiskInfo_Response = CAuthentication_GetAuthSessionRiskInfo_Response {
+            location_confirmer: ::std::option::Option::None,
+            location_requestor: ::std::option::Option::None,
+            location_other: ::std::option::Option::None,
+            platform_type: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CAuthentication_NotifyRiskQuizResults_Notification)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CAuthentication_NotifyRiskQuizResults_Notification {
+    // message fields
+    // @@protoc_insertion_point(field:CAuthentication_NotifyRiskQuizResults_Notification.client_id)
+    pub client_id: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CAuthentication_NotifyRiskQuizResults_Notification.results)
+    pub results: ::steam_vent_proto_common::protobuf::MessageField<cauthentication_notify_risk_quiz_results_notification::RiskQuizResults>,
+    // @@protoc_insertion_point(field:CAuthentication_NotifyRiskQuizResults_Notification.selected_action)
+    pub selected_action: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CAuthentication_NotifyRiskQuizResults_Notification.did_confirm_login)
+    pub did_confirm_login: ::std::option::Option<bool>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CAuthentication_NotifyRiskQuizResults_Notification.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CAuthentication_NotifyRiskQuizResults_Notification {
+    fn default() -> &'a CAuthentication_NotifyRiskQuizResults_Notification {
+        <CAuthentication_NotifyRiskQuizResults_Notification as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CAuthentication_NotifyRiskQuizResults_Notification {
+    pub fn new() -> CAuthentication_NotifyRiskQuizResults_Notification {
+        ::std::default::Default::default()
+    }
+
+    // optional uint64 client_id = 1;
+
+    pub fn client_id(&self) -> u64 {
+        self.client_id.unwrap_or(0)
+    }
+
+    pub fn clear_client_id(&mut self) {
+        self.client_id = ::std::option::Option::None;
+    }
+
+    pub fn has_client_id(&self) -> bool {
+        self.client_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_client_id(&mut self, v: u64) {
+        self.client_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string selected_action = 3;
+
+    pub fn selected_action(&self) -> &str {
+        match self.selected_action.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_selected_action(&mut self) {
+        self.selected_action = ::std::option::Option::None;
+    }
+
+    pub fn has_selected_action(&self) -> bool {
+        self.selected_action.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_selected_action(&mut self, v: ::std::string::String) {
+        self.selected_action = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_selected_action(&mut self) -> &mut ::std::string::String {
+        if self.selected_action.is_none() {
+            self.selected_action = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.selected_action.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_selected_action(&mut self) -> ::std::string::String {
+        self.selected_action.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional bool did_confirm_login = 4;
+
+    pub fn did_confirm_login(&self) -> bool {
+        self.did_confirm_login.unwrap_or(false)
+    }
+
+    pub fn clear_did_confirm_login(&mut self) {
+        self.did_confirm_login = ::std::option::Option::None;
+    }
+
+    pub fn has_did_confirm_login(&self) -> bool {
+        self.did_confirm_login.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_did_confirm_login(&mut self, v: bool) {
+        self.did_confirm_login = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CAuthentication_NotifyRiskQuizResults_Notification {
+    const NAME: &'static str = "CAuthentication_NotifyRiskQuizResults_Notification";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.client_id = ::std::option::Option::Some(is.read_uint64()?);
+                },
+                18 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_singular_message_into_field(is, &mut self.results)?;
+                },
+                26 => {
+                    self.selected_action = ::std::option::Option::Some(is.read_string()?);
+                },
+                32 => {
+                    self.did_confirm_login = ::std::option::Option::Some(is.read_bool()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.client_id {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint64_size(1, v);
+        }
+        if let Some(v) = self.results.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        if let Some(v) = self.selected_action.as_ref() {
+            my_size += ::steam_vent_proto_common::protobuf::rt::string_size(3, &v);
+        }
+        if let Some(v) = self.did_confirm_login {
+            my_size += 1 + 1;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.client_id {
+            os.write_uint64(1, v)?;
+        }
+        if let Some(v) = self.results.as_ref() {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(2, v, os)?;
+        }
+        if let Some(v) = self.selected_action.as_ref() {
+            os.write_string(3, v)?;
+        }
+        if let Some(v) = self.did_confirm_login {
+            os.write_bool(4, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CAuthentication_NotifyRiskQuizResults_Notification {
+        CAuthentication_NotifyRiskQuizResults_Notification::new()
+    }
+
+    fn clear(&mut self) {
+        self.client_id = ::std::option::Option::None;
+        self.results.clear();
+        self.selected_action = ::std::option::Option::None;
+        self.did_confirm_login = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CAuthentication_NotifyRiskQuizResults_Notification {
+        static instance: CAuthentication_NotifyRiskQuizResults_Notification = CAuthentication_NotifyRiskQuizResults_Notification {
+            client_id: ::std::option::Option::None,
+            results: ::steam_vent_proto_common::protobuf::MessageField::none(),
+            selected_action: ::std::option::Option::None,
+            did_confirm_login: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+/// Nested message and enums of message `CAuthentication_NotifyRiskQuizResults_Notification`
+pub mod cauthentication_notify_risk_quiz_results_notification {
+    // @@protoc_insertion_point(message:CAuthentication_NotifyRiskQuizResults_Notification.RiskQuizResults)
+    #[derive(PartialEq,Clone,Default,Debug)]
+    pub struct RiskQuizResults {
+        // message fields
+        // @@protoc_insertion_point(field:CAuthentication_NotifyRiskQuizResults_Notification.RiskQuizResults.platform)
+        pub platform: ::std::option::Option<bool>,
+        // @@protoc_insertion_point(field:CAuthentication_NotifyRiskQuizResults_Notification.RiskQuizResults.location)
+        pub location: ::std::option::Option<bool>,
+        // @@protoc_insertion_point(field:CAuthentication_NotifyRiskQuizResults_Notification.RiskQuizResults.action)
+        pub action: ::std::option::Option<bool>,
+        // special fields
+        // @@protoc_insertion_point(special_field:CAuthentication_NotifyRiskQuizResults_Notification.RiskQuizResults.special_fields)
+        pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+    }
+
+    impl<'a> ::std::default::Default for &'a RiskQuizResults {
+        fn default() -> &'a RiskQuizResults {
+            <RiskQuizResults as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+        }
+    }
+
+    impl RiskQuizResults {
+        pub fn new() -> RiskQuizResults {
+            ::std::default::Default::default()
+        }
+
+        // optional bool platform = 1;
+
+        pub fn platform(&self) -> bool {
+            self.platform.unwrap_or(false)
+        }
+
+        pub fn clear_platform(&mut self) {
+            self.platform = ::std::option::Option::None;
+        }
+
+        pub fn has_platform(&self) -> bool {
+            self.platform.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_platform(&mut self, v: bool) {
+            self.platform = ::std::option::Option::Some(v);
+        }
+
+        // optional bool location = 2;
+
+        pub fn location(&self) -> bool {
+            self.location.unwrap_or(false)
+        }
+
+        pub fn clear_location(&mut self) {
+            self.location = ::std::option::Option::None;
+        }
+
+        pub fn has_location(&self) -> bool {
+            self.location.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_location(&mut self, v: bool) {
+            self.location = ::std::option::Option::Some(v);
+        }
+
+        // optional bool action = 3;
+
+        pub fn action(&self) -> bool {
+            self.action.unwrap_or(false)
+        }
+
+        pub fn clear_action(&mut self) {
+            self.action = ::std::option::Option::None;
+        }
+
+        pub fn has_action(&self) -> bool {
+            self.action.is_some()
+        }
+
+        // Param is passed by value, moved
+        pub fn set_action(&mut self, v: bool) {
+            self.action = ::std::option::Option::Some(v);
+        }
+    }
+
+    impl ::steam_vent_proto_common::protobuf::Message for RiskQuizResults {
+        const NAME: &'static str = "RiskQuizResults";
+
+        fn is_initialized(&self) -> bool {
+            true
+        }
+
+        fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+            while let Some(tag) = is.read_raw_tag_or_eof()? {
+                match tag {
+                    8 => {
+                        self.platform = ::std::option::Option::Some(is.read_bool()?);
+                    },
+                    16 => {
+                        self.location = ::std::option::Option::Some(is.read_bool()?);
+                    },
+                    24 => {
+                        self.action = ::std::option::Option::Some(is.read_bool()?);
+                    },
+                    tag => {
+                        ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                    },
+                };
+            }
+            ::std::result::Result::Ok(())
+        }
+
+        // Compute sizes of nested messages
+        #[allow(unused_variables)]
+        fn compute_size(&self) -> u64 {
+            let mut my_size = 0;
+            if let Some(v) = self.platform {
+                my_size += 1 + 1;
+            }
+            if let Some(v) = self.location {
+                my_size += 1 + 1;
+            }
+            if let Some(v) = self.action {
+                my_size += 1 + 1;
+            }
+            my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+            self.special_fields.cached_size().set(my_size as u32);
+            my_size
+        }
+
+        fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+            if let Some(v) = self.platform {
+                os.write_bool(1, v)?;
+            }
+            if let Some(v) = self.location {
+                os.write_bool(2, v)?;
+            }
+            if let Some(v) = self.action {
+                os.write_bool(3, v)?;
+            }
+            os.write_unknown_fields(self.special_fields.unknown_fields())?;
+            ::std::result::Result::Ok(())
+        }
+
+        fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+            &self.special_fields
+        }
+
+        fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+            &mut self.special_fields
+        }
+
+        fn new() -> RiskQuizResults {
+            RiskQuizResults::new()
+        }
+
+        fn clear(&mut self) {
+            self.platform = ::std::option::Option::None;
+            self.location = ::std::option::Option::None;
+            self.action = ::std::option::Option::None;
+            self.special_fields.clear();
+        }
+
+        fn default_instance() -> &'static RiskQuizResults {
+            static instance: RiskQuizResults = RiskQuizResults {
+                platform: ::std::option::Option::None,
+                location: ::std::option::Option::None,
+                action: ::std::option::Option::None,
+                special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+            };
+            &instance
+        }
     }
 }
 
@@ -8488,6 +9370,223 @@ impl ::steam_vent_proto_common::protobuf::Message for CAuthenticationSupport_Get
     }
 }
 
+// @@protoc_insertion_point(message:CAuthenticationSupport_MarkTokenCompromised_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CAuthenticationSupport_MarkTokenCompromised_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CAuthenticationSupport_MarkTokenCompromised_Request.steamid)
+    pub steamid: ::std::option::Option<u64>,
+    // @@protoc_insertion_point(field:CAuthenticationSupport_MarkTokenCompromised_Request.token_id)
+    pub token_id: ::std::option::Option<u64>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CAuthenticationSupport_MarkTokenCompromised_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CAuthenticationSupport_MarkTokenCompromised_Request {
+    fn default() -> &'a CAuthenticationSupport_MarkTokenCompromised_Request {
+        <CAuthenticationSupport_MarkTokenCompromised_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CAuthenticationSupport_MarkTokenCompromised_Request {
+    pub fn new() -> CAuthenticationSupport_MarkTokenCompromised_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional fixed64 steamid = 1;
+
+    pub fn steamid(&self) -> u64 {
+        self.steamid.unwrap_or(0)
+    }
+
+    pub fn clear_steamid(&mut self) {
+        self.steamid = ::std::option::Option::None;
+    }
+
+    pub fn has_steamid(&self) -> bool {
+        self.steamid.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_steamid(&mut self, v: u64) {
+        self.steamid = ::std::option::Option::Some(v);
+    }
+
+    // optional fixed64 token_id = 2;
+
+    pub fn token_id(&self) -> u64 {
+        self.token_id.unwrap_or(0)
+    }
+
+    pub fn clear_token_id(&mut self) {
+        self.token_id = ::std::option::Option::None;
+    }
+
+    pub fn has_token_id(&self) -> bool {
+        self.token_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_token_id(&mut self, v: u64) {
+        self.token_id = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CAuthenticationSupport_MarkTokenCompromised_Request {
+    const NAME: &'static str = "CAuthenticationSupport_MarkTokenCompromised_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                9 => {
+                    self.steamid = ::std::option::Option::Some(is.read_fixed64()?);
+                },
+                17 => {
+                    self.token_id = ::std::option::Option::Some(is.read_fixed64()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.steamid {
+            my_size += 1 + 8;
+        }
+        if let Some(v) = self.token_id {
+            my_size += 1 + 8;
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.steamid {
+            os.write_fixed64(1, v)?;
+        }
+        if let Some(v) = self.token_id {
+            os.write_fixed64(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CAuthenticationSupport_MarkTokenCompromised_Request {
+        CAuthenticationSupport_MarkTokenCompromised_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.steamid = ::std::option::Option::None;
+        self.token_id = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CAuthenticationSupport_MarkTokenCompromised_Request {
+        static instance: CAuthenticationSupport_MarkTokenCompromised_Request = CAuthenticationSupport_MarkTokenCompromised_Request {
+            steamid: ::std::option::Option::None,
+            token_id: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CAuthenticationSupport_MarkTokenCompromised_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CAuthenticationSupport_MarkTokenCompromised_Response {
+    // special fields
+    // @@protoc_insertion_point(special_field:CAuthenticationSupport_MarkTokenCompromised_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CAuthenticationSupport_MarkTokenCompromised_Response {
+    fn default() -> &'a CAuthenticationSupport_MarkTokenCompromised_Response {
+        <CAuthenticationSupport_MarkTokenCompromised_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CAuthenticationSupport_MarkTokenCompromised_Response {
+    pub fn new() -> CAuthenticationSupport_MarkTokenCompromised_Response {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CAuthenticationSupport_MarkTokenCompromised_Response {
+    const NAME: &'static str = "CAuthenticationSupport_MarkTokenCompromised_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CAuthenticationSupport_MarkTokenCompromised_Response {
+        CAuthenticationSupport_MarkTokenCompromised_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CAuthenticationSupport_MarkTokenCompromised_Response {
+        static instance: CAuthenticationSupport_MarkTokenCompromised_Response = CAuthenticationSupport_MarkTokenCompromised_Response {
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 // @@protoc_insertion_point(message:CCloudGaming_CreateNonce_Request)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CCloudGaming_CreateNonce_Request {
@@ -9234,6 +10333,56 @@ impl ::std::default::Default for EAuthTokenPlatformType {
 
 
 #[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+// @@protoc_insertion_point(enum:EAuthTokenAppType)
+pub enum EAuthTokenAppType {
+    // @@protoc_insertion_point(enum_value:EAuthTokenAppType.k_EAuthTokenAppType_Unknown)
+    k_EAuthTokenAppType_Unknown = 0,
+    // @@protoc_insertion_point(enum_value:EAuthTokenAppType.k_EAuthTokenAppType_Mobile_SteamApp)
+    k_EAuthTokenAppType_Mobile_SteamApp = 1,
+    // @@protoc_insertion_point(enum_value:EAuthTokenAppType.k_EAuthTokenAppType_Mobile_ChatApp)
+    k_EAuthTokenAppType_Mobile_ChatApp = 2,
+}
+
+impl ::steam_vent_proto_common::protobuf::Enum for EAuthTokenAppType {
+    const NAME: &'static str = "EAuthTokenAppType";
+
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<EAuthTokenAppType> {
+        match value {
+            0 => ::std::option::Option::Some(EAuthTokenAppType::k_EAuthTokenAppType_Unknown),
+            1 => ::std::option::Option::Some(EAuthTokenAppType::k_EAuthTokenAppType_Mobile_SteamApp),
+            2 => ::std::option::Option::Some(EAuthTokenAppType::k_EAuthTokenAppType_Mobile_ChatApp),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn from_str(str: &str) -> ::std::option::Option<EAuthTokenAppType> {
+        match str {
+            "k_EAuthTokenAppType_Unknown" => ::std::option::Option::Some(EAuthTokenAppType::k_EAuthTokenAppType_Unknown),
+            "k_EAuthTokenAppType_Mobile_SteamApp" => ::std::option::Option::Some(EAuthTokenAppType::k_EAuthTokenAppType_Mobile_SteamApp),
+            "k_EAuthTokenAppType_Mobile_ChatApp" => ::std::option::Option::Some(EAuthTokenAppType::k_EAuthTokenAppType_Mobile_ChatApp),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    const VALUES: &'static [EAuthTokenAppType] = &[
+        EAuthTokenAppType::k_EAuthTokenAppType_Unknown,
+        EAuthTokenAppType::k_EAuthTokenAppType_Mobile_SteamApp,
+        EAuthTokenAppType::k_EAuthTokenAppType_Mobile_ChatApp,
+    ];
+}
+
+impl ::std::default::Default for EAuthTokenAppType {
+    fn default() -> Self {
+        EAuthTokenAppType::k_EAuthTokenAppType_Unknown
+    }
+}
+
+
+#[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
 // @@protoc_insertion_point(enum:EAuthSessionGuardType)
 pub enum EAuthSessionGuardType {
     // @@protoc_insertion_point(enum_value:EAuthSessionGuardType.k_EAuthSessionGuardType_Unknown)
@@ -9789,6 +10938,48 @@ for CAuthentication_GetAuthSessionInfo_Response {
     }
 }
 impl ::steam_vent_proto_common::RpcMessage
+for CAuthentication_GetAuthSessionRiskInfo_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CAuthentication_GetAuthSessionRiskInfo_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CAuthentication_NotifyRiskQuizResults_Notification {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
 for CAuthentication_UpdateAuthSessionWithMobileConfirmation_Request {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -10148,6 +11339,34 @@ for CAuthenticationSupport_GetTokenHistory_Response {
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessage
+for CAuthenticationSupport_MarkTokenCompromised_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CAuthenticationSupport_MarkTokenCompromised_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
 impl ::steam_vent_proto_common::RpcMessage for CCloudGaming_CreateNonce_Request {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -10234,6 +11453,11 @@ for CAuthenticationSupport_GetTokenHistory_Request {
     type Response = CAuthenticationSupport_GetTokenHistory_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod
+for CAuthenticationSupport_MarkTokenCompromised_Request {
+    const METHOD_NAME: &'static str = "AuthenticationSupport.MarkTokenCompromised#1";
+    type Response = CAuthenticationSupport_MarkTokenCompromised_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
 for CAuthenticationSupport_QueryRefreshTokenByID_Request {
     const METHOD_NAME: &'static str = "AuthenticationSupport.QueryRefreshTokenByID#1";
     type Response = CAuthenticationSupport_QueryRefreshTokenByID_Response;
@@ -10269,6 +11493,11 @@ for CAuthentication_GetAuthSessionInfo_Request {
     type Response = CAuthentication_GetAuthSessionInfo_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod
+for CAuthentication_GetAuthSessionRiskInfo_Request {
+    const METHOD_NAME: &'static str = "Authentication.GetAuthSessionRiskInfo#1";
+    type Response = CAuthentication_GetAuthSessionRiskInfo_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
 for CAuthentication_GetAuthSessionsForAccount_Request {
     const METHOD_NAME: &'static str = "Authentication.GetAuthSessionsForAccount#1";
     type Response = CAuthentication_GetAuthSessionsForAccount_Response;
@@ -10282,6 +11511,11 @@ impl ::steam_vent_proto_common::RpcMethod
 for CAuthentication_MigrateMobileSession_Request {
     const METHOD_NAME: &'static str = "Authentication.MigrateMobileSession#1";
     type Response = CAuthentication_MigrateMobileSession_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CAuthentication_NotifyRiskQuizResults_Notification {
+    const METHOD_NAME: &'static str = "Authentication.NotifyRiskQuizResults#1";
+    type Response = ();
 }
 impl ::steam_vent_proto_common::RpcMethod
 for CAuthentication_PollAuthSessionStatus_Request {

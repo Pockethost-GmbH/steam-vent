@@ -506,6 +506,8 @@ pub struct CDataPublisher_ClientUpdateAppJob_Notification {
     pub is_workshop: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CDataPublisher_ClientUpdateAppJob_Notification.is_shader)
     pub is_shader: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CDataPublisher_ClientUpdateAppJob_Notification.seconds_not_played)
+    pub seconds_not_played: ::std::option::Option<u32>,
     // special fields
     // @@protoc_insertion_point(special_field:CDataPublisher_ClientUpdateAppJob_Notification.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -973,6 +975,25 @@ impl CDataPublisher_ClientUpdateAppJob_Notification {
     pub fn set_is_shader(&mut self, v: bool) {
         self.is_shader = ::std::option::Option::Some(v);
     }
+
+    // optional uint32 seconds_not_played = 25;
+
+    pub fn seconds_not_played(&self) -> u32 {
+        self.seconds_not_played.unwrap_or(0)
+    }
+
+    pub fn clear_seconds_not_played(&mut self) {
+        self.seconds_not_played = ::std::option::Option::None;
+    }
+
+    pub fn has_seconds_not_played(&self) -> bool {
+        self.seconds_not_played.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_seconds_not_played(&mut self, v: u32) {
+        self.seconds_not_played = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CDataPublisher_ClientUpdateAppJob_Notification {
@@ -1057,6 +1078,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CDataPublisher_ClientUpdat
                 192 => {
                     self.is_shader = ::std::option::Option::Some(is.read_bool()?);
                 },
+                200 => {
+                    self.seconds_not_played = ::std::option::Option::Some(is.read_uint32()?);
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -1138,6 +1162,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CDataPublisher_ClientUpdat
         if let Some(v) = self.is_shader {
             my_size += 2 + 1;
         }
+        if let Some(v) = self.seconds_not_played {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(25, v);
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -1213,6 +1240,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CDataPublisher_ClientUpdat
         if let Some(v) = self.is_shader {
             os.write_bool(24, v)?;
         }
+        if let Some(v) = self.seconds_not_played {
+            os.write_uint32(25, v)?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -1253,6 +1283,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CDataPublisher_ClientUpdat
         self.cell_id = ::std::option::Option::None;
         self.is_workshop = ::std::option::Option::None;
         self.is_shader = ::std::option::Option::None;
+        self.seconds_not_played = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -1281,6 +1312,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CDataPublisher_ClientUpdat
             cell_id: ::std::option::Option::None,
             is_workshop: ::std::option::Option::None,
             is_shader: ::std::option::Option::None,
+            seconds_not_played: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance

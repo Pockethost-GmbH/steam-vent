@@ -1874,8 +1874,8 @@ pub struct CStreamingClientCaps {
     pub maximum_decode_bitrate_kbps: ::std::option::Option<i32>,
     // @@protoc_insertion_point(field:CStreamingClientCaps.maximum_burst_bitrate_kbps)
     pub maximum_burst_bitrate_kbps: ::std::option::Option<i32>,
-    // @@protoc_insertion_point(field:CStreamingClientCaps.supports_video_hevc)
-    pub supports_video_hevc: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CStreamingClientCaps.supports_video_hevc_OBSOLETE)
+    pub supports_video_hevc_OBSOLETE: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CStreamingClientCaps.disable_steam_store)
     pub disable_steam_store: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CStreamingClientCaps.disable_client_cursor)
@@ -1892,6 +1892,10 @@ pub struct CStreamingClientCaps {
     pub has_on_screen_keyboard: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:CStreamingClientCaps.supported_colorspaces)
     pub supported_colorspaces: ::std::vec::Vec<::steam_vent_proto_common::protobuf::EnumOrUnknown<EStreamColorspace>>,
+    // @@protoc_insertion_point(field:CStreamingClientCaps.supported_audio_codecs)
+    pub supported_audio_codecs: ::std::vec::Vec<::steam_vent_proto_common::protobuf::EnumOrUnknown<EStreamAudioCodec>>,
+    // @@protoc_insertion_point(field:CStreamingClientCaps.supported_video_codecs)
+    pub supported_video_codecs: ::std::vec::Vec<::steam_vent_proto_common::protobuf::EnumOrUnknown<EStreamVideoCodec>>,
     // special fields
     // @@protoc_insertion_point(special_field:CStreamingClientCaps.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -2001,23 +2005,23 @@ impl CStreamingClientCaps {
         self.maximum_burst_bitrate_kbps = ::std::option::Option::Some(v);
     }
 
-    // optional bool supports_video_hevc = 5;
+    // optional bool supports_video_hevc_OBSOLETE = 5;
 
-    pub fn supports_video_hevc(&self) -> bool {
-        self.supports_video_hevc.unwrap_or(false)
+    pub fn supports_video_hevc_OBSOLETE(&self) -> bool {
+        self.supports_video_hevc_OBSOLETE.unwrap_or(false)
     }
 
-    pub fn clear_supports_video_hevc(&mut self) {
-        self.supports_video_hevc = ::std::option::Option::None;
+    pub fn clear_supports_video_hevc_OBSOLETE(&mut self) {
+        self.supports_video_hevc_OBSOLETE = ::std::option::Option::None;
     }
 
-    pub fn has_supports_video_hevc(&self) -> bool {
-        self.supports_video_hevc.is_some()
+    pub fn has_supports_video_hevc_OBSOLETE(&self) -> bool {
+        self.supports_video_hevc_OBSOLETE.is_some()
     }
 
     // Param is passed by value, moved
-    pub fn set_supports_video_hevc(&mut self, v: bool) {
-        self.supports_video_hevc = ::std::option::Option::Some(v);
+    pub fn set_supports_video_hevc_OBSOLETE(&mut self, v: bool) {
+        self.supports_video_hevc_OBSOLETE = ::std::option::Option::Some(v);
     }
 
     // optional bool disable_steam_store = 6;
@@ -2177,7 +2181,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
                     self.maximum_burst_bitrate_kbps = ::std::option::Option::Some(is.read_int32()?);
                 },
                 40 => {
-                    self.supports_video_hevc = ::std::option::Option::Some(is.read_bool()?);
+                    self.supports_video_hevc_OBSOLETE = ::std::option::Option::Some(is.read_bool()?);
                 },
                 48 => {
                     self.disable_steam_store = ::std::option::Option::Some(is.read_bool()?);
@@ -2206,6 +2210,18 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
                 106 => {
                     ::steam_vent_proto_common::protobuf::rt::read_repeated_packed_enum_or_unknown_into(is, &mut self.supported_colorspaces)?
                 },
+                112 => {
+                    self.supported_audio_codecs.push(is.read_enum_or_unknown()?);
+                },
+                114 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_repeated_packed_enum_or_unknown_into(is, &mut self.supported_audio_codecs)?
+                },
+                120 => {
+                    self.supported_video_codecs.push(is.read_enum_or_unknown()?);
+                },
+                122 => {
+                    ::steam_vent_proto_common::protobuf::rt::read_repeated_packed_enum_or_unknown_into(is, &mut self.supported_video_codecs)?
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -2230,7 +2246,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
         if let Some(v) = self.maximum_burst_bitrate_kbps {
             my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(4, v);
         }
-        if let Some(v) = self.supports_video_hevc {
+        if let Some(v) = self.supports_video_hevc_OBSOLETE {
             my_size += 1 + 1;
         }
         if let Some(v) = self.disable_steam_store {
@@ -2257,6 +2273,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
         for value in &self.supported_colorspaces {
             my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(13, value.value());
         };
+        for value in &self.supported_audio_codecs {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(14, value.value());
+        };
+        for value in &self.supported_video_codecs {
+            my_size += ::steam_vent_proto_common::protobuf::rt::int32_size(15, value.value());
+        };
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -2275,7 +2297,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
         if let Some(v) = self.maximum_burst_bitrate_kbps {
             os.write_int32(4, v)?;
         }
-        if let Some(v) = self.supports_video_hevc {
+        if let Some(v) = self.supports_video_hevc_OBSOLETE {
             os.write_bool(5, v)?;
         }
         if let Some(v) = self.disable_steam_store {
@@ -2302,6 +2324,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
         for v in &self.supported_colorspaces {
             os.write_enum(13, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(v))?;
         };
+        for v in &self.supported_audio_codecs {
+            os.write_enum(14, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(v))?;
+        };
+        for v in &self.supported_video_codecs {
+            os.write_enum(15, ::steam_vent_proto_common::protobuf::EnumOrUnknown::value(v))?;
+        };
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -2323,7 +2351,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
         self.system_can_suspend = ::std::option::Option::None;
         self.maximum_decode_bitrate_kbps = ::std::option::Option::None;
         self.maximum_burst_bitrate_kbps = ::std::option::Option::None;
-        self.supports_video_hevc = ::std::option::Option::None;
+        self.supports_video_hevc_OBSOLETE = ::std::option::Option::None;
         self.disable_steam_store = ::std::option::Option::None;
         self.disable_client_cursor = ::std::option::Option::None;
         self.disable_intel_hardware_encoding = ::std::option::Option::None;
@@ -2332,6 +2360,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
         self.form_factor = ::std::option::Option::None;
         self.has_on_screen_keyboard = ::std::option::Option::None;
         self.supported_colorspaces.clear();
+        self.supported_audio_codecs.clear();
+        self.supported_video_codecs.clear();
         self.special_fields.clear();
     }
 
@@ -2341,7 +2371,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
             system_can_suspend: ::std::option::Option::None,
             maximum_decode_bitrate_kbps: ::std::option::Option::None,
             maximum_burst_bitrate_kbps: ::std::option::Option::None,
-            supports_video_hevc: ::std::option::Option::None,
+            supports_video_hevc_OBSOLETE: ::std::option::Option::None,
             disable_steam_store: ::std::option::Option::None,
             disable_client_cursor: ::std::option::Option::None,
             disable_intel_hardware_encoding: ::std::option::Option::None,
@@ -2350,6 +2380,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientCaps {
             form_factor: ::std::option::Option::None,
             has_on_screen_keyboard: ::std::option::Option::None,
             supported_colorspaces: ::std::vec::Vec::new(),
+            supported_audio_codecs: ::std::vec::Vec::new(),
+            supported_video_codecs: ::std::vec::Vec::new(),
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -2408,6 +2440,8 @@ pub struct CStreamingClientConfig {
     pub decoder_limit: ::std::vec::Vec<CStreamVideoLimit>,
     // @@protoc_insertion_point(field:CStreamingClientConfig.enable_unreliable_fec)
     pub enable_unreliable_fec: ::std::option::Option<bool>,
+    // @@protoc_insertion_point(field:CStreamingClientConfig.enable_video_av1)
+    pub enable_video_av1: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CStreamingClientConfig.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -2826,6 +2860,25 @@ impl CStreamingClientConfig {
     pub fn set_enable_unreliable_fec(&mut self, v: bool) {
         self.enable_unreliable_fec = ::std::option::Option::Some(v);
     }
+
+    // optional bool enable_video_av1 = 26;
+
+    pub fn enable_video_av1(&self) -> bool {
+        self.enable_video_av1.unwrap_or(false)
+    }
+
+    pub fn clear_enable_video_av1(&mut self) {
+        self.enable_video_av1 = ::std::option::Option::None;
+    }
+
+    pub fn has_enable_video_av1(&self) -> bool {
+        self.enable_video_av1.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_enable_video_av1(&mut self, v: bool) {
+        self.enable_video_av1 = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientConfig {
@@ -2930,6 +2983,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientConfig {
                 200 => {
                     self.enable_unreliable_fec = ::std::option::Option::Some(is.read_bool()?);
                 },
+                208 => {
+                    self.enable_video_av1 = ::std::option::Option::Some(is.read_bool()?);
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -3018,6 +3074,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientConfig {
         if let Some(v) = self.enable_unreliable_fec {
             my_size += 2 + 1;
         }
+        if let Some(v) = self.enable_video_av1 {
+            my_size += 2 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -3096,6 +3155,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientConfig {
         if let Some(v) = self.enable_unreliable_fec {
             os.write_bool(25, v)?;
         }
+        if let Some(v) = self.enable_video_av1 {
+            os.write_bool(26, v)?;
+        }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -3137,6 +3199,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientConfig {
         self.runtime_limit.clear();
         self.decoder_limit.clear();
         self.enable_unreliable_fec = ::std::option::Option::None;
+        self.enable_video_av1 = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -3166,6 +3229,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CStreamingClientConfig {
             runtime_limit: ::steam_vent_proto_common::protobuf::MessageField::none(),
             decoder_limit: ::std::vec::Vec::new(),
             enable_unreliable_fec: ::std::option::Option::None,
+            enable_video_av1: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -7625,6 +7689,10 @@ pub struct CInputKeyDownMsg {
     pub input_mark: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CInputKeyDownMsg.scancode)
     pub scancode: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CInputKeyDownMsg.modifiers)
+    pub modifiers: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CInputKeyDownMsg.keycode)
+    pub keycode: ::std::option::Option<u32>,
     // special fields
     // @@protoc_insertion_point(special_field:CInputKeyDownMsg.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -7678,6 +7746,44 @@ impl CInputKeyDownMsg {
     pub fn set_scancode(&mut self, v: u32) {
         self.scancode = ::std::option::Option::Some(v);
     }
+
+    // optional uint32 modifiers = 3;
+
+    pub fn modifiers(&self) -> u32 {
+        self.modifiers.unwrap_or(0)
+    }
+
+    pub fn clear_modifiers(&mut self) {
+        self.modifiers = ::std::option::Option::None;
+    }
+
+    pub fn has_modifiers(&self) -> bool {
+        self.modifiers.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_modifiers(&mut self, v: u32) {
+        self.modifiers = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 keycode = 4;
+
+    pub fn keycode(&self) -> u32 {
+        self.keycode.unwrap_or(0)
+    }
+
+    pub fn clear_keycode(&mut self) {
+        self.keycode = ::std::option::Option::None;
+    }
+
+    pub fn has_keycode(&self) -> bool {
+        self.keycode.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_keycode(&mut self, v: u32) {
+        self.keycode = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CInputKeyDownMsg {
@@ -7699,6 +7805,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyDownMsg {
                 16 => {
                     self.scancode = ::std::option::Option::Some(is.read_uint32()?);
                 },
+                24 => {
+                    self.modifiers = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                32 => {
+                    self.keycode = ::std::option::Option::Some(is.read_uint32()?);
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -7717,6 +7829,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyDownMsg {
         if let Some(v) = self.scancode {
             my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
         }
+        if let Some(v) = self.modifiers {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(3, v);
+        }
+        if let Some(v) = self.keycode {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(4, v);
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -7728,6 +7846,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyDownMsg {
         }
         if let Some(v) = self.scancode {
             os.write_uint32(2, v)?;
+        }
+        if let Some(v) = self.modifiers {
+            os.write_uint32(3, v)?;
+        }
+        if let Some(v) = self.keycode {
+            os.write_uint32(4, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -7748,6 +7872,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyDownMsg {
     fn clear(&mut self) {
         self.input_mark = ::std::option::Option::None;
         self.scancode = ::std::option::Option::None;
+        self.modifiers = ::std::option::Option::None;
+        self.keycode = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -7755,6 +7881,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyDownMsg {
         static instance: CInputKeyDownMsg = CInputKeyDownMsg {
             input_mark: ::std::option::Option::None,
             scancode: ::std::option::Option::None,
+            modifiers: ::std::option::Option::None,
+            keycode: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -7769,6 +7897,10 @@ pub struct CInputKeyUpMsg {
     pub input_mark: ::std::option::Option<u32>,
     // @@protoc_insertion_point(field:CInputKeyUpMsg.scancode)
     pub scancode: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CInputKeyUpMsg.modifiers)
+    pub modifiers: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CInputKeyUpMsg.keycode)
+    pub keycode: ::std::option::Option<u32>,
     // special fields
     // @@protoc_insertion_point(special_field:CInputKeyUpMsg.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -7822,6 +7954,44 @@ impl CInputKeyUpMsg {
     pub fn set_scancode(&mut self, v: u32) {
         self.scancode = ::std::option::Option::Some(v);
     }
+
+    // optional uint32 modifiers = 3;
+
+    pub fn modifiers(&self) -> u32 {
+        self.modifiers.unwrap_or(0)
+    }
+
+    pub fn clear_modifiers(&mut self) {
+        self.modifiers = ::std::option::Option::None;
+    }
+
+    pub fn has_modifiers(&self) -> bool {
+        self.modifiers.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_modifiers(&mut self, v: u32) {
+        self.modifiers = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 keycode = 4;
+
+    pub fn keycode(&self) -> u32 {
+        self.keycode.unwrap_or(0)
+    }
+
+    pub fn clear_keycode(&mut self) {
+        self.keycode = ::std::option::Option::None;
+    }
+
+    pub fn has_keycode(&self) -> bool {
+        self.keycode.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_keycode(&mut self, v: u32) {
+        self.keycode = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CInputKeyUpMsg {
@@ -7843,6 +8013,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyUpMsg {
                 16 => {
                     self.scancode = ::std::option::Option::Some(is.read_uint32()?);
                 },
+                24 => {
+                    self.modifiers = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                32 => {
+                    self.keycode = ::std::option::Option::Some(is.read_uint32()?);
+                },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
@@ -7861,6 +8037,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyUpMsg {
         if let Some(v) = self.scancode {
             my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
         }
+        if let Some(v) = self.modifiers {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(3, v);
+        }
+        if let Some(v) = self.keycode {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(4, v);
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -7872,6 +8054,12 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyUpMsg {
         }
         if let Some(v) = self.scancode {
             os.write_uint32(2, v)?;
+        }
+        if let Some(v) = self.modifiers {
+            os.write_uint32(3, v)?;
+        }
+        if let Some(v) = self.keycode {
+            os.write_uint32(4, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -7892,6 +8080,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyUpMsg {
     fn clear(&mut self) {
         self.input_mark = ::std::option::Option::None;
         self.scancode = ::std::option::Option::None;
+        self.modifiers = ::std::option::Option::None;
+        self.keycode = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -7899,6 +8089,8 @@ impl ::steam_vent_proto_common::protobuf::Message for CInputKeyUpMsg {
         static instance: CInputKeyUpMsg = CInputKeyUpMsg {
             input_mark: ::std::option::Option::None,
             scancode: ::std::option::Option::None,
+            modifiers: ::std::option::Option::None,
+            keycode: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -14634,6 +14826,8 @@ pub struct CRemotePlayTogetherGroupUpdateMsg {
     pub game_name: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:CRemotePlayTogetherGroupUpdateMsg.avatar_location)
     pub avatar_location: ::std::option::Option<::std::string::String>,
+    // @@protoc_insertion_point(field:CRemotePlayTogetherGroupUpdateMsg.direct_input)
+    pub direct_input: ::std::option::Option<bool>,
     // special fields
     // @@protoc_insertion_point(special_field:CRemotePlayTogetherGroupUpdateMsg.special_fields)
     pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
@@ -14776,6 +14970,25 @@ impl CRemotePlayTogetherGroupUpdateMsg {
     pub fn take_avatar_location(&mut self) -> ::std::string::String {
         self.avatar_location.take().unwrap_or_else(|| ::std::string::String::new())
     }
+
+    // optional bool direct_input = 6;
+
+    pub fn direct_input(&self) -> bool {
+        self.direct_input.unwrap_or(false)
+    }
+
+    pub fn clear_direct_input(&mut self) {
+        self.direct_input = ::std::option::Option::None;
+    }
+
+    pub fn has_direct_input(&self) -> bool {
+        self.direct_input.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_direct_input(&mut self, v: bool) {
+        self.direct_input = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::steam_vent_proto_common::protobuf::Message for CRemotePlayTogetherGroupUpdateMsg {
@@ -14802,6 +15015,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CRemotePlayTogetherGroupUp
                 },
                 42 => {
                     self.avatar_location = ::std::option::Option::Some(is.read_string()?);
+                },
+                48 => {
+                    self.direct_input = ::std::option::Option::Some(is.read_bool()?);
                 },
                 tag => {
                     ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
@@ -14831,6 +15047,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CRemotePlayTogetherGroupUp
         if let Some(v) = self.avatar_location.as_ref() {
             my_size += ::steam_vent_proto_common::protobuf::rt::string_size(5, &v);
         }
+        if let Some(v) = self.direct_input {
+            my_size += 1 + 1;
+        }
         my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
@@ -14851,6 +15070,9 @@ impl ::steam_vent_proto_common::protobuf::Message for CRemotePlayTogetherGroupUp
         }
         if let Some(v) = self.avatar_location.as_ref() {
             os.write_string(5, v)?;
+        }
+        if let Some(v) = self.direct_input {
+            os.write_bool(6, v)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -14874,6 +15096,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CRemotePlayTogetherGroupUp
         self.miniprofile_location = ::std::option::Option::None;
         self.game_name = ::std::option::Option::None;
         self.avatar_location = ::std::option::Option::None;
+        self.direct_input = ::std::option::Option::None;
         self.special_fields.clear();
     }
 
@@ -14884,6 +15107,7 @@ impl ::steam_vent_proto_common::protobuf::Message for CRemotePlayTogetherGroupUp
             miniprofile_location: ::std::option::Option::None,
             game_name: ::std::option::Option::None,
             avatar_location: ::std::option::Option::None,
+            direct_input: ::std::option::Option::None,
             special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
         };
         &instance
@@ -20628,6 +20852,8 @@ pub enum EStreamVideoCodec {
     k_EStreamVideoCodecORBX1 = 6,
     // @@protoc_insertion_point(enum_value:EStreamVideoCodec.k_EStreamVideoCodecORBX2)
     k_EStreamVideoCodecORBX2 = 7,
+    // @@protoc_insertion_point(enum_value:EStreamVideoCodec.k_EStreamVideoCodecAV1)
+    k_EStreamVideoCodecAV1 = 8,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EStreamVideoCodec {
@@ -20647,6 +20873,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EStreamVideoCodec {
             5 => ::std::option::Option::Some(EStreamVideoCodec::k_EStreamVideoCodecHEVC),
             6 => ::std::option::Option::Some(EStreamVideoCodec::k_EStreamVideoCodecORBX1),
             7 => ::std::option::Option::Some(EStreamVideoCodec::k_EStreamVideoCodecORBX2),
+            8 => ::std::option::Option::Some(EStreamVideoCodec::k_EStreamVideoCodecAV1),
             _ => ::std::option::Option::None
         }
     }
@@ -20661,6 +20888,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EStreamVideoCodec {
             "k_EStreamVideoCodecHEVC" => ::std::option::Option::Some(EStreamVideoCodec::k_EStreamVideoCodecHEVC),
             "k_EStreamVideoCodecORBX1" => ::std::option::Option::Some(EStreamVideoCodec::k_EStreamVideoCodecORBX1),
             "k_EStreamVideoCodecORBX2" => ::std::option::Option::Some(EStreamVideoCodec::k_EStreamVideoCodecORBX2),
+            "k_EStreamVideoCodecAV1" => ::std::option::Option::Some(EStreamVideoCodec::k_EStreamVideoCodecAV1),
             _ => ::std::option::Option::None
         }
     }
@@ -20674,6 +20902,7 @@ impl ::steam_vent_proto_common::protobuf::Enum for EStreamVideoCodec {
         EStreamVideoCodec::k_EStreamVideoCodecHEVC,
         EStreamVideoCodec::k_EStreamVideoCodecORBX1,
         EStreamVideoCodec::k_EStreamVideoCodecORBX2,
+        EStreamVideoCodec::k_EStreamVideoCodecAV1,
     ];
 }
 

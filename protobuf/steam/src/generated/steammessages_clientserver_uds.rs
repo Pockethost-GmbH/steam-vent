@@ -4334,6 +4334,10 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgClientLaunchClientApp {
         self.compute_size() as usize
     }
 }
+impl ::steam_vent_proto_common::RpcMessageWithKind for CMsgClientLaunchClientApp {
+    type KindEnum = crate::enums_clientserver::EMsg;
+    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientLaunchClientApp;
+}
 impl ::steam_vent_proto_common::RpcMessage for CMsgClientLaunchClientAppResponse {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
@@ -4346,6 +4350,11 @@ impl ::steam_vent_proto_common::RpcMessage for CMsgClientLaunchClientAppResponse
         use ::steam_vent_proto_common::protobuf::Message;
         self.compute_size() as usize
     }
+}
+impl ::steam_vent_proto_common::RpcMessageWithKind
+for CMsgClientLaunchClientAppResponse {
+    type KindEnum = crate::enums_clientserver::EMsg;
+    const KIND: Self::KindEnum = crate::enums_clientserver::EMsg::k_EMsgClientLaunchClientAppResponse;
 }
 impl ::steam_vent_proto_common::RpcMessage for CMsgClientEnableOrDisableDownloads {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {

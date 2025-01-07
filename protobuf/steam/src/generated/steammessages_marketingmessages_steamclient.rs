@@ -1362,6 +1362,238 @@ impl ::steam_vent_proto_common::protobuf::Message for CMarketingMessages_GetActi
     }
 }
 
+// @@protoc_insertion_point(message:CMarketingMessages_GetPastMarketingMessages_Request)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CMarketingMessages_GetPastMarketingMessages_Request {
+    // message fields
+    // @@protoc_insertion_point(field:CMarketingMessages_GetPastMarketingMessages_Request.start_past_days)
+    pub start_past_days: ::std::option::Option<u32>,
+    // @@protoc_insertion_point(field:CMarketingMessages_GetPastMarketingMessages_Request.upto_past_days)
+    pub upto_past_days: ::std::option::Option<u32>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CMarketingMessages_GetPastMarketingMessages_Request.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CMarketingMessages_GetPastMarketingMessages_Request {
+    fn default() -> &'a CMarketingMessages_GetPastMarketingMessages_Request {
+        <CMarketingMessages_GetPastMarketingMessages_Request as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CMarketingMessages_GetPastMarketingMessages_Request {
+    pub fn new() -> CMarketingMessages_GetPastMarketingMessages_Request {
+        ::std::default::Default::default()
+    }
+
+    // optional uint32 start_past_days = 1;
+
+    pub fn start_past_days(&self) -> u32 {
+        self.start_past_days.unwrap_or(0)
+    }
+
+    pub fn clear_start_past_days(&mut self) {
+        self.start_past_days = ::std::option::Option::None;
+    }
+
+    pub fn has_start_past_days(&self) -> bool {
+        self.start_past_days.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_start_past_days(&mut self, v: u32) {
+        self.start_past_days = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 upto_past_days = 2;
+
+    pub fn upto_past_days(&self) -> u32 {
+        self.upto_past_days.unwrap_or(0)
+    }
+
+    pub fn clear_upto_past_days(&mut self) {
+        self.upto_past_days = ::std::option::Option::None;
+    }
+
+    pub fn has_upto_past_days(&self) -> bool {
+        self.upto_past_days.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_upto_past_days(&mut self, v: u32) {
+        self.upto_past_days = ::std::option::Option::Some(v);
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CMarketingMessages_GetPastMarketingMessages_Request {
+    const NAME: &'static str = "CMarketingMessages_GetPastMarketingMessages_Request";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.start_past_days = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                16 => {
+                    self.upto_past_days = ::std::option::Option::Some(is.read_uint32()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.start_past_days {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(1, v);
+        }
+        if let Some(v) = self.upto_past_days {
+            my_size += ::steam_vent_proto_common::protobuf::rt::uint32_size(2, v);
+        }
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        if let Some(v) = self.start_past_days {
+            os.write_uint32(1, v)?;
+        }
+        if let Some(v) = self.upto_past_days {
+            os.write_uint32(2, v)?;
+        }
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CMarketingMessages_GetPastMarketingMessages_Request {
+        CMarketingMessages_GetPastMarketingMessages_Request::new()
+    }
+
+    fn clear(&mut self) {
+        self.start_past_days = ::std::option::Option::None;
+        self.upto_past_days = ::std::option::Option::None;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CMarketingMessages_GetPastMarketingMessages_Request {
+        static instance: CMarketingMessages_GetPastMarketingMessages_Request = CMarketingMessages_GetPastMarketingMessages_Request {
+            start_past_days: ::std::option::Option::None,
+            upto_past_days: ::std::option::Option::None,
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+// @@protoc_insertion_point(message:CMarketingMessages_GetPastMarketingMessages_Response)
+#[derive(PartialEq,Clone,Default,Debug)]
+pub struct CMarketingMessages_GetPastMarketingMessages_Response {
+    // message fields
+    // @@protoc_insertion_point(field:CMarketingMessages_GetPastMarketingMessages_Response.messages)
+    pub messages: ::std::vec::Vec<CMarketingMessageProto>,
+    // special fields
+    // @@protoc_insertion_point(special_field:CMarketingMessages_GetPastMarketingMessages_Response.special_fields)
+    pub special_fields: ::steam_vent_proto_common::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CMarketingMessages_GetPastMarketingMessages_Response {
+    fn default() -> &'a CMarketingMessages_GetPastMarketingMessages_Response {
+        <CMarketingMessages_GetPastMarketingMessages_Response as ::steam_vent_proto_common::protobuf::Message>::default_instance()
+    }
+}
+
+impl CMarketingMessages_GetPastMarketingMessages_Response {
+    pub fn new() -> CMarketingMessages_GetPastMarketingMessages_Response {
+        ::std::default::Default::default()
+    }
+}
+
+impl ::steam_vent_proto_common::protobuf::Message for CMarketingMessages_GetPastMarketingMessages_Response {
+    const NAME: &'static str = "CMarketingMessages_GetPastMarketingMessages_Response";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::steam_vent_proto_common::protobuf::CodedInputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.messages.push(is.read_message()?);
+                },
+                tag => {
+                    ::steam_vent_proto_common::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        for value in &self.messages {
+            let len = value.compute_size();
+            my_size += 1 + ::steam_vent_proto_common::protobuf::rt::compute_raw_varint64_size(len) + len;
+        };
+        my_size += ::steam_vent_proto_common::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::steam_vent_proto_common::protobuf::CodedOutputStream<'_>) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        for v in &self.messages {
+            ::steam_vent_proto_common::protobuf::rt::write_message_field_with_cached_size(1, v, os)?;
+        };
+        os.write_unknown_fields(self.special_fields.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn special_fields(&self) -> &::steam_vent_proto_common::protobuf::SpecialFields {
+        &self.special_fields
+    }
+
+    fn mut_special_fields(&mut self) -> &mut ::steam_vent_proto_common::protobuf::SpecialFields {
+        &mut self.special_fields
+    }
+
+    fn new() -> CMarketingMessages_GetPastMarketingMessages_Response {
+        CMarketingMessages_GetPastMarketingMessages_Response::new()
+    }
+
+    fn clear(&mut self) {
+        self.messages.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CMarketingMessages_GetPastMarketingMessages_Response {
+        static instance: CMarketingMessages_GetPastMarketingMessages_Response = CMarketingMessages_GetPastMarketingMessages_Response {
+            messages: ::std::vec::Vec::new(),
+            special_fields: ::steam_vent_proto_common::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
 // @@protoc_insertion_point(message:CMarketingMessages_GetMarketingMessagesForUser_Request)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct CMarketingMessages_GetMarketingMessagesForUser_Request {
@@ -5881,6 +6113,12 @@ pub enum EMarketingMessageType {
     k_EMarketingMessageDailyDeal = 12,
     // @@protoc_insertion_point(enum_value:EMarketingMessageType.k_EMarketingMessageNewDLC)
     k_EMarketingMessageNewDLC = 13,
+    // @@protoc_insertion_point(enum_value:EMarketingMessageType.k_EMarketingMessageFreeWeekend)
+    k_EMarketingMessageFreeWeekend = 14,
+    // @@protoc_insertion_point(enum_value:EMarketingMessageType.k_EMarketingMessageSalePages)
+    k_EMarketingMessageSalePages = 15,
+    // @@protoc_insertion_point(enum_value:EMarketingMessageType.k_EMarketingMessagePlaytestAvailable)
+    k_EMarketingMessagePlaytestAvailable = 16,
 }
 
 impl ::steam_vent_proto_common::protobuf::Enum for EMarketingMessageType {
@@ -5906,6 +6144,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMarketingMessageType {
             11 => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageMidweekDeal),
             12 => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageDailyDeal),
             13 => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageNewDLC),
+            14 => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageFreeWeekend),
+            15 => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageSalePages),
+            16 => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessagePlaytestAvailable),
             _ => ::std::option::Option::None
         }
     }
@@ -5926,6 +6167,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMarketingMessageType {
             "k_EMarketingMessageMidweekDeal" => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageMidweekDeal),
             "k_EMarketingMessageDailyDeal" => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageDailyDeal),
             "k_EMarketingMessageNewDLC" => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageNewDLC),
+            "k_EMarketingMessageFreeWeekend" => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageFreeWeekend),
+            "k_EMarketingMessageSalePages" => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessageSalePages),
+            "k_EMarketingMessagePlaytestAvailable" => ::std::option::Option::Some(EMarketingMessageType::k_EMarketingMessagePlaytestAvailable),
             _ => ::std::option::Option::None
         }
     }
@@ -5945,6 +6189,9 @@ impl ::steam_vent_proto_common::protobuf::Enum for EMarketingMessageType {
         EMarketingMessageType::k_EMarketingMessageMidweekDeal,
         EMarketingMessageType::k_EMarketingMessageDailyDeal,
         EMarketingMessageType::k_EMarketingMessageNewDLC,
+        EMarketingMessageType::k_EMarketingMessageFreeWeekend,
+        EMarketingMessageType::k_EMarketingMessageSalePages,
+        EMarketingMessageType::k_EMarketingMessagePlaytestAvailable,
     ];
 }
 
@@ -6239,6 +6486,34 @@ impl ::steam_vent_proto_common::RpcMessage for CMarketingMessageProto {
 }
 impl ::steam_vent_proto_common::RpcMessage
 for CMarketingMessages_GetActiveMarketingMessages_Response {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CMarketingMessages_GetPastMarketingMessages_Request {
+    fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
+        <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
+    }
+    fn write(&self, writer: &mut dyn std::io::Write) -> ::steam_vent_proto_common::protobuf::Result<()> {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.write_to_writer(writer)
+    }
+    fn encode_size(&self) -> usize {
+        use ::steam_vent_proto_common::protobuf::Message;
+        self.compute_size() as usize
+    }
+}
+impl ::steam_vent_proto_common::RpcMessage
+for CMarketingMessages_GetPastMarketingMessages_Response {
     fn parse(reader: &mut dyn std::io::Read) -> ::steam_vent_proto_common::protobuf::Result<Self> {
         <Self as ::steam_vent_proto_common::protobuf::Message>::parse_from_reader(reader)
     }
@@ -6785,6 +7060,11 @@ impl ::steam_vent_proto_common::RpcMethod
 for CMarketingMessages_GetPartnerReadyToPublishMessages_Request {
     const METHOD_NAME: &'static str = "MarketingMessages.GetPartnerReadyToPublishMessages#1";
     type Response = CMarketingMessages_GetPartnerReadyToPublishMessages_Response;
+}
+impl ::steam_vent_proto_common::RpcMethod
+for CMarketingMessages_GetPastMarketingMessages_Request {
+    const METHOD_NAME: &'static str = "MarketingMessages.GetPastMarketingMessages#1";
+    type Response = CMarketingMessages_GetPastMarketingMessages_Response;
 }
 impl ::steam_vent_proto_common::RpcMethod
 for CMarketingMessages_MarkMessageSeen_Notification {
