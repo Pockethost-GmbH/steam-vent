@@ -3,7 +3,7 @@ use std::error::Error;
 use std::io::Cursor;
 use steam_vent::auth::{
     AuthConfirmationHandler, ConsoleAuthConfirmationHandler, DeviceConfirmationHandler,
-    FileGuardDataStore,
+    FileTokenStore,
 };
 use steam_vent::{Connection, ConnectionTrait, GameCoordinator, ServerList};
 use steam_vent_proto::tf2::base_gcmessages::CSOEconItem;
@@ -25,7 +25,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         &server_list,
         &account,
         &password,
-        FileGuardDataStore::user_cache(),
+        FileTokenStore::user_cache(),
         ConsoleAuthConfirmationHandler::default().or(DeviceConfirmationHandler),
     )
     .await?;

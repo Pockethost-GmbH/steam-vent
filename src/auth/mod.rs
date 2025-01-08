@@ -23,7 +23,8 @@ use num_bigint_dig::BigUint;
 use num_traits::Num;
 use protobuf::{EnumOrUnknown, MessageField};
 use rsa::RsaPublicKey;
-use std::time::Duration;
+use serde::{Deserialize, Serialize};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use steam_vent_crypto::encrypt_with_key_pkcs1;
 use thiserror::Error;
 use tokio::time::sleep;
@@ -189,8 +190,8 @@ impl PendingAuth {
     }
 }
 
-#[derive(Debug, Clone)]
-pub(crate) struct Token(String);
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Token(String);
 
 impl AsRef<str> for Token {
     fn as_ref(&self) -> &str {
@@ -198,8 +199,41 @@ impl AsRef<str> for Token {
     }
 }
 
-#[derive(Debug, Clone)]
-pub(crate) struct Tokens {
+#[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
+pub struct TokenClaims {
+    pub sub: String,
+    pub exp: u64,
+}
+
+impl Token {
+    /// Get JWT claims
+    pub fn claims(&self) -> jsonwebtoken::errors::Result<TokenClaims> {
+        let key = jsonwebtoken::DecodingKey::from_secret(&[]);
+        let mut validation = jsonwebtoken::Validation::new(jsonwebtoken::Algorithm::HS256);
+        validation.insecure_disable_signature_validation();
+        validation.validate_aud = false;
+        validation.validate_exp = false;
+        let token = jsonwebtoken::decode::<TokenClaims>(&self.0, &key, &validation)?;
+        Ok(token.claims)
+    }
+
+    /// Check if the token is expired.
+    ///
+    /// # Arguments
+    /// `leeway`: How long before the actual expiration of the token to consider it expired
+    pub fn is_expired(claims: &TokenClaims, leeway: Option<Duration>) -> bool {
+        let exp = UNIX_EPOCH + Duration::from_secs(claims.exp);
+        let exp = if let Some(leeway) = leeway {
+            exp - leeway
+        } else {
+            exp
+        };
+        SystemTime::now() >= exp
+    }
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+pub struct Tokens {
     #[allow(dead_code)]
     pub access_token: Token,
     pub refresh_token: Token,

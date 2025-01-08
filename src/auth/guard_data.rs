@@ -1,3 +1,4 @@
+use crate::auth::Tokens;
 use directories::ProjectDirs;
 use std::collections::HashMap;
 use std::convert::Infallible;
@@ -6,25 +7,25 @@ use std::fs::{create_dir_all, read_to_string, write};
 use std::path::PathBuf;
 use thiserror::Error;
 
-/// Trait for storing steam guard machine tokens
-pub trait GuardDataStore {
+/// Trait for storing steam tokens
+pub trait TokenStore {
     type Err: Error;
 
-    /// Store a machine token for an account
+    /// Store a token set for an account
     fn store(
         &mut self,
         account: &str,
-        machine_token: String,
+        tokens: Tokens,
     ) -> impl std::future::Future<Output = Result<(), Self::Err>> + Send;
 
     /// Retrieve the stored token for an account
     fn load(
         &mut self,
         account: &str,
-    ) -> impl std::future::Future<Output = Result<Option<String>, Self::Err>> + Send;
+    ) -> impl std::future::Future<Output = Result<Option<Tokens>, Self::Err>> + Send;
 }
 
-/// Error while storing or loading guard data from json file
+/// Error while storing or loading tokens from json file
 #[derive(Debug, Error)]
 pub enum FileStoreError {
     /// Error while reading the json file
@@ -45,17 +46,17 @@ pub enum FileStoreError {
 }
 
 /// Store the steam guard data in a json file
-pub struct FileGuardDataStore {
+pub struct FileTokenStore {
     path: PathBuf,
 }
 
-impl FileGuardDataStore {
-    /// Store the machine token at the provided path
+impl FileTokenStore {
+    /// Store the tokens at the provided path
     pub fn new(path: PathBuf) -> Self {
-        FileGuardDataStore { path }
+        FileTokenStore { path }
     }
 
-    /// Store the machine tokens in the user's cache directory
+    /// Store the tokens in the user's cache directory
     ///
     /// This will be
     /// - `$XDG_CACHE_HOME/steam-vent/machine_token.json` (where `$XDG_CACHE_HOME` defaults to `$HOME/.cache`) on Linux
@@ -67,7 +68,7 @@ impl FileGuardDataStore {
         Self::new(project_dirs.cache_dir().join("machine_tokens.json"))
     }
 
-    fn all_tokens(&self) -> Result<HashMap<String, String>, FileStoreError> {
+    fn all_tokens(&self) -> Result<HashMap<String, Tokens>, FileStoreError> {
         if !self.path.exists() {
             return Ok(HashMap::default());
         }
@@ -81,7 +82,7 @@ impl FileGuardDataStore {
         })
     }
 
-    fn save(&self, tokens: HashMap<String, String>) -> Result<(), FileStoreError> {
+    fn save(&self, tokens: HashMap<String, Tokens>) -> Result<(), FileStoreError> {
         if let Some(parent) = self.path.parent() {
             create_dir_all(parent).map_err(|err| FileStoreError::DirCreation {
                 err,
@@ -101,36 +102,32 @@ impl FileGuardDataStore {
     }
 }
 
-impl GuardDataStore for FileGuardDataStore {
+impl TokenStore for FileTokenStore {
     type Err = FileStoreError;
 
-    async fn store(&mut self, account: &str, machine_token: String) -> Result<(), Self::Err> {
-        if !machine_token.is_empty() {
-            let mut tokens = self.all_tokens()?;
-            tokens.insert(account.into(), machine_token);
-            self.save(tokens)
-        } else {
-            Ok(())
-        }
+    async fn store(&mut self, account: &str, new_tokens: Tokens) -> Result<(), Self::Err> {
+        let mut tokens = self.all_tokens()?;
+        tokens.insert(account.into(), new_tokens);
+        self.save(tokens)
     }
 
-    async fn load(&mut self, account: &str) -> Result<Option<String>, Self::Err> {
+    async fn load(&mut self, account: &str) -> Result<Option<Tokens>, Self::Err> {
         let mut tokens = self.all_tokens()?;
-        Ok(tokens.remove(account).filter(|token| !token.is_empty()))
+        Ok(tokens.remove(account))
     }
 }
 
 /// Don't store guard data
-pub struct NullGuardDataStore;
+pub struct NullTokenStore;
 
-impl GuardDataStore for NullGuardDataStore {
+impl TokenStore for NullTokenStore {
     type Err = Infallible;
 
-    async fn store(&mut self, _account: &str, _machine_token: String) -> Result<(), Self::Err> {
+    async fn store(&mut self, _account: &str, _tokens: Tokens) -> Result<(), Self::Err> {
         Ok(())
     }
 
-    async fn load(&mut self, _account: &str) -> Result<Option<String>, Self::Err> {
+    async fn load(&mut self, _account: &str) -> Result<Option<Tokens>, Self::Err> {
         Ok(None)
     }
 }

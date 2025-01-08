@@ -3,7 +3,7 @@ use std::error::Error;
 use std::io::stdin;
 use steam_vent::auth::{
     AuthConfirmationHandler, ConsoleAuthConfirmationHandler, DeviceConfirmationHandler,
-    FileGuardDataStore,
+    FileTokenStore,
 };
 use steam_vent::proto::steammessages_friendmessages_steamclient::{
     CFriendMessages_IncomingMessage_Notification, CFriendMessages_SendMessage_Request,
@@ -30,7 +30,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         &server_list,
         &account,
         &password,
-        FileGuardDataStore::user_cache(),
+        FileTokenStore::user_cache(),
         ConsoleAuthConfirmationHandler::default().or(DeviceConfirmationHandler),
     )
     .await?;

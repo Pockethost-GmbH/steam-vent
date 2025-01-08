@@ -1,6 +1,6 @@
 mod filter;
 
-use crate::auth::{begin_password_auth, AuthConfirmationHandler, GuardDataStore};
+use crate::auth::{begin_password_auth, AuthConfirmationHandler, Token, TokenStore};
 use crate::message::{NetMessage, ServiceMethodMessage, ServiceMethodResponseMessage};
 use crate::net::{NetMessageHeader, NetworkError, RawNetMessage};
 use crate::proto::enums_clientserver::EMsg;
@@ -28,7 +28,7 @@ use tokio::time::{sleep, timeout};
 use tokio_stream::wrappers::BroadcastStream;
 use tokio_stream::{Stream, StreamExt};
 use tokio_util::sync::{CancellationToken, DropGuard};
-use tracing::{debug, error, instrument};
+use tracing::{debug, error, info, instrument};
 
 type Result<T, E = NetworkError> = std::result::Result<T, E>;
 
@@ -100,62 +100,89 @@ impl Connection {
         Ok(connection)
     }
 
-    pub async fn login<H: AuthConfirmationHandler, G: GuardDataStore>(
+    pub async fn login<H: AuthConfirmationHandler, T: TokenStore>(
         server: String,
         account: &str,
         password: &str,
-        mut guard_data_store: G,
+        mut token_store: T,
         confirmation_handler: H,
     ) -> Result<Self, ConnectionError> {
         let mut connection = Self::connect(&server).await?;
-        let guard_data = guard_data_store.load(account).await.unwrap_or_else(|e| {
-            error!(error = ?e, "failed to retrieve guard data");
+        let stored_tokens = token_store.load(account).await.unwrap_or_else(|e| {
+            error!(error = ?e, "failed to retrieve tokens");
             None
         });
-        if guard_data.is_some() {
-            debug!(account, "found stored guard data");
-        }
-        let begin =
-            begin_password_auth(&mut connection, account, password, guard_data.as_deref()).await?;
-        let steam_id = SteamID::from(begin.steam_id());
-
-        let allowed_confirmations = begin.allowed_confirmations();
-
-        let tokens = match select(
-            pin!(confirmation_handler.handle_confirmation(&allowed_confirmations)),
-            pin!(begin.poll().wait_for_tokens(&connection)),
-        )
-        .await
-        {
-            Either::Left((confirmation_action, tokens_fut)) => {
-                if let Some(confirmation_action) = confirmation_action {
-                    begin
-                        .submit_confirmation(&connection, confirmation_action)
-                        .await?;
-                    tokens_fut.await?
-                } else if begin.action_required() {
-                    return Err(ConnectionError::UnsupportedConfirmationAction(
-                        allowed_confirmations.clone(),
-                    ));
-                } else {
-                    tokens_fut.await?
+        let session_login_info = stored_tokens.as_ref().and_then(|stored_tokens| {
+            debug!(account, "found stored tokens");
+            match stored_tokens.refresh_token.claims() {
+                Ok(ref claims) => claims.sub.parse().ok().and_then(|steam_id: u64| {
+                    if !Token::is_expired(&claims, Some(Duration::from_secs(60 * 60 * 24))) {
+                        Some((stored_tokens.refresh_token.clone(), SteamID::from(steam_id)))
+                    } else {
+                        info!("stored refresh token is expired, need to re-login fully");
+                        None
+                    }
+                }),
+                Err(e) => {
+                    error!(error = ?e, "failed to parse refresh token");
+                    None
                 }
             }
-            Either::Right((tokens, _)) => tokens?,
-        };
+        });
 
-        if let Some(guard_data) = tokens.new_guard_data {
-            if let Err(e) = guard_data_store.store(account, guard_data).await {
-                error!(error = ?e, "failed to store guard data");
+        let (refresh_token, steam_id) = if let Some(session_login_info) = session_login_info {
+            session_login_info
+        } else {
+            let begin = begin_password_auth(
+                &mut connection,
+                account,
+                password,
+                stored_tokens
+                    .as_ref()
+                    .and_then(|t| t.new_guard_data.as_deref()),
+            )
+            .await?;
+            let steam_id = SteamID::from(begin.steam_id());
+
+            let allowed_confirmations = begin.allowed_confirmations();
+
+            let tokens = match select(
+                pin!(confirmation_handler.handle_confirmation(&allowed_confirmations)),
+                pin!(begin.poll().wait_for_tokens(&connection)),
+            )
+            .await
+            {
+                Either::Left((confirmation_action, tokens_fut)) => {
+                    if let Some(confirmation_action) = confirmation_action {
+                        begin
+                            .submit_confirmation(&connection, confirmation_action)
+                            .await?;
+                        tokens_fut.await?
+                    } else if begin.action_required() {
+                        return Err(ConnectionError::UnsupportedConfirmationAction(
+                            allowed_confirmations.clone(),
+                        ));
+                    } else {
+                        tokens_fut.await?
+                    }
+                }
+                Either::Right((tokens, _)) => tokens?,
+            };
+            let refresh_token = tokens.refresh_token.clone();
+
+            if let Err(e) = token_store.store(account, tokens).await {
+                error!(error = ?e, "failed to store tokens");
             }
-        }
+
+            (refresh_token, steam_id)
+        };
 
         connection.session = login(
             &mut connection,
             account,
             steam_id,
             // yes we send the refresh token as access token, yes it makes no sense, yes this is actually required
-            tokens.refresh_token.as_ref(),
+            refresh_token.as_ref(),
         )
         .await?;
         connection.setup_heartbeat();
