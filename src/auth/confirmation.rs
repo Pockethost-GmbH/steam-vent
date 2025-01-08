@@ -267,11 +267,11 @@ impl AuthConfirmationHandler for SharedSecretAuthConfirmationHandler {
                 debug!("Server time offset: {offset}");
                 // Wait for server time on second 15 and 45 on the minute, since that would be in the middle of the validity
                 // of any TOTP
-                let current_ts = time::SystemTime::now()
+                let current_ts = (time::SystemTime::now()
                     .duration_since(UNIX_EPOCH)
                     .unwrap()
-                    .as_secs()
-                    + offset as u64;
+                    .as_secs() as i64
+                    + offset) as u64;
                 let modulo = current_ts % 30;
                 let next = if modulo <= 15 {
                     current_ts - modulo + 15
