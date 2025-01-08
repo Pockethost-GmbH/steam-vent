@@ -191,7 +191,7 @@ impl PendingAuth {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Token(String);
+pub struct Token(pub String);
 
 impl AsRef<str> for Token {
     fn as_ref(&self) -> &str {

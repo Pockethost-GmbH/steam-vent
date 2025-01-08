@@ -23,6 +23,12 @@ pub trait TokenStore {
         &mut self,
         account: &str,
     ) -> impl std::future::Future<Output = Result<Option<Tokens>, Self::Err>> + Send;
+
+    /// Clear stored tokens for an account
+    fn clear(
+        &mut self,
+        account: &str,
+    ) -> impl std::future::Future<Output = Result<(), Self::Err>> + Send;
 }
 
 /// Error while storing or loading tokens from json file
@@ -115,6 +121,12 @@ impl TokenStore for FileTokenStore {
         let mut tokens = self.all_tokens()?;
         Ok(tokens.remove(account))
     }
+
+    async fn clear(&mut self, account: &str) -> Result<(), Self::Err> {
+        let mut tokens = self.all_tokens()?;
+        tokens.remove(account);
+        self.save(tokens)
+    }
 }
 
 /// Don't store guard data
@@ -129,5 +141,9 @@ impl TokenStore for NullTokenStore {
 
     async fn load(&mut self, _account: &str) -> Result<Option<Tokens>, Self::Err> {
         Ok(None)
+    }
+
+    async fn clear(&mut self, _account: &str) -> Result<(), Self::Err> {
+        Ok(())
     }
 }

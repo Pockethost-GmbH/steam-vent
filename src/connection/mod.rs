@@ -8,6 +8,7 @@ use crate::proto::steammessages_clientserver_login::CMsgClientHeartBeat;
 use crate::service_method::ServiceMethodRequest;
 use crate::session::{anonymous, hello, login, ConnectionError, Session};
 use crate::transport::websocket::connect;
+use crate::LoginError;
 use async_stream::try_stream;
 pub(crate) use connection_impl::ConnectionImpl;
 pub use filter::MessageFilter;
@@ -130,8 +131,10 @@ impl Connection {
             }
         });
 
-        let (refresh_token, steam_id) = if let Some(session_login_info) = session_login_info {
-            session_login_info
+        let (reused, refresh_token, steam_id) = if let Some(session_login_info) = session_login_info
+        {
+            let (refresh_token, steam_id) = session_login_info;
+            (true, refresh_token, steam_id)
         } else {
             let begin = begin_password_auth(
                 &mut connection,
@@ -174,20 +177,36 @@ impl Connection {
                 error!(error = ?e, "failed to store tokens");
             }
 
-            (refresh_token, steam_id)
+            (false, refresh_token, steam_id)
         };
 
-        connection.session = login(
+        match login(
             &mut connection,
             account,
             steam_id,
             // yes we send the refresh token as access token, yes it makes no sense, yes this is actually required
             refresh_token.as_ref(),
         )
-        .await?;
-        connection.setup_heartbeat();
-
-        Ok(connection)
+        .await
+        {
+            Err(e) => match e {
+                ConnectionError::LoginError(LoginError::InvalidCredentials) => {
+                    if reused {
+                        error!(error = ?e, "got invalid credentials error during login with re-used refresh token, clearing token storage");
+                        if let Err(e) = token_store.clear(account).await {
+                            error!(error = ?e, "failed to clear token storage");
+                        };
+                    }
+                    Err(e)
+                }
+                _ => Err(e),
+            },
+            Ok(session) => {
+                connection.session = session;
+                connection.setup_heartbeat();
+                Ok(connection)
+            }
+        }
     }
 
     fn setup_heartbeat(&self) {
