@@ -27,9 +27,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let server_list = ServerList::discover().await?;
     let connection = Connection::login(
-        &server_list,
+        server_list.pick_ws().server().url(),
         &account,
         &password,
+        None,
         FileTokenStore::user_cache(),
         ConsoleAuthConfirmationHandler::default().or(DeviceConfirmationHandler),
     )

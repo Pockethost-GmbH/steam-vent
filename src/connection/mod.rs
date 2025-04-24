@@ -105,6 +105,7 @@ impl Connection {
         server: String,
         account: &str,
         password: &str,
+        device_friendly_name: Option<String>,
         mut token_store: T,
         confirmation_handler: H,
     ) -> Result<Self, ConnectionError> {
@@ -140,6 +141,7 @@ impl Connection {
                 &mut connection,
                 account,
                 password,
+                device_friendly_name,
                 stored_tokens
                     .as_ref()
                     .and_then(|t| t.new_guard_data.as_deref()),

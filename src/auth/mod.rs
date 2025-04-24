@@ -34,6 +34,7 @@ pub(crate) async fn begin_password_auth(
     connection: &mut Connection,
     account: &str,
     password: &str,
+    device_friendly_name: Option<String>,
     guard_data: Option<&str>,
 ) -> Result<StartedAuth, ConnectionError> {
     let (pub_key, timestamp) = get_password_rsa(connection, account.into()).await?;
@@ -52,7 +53,7 @@ pub(crate) async fn begin_password_auth(
         // todo: platform types
         website_id: Some("Client".into()),
         device_details: MessageField::some(CAuthentication_DeviceDetails {
-            device_friendly_name: Some("DESKTOP-VENT".into()),
+            device_friendly_name: Some(device_friendly_name.unwrap_or("DESKTOP-VENT".to_string())),
             platform_type: Some(EnumOrUnknown::new(
                 EAuthTokenPlatformType::k_EAuthTokenPlatformType_SteamClient,
             )),
