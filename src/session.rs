@@ -172,6 +172,7 @@ pub async fn login(
     account: &str,
     steam_id: SteamID,
     access_token: &str,
+    machine_name: Option<&str>,
 ) -> Result<Session> {
     let mut ip = CMsgIPAddress::new();
     ip.set_v4(0);
@@ -183,7 +184,8 @@ pub async fn login(
         supports_rate_limit_response: Some(false),
         obfuscated_private_ip: MessageField::some(ip),
         client_language: Some(String::new()),
-        machine_name: Some(String::new()),
+        machine_id: machine_name.as_ref().map(|n| n.as_bytes().to_vec()),
+        machine_name: machine_name.map(|n| n.to_string()),
         steamguard_dont_remember_computer: Some(false),
         chat_mode: Some(2),
         access_token: Some(access_token.into()),

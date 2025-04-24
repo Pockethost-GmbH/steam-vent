@@ -105,7 +105,7 @@ impl Connection {
         server: String,
         account: &str,
         password: &str,
-        device_friendly_name: Option<String>,
+        machine_name: Option<&str>,
         mut token_store: T,
         confirmation_handler: H,
     ) -> Result<Self, ConnectionError> {
@@ -141,7 +141,7 @@ impl Connection {
                 &mut connection,
                 account,
                 password,
-                device_friendly_name,
+                machine_name,
                 stored_tokens
                     .as_ref()
                     .and_then(|t| t.new_guard_data.as_deref()),
@@ -188,6 +188,7 @@ impl Connection {
             steam_id,
             // yes we send the refresh token as access token, yes it makes no sense, yes this is actually required
             refresh_token.as_ref(),
+            machine_name,
         )
         .await
         {
