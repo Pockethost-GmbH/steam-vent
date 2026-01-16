@@ -2,6 +2,7 @@ use crate::message::ServiceMethodNotification;
 use crate::net::{JobId, RawNetMessage};
 use dashmap::DashMap;
 use futures_util::Stream;
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 use steam_vent_proto::enums_clientserver::EMsg;
 use steam_vent_proto::MsgKind;
@@ -23,7 +24,16 @@ impl MessageFilter {
     pub fn new<
         Input: Stream<Item = crate::connection::Result<RawNetMessage>> + Send + Unpin + 'static,
     >(
+        source: Input,
+    ) -> Self {
+        Self::new_with_close_signal(source, None)
+    }
+
+    pub fn new_with_close_signal<
+        Input: Stream<Item = crate::connection::Result<RawNetMessage>> + Send + Unpin + 'static,
+    >(
         mut source: Input,
+        closed: Option<Arc<AtomicBool>>,
     ) -> Self {
         let filter = MessageFilter {
             job_id_filters: Default::default(),
@@ -77,8 +87,14 @@ impl MessageFilter {
                     }
                     Err(err) => {
                         error!(error = ?err, "Error while reading message");
+                        if let Some(flag) = &closed {
+                            flag.store(true, Ordering::Relaxed);
+                        }
                     }
                 }
+            }
+            if let Some(flag) = &closed {
+                flag.store(true, Ordering::Relaxed);
             }
         });
         filter

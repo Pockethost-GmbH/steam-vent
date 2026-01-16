@@ -18,6 +18,7 @@ use std::fmt::{Debug, Formatter};
 use std::future::Future;
 use std::net::IpAddr;
 use std::pin::pin;
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 use std::time::Duration;
 use steam_vent_proto::{JobMultiple, MsgKindEnum};
@@ -39,11 +40,16 @@ type TransportWriter = Arc<Mutex<dyn Sink<RawNetMessage, Error = NetworkError> +
 #[derive(Clone)]
 pub struct MessageSender {
     write: TransportWriter,
+    closed: Arc<AtomicBool>,
 }
 
 impl MessageSender {
     pub async fn send_raw(&self, raw_message: RawNetMessage) -> Result<()> {
-        self.write.lock().await.send(raw_message).await?;
+        let result = self.write.lock().await.send(raw_message).await;
+        if result.is_err() {
+            self.closed.store(true, Ordering::Relaxed);
+        }
+        result?;
         Ok(())
     }
 }
@@ -55,6 +61,7 @@ pub struct Connection {
     filter: MessageFilter,
     timeout: Duration,
     sender: MessageSender,
+    closed: Arc<AtomicBool>,
     heartbeat_cancellation_token: CancellationToken,
     _heartbeat_drop_guard: Arc<DropGuard>,
 }
@@ -68,15 +75,18 @@ impl Debug for Connection {
 impl Connection {
     async fn connect(server: &str) -> Result<Self, ConnectionError> {
         let (read, write) = connect(&server).await?;
-        let filter = MessageFilter::new(read);
+        let closed = Arc::new(AtomicBool::new(false));
+        let filter = MessageFilter::new_with_close_signal(read, Some(closed.clone()));
         let heartbeat_cancellation_token = CancellationToken::new();
         let mut connection = Connection {
             session: Session::default(),
             filter,
             sender: MessageSender {
                 write: Arc::new(Mutex::new(write)),
+                closed: closed.clone(),
             },
             timeout: Duration::from_secs(10),
+            closed,
             heartbeat_cancellation_token: heartbeat_cancellation_token.clone(),
             // We just store a drop guard using an `Arc` here, so dropping the last clone of `Connection` will cancel the heartbeat task.
             _heartbeat_drop_guard: Arc::new(heartbeat_cancellation_token.drop_guard()),
@@ -268,6 +278,10 @@ impl Connection {
 
     pub fn set_timeout(&mut self, timeout: Duration) {
         self.timeout = timeout;
+    }
+
+    pub fn is_closed(&self) -> bool {
+        self.closed.load(Ordering::Relaxed)
     }
 
     pub(crate) async fn service_method_un_authenticated<Msg: ServiceMethodRequest>(
